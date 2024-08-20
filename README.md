@@ -1,2 +1,2 @@
 # CodingGuide
-Solutions to the CodingGuide
+Solutions to the Coding Guide
