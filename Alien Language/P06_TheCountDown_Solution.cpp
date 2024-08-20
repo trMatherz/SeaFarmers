@@ -8,8 +8,9 @@ using namespace std;
 
 int main() {
     int n; cin >> n; 
-    while(n > 0) { 
-        cout << n << endl; n--;
+    while(n > 0) { //or while x >= 1
+        cout << n << endl; 
+        n--;
     }
     cout << "Blast Off!"; 
     return 0;
