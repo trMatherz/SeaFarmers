@@ -7,9 +7,9 @@ using namespace std;
 
 
 int main() {
-    int n; //decalre the variable
-    cin >> n; //read it in
-    n = n + 5; //increase the variable
-    cout << n; //output the variable
+    int n; //Decalre the variable
+    cin >> n; //Read it in
+    n = n + 5; //Increase the variable
+    cout << n; //Output the variable
     return 0;
 }
