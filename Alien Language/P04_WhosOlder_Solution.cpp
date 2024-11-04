@@ -7,13 +7,13 @@ using namespace std;
 
 
 int main() {
-    int a, b; //declare the variables
-    cin >> a >> b; //read in the variables
-    if(a > b) { //check if Mark is older
+    int a, b; //Declare the variables
+    cin >> a >> b; //Read in the variables
+    if(a > b) { //Check if Mark is older
         cout << "Mark";
-    } else if(a < b) { //check if Jerry is older
+    } else if(a < b) { //Check if Jerry is older
         cout << "Jerry"; 
-    } else { //if neither is older, they are the same age
+    } else { //If neither is older, they are the same age
         cout << "You're the same age!";
     }
     return 0;
