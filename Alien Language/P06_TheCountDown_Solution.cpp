@@ -8,7 +8,7 @@ using namespace std;
 
 int main() {
     int n; cin >> n; 
-    while(n > 0) { //or while n >= 1
+    while(n > 0) { //Or while n >= 1
         cout << n << endl; 
         n--;
     }
