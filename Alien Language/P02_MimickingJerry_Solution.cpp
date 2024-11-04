@@ -7,8 +7,8 @@ using namespace std;
 
 
 int main() {
-    string a; //declare the variable
-    cin >> a; //read it in
-    cout << a; //output the variable
+    string a; //Declare the variable
+    cin >> a; //Read it in
+    cout << a; //Output the variable
     return 0;
 }
