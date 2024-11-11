@@ -1,0 +1,355 @@
+{
+  "/SeaFarmers/__docusaurus/debug-076": {
+    "__comp": "__comp---theme-debug-config-23-a-2ff",
+    "__context": {
+      "plugin": "plugin---sea-farmers-docusaurus-debugb-38-d1b"
+    }
+  },
+  "/SeaFarmers/__docusaurus/debug/config-dbd": {
+    "__comp": "__comp---theme-debug-config-23-a-2ff",
+    "__context": {
+      "plugin": "plugin---sea-farmers-docusaurus-debugb-38-d1b"
+    }
+  },
+  "/SeaFarmers/__docusaurus/debug/content-c5f": {
+    "__comp": "__comp---theme-debug-contentba-8-ce7",
+    "__context": {
+      "plugin": "plugin---sea-farmers-docusaurus-debugb-38-d1b"
+    },
+    "__props": "__props---sea-farmers-docusaurus-debug-contenta-00-32b"
+  },
+  "/SeaFarmers/__docusaurus/debug/globalData-684": {
+    "__comp": "__comp---theme-debug-global-dataede-0fa",
+    "__context": {
+      "plugin": "plugin---sea-farmers-docusaurus-debugb-38-d1b"
+    }
+  },
+  "/SeaFarmers/__docusaurus/debug/metadata-0d1": {
+    "__comp": "__comp---theme-debug-site-metadata-68-e-3d4",
+    "__context": {
+      "plugin": "plugin---sea-farmers-docusaurus-debugb-38-d1b"
+    }
+  },
+  "/SeaFarmers/__docusaurus/debug/registry-10c": {
+    "__comp": "__comp---theme-debug-registry-679-501",
+    "__context": {
+      "plugin": "plugin---sea-farmers-docusaurus-debugb-38-d1b"
+    }
+  },
+  "/SeaFarmers/__docusaurus/debug/routes-c0a": {
+    "__comp": "__comp---theme-debug-routes-946-699",
+    "__context": {
+      "plugin": "plugin---sea-farmers-docusaurus-debugb-38-d1b"
+    }
+  },
+  "/SeaFarmers/blog-2a3": {
+    "__comp": "__comp---theme-blog-list-pagea-6-a-7ba",
+    "__context": {
+      "plugin": "plugin---sea-farmers-blog-369-03d"
+    },
+    "sidebar": "sidebar---sea-farmers-blog-814-fc1",
+    "items": [
+      {
+        "content": "content---sea-farmers-blog-766-9f1"
+      },
+      {
+        "content": "content---sea-farmers-blogf-4-f-74d"
+      },
+      {
+        "content": "content---sea-farmers-blog-871-36f"
+      },
+      {
+        "content": "content---sea-farmers-blog-925-716"
+      }
+    ],
+    "__props": "__props---sea-farmers-blog-462-851"
+  },
+  "/SeaFarmers/blog/archive-818": {
+    "__comp": "__comp---theme-blog-archive-page-9-e-4-1d8",
+    "__context": {
+      "plugin": "plugin---sea-farmers-blog-369-03d"
+    },
+    "__props": "__props---sea-farmers-blog-archivea-91-a78"
+  },
+  "/SeaFarmers/blog/authors-203": {
+    "__comp": "__comp---theme-blog-pages-blog-authors-list-page-621-70c",
+    "__context": {
+      "data": {
+        "blogMetadata": "blogMetadata---sea-farmers-blog-authorsace-326"
+      },
+      "plugin": "plugin---sea-farmers-blog-369-03d"
+    },
+    "sidebar": "sidebar---sea-farmers-blog-814-fc1",
+    "__props": "__props---sea-farmers-blog-authors-302-b81"
+  },
+  "/SeaFarmers/blog/authors/all-sebastien-lorber-articles-7c8": {
+    "__comp": "__comp---theme-blog-pages-blog-authors-posts-page-33-f-bd5",
+    "__context": {
+      "data": {
+        "blogMetadata": "blogMetadata---sea-farmers-blog-authorsace-326"
+      },
+      "plugin": "plugin---sea-farmers-blog-369-03d"
+    },
+    "items": [
+      {
+        "content": "content---sea-farmers-blog-766-9f1"
+      },
+      {
+        "content": "content---sea-farmers-blogf-4-f-74d"
+      },
+      {
+        "content": "content---sea-farmers-blog-925-716"
+      }
+    ],
+    "sidebar": "sidebar---sea-farmers-blog-814-fc1",
+    "__props": "__props---sea-farmers-blog-authors-all-sebastien-lorber-articles-04-c-50d"
+  },
+  "/SeaFarmers/blog/authors/yangshun-3df": {
+    "__comp": "__comp---theme-blog-pages-blog-authors-posts-page-33-f-bd5",
+    "__context": {
+      "data": {
+        "blogMetadata": "blogMetadata---sea-farmers-blog-authorsace-326"
+      },
+      "plugin": "plugin---sea-farmers-blog-369-03d"
+    },
+    "items": [
+      {
+        "content": "content---sea-farmers-blog-766-9f1"
+      },
+      {
+        "content": "content---sea-farmers-blog-871-36f"
+      },
+      {
+        "content": "content---sea-farmers-blog-925-716"
+      }
+    ],
+    "sidebar": "sidebar---sea-farmers-blog-814-fc1",
+    "__props": "__props---sea-farmers-blog-authors-yangshun-90-f-811"
+  },
+  "/SeaFarmers/blog/first-blog-post-1f6": {
+    "__comp": "__comp---theme-blog-post-pageccc-cab",
+    "__context": {
+      "data": {
+        "blogMetadata": "blogMetadata---sea-farmers-blog-authorsace-326"
+      },
+      "plugin": "plugin---sea-farmers-blog-369-03d"
+    },
+    "sidebar": "sidebar---sea-farmers-blog-814-fc1",
+    "content": "content---sea-farmers-blog-first-blog-poste-27-36a"
+  },
+  "/SeaFarmers/blog/long-blog-post-441": {
+    "__comp": "__comp---theme-blog-post-pageccc-cab",
+    "__context": {
+      "data": {
+        "blogMetadata": "blogMetadata---sea-farmers-blog-authorsace-326"
+      },
+      "plugin": "plugin---sea-farmers-blog-369-03d"
+    },
+    "sidebar": "sidebar---sea-farmers-blog-814-fc1",
+    "content": "content---sea-farmers-blog-long-blog-post-736-d9a"
+  },
+  "/SeaFarmers/blog/mdx-blog-post-b93": {
+    "__comp": "__comp---theme-blog-post-pageccc-cab",
+    "__context": {
+      "data": {
+        "blogMetadata": "blogMetadata---sea-farmers-blog-authorsace-326"
+      },
+      "plugin": "plugin---sea-farmers-blog-369-03d"
+    },
+    "sidebar": "sidebar---sea-farmers-blog-814-fc1",
+    "content": "content---sea-farmers-blog-mdx-blog-post-593-862"
+  },
+  "/SeaFarmers/blog/tags-e10": {
+    "__comp": "__comp---theme-blog-tags-list-page-01-a-d0b",
+    "__context": {
+      "plugin": "plugin---sea-farmers-blog-369-03d"
+    },
+    "sidebar": "sidebar---sea-farmers-blog-814-fc1",
+    "__props": "__props---sea-farmers-blog-tags-8-cc-813"
+  },
+  "/SeaFarmers/blog/tags/docusaurus-628": {
+    "__comp": "__comp---theme-blog-tags-posts-page-687-b6c",
+    "__context": {
+      "plugin": "plugin---sea-farmers-blog-369-03d"
+    },
+    "sidebar": "sidebar---sea-farmers-blog-814-fc1",
+    "items": [
+      {
+        "content": "content---sea-farmers-blog-766-9f1"
+      },
+      {
+        "content": "content---sea-farmers-blogf-4-f-74d"
+      },
+      {
+        "content": "content---sea-farmers-blog-871-36f"
+      },
+      {
+        "content": "content---sea-farmers-blog-925-716"
+      }
+    ],
+    "__props": "__props---sea-farmers-blog-tags-docusaurusd-52-313"
+  },
+  "/SeaFarmers/blog/tags/facebook-c8d": {
+    "__comp": "__comp---theme-blog-tags-posts-page-687-b6c",
+    "__context": {
+      "plugin": "plugin---sea-farmers-blog-369-03d"
+    },
+    "sidebar": "sidebar---sea-farmers-blog-814-fc1",
+    "items": [
+      {
+        "content": "content---sea-farmers-blog-766-9f1"
+      }
+    ],
+    "__props": "__props---sea-farmers-blog-tags-facebookaf-0-423"
+  },
+  "/SeaFarmers/blog/tags/hello-ae6": {
+    "__comp": "__comp---theme-blog-tags-posts-page-687-b6c",
+    "__context": {
+      "plugin": "plugin---sea-farmers-blog-369-03d"
+    },
+    "sidebar": "sidebar---sea-farmers-blog-814-fc1",
+    "items": [
+      {
+        "content": "content---sea-farmers-blog-766-9f1"
+      },
+      {
+        "content": "content---sea-farmers-blog-871-36f"
+      }
+    ],
+    "__props": "__props---sea-farmers-blog-tags-hello-276-556"
+  },
+  "/SeaFarmers/blog/tags/hola-9a4": {
+    "__comp": "__comp---theme-blog-tags-posts-page-687-b6c",
+    "__context": {
+      "plugin": "plugin---sea-farmers-blog-369-03d"
+    },
+    "sidebar": "sidebar---sea-farmers-blog-814-fc1",
+    "items": [
+      {
+        "content": "content---sea-farmers-blog-925-716"
+      }
+    ],
+    "__props": "__props---sea-farmers-blog-tags-hola-2-a-6-99e"
+  },
+  "/SeaFarmers/blog/welcome-3f8": {
+    "__comp": "__comp---theme-blog-post-pageccc-cab",
+    "__context": {
+      "data": {
+        "blogMetadata": "blogMetadata---sea-farmers-blog-authorsace-326"
+      },
+      "plugin": "plugin---sea-farmers-blog-369-03d"
+    },
+    "sidebar": "sidebar---sea-farmers-blog-814-fc1",
+    "content": "content---sea-farmers-blog-welcomed-9-f-783"
+  },
+  "/SeaFarmers/modules/LearnToCode/HowToCode-03d": {
+    "__comp": "__comp---site-src-pages-modules-learn-to-code-how-to-code-js-9-f-4-6e7",
+    "__context": {
+      "plugin": "plugin---sea-farmers-modules-learn-to-code-learn-to-code-homea-74-c31"
+    },
+    "config": "config---sea-farmers-modules-learn-to-code-learn-to-code-home-5-e-9-a32"
+  },
+  "/SeaFarmers/modules/LearnToCode/LearnToCodeHome-b65": {
+    "__comp": "__comp---site-src-pages-modules-learn-to-code-learn-to-code-home-jse-9-b-bd2",
+    "__context": {
+      "plugin": "plugin---sea-farmers-modules-learn-to-code-learn-to-code-homea-74-c31"
+    },
+    "config": "config---sea-farmers-modules-learn-to-code-learn-to-code-home-5-e-9-a32"
+  },
+  "/SeaFarmers/modules/LearnToCode/TestPage-f65": {
+    "__comp": "__comp---site-src-pages-modules-learn-to-code-test-page-js-575-7c6",
+    "__context": {
+      "plugin": "plugin---sea-farmers-modules-learn-to-code-learn-to-code-homea-74-c31"
+    },
+    "config": "config---sea-farmers-modules-learn-to-code-learn-to-code-home-5-e-9-a32"
+  },
+  "/SeaFarmers/modules/Novice/NoviceHome-b6f": {
+    "__comp": "__comp---site-src-pages-modules-novice-novice-home-jsb-98-922",
+    "__context": {
+      "plugin": "plugin---sea-farmers-modules-learn-to-code-learn-to-code-homea-74-c31"
+    },
+    "config": "config---sea-farmers-modules-learn-to-code-learn-to-code-home-5-e-9-a32"
+  },
+  "/SeaFarmers/my-markdown-page-9e5": {
+    "__comp": "__comp---theme-mdx-page-1-f-3-b90",
+    "__context": {
+      "plugin": "plugin---sea-farmers-modules-learn-to-code-learn-to-code-homea-74-c31"
+    },
+    "content": "content---sea-farmers-my-markdown-page-031-d1b"
+  },
+  "/SeaFarmers/my-react-page-388": {
+    "__comp": "__comp---site-src-pages-my-react-page-jsf-85-e77",
+    "__context": {
+      "plugin": "plugin---sea-farmers-modules-learn-to-code-learn-to-code-homea-74-c31"
+    },
+    "config": "config---sea-farmers-modules-learn-to-code-learn-to-code-home-5-e-9-a32"
+  },
+  "/SeaFarmers/docs-556": {
+    "__comp": "__comp---theme-docs-root-5-e-9-0b6",
+    "__context": {
+      "plugin": "plugin---sea-farmers-docsaba-33a"
+    }
+  },
+  "/SeaFarmers/docs-592": {
+    "__comp": "__comp---theme-doc-version-roota-7-b-5de",
+    "__props": "__props---sea-farmers-docsb-9-c-111"
+  },
+  "/SeaFarmers/docs-b9a": {
+    "__comp": "__comp---theme-doc-roota-94-67a"
+  },
+  "/SeaFarmers/docs/category/tutorial---basics-074": {
+    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
+    "__props": "__props---sea-farmers-docs-category-tutorial-basicsfcf-b4e"
+  },
+  "/SeaFarmers/docs/category/tutorial---extras-9a8": {
+    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
+    "__props": "__props---sea-farmers-docs-category-tutorial-extras-431-321"
+  },
+  "/SeaFarmers/docs/hello-800": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---sea-farmers-docs-hello-9-df-59c"
+  },
+  "/SeaFarmers/docs/intro-2fd": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---sea-farmers-docs-intro-0-e-3-da7"
+  },
+  "/SeaFarmers/docs/tutorial-basics/congratulations-c41": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---sea-farmers-docs-tutorial-basics-congratulations-822-6ac"
+  },
+  "/SeaFarmers/docs/tutorial-basics/create-a-blog-post-203": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---sea-farmers-docs-tutorial-basics-create-a-blog-post-533-552"
+  },
+  "/SeaFarmers/docs/tutorial-basics/create-a-document-94e": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---sea-farmers-docs-tutorial-basics-create-a-document-1-e-4-a3d"
+  },
+  "/SeaFarmers/docs/tutorial-basics/create-a-page-492": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---sea-farmers-docs-tutorial-basics-create-a-page-5-c-8-437"
+  },
+  "/SeaFarmers/docs/tutorial-basics/deploy-your-site-ff1": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---sea-farmers-docs-tutorial-basics-deploy-your-sitef-55-eb6"
+  },
+  "/SeaFarmers/docs/tutorial-basics/markdown-features-159": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---sea-farmers-docs-tutorial-basics-markdown-features-18-c-b5d"
+  },
+  "/SeaFarmers/docs/tutorial-extras/manage-docs-versions-b71": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---sea-farmers-docs-tutorial-extras-manage-docs-versionsdff-de1"
+  },
+  "/SeaFarmers/docs/tutorial-extras/translate-your-site-110": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---sea-farmers-docs-tutorial-extras-translate-your-sitee-44-060"
+  },
+  "/SeaFarmers/-c15": {
+    "__comp": "__comp---site-src-pages-index-jsc-4-f-f99",
+    "__context": {
+      "plugin": "plugin---sea-farmers-modules-learn-to-code-learn-to-code-homea-74-c31"
+    },
+    "config": "config---sea-farmers-modules-learn-to-code-learn-to-code-home-5-e-9-a32"
+  }
+}
