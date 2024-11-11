@@ -1,0 +1,112 @@
+/* Sidebar.module.css */
+.sidebarContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Make the sidebar container take up the full height of the screen */
+  width: 300px;  /* Set a fixed width for the sidebar */
+}
+
+.sidebarHeader {
+  background-color: #333; /* Dark background for the header */
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+/* Dropdown Button Styles */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdownButton {
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+}
+
+.dropdownButton:hover {
+  background-color: #444;
+}
+
+/* Dropdown Content */
+.dropdownContent {
+  display: block;
+  position: absolute;
+  background-color: #f4f4f4;
+  min-width: 200px;
+  z-index: 1;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  margin-top: 5px;
+}
+
+.dropdownContent ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdownContent li {
+  padding: 10px;
+}
+
+.dropdownContent li a {
+  color: #333;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdownContent li a:hover {
+  background-color: #ddd;
+}
+
+/* Sidebar content styling */
+.sidebar {
+  background-color: #f4f4f4;
+  padding: 20px;
+  overflow-y: auto;
+  height: calc(100vh - 80px); /* Make sidebar content scrollable if it exceeds the height */
+  width: 300px; /* Ensure sidebar content is the same width as the container */
+}
+
+.topicItem {
+  margin-bottom: 10px;
+}
+
+.topicName {
+  font-weight: bold;
+  cursor: pointer;
+  padding: 5px;
+  background-color: #ddd;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.topicName:hover {
+  background-color: #bbb;
+}
+
+.subtopicsList {
+  list-style-type: none;
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+.subtopicItem {
+  margin-bottom: 5px;
+}
+
+.subtopicItem a {
+  text-decoration: none;
+  color: #333;
+}
+
+.subtopicItem a:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,61 @@
+/* global.css */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #2e8555;
+  --ifm-color-primary-dark: #29784c;
+  --ifm-color-primary-darker: #277148;
+  --ifm-color-primary-darkest: #205d3b;
+  --ifm-color-primary-light: #33925d;
+  --ifm-color-primary-lighter: #359962;
+  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] {
+  --ifm-color-primary: #25c2a0;
+  --ifm-color-primary-dark: #21af90;
+  --ifm-color-primary-darker: #1fa588;
+  --ifm-color-primary-darkest: #1a8870;
+  --ifm-color-primary-light: #29d5b0;
+  --ifm-color-primary-lighter: #32d8b4;
+  --ifm-color-primary-lightest: #4fddbf;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+/* src/css/custom.css */
+
+/* Change the navbar background color */
+.navbar {
+  background-color: #000040; /* Example color for navbar background */
+}
+
+/* Change the navbar text color */
+.navbar .navbar__links a {
+  color: white; /* White text color for the navbar links */
+}
+
+/* Change the navbar brand (title) color */
+.navbar__brand {
+  color: white; /* White color for the brand name */
+}
+
+/* Change the color of the navbar items on hover */
+.navbar__links a:hover {
+  color: #ffb703; /* Example: yellow on hover */
+}
+
+/* Custom CSS for the 'Sections' dropdown label */
+.navbar-sections {
+  color: white !important;
+}
+
+
+/* src/css/custom.css */
+
+/* Dark mode background */
+body {
+  background-color: #000040; /* Set dark mode background */
+}
+
