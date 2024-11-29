@@ -1,0 +1,46 @@
+.navbarItems {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdownButton {
+  background-color: #0078d4; /* Adjust for your theme */
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.dropdownButton:hover {
+  background-color: #005bb5; /* Darker shade for hover effect */
+}
+
+.dropdownContent {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.dropdownContent a {
+  padding: 12px 16px;
+  text-decoration: none;
+  color: black;
+  display: block;
+}
+
+.dropdownContent a:hover {
+  background-color: #f1f1f1; /* Light grey hover */
+}

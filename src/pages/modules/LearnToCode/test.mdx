@@ -1,0 +1,29 @@
+import React from 'react';
+import UserProfile from '../../../components/UserProfile';  // Adjust the path if needed
+import ProblemList from '../../../components/ProblemList';  // Default import
+import TopicProgress from '../../../components/TopicProgress';  // Default import
+import Sidebar from '../../../components/Sidebar';  // Default import
+import problems from './test.problems.json';
+import SignInButton from '@site/src/components/SignInButton';
+
+export const moduleName = "LearnToCode"; 
+export const topicId = "variables";  
+
+
+<Sidebar moduleName={moduleName} /> 
+
+# Welcome to the Site
+
+Click below to sign in with GitHub:
+
+<SignInButton />
+
+# User Profile
+
+<UserProfile />
+
+# Example Problem List
+
+<ProblemList moduleName={moduleName} topicId={topicId} />
+
+<TopicProgress moduleName={moduleName} topicId={topicId} />

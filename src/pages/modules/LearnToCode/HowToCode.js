@@ -50,7 +50,7 @@ function HowToCode() {
 
   return (
     <div className={styles.pageContainer}>
-      <Sidebar topics={learnToCodeData.topics} />
+     {/*<Sidebar topics={learnToCodeData.topics} />*/}
 
       <div className={styles.content}>
         {/* Title and Subtitle */}

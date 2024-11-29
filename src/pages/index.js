@@ -1,31 +1,33 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
-import '../css/custom.css'; // Import the global CSS
-import '../css/index.css';  // Import the index-specific CSS
+import Navbar from '../components/Navbar'; // Import the Navbar component
+import styles from '../css/index.module.css'; // Import the index-specific CSS module
 
 function Home() {
- 
   return (
     <Layout
       title="Welcome to the Guide"
       description="The ultimate guide to competitive programming."
     >
+      {/* Navbar */}
+      <Navbar />
+
       {/* Background Video */}
-      <div className="background-video-container">
-        <video autoPlay loop muted className="background-video">
+      <div className={styles.backgroundVideoContainer}>
+        <video autoPlay loop muted className={styles.backgroundVideo}>
           <source src="/SeaFarmers/background.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </div>
 
-      
-
       {/* Main Content */}
-      <main className="main-content">
+      <main className={styles.mainContent}>
         <section className="container">
-          <h1 className="hero__title">Sea Farmers</h1>
-          <h2>The ultimate guide to competitive programming.</h2>
+          <h1 className={styles.heroTitle}>Sea Farmers</h1>
+          <h2 className={styles.subtitle}>
+            The ultimate guide to competitive programming.
+          </h2>
         </section>
       </main>
     </Layout>

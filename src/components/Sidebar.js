@@ -1,83 +1,79 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios'; // Ensure axios is installed
 import styles from '../css/Sidebar.module.css';
+import Dropdown from './Dropdown'; // Adjust path as needed
 
-// Assuming you import the items from docusaurus.config.js
-import config from '../../docusaurus.config';
+function Sidebar({ moduleName }) {
+  const [moduleData, setModuleData] = useState(null); // Holds the entire module data
+  const [loading, setLoading] = useState(false); // Loading state for API calls
+  const [error, setError] = useState(null); // Holds any error that occurs
 
-// Access navbarItems from customFields
-const navbarItems = config.customFields.navbarItems;
+  // Fetch module data when component mounts or when moduleName changes
+  useEffect(() => {
+    async function fetchModuleData() {
+      setLoading(true); // Start loading
+      try {
+        const response = await axios.get(`http://localhost:3001/api/module/${moduleName}`, {
+          withCredentials: true, // Ensure session cookies are included
+        });
+        setModuleData(response.data); // Set module data
+        setLoading(false); // Stop loading
+      } catch (error) {
+        setError(error.response ? error.response.data : error.message);
+        setLoading(false); // Stop loading
+      }
+    }
 
-function Sidebar({ topics }) {
-  // State to track expanded topics (an array of indices)
-  const [expandedTopics, setExpandedTopics] = useState([]);
-  const [dropdownOpen, setDropdownOpen] = useState(false); // State for dropdown visibility
+    if (moduleName) {
+      fetchModuleData();
+    }
+  }, [moduleName]); // Runs whenever moduleName changes
 
-  // Toggle the visibility of the subtopics for a given topic
-  const toggleSubtopics = (index) => {
-    setExpandedTopics((prevExpanded) =>
-      prevExpanded.includes(index)
-        ? prevExpanded.filter((i) => i !== index) // Remove from expanded if already open
-        : [...prevExpanded, index] // Add to expanded if not open
-    );
-  };
+  if (loading) {
+    return <p>Loading module data...</p>;
+  }
 
-  // Toggle the dropdown visibility
-  const toggleDropdown = () => {
-    setDropdownOpen(!dropdownOpen);
-  };
+  if (error) {
+    return <p>Error: {error}</p>;
+  }
+
+  // Ensure moduleData and topics exist before rendering
+  const { genericTopics = [], topics = [] } = moduleData || {};
 
   return (
     <div className={styles.sidebarContainer}>
       {/* Header with dropdown */}
       <header className={styles.sidebarHeader}>
         <div className={styles.dropdown}>
-          <button
-            className={styles.dropdownButton}
-            onClick={toggleDropdown}
-          >
-            Topics
-          </button>
-          {dropdownOpen && (
-            <div className={styles.dropdownContent}>
-              <ul>
-                {navbarItems.map((item, index) => (
-                  <li key={index}>
-                    <a href={item.to}>{item.label}</a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
+          <Dropdown />
         </div>
       </header>
+      <div className="generic-topics-container">
+        {genericTopics.map((genericTopic, index) => {
+          // Find all matching topics for the current generic topic
+          const matchingTopics = genericTopic.topics.map((topicId) =>
+            topics.find((topic) => topic.topicId === topicId)
+          );
 
-      <div className={styles.sidebar}>
-        <ul>
-          {topics.map((topic, index) => (
-            <li key={index} className={styles.topicItem}>
-              {/* Topic name, clicking will toggle its subtopics */}
-              <div
-                className={styles.topicName}
-                onClick={() => toggleSubtopics(index)}
-              >
-                {topic.name}
-              </div>
+          return (
+            <div key={index} className="generic-topic">
+              {/* Output the genericTopicName */}
+              <h3>{genericTopic.genericTopicName}</h3>
 
-              {/* Subtopics list, only visible when the topic is expanded */}
-              {expandedTopics.includes(index) && (
-                <ul className={styles.subtopicsList}>
-                  {topic.specificTopics.map((subtopic, subIndex) => (
-                    <li key={subIndex} className={styles.subtopicItem}>
-                      <a href={`#${subtopic.name.toLowerCase().replace(/\s+/g, '-')}`}>
-                        {subtopic.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </li>
-          ))}
-        </ul>
+              {/* Output all matching topics */}
+              <ul>
+                {matchingTopics.map(
+                  (matchingTopic, subIndex) =>
+                    matchingTopic && (
+                      <li key={subIndex}>
+                        {matchingTopic.topicName}
+                      </li>
+                    )
+                )}
+              </ul>
+            </div>
+          );
+        })}
       </div>
     </div>
   );

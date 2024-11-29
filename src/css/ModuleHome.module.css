@@ -1,0 +1,91 @@
+.moduleHome {
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .informationBackground {
+    background-color: #004080;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    color: #ffffff;
+  }
+  
+  .progressCardsContainer {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+  }
+  
+  .progressCard {
+    width: 45%;
+    background-color: #000040;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px 0;
+    color: #ffffff;
+  }
+  
+  .progressBar {
+    position: relative;
+    background-color: #f2f2f2;
+    border-radius: 15px;
+    height: 25px;
+    width: 100%;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .progressFill {
+    position: absolute;
+    height: 100%;
+    border-radius: 15px;
+    transition: width 0.5s ease-out;
+  }
+  
+  .unseen {
+    background: linear-gradient(45deg, #f44336, #ff6666);
+  }
+  
+  .skipped {
+    background: linear-gradient(45deg, #ffeb3b, #ffee58);
+  }
+  
+  .solved {
+    background: linear-gradient(45deg, #4caf50, #81c784);
+  }
+  
+  .progressNumbers {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #ffffff;
+  }
+  
+  .number {
+    font-size: 1.2em;
+  }
+  
+  .label {
+    font-size: 0.9em;
+    margin-top: 5px;
+  }
+  
+  .genericTopicsContainer ul li {
+    color: #ffffff;
+  }
+  
+  .genericTopicsContainer ul li a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  .genericTopicsContainer ul li a:hover {
+    text-decoration: underline;
+  }
+  

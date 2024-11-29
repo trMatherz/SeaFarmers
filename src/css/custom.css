@@ -24,35 +24,9 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
-/* src/css/custom.css */
-
-/* Change the navbar background color */
 .navbar {
-  background-color: #000040; /* Example color for navbar background */
+  display: none !important;
 }
-
-/* Change the navbar text color */
-.navbar .navbar__links a {
-  color: white; /* White text color for the navbar links */
-}
-
-/* Change the navbar brand (title) color */
-.navbar__brand {
-  color: white; /* White color for the brand name */
-}
-
-/* Change the color of the navbar items on hover */
-.navbar__links a:hover {
-  color: #ffb703; /* Example: yellow on hover */
-}
-
-/* Custom CSS for the 'Sections' dropdown label */
-.navbar-sections {
-  color: white !important;
-}
-
-
-/* src/css/custom.css */
 
 /* Dark mode background */
 body {

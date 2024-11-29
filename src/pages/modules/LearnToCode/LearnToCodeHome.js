@@ -1,37 +1,50 @@
-// src/pages/modules/LearnToCode/LearnToCodeHome.js
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import ModuleHome from '../../../components/ModuleHome';
+import axios from 'axios';
 
-export const learnToCodeData = {
-  moduleName: 'Learn To Code',
-  description: 'An introduction to foundational programming skills.',
-  unseenTopics: 20,
-  skippedTopics: 2,
-  solvedTopics: 0,
-  unseenProblems: 3,
-  skippedProblems: 2,
-  solvedProblems: 3,
-  totalTopics: 22,
-  totalProblems: 8,
-  topics: [
-    {
-      name: 'Preliminaries',
-      specificTopics: [
-        { name: 'How To Code', description: 'How to setup a coding environment', link: '/SeaFarmers/modules/LearnToCode/HowToCode' },
-        { name: 'Time Complexity', description: 'Description of Subtopic 1b', link: '/SeaFarmers/modules/LearnToCode/TimeComplexity' },
-      ],
-    },
-    // {
-    //   name: 'Topic 2',
-    //   specificTopics: [
-    //     { name: 'Subtopic 2a', description: 'Description of Subtopic 2a', link: '/subtopic-2a' },
-    //     { name: 'Subtopic 2b', description: 'Description of Subtopic 2b', link: '/subtopic-2b' },
-    //   ],
-    // },
-  ],
-};
 const LearnToCode = () => {
-  return <ModuleHome {...learnToCodeData} />;
+  const [error, setError] = useState(null);
+  const [moduleData, setModuleData] = useState(null);
+  const [loading, setLoading] = useState(true); // To track loading state
+
+  // Fetch module data based on moduleName
+  const fetchModuleData = async (moduleName) => {
+    setLoading(true); // Start loading
+    try {
+      const response = await axios.get(`http://localhost:3001/api/module/${moduleName}`, {
+        withCredentials: true, // Ensure session cookies are included
+      });
+      setModuleData(response.data);
+      setLoading(false); // Stop loading
+    } catch (error) {
+      setError(error.response ? error.response.data : error.message);
+      setLoading(false); // Stop loading
+    }
+  };
+
+  // Fetch module data after component mounts or when the user is authenticated
+  useEffect(() => {
+    // Fetch the module data only if the user is authenticated or the required conditions are met
+    fetchModuleData('LearnToCode'); // Fetch module data for a specific module name
+  }, []);  // Empty dependency array to run once when the component mounts
+
+  // Display loading or error state
+  if (loading) {
+    return <p>Loading module data...</p>;
+  }
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+
+  return (
+    <div>
+      {moduleData ? (
+        <ModuleHome {...moduleData} />
+      ) : (
+        <div>Error: No data available</div>
+      )}
+    </div>
+  );
 };
 
 export default LearnToCode;

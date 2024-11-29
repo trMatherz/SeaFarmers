@@ -1,0 +1,117 @@
+/* Set the table to have a fixed layout, so column widths are respected */
+.problemTable {
+  width: 100%;
+  table-layout: fixed;
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+
+/* Column widths for each column */
+.statusColumn,
+.statusCell {
+  width: 120px;
+}
+
+.sourceColumn,
+.sourceCell {
+  width: 220px;
+}
+
+.starredColumn,
+.starredCell {
+  width: 100px;
+}
+
+.problemColumn,
+.problemCell {
+  width: 250px;
+}
+
+.difficultyColumn,
+.difficultyCell {
+  width: 180px;
+}
+
+.tagsColumn,
+.tagsCell {
+  width: 250px;
+}
+
+/* Table cell padding and no border */
+th,
+td {
+  padding: 10px;
+  border: 0 !important; /* Ensure no borders are applied to any cell */
+}
+
+/* Alternating row colors in the table body */
+tbody tr:nth-child(even) {
+  background-color: #0000ff; /* Blue for even rows */
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #ff0000; /* Red for odd rows */
+}
+
+/* State Circle Styles */
+.stateCircle {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: grey; /* Default */
+}
+
+.state0 {
+  background-color: grey;
+}
+
+.state1 {
+  background-color: blue;
+}
+
+.state2 {
+  background-color: green;
+}
+
+/* Hyperlink Styles */
+.problemLink {
+  text-decoration: none;
+  color: #0073e6;
+  font-weight: bold;
+}
+
+/* Starred Problems */
+.starredCell {
+  font-size: 20px;
+}
+
+/* Apply pink background to the header row cells */
+thead th {
+  background-color: pink;
+  color: white;
+  padding: 10px;
+}
+
+.dropdownMenu {
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.dropdownMenu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dropdownMenu ul li {
+  padding: 4px 8px;
+  cursor: pointer;
+  color: black; 
+}
+
+.dropdownMenu ul li:hover {
+  background-color: #009900;
+}
+

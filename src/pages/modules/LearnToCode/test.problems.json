@@ -1,0 +1,31 @@
+{
+  "MODULE_ID": "centroid",
+  "general": [
+    {
+      "uniqueId": "cf-321C",
+      "name": "Ciel the Commander",
+      "url": "https://codeforces.com/contest/321/problem/C",
+      "source": "CF",
+      "difficulty": "Easy",
+      "isStarred": true,
+      "tags": ["Centroid"],
+      "solutionMetadata": {
+        "kind": "autogen-label-from-site",
+        "site": "CF"
+      }
+    },
+    {
+      "uniqueId": "baltic-20-VillageMaximum",
+      "name": "2020 - Village (Maximum)",
+      "url": "https://codeforces.com/contest/1387/problem/B2",
+      "source": "Baltic OI",
+      "difficulty": "Easy",
+      "isStarred": true,
+      "tags": ["Centroid", "Small to Large"],
+      "solutionMetadata": {
+        "kind": "autogen-label-from-site",
+        "site": "CF"
+      }
+    }
+  ]
+}

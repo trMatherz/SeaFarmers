@@ -1,0 +1,101 @@
+{
+  "moduleId": "module1",
+  "moduleName": "LearnToCode",
+  "description": "A beginner-friendly module to kickstart your coding journey.",
+  "unseenTopics": 2,
+  "skippedTopics": 0,
+  "solvedTopics": 0,
+  "unseenProblems": 5,
+  "skippedProblems": 0,
+  "solvedProblems": 0,
+  "totalTopics": 2,
+  "totalProblems": 5,
+  "genericTopics" : [
+    {
+      "genericTopicId": "topic1",
+      "genericTopicName": "name1",
+      "topics" : [
+        "variables"
+      ]
+    },
+    {
+      "genericTopicId": "topic2",
+      "genericTopicName": "name2",
+      "topics" : [
+        "conditionals"
+      ]
+    }
+  ],
+  "topics": [
+    {
+      "topicId": "variables",
+      "topicName": "Understanding Variables",
+      "description": "Learn about variables and their importance in programming.",
+      "solvedProblems": 0,
+      "skippedProblems": 0,
+      "unseenProblems": 2,
+      "totalProblems": 2,
+      "state": 0,
+      "problems": [
+        {
+          "problemId": "var1",
+          "name": "Declare a variable",
+          "state": 0,
+          "source": "PlatformX",
+          "difficulty": 1,
+          "star": 1,
+          "tags": ["one", "two"]
+        },
+        {
+          "problemId": "var2",
+          "name": "Declare a variable pt2",
+          "state": 0,
+          "source": "PlatformXXXXX",
+          "difficulty": 4,
+          "star": 0,
+          "tags": ["onsssse", "two"]
+        },
+        {
+          "problemId": "var3",
+          "name": "Declare a variable pt2skldaslkakdkakds",
+          "state": 0,
+          "source": "PlatsadkjasdjkdsajdkaskdsjkajkkdjasdsadX",
+          "difficulty": 10,
+          "star": 1,
+          "tags": ["onssssddde", "tdddddwo", "osdoasdoasdsad"]
+        }
+        
+      ]
+    },
+    {
+      "topicId": "conditionals",
+      "topicName": "Mastering Conditionals",
+      "description": "Understand how to use if-else statements to make decisions in code.",
+      "solvedProblems": 0,
+      "skippedProblems": 0,
+      "unseenProblems": 2,
+      "totalProblems": 2,
+      "state": 0,
+      "problems": [
+        {
+          "problemId": "cond1",
+          "name": "Simple if-else statement",
+          "state": 0,
+          "source": "PlatformY",
+          "difficulty": 1,
+          "star": 1,
+          "tags": ["one", "two"]
+        },
+        {
+          "problemId": "cond2",
+          "name": "Nested if-else statement",
+          "state": 0,
+          "source": "PlatformY",
+          "difficulty": 2,
+          "star": 1,
+          "tags": ["one", "two"]
+        }
+      ]
+    }
+  ]
+}
