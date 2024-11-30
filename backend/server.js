@@ -53,7 +53,7 @@ app.use(session({
   resave: false,
   saveUninitialized: false,
   store: MongoStore.create({
-    mongoUrl: 'your-mongo-db-uri',  // MongoDB URI to store sessions
+    mongoUrl: dbURI,  // MongoDB URI to store sessions
     collectionName: 'sessions',  // Collection where sessions will be stored
     ttl: 86400,  // Session expiration time in seconds (1 day)
   }),
