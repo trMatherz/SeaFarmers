@@ -3,7 +3,7 @@ import axios from 'axios'; // Ensure axios is installed
 import styles from '../css/Sidebar.module.css';
 import Dropdown from './Dropdown'; // Adjust path as needed
 const config = require('../../docusaurus.config.js');  // Adjust the path if necessary
-const backendUrl = config.backendUrl;
+const backendUrl = config.customFields.backendUrl; // Access customFields for backendUrl
 
 function Sidebar({ moduleName }) {
   const [moduleData, setModuleData] = useState(null); // Holds the entire module data

@@ -3,6 +3,7 @@ const passport = require('passport');
 const GitHubStrategy = require('passport-github').Strategy;
 const session = require('express-session');
 const mongoose = require('mongoose');
+const MongoStore = require('connect-mongo');
 const User = require('./models/User');
 const Module = require('./models/Module');
 
@@ -23,11 +24,12 @@ const allowedOrigins = [
 const corsOptions = {
   origin: function (origin, callback) {
     if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
-      callback(null, true);
+      callback(null, true); // Allow the request if it's from an allowed origin
     } else {
       callback(new Error('Not allowed by CORS'));
     }
   },
+  credentials: true, // Allow cookies and credentials to be sent
 };
 
 const app = express();
@@ -50,6 +52,11 @@ app.use(session({
   secret: 'your-session-secret',
   resave: false,
   saveUninitialized: false,
+  store: MongoStore.create({
+    mongoUrl: dbURI, // MongoDB URI
+    collectionName: 'sessions', // The collection where sessions will be stored
+    ttl: 86400, // Session expiration time in seconds (24 hours)
+  }),
   cookie: {
     httpOnly: true,
     secure: false, // Should be true if using HTTPS

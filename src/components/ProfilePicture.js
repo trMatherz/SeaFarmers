@@ -1,15 +1,12 @@
 import React, { useState, useEffect } from 'react';
 const config = require('../../docusaurus.config.js');  // Adjust the path if necessary
-const backendUrl = config.backendUrl;
+const backendUrl = config.customFields.backendUrl; // Access customFields for backendUrl
 
 const ProfilePicture = () => {
   const [user, setUser] = useState(null);
 
-  console.log("ProfilePicture component rendered");
-
   useEffect(() => {
     // Fetch user data to display the profile picture
-    console.log("Fetching user data...");
     fetch(`${backendUrl}/api/user`, {
       credentials: 'include', // Include session cookies
     })
@@ -37,7 +34,13 @@ const ProfilePicture = () => {
       })
     );
   } else {
-    return React.createElement('div', null, 'Loading...');
+    return (
+      <div>
+        <a href={`${backendUrl}/auth/github`}>
+          <button>Login with GitHub</button>
+        </a>
+      </div>
+    );
   }
 };
 

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 const config = require('../../docusaurus.config.js');  // Adjust the path if necessary
-const backendUrl = config.backendUrl;
+const backendUrl = config.customFields.backendUrl; // Access customFields for backendUrl
 
 const UserProfile = () => {
   const [user, setUser] = useState(null);

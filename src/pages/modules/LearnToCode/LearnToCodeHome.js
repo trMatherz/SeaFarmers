@@ -3,7 +3,7 @@ import ModuleHome from '../../../components/ModuleHome';
 import axios from 'axios';
 
 const config = require('../../../../docusaurus.config.js');  // Adjust the path if necessary
-const backendUrl = config.backendUrl;
+const backendUrl = config.customFields.backendUrl; // Access customFields for backendUrl
 
 const LearnToCode = () => {
   const [error, setError] = useState(null);

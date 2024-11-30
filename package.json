@@ -23,9 +23,11 @@
     "@mui/material": "^6.1.6",
     "classnames": "^2.5.1",
     "clsx": "^2.0.0",
+    "connect-mongo": "^5.1.0",
     "express": "^4.21.1",
+    "express-session": "^1.18.1",
     "http-proxy-middleware": "^3.0.3",
-    "mongoose": "^8.8.1",
+    "mongoose": "^8.8.3",
     "prism-react-renderer": "^2.3.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"

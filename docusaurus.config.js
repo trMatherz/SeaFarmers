@@ -1,6 +1,6 @@
 // @ts-check
 const React = require('react');
-const { ProfilePicture } = require('./src/components/ProfilePicture');
+
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -51,7 +51,7 @@ const config = {
     ],
   ],
   customFields: {
-    backendUrl: 'http://localhost:3001', // Specify backend server URL here
+    backendUrl: 'https://seafarmers.onrender.com', // Specify backend server URL here
   },
 };
 
