@@ -148,6 +148,8 @@ app.get('/auth/github/callback',
 
 // API to fetch user details
 app.get('/api/user', (req, res) => {
+  console.log("Session data:", req.session);  // Log the session data
+  console.log("User data:", req.user);  // Log the user data
   if (!req.user) {
     return res.status(401).json({ message: 'User not authenticated' });
   }
