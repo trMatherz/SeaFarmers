@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'; // Assuming you are using react-router 
 import { ProfilePicture } from './ProfilePicture'; // Import ProfilePicture component
 import Dropdown from './Dropdown'; // Adjust path as needed
 import styles from '../css/navbar.module.css'; // Import CSS module
+const config = require('../../docusaurus.config.js');  // Adjust the path if necessary
+const backendUrl = config.backendUrl;
 
 const Navbar = () => {
   const [user, setUser] = useState(null);
@@ -10,7 +12,7 @@ const Navbar = () => {
 
   useEffect(() => {
     // Fetch the user data from the backend API
-    fetch('http://localhost:3001/api/user', {
+    fetch(`${backendUrl}/api/user`, {
       credentials: 'include', // To include session cookies
     })
       .then((response) => {
@@ -40,7 +42,7 @@ const Navbar = () => {
         {error && <p className={styles.error}>{error}</p>}
         {user ? (
           <div className={styles.customUserProfile}>
-            <ProfilePicture /> {/* Use the ProfilePicture component */}
+            <ProfilePicture /> 
             <span>{user.username}</span>
           </div>
         ) : (

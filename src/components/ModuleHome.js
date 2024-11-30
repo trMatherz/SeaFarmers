@@ -4,6 +4,8 @@ import axios from 'axios';
 import styles from '../css/ModuleHome.module.css'; // Import CSS module
 import Layout from '@theme/Layout';
 import Navbar from './Navbar';
+const config = require('../../docusaurus.config.js');  // Adjust the path if necessary
+const backendUrl = config.backendUrl;
 
 function ModuleHome({
   moduleName,
@@ -28,7 +30,7 @@ function ModuleHome({
   const handleSolveProblem = () => {
     axios
       .put(
-        `http://localhost:3001/api/module/${moduleName}`,
+        `${backendUrl}/api/module/${moduleName}`,
         {},
         { withCredentials: true }
       )

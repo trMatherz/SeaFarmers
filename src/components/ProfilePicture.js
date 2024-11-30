@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+const config = require('../../docusaurus.config.js');  // Adjust the path if necessary
+const backendUrl = config.backendUrl;
 
 const ProfilePicture = () => {
   const [user, setUser] = useState(null);
@@ -8,7 +10,7 @@ const ProfilePicture = () => {
   useEffect(() => {
     // Fetch user data to display the profile picture
     console.log("Fetching user data...");
-    fetch('http://localhost:3001/api/user', {
+    fetch(`${backendUrl}/api/user`, {
       credentials: 'include', // Include session cookies
     })
       .then((response) => {

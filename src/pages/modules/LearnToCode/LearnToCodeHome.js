@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import ModuleHome from '../../../components/ModuleHome';
 import axios from 'axios';
 
+const config = require('../../../../docusaurus.config.js');  // Adjust the path if necessary
+const backendUrl = config.backendUrl;
+
 const LearnToCode = () => {
   const [error, setError] = useState(null);
   const [moduleData, setModuleData] = useState(null);
@@ -11,7 +14,7 @@ const LearnToCode = () => {
   const fetchModuleData = async (moduleName) => {
     setLoading(true); // Start loading
     try {
-      const response = await axios.get(`http://localhost:3001/api/module/${moduleName}`, {
+      const response = await axios.get(`${backendUrl}/api/module/${moduleName}`, {
         withCredentials: true, // Ensure session cookies are included
       });
       setModuleData(response.data);

@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios'; // Ensure axios is installed
 import styles from '../css/Sidebar.module.css';
 import Dropdown from './Dropdown'; // Adjust path as needed
+const config = require('../../docusaurus.config.js');  // Adjust the path if necessary
+const backendUrl = config.backendUrl;
 
 function Sidebar({ moduleName }) {
   const [moduleData, setModuleData] = useState(null); // Holds the entire module data
@@ -13,7 +15,7 @@ function Sidebar({ moduleName }) {
     async function fetchModuleData() {
       setLoading(true); // Start loading
       try {
-        const response = await axios.get(`http://localhost:3001/api/module/${moduleName}`, {
+        const response = await axios.get(`${backendUrl}/api/module/${moduleName}`, {
           withCredentials: true, // Ensure session cookies are included
         });
         setModuleData(response.data); // Set module data

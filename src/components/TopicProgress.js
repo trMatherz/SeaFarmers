@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import styles from '../css/TopicProgress.module.css'; // Import the CSS module
+const config = require('../../docusaurus.config.js');  // Adjust the path if necessary
+const backendUrl = config.backendUrl;
 
 const TopicProgress = ({ moduleName, topicId }) => {
     const [moduleData, setModuleData] = useState(null); // Add moduleData state
@@ -14,7 +16,7 @@ const TopicProgress = ({ moduleName, topicId }) => {
         async function fetchModuleData() {
             setLoading(true);
             try {
-                const response = await axios.get(`http://localhost:3001/api/module/${moduleName}`, {
+                const response = await axios.get(`${backendUrl}/api/module/${moduleName}`, {
                     withCredentials: true,
                 });
                 setModuleData(response.data); // Set module data
@@ -51,7 +53,7 @@ const TopicProgress = ({ moduleName, topicId }) => {
 
         try {
             // Send state change to the backend
-            await axios.post('http://localhost:3001/api/topic/updateState', {
+            await axios.post(`${backendUrl}/api/topic/updateState`, {
                 moduleName: moduleName,
                 topicId: topicId,
                 newState: newState,

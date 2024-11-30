@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import styles from '../css/ProblemList.module.css'; // Import the CSS module
+const config = require('../../docusaurus.config.js');  // Adjust the path if necessary
+const backendUrl = config.backendUrl;
 
 const ProblemList = ({ moduleName, topicId }) => {
   const [moduleData, setModuleData] = useState(null);
@@ -14,7 +16,7 @@ const ProblemList = ({ moduleName, topicId }) => {
     async function fetchModuleData() {
       setLoading(true);
       try {
-        const response = await axios.get(`http://localhost:3001/api/module/${moduleName}`, {
+        const response = await axios.get(`${backendUrl}/api/module/${moduleName}`, {
           withCredentials: true,
         });
         setModuleData(response.data);
@@ -59,7 +61,7 @@ const ProblemList = ({ moduleName, topicId }) => {
   const updateProblemState = async (problem, newState) => {
     const problemId = problem.problemId; 
     try {
-      const response = await axios.post('http://localhost:3001/api/problem/updateState', {
+      const response = await axios.post(`${backendUrl}/api/problem/updateState`, {
         moduleName,
         topicId,
         problemId,
