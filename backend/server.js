@@ -10,10 +10,25 @@ const cors = require('cors');
 const fs = require('fs');  // To read the local JSON file
 const path = require('path');  // Path module to handle file paths
 
-const frontEnd = 'https://trmatherz.github.io/SeaFarmers/'; 
+
 const callBack = 'http://seafarmers.onrender.com/auth/github/callback';
 const backendURL = 'https://seafarmers.onrender.com/'; 
 const PORT = process.env.PORT || 3001;  // Dynamically use the PORT environment variable
+
+const allowedOrigins = [
+  'https://trmatherz.github.io',  // Production URL
+  'http://localhost:3000', // Local development URL
+];
+
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+};
 
 const app = express();
 
@@ -27,10 +42,8 @@ mongoose.connect(dbURI)
 
 // Middleware
 app.use(express.json());  // Parse JSON requests
-app.use(cors({
-  origin: frontEnd,  // Allow frontend to communicate with backend
-  credentials: true,               // Allow credentials (cookies/sessions) to be sent
-}));
+app.use(cors(corsOptions));
+
 
 // Configure session
 app.use(session({
