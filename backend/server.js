@@ -53,14 +53,14 @@ app.use(session({
   resave: false,
   saveUninitialized: false,
   store: MongoStore.create({
-    mongoUrl: dbURI, // MongoDB URI
-    collectionName: 'sessions', // The collection where sessions will be stored
-    ttl: 86400, // Session expiration time in seconds (24 hours)
+    mongoUrl: 'your-mongo-db-uri',  // MongoDB URI to store sessions
+    collectionName: 'sessions',  // Collection where sessions will be stored
+    ttl: 86400,  // Session expiration time in seconds (1 day)
   }),
   cookie: {
-    httpOnly: true,
-    secure: false, // Should be true if using HTTPS
-    maxAge: 86400000, // 1 day in milliseconds
+    httpOnly: true,  // Can't be accessed by JavaScript
+    secure: false,  // Set to true when using HTTPS
+    maxAge: 86400000,  // 1 day in milliseconds
   },
 }));
 
