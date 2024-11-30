@@ -11,7 +11,7 @@ const fs = require('fs');  // To read the local JSON file
 const path = require('path');  // Path module to handle file paths
 
 const frontEnd = 'http://localhost:3000';
-const callBack = 'http://localhost:3001/auth/github/callback';
+const callBack = 'http://https://seafarmers.onrender.com/auth/github/callback';
 const PORT = process.env.PORT || 3001;  // Dynamically use the PORT environment variable
 
 const app = express();
