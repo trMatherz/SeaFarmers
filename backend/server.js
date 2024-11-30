@@ -143,7 +143,8 @@ app.get('/auth/github', passport.authenticate('github'));
 app.get('/auth/github/callback',
   passport.authenticate('github', { failureRedirect: '/' }),
   (req, res) => {
-    res.redirect('/dashboard'); // Redirect to dashboard after successful login
+    console.log('User authenticated:', req.user);  // Check if user data is present in req.user
+    res.redirect('/');  // Redirect the user to the dashboard or home page
   });
 
 // API to fetch user details
