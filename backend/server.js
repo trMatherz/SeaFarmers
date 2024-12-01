@@ -20,6 +20,7 @@ const PORT = process.env.PORT || 3001;  // Dynamically use the PORT environment 
 const allowedOrigins = [
   'https://trmatherz.github.io',  // Production URL
   'http://localhost:3000', // Local development URL
+  backendURL,
 ];
 
 const corsOptions = {
@@ -149,7 +150,7 @@ app.get('/auth/github/callback',
   (req, res) => {
     console.log("AUTH GITHUB CALLBACK", req.session);  // Log the session data
     console.log('User authenticated:', req.user);  // Check if user data is present in req.user
-    res.redirect('/');  // Redirect the user to the dashboard or home page
+   // res.redirect('/');  // Redirect the user to the dashboard or home page
   });
 
 // API to fetch user details
