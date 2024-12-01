@@ -126,11 +126,13 @@ passport.use(new GitHubStrategy({
 
 // Serialize and deserialize the user to store in the session
 passport.serializeUser((user, done) => {
+  console.log("SERIALIZE USER", req.session);  // Log the session data
   done(null, user._id); // Storing the user's _id in the session
 });
 
 passport.deserializeUser(async (id, done) => {
   try {
+    console.log("DESERIALIZE USER", req.session);  // Log the session data
     const user = await User.findById(id);  // Retrieve user by _id
     done(null, user);  // Populate req.user with the retrieved user object
   } catch (err) {
@@ -145,12 +147,14 @@ app.get('/auth/github', passport.authenticate('github'));
 app.get('/auth/github/callback',
   passport.authenticate('github', { failureRedirect: '/' }),
   (req, res) => {
+    console.log("AUTH GITHUB CALLBACK", req.session);  // Log the session data
     console.log('User authenticated:', req.user);  // Check if user data is present in req.user
     res.redirect('/');  // Redirect the user to the dashboard or home page
   });
 
 // API to fetch user details
 app.get('/api/user', (req, res) => {
+  console.log("API USER", req.session);  // Log the session data
   console.log("Session data:", req.session);  // Log the session data
   console.log("User data:", req.user);  // Log the user data
   if (!req.user) {
