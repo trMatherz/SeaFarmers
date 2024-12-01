@@ -13,7 +13,7 @@ const path = require('path');  // Path module to handle file paths
 
 
 const callBack = 'https://seafarmers.onrender.com/auth/github/callback';
-const backendURL = 'https://seafarmers.onrender.com/'; 
+const backendURL = 'https://seafarmers.onrender.com'; 
 //const backendURL = 'http://localhost:3000'; 
 const PORT = process.env.PORT || 3001;  // Dynamically use the PORT environment variable
 
