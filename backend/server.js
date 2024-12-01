@@ -61,9 +61,7 @@ app.use(session({
   }),
   cookie: {
     httpOnly: true,  // Can't be accessed by JavaScript
-    secure: true,  // Set to true when using HTTPS
     maxAge: 86400000,  // 1 day in milliseconds
-    sameSite: 'None',
   },
 }));
 
@@ -150,7 +148,7 @@ app.get('/auth/github/callback',
   (req, res) => {
     console.log("AUTH GITHUB CALLBACK", req.session);  // Log the session data
     console.log('User authenticated:', req.user);  // Check if user data is present in req.user
-   // res.redirect('/');  // Redirect the user to the dashboard or home page
+    res.redirect('/');  // Redirect the user to the dashboard or home page
   });
 
 // API to fetch user details
