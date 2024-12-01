@@ -59,8 +59,9 @@ app.use(session({
   }),
   cookie: {
     httpOnly: true,  // Can't be accessed by JavaScript
-    secure: false,  // Set to true when using HTTPS
+    secure: true,  // Set to true when using HTTPS
     maxAge: 86400000,  // 1 day in milliseconds
+    sameSite: 'None',
   },
 }));
 
