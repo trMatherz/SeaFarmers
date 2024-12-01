@@ -1,4 +1,5 @@
 // @ts-check
+
 const React = require('react');
 
 
@@ -7,7 +8,7 @@ const config = {
   title: 'My Site',
   tagline: 'Dinosaurs are cool',
   favicon: 'img/favicon.ico',
-  url: 'https://trmatherz.github.io/',
+  url: 'https://trmatherz.github.io',
   baseUrl: '/SeaFarmers/',
   organizationName: 'trMatherz',
   projectName: 'SeaFarmers',
