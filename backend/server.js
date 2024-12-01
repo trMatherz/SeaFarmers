@@ -145,7 +145,7 @@ app.get('/auth/github/callback',
   (req, res) => {
     console.log("AUTH GITHUB CALLBACK", req.session);  // Log the session data
     console.log('User authenticated:', req.user);  // Check if user data is present in req.user
-    res.redirect(`${frontendURL}`);  // Redirect with token to frontend
+    res.redirect(`${frontendURL}/SeaFarmers/`);  // Redirect with token to frontend
   });
 
 // API to fetch user details
