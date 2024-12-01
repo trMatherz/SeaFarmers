@@ -5,20 +5,16 @@ const session = require('express-session');
 const mongoose = require('mongoose');
 const MongoStore = require('connect-mongo');
 const User = require('./models/User');
-const Module = require('./models/Module');
-
 const cors = require('cors');
-const fs = require('fs');  // To read the local JSON file
-const path = require('path');  // Path module to handle file paths
 
+const callBack = 'https://seafarmers.onrender.com/auth/github/callback'; // GitHub OAuth callback URL
+const backendURL = 'https://seafarmers.onrender.com'; // Backend URL for production
+const frontendURL = 'https://trmatherz.github.io'; // Frontend URL for production
 
-const callBack = 'https://seafarmers.onrender.com/auth/github/callback';
-const backendURL = 'https://seafarmers.onrender.com'; 
-//const backendURL = 'http://localhost:3000'; 
 const PORT = process.env.PORT || 3001;  // Dynamically use the PORT environment variable
 
 const allowedOrigins = [
-  'https://trmatherz.github.io',  // Production URL
+  frontendURL,  // Production URL
   'http://localhost:3000', // Local development URL
   backendURL,
 ];
@@ -47,7 +43,6 @@ mongoose.connect(dbURI)
 // Middleware
 app.use(express.json());  // Parse JSON requests
 app.use(cors(corsOptions));
-
 
 // Configure session
 app.use(session({
@@ -150,7 +145,7 @@ app.get('/auth/github/callback',
   (req, res) => {
     console.log("AUTH GITHUB CALLBACK", req.session);  // Log the session data
     console.log('User authenticated:', req.user);  // Check if user data is present in req.user
-    res.redirect('/');  // Redirect the user to the dashboard or home page
+    res.redirect(`${frontendURL}?token=${req.user._id}`);  // Redirect with token to frontend
   });
 
 // API to fetch user details
