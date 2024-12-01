@@ -60,8 +60,10 @@ app.use(session({
     ttl: 86400,  // Session expiration time in seconds (1 day)
   }),
   cookie: {
-    httpOnly: true,  // Can't be accessed by JavaScript
-    maxAge: 86400000,  // 1 day in milliseconds
+    httpOnly: true,  // Makes cookie inaccessible to JavaScript
+    maxAge: 86400000,  // Session cookie expiration time in milliseconds (1 day)
+    sameSite: 'None',  // Allows cross-site cookie usage
+    secure: true,  // Ensures cookie is only sent over HTTPS
   },
 }));
 
