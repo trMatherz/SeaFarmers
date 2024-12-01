@@ -32,6 +32,7 @@ const corsOptions = {
   credentials: true, // Allow cookies and credentials to be sent
 };
 
+
 const app = express();
 
 // MongoDB Atlas connection string
@@ -47,6 +48,7 @@ app.use(express.json());  // Parse JSON requests
 app.use(cors(corsOptions));
 
 
+
 // Configure session
 app.use(session({
   secret: 'your-session-secret',
@@ -59,6 +61,7 @@ app.use(session({
   }),
   cookie: {
     httpOnly: true,  // Can't be accessed by JavaScript
+    secure: true,  // Set to true when using HTTPS
     maxAge: 86400000,  // 1 day in milliseconds
     sameSite: 'None',
   },
@@ -104,9 +107,11 @@ passport.use(new GitHubStrategy({
   clientSecret: '2ee93dd9cfa82ebf72ae72e1b21ab962f64d5d3f',
   callbackURL: callBack,
 }, async (accessToken, refreshToken, profile, done) => {
+  console.log('GitHub OAuth callback called');
   try {
     let user = await User.findOne({ githubId: profile.id });
     if (!user) {
+      console.log('No user found, creating new user');
       user = new User({
         githubId: profile.id,
         username: profile.username,
@@ -115,6 +120,7 @@ passport.use(new GitHubStrategy({
       });
       await user.save();
     }
+    console.log('User Set', user);
     return done(null, user);
   } catch (err) {
     console.error(err);
@@ -124,10 +130,12 @@ passport.use(new GitHubStrategy({
 
 // Serialize and deserialize the user to store in the session
 passport.serializeUser((user, done) => {
+  console.log('Serializing user:', user._id);
   done(null, user._id); // Storing the user's _id in the session
 });
 
 passport.deserializeUser(async (id, done) => {
+  console.log('Deserializing user with ID:', id);
   try {
     const user = await User.findById(id);  // Retrieve user by _id
     done(null, user);  // Populate req.user with the retrieved user object
@@ -149,8 +157,7 @@ app.get('/auth/github/callback',
 
 // API to fetch user details
 app.get('/api/user', (req, res) => {
-  console.log("Session data:", req.session);  // Log the session data
-  console.log("User data:", req.user);  // Log the user data
+  console.log('Fetching user details');
   if (!req.user) {
     return res.status(401).json({ message: 'User not authenticated' });
   }
