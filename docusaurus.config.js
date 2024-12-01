@@ -52,6 +52,7 @@ const config = {
   ],
   customFields: {
     backendUrl: 'https://seafarmers.onrender.com', // Specify backend server URL here
+   // backendUrl: 'http://localhost:3000',
   },
 };
 
