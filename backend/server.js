@@ -145,6 +145,12 @@ app.get('/auth/github/callback',
   (req, res) => {
     console.log("AUTH GITHUB CALLBACK", req.session);  // Log the session data
     console.log('User authenticated:', req.user);  // Check if user data is present in req.user
+    res.cookie('auth_token', req.user, {
+      httpOnly: true, // Prevent access via JavaScript
+      secure: true, // Ensures the cookie is sent only over HTTPS
+      sameSite: 'none', // Allows cross-site cookie sharing
+      maxAge: 24 * 60 * 60 * 1000, // 1 day in milliseconds
+    });
     res.redirect(`${frontendURL}/SeaFarmers/`);  // Redirect with token to frontend
   });
 

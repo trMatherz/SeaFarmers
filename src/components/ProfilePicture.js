@@ -8,7 +8,7 @@ const ProfilePicture = () => {
 
   useEffect(() => {
     // Fetch the user data when the component mounts
-    fetchUserData();
+    //fetchUserData();
   }, []);
 
   const fetchUserData = async () => {
@@ -17,7 +17,8 @@ const ProfilePicture = () => {
     try {
       // Send a request to the backend to get user data
       const response = await fetch(`${backendUrl}/api/user`, {
-        credentials: 'include', // Include session cookies to check if the user is authenticated
+        method: 'GET',             // Explicitly specify GET method
+        credentials: 'include',    // Include session cookies for authentication
       });
 
       if (!response.ok) {
@@ -43,9 +44,9 @@ const ProfilePicture = () => {
     window.location.href = `${backendUrl}/auth/github`; // This will start the GitHub authentication flow
   };
 
-  if (isLoading) {
-    return <div>Loading user data...</div>;
-  }
+  // if (isLoading) {
+  //   return <div>Loading user data...</div>;
+  // }
 
   if (user) {
     return (
