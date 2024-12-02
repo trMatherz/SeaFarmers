@@ -172,7 +172,10 @@ const getDefaultModuleData = (moduleName) => {
   }
 };
 
-app.put('/api/module/:moduleName', async (req, res) => {
+app.get('/api/module/:moduleName', cors({
+  origin: 'https://trmatherz.github.io',
+  credentials: true,
+}), (req, res) => {
   const { moduleName } = req.params;
   const defaultModuleData = getDefaultModuleData(moduleName);
   if(!req.user) {
