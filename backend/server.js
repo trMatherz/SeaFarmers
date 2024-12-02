@@ -65,7 +65,7 @@ app.use((req, res, next) => {
 app.get('/', (req, res) => {
   const authToken = req.cookies.auth_token;
   if (authToken) {
-    res.send(`<h1>Welcome, ${authToken.username}!</h1><a href="/dashboard">Go to Dashboard</a>`);
+    res.send(`<h1>Welcome, ${authToken.username}!</h1><a href="${frontendURL}/SeaFarmers/">Go to Dashboard</a>`);
   } else {
     res.send('<h1>Welcome to the SeaFarmers app!</h1><a href="/auth/github"><button>Sign in with GitHub</button></a>');
   }
