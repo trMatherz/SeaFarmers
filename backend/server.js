@@ -63,8 +63,9 @@ app.use((req, res, next) => {
 
 // Define a route for the home page (root)
 app.get('/', (req, res) => {
-  if (req.user) {
-    res.send(`<h1>Welcome, ${req.user.username}!</h1><a href="/dashboard">Go to Dashboard</a>`);
+  const authToken = req.cookies.auth_token;
+  if (authToken) {
+    res.send(`<h1>Welcome, ${authToken.username}!</h1><a href="/dashboard">Go to Dashboard</a>`);
   } else {
     res.send('<h1>Welcome to the SeaFarmers app!</h1><a href="/auth/github"><button>Sign in with GitHub</button></a>');
   }
