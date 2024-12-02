@@ -41,8 +41,9 @@ mongoose.connect(dbURI)
   .catch((err) => console.error('MongoDB connection error:', err));
 
 // Middleware
-app.use(express.json());  // Parse JSON requests
+app.use(express.json());  
 app.use(cors(corsOptions));
+app.use(cookieParser());
 
 // Configure session
 app.use(session({
