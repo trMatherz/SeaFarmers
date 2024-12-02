@@ -16,6 +16,7 @@ const LearnToCode = () => {
     try {
       const response = await axios.get(`${backendUrl}/api/module/${moduleName}`, {
         withCredentials: true, // Ensure session cookies are included
+        credentials: 'include',
       });
       setModuleData(response.data);
       setLoading(false); // Stop loading
