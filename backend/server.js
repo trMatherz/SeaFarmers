@@ -178,6 +178,7 @@ app.get('/api/module/:moduleName', cors({
 }), (req, res) => {
   const { moduleName } = req.params;
   const defaultModuleData = getDefaultModuleData(moduleName);
+  console.log("Yo"); 
   if(!req.user) {
     console.log('No User');
     return res.json(defaultModuleData);  // Return the default module data
