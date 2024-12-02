@@ -175,10 +175,9 @@ const getDefaultModuleData = (moduleName) => {
 app.get('/api/module/:moduleName', cors({
   origin: 'https://trmatherz.github.io',
   credentials: true,
-}), (req, res) => {
+}), async (req, res) => {
   const { moduleName } = req.params;
   const defaultModuleData = getDefaultModuleData(moduleName);
-  console.log("Yo"); 
   if(!req.user) {
     console.log('No User');
     return res.json(defaultModuleData);  // Return the default module data
