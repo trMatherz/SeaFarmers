@@ -8,7 +8,7 @@ const ProfilePicture = () => {
 
   useEffect(() => {
     // Fetch the user data when the component mounts
-    //fetchUserData();
+    fetchUserData();
   }, []);
 
   const fetchUserData = async () => {

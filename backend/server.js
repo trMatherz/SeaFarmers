@@ -147,16 +147,17 @@ app.get('/auth/github/callback',
 
 // API to fetch user details
 app.get('/api/user', (req, res) => {
+  const authToken = req.cookies.auth_token;
   console.log("API USER");  // Log the session data
   console.log("Session data:", req.session);  // Log the session data
-  console.log("User data:", req.user);  // Log the user data
-  if (!req.user) {
+  console.log("User data:", authToken);  // Log the user data
+  if (!authToken) {
     return res.status(401).json({ message: 'User not authenticated' });
   }
   res.json({
-    username: req.user.username,
-    email: req.user.email,
-    avatarUrl: req.user.avatarUrl,
+    username: authToken.username,
+    email: authToken.email,
+    avatarUrl: authToken.avatarUrl,
   });
 });
 
