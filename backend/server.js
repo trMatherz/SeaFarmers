@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 const MongoStore = require('connect-mongo');
 const User = require('./models/User');
 const cors = require('cors');
+const cookieParser = require('cookie-parser');
 
 const callBack = 'https://seafarmers.onrender.com/auth/github/callback'; // GitHub OAuth callback URL
 const backendURL = 'https://seafarmers.onrender.com'; // Backend URL for production
