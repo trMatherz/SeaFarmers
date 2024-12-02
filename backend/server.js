@@ -148,7 +148,7 @@ app.get('/auth/github/callback',
     res.cookie('auth_token', req.user, {
       httpOnly: true, // Prevent access via JavaScript
       secure: true, // Ensures the cookie is sent only over HTTPS
-      sameSite: 'none', // Allows cross-site cookie sharing
+      sameSite: 'None', // Allows cross-site cookie sharing
       maxAge: 24 * 60 * 60 * 1000, // 1 day in milliseconds
     });
     res.redirect(`${frontendURL}/SeaFarmers/`);  // Redirect with token to frontend
