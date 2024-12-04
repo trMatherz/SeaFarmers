@@ -39,9 +39,24 @@ const ProfilePicture = () => {
     }
   };
 
-  const handleGitHubLogin = () => {
-    // Redirect the user to GitHub's OAuth authorization URL
-    window.location.href = `${backendUrl}/auth/github`; // This will start the GitHub authentication flow
+  const handleGitHubLogin = async () => {
+    try {
+      // Call the backend API to initiate the GitHub OAuth flow
+      const response = await fetch(`${backendUrl}/auth/github`, {
+        method: 'GET',
+        credentials: 'include', // Include cookies with the request
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        console.log('Login successful:', data);
+      } else {
+        console.error('Login failed:', await response.json());
+      }
+
+    } catch (error) {
+      console.error('Error during GitHub login:', error);
+    }
   };
 
   // if (isLoading) {
