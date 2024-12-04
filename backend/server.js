@@ -46,8 +46,6 @@ app.use(session({
   cookie: {
     httpOnly: true,  // Makes cookie inaccessible to JavaScript
     maxAge: 86400000,  // Session cookie expiration time in milliseconds (1 day)
-    //sameSite: 'None',  // Allows cross-site cookie usage
-    //secure: true,  // Ensures cookie is only sent over HTTPS
   },
 }));
 
@@ -146,17 +144,13 @@ app.get('/auth/github/callback',
 
 // API to fetch user details
 app.get('/api/user', (req, res) => {
-  const authToken = req.cookies.auth_token;
-  console.log("API USER");  // Log the session data
-  console.log("Session data:", req.session);  // Log the session data
-  console.log("User data:", authToken);  // Log the user data
-  if (!authToken) {
+  if (!req.user) {
     return res.status(401).json({ message: 'User not authenticated' });
   }
   res.json({
-    username: authToken.username,
-    email: authToken.email,
-    avatarUrl: authToken.avatarUrl,
+    username: req.user.username,
+    email: req.user.email,
+    avatarUrl: req.user.avatarUrl,
   });
 });
 
