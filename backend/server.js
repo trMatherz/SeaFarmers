@@ -63,26 +63,35 @@ app.use((req, res, next) => {
 
 // Define a route for the home page (root)
 app.get('/', (req, res) => {
-  const authToken = req.cookies.auth_token;
-  if (authToken) {
-    res.send(`<h1>Welcome, ${authToken.username}!</h1><a href="${frontendURL}/SeaFarmers/">Go to Dashboard</a>`);
+  if (req.isAuthenticated()) {
+    res.send(`
+      <h1>Welcome, ${req.user.username}!</h1>
+      <img src="${req.user.avatarUrl}" alt="Avatar" width="100">
+      <a href="/dashboard">Go to Dashboard</a>
+      <br>
+      <a href="/logout">Logout</a>
+    `);
   } else {
-    res.send('<h1>Welcome to the SeaFarmers app!</h1><a href="/auth/github"><button>Sign in with GitHub</button></a>');
+    res.send(`
+      <h1>Welcome to the SeaFarmers App!</h1>
+      <a href="/auth/github"><button>Sign in with GitHub</button></a>
+    `);
   }
 });
 
 // Route for Dashboard (Displays user details)
 app.get('/dashboard', (req, res) => {
-  if (!req.user) {
-    return res.redirect('/'); // Redirect to home page if not authenticated
+  if (!req.isAuthenticated()) {
+    return res.redirect('/');
   }
   res.send(`
     <h1>Dashboard</h1>
     <p>Your GitHub Username: ${req.user.username}</p>
     <p>Your GitHub Email: ${req.user.email}</p>
     <img src="${req.user.avatarUrl}" alt="Avatar" width="100">
-    <br>
     <a href="/">Go back to Home</a>
+    <br>
+    <a href="/logout">Logout</a>
   `);
 });
 
@@ -112,13 +121,11 @@ passport.use(new GitHubStrategy({
 
 // Serialize and deserialize the user to store in the session
 passport.serializeUser((user, done) => {
-  console.log("SERIALIZE USER");  // Log the session data
   done(null, user._id); // Storing the user's _id in the session
 });
 
 passport.deserializeUser(async (id, done) => {
   try {
-    console.log("DESERIALIZE USER");  // Log the session data
     const user = await User.findById(id);  // Retrieve user by _id
     done(null, user);  // Populate req.user with the retrieved user object
   } catch (err) {
@@ -130,20 +137,12 @@ passport.deserializeUser(async (id, done) => {
 app.get('/auth/github', passport.authenticate('github'));
 
 // Route for GitHub OAuth callback
-app.get('/auth/github/callback',
+app.get('/auth/github/callback', 
   passport.authenticate('github', { failureRedirect: '/' }),
   (req, res) => {
-    console.log("AUTH GITHUB CALLBACK", req.session);  // Log the session data
-    console.log('User authenticated:', req.user);  // Check if user data is present in req.user
-    res.cookie('auth_token', req.user, {
-      httpOnly: true, // Prevent access via JavaScript
-      secure: true, // Ensures the cookie is sent only over HTTPS
-      sameSite: 'None', // Allows cross-site cookie sharing
-      maxAge: 24 * 60 * 60 * 1000, // 1 day in milliseconds
-    });
-    res.redirect('/'); 
-    //res.redirect(`${frontendURL}/SeaFarmers/`);  // Redirect with token to frontend
-  });
+    res.redirect('/');
+  }
+);
 
 // API to fetch user details
 app.get('/api/user', (req, res) => {
