@@ -46,8 +46,8 @@ app.use(session({
   cookie: {
     httpOnly: true,  // Makes cookie inaccessible to JavaScript
     maxAge: 86400000,  // Session cookie expiration time in milliseconds (1 day)
-    sameSite: 'None',  // Allows cross-site cookie usage
-    secure: true,  // Ensures cookie is only sent over HTTPS
+    //sameSite: 'None',  // Allows cross-site cookie usage
+    //secure: true,  // Ensures cookie is only sent over HTTPS
   },
 }));
 
