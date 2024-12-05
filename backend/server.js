@@ -29,7 +29,7 @@ mongoose.connect(dbURI)
 app.use(express.json());  
 app.use(cookieParser());
 app.use(cors({
-  origin: '*',  // Your frontend URL
+  origin: frontendURL,  // Your frontend URL
   credentials: true,  // Ensure cookies are sent with requests
 }));
 
