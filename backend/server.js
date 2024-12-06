@@ -14,6 +14,11 @@ const frontendURL = 'https://trmatherz.github.io'; // Frontend URL for productio
 
 const PORT = process.env.PORT || 3001;  // Dynamically use the PORT environment variable
 
+const corsOptions = {
+  origin: frontendURL, // Allow only your frontend domain
+  methods: ['GET', 'POST', 'PUT'], // Allowed methods
+  credentials: true,  // Allow cookies to be sent
+};
 
 const app = express();
 
@@ -28,10 +33,8 @@ mongoose.connect(dbURI)
 // Middleware
 app.use(express.json());  
 app.use(cookieParser());
-app.use(cors({
-  origin: frontendURL,  // Your frontend URL
-  credentials: true,  // Ensure cookies are sent with requests
-}));
+app.use(cors(corsOptions));
+
 
 // Configure session
 app.use(session({
