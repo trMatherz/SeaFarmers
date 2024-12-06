@@ -144,14 +144,15 @@ app.get('/auth/github/callback',
 );
 
 // API to fetch user details
-app.get('/api/user', (req, res) => {
-  if (!req.user) {
-    return res.status(401).json({ message: 'User not authenticated' });
-  }
+app.get('/api/user', async (req, res) => {
+  const { userId } = req.query;
+  const user = await User.findOne({ _id: userId });
+  console.log(req.user); 
+  console.log(user); 
   res.json({
-    username: req.user.username,
-    email: req.user.email,
-    avatarUrl: req.user.avatarUrl,
+    username: user.username,
+    email: user.email,
+    avatarUrl: user.avatarUrl,
   });
 });
 
