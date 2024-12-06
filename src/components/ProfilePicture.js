@@ -53,7 +53,7 @@ const ProfilePicture = () => {
       if (userId) {
        
         sessionStorage.setItem('userId', userId);
-        window.location.href = `$https://trmatherz.github.io/SeaFarmers/`;
+        window.location.href = `https://trmatherz.github.io/SeaFarmers/`;
       }
     } catch (error) {
       console.error('Error during GitHub login:', error);
