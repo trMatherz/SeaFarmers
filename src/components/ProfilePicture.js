@@ -15,8 +15,14 @@ const ProfilePicture = () => {
     setIsLoading(true);
 
     try {
+
+      const userId = sessionStorage.getItem('userId');
+
+      if (!userId) {
+        throw new Error('User ID not found in session storage');
+      }
       // Send a request to the backend to get user data
-      const response = await fetch(`${backendUrl}/api/user`, {
+      const response = await fetch(`${backendUrl}/api/user?userId=${userId}`, {
         method: 'GET',             // Explicitly specify GET method
         credentials: 'include',    // Include session cookies for authentication
       });
@@ -45,9 +51,11 @@ const ProfilePicture = () => {
       window.location.href = `${backendUrl}/auth/github`;
       const urlParams = new URLSearchParams(window.location.search);
       const userId = urlParams.get('userId'); 
-      console.log('User authenticated:', userId);
- 
-
+      if (userId) {
+       
+        sessionStorage.setItem('userId', userId);
+        
+      }
     } catch (error) {
       console.error('Error during GitHub login:', error);
     }
