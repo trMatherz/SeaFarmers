@@ -112,6 +112,7 @@ passport.use(new GitHubStrategy({
         username: profile.username,
         email: profile.emails ? profile.emails[0].value : null,
         avatarUrl: profile.photos ? profile.photos[0].value : null,
+        modules: [],
       });
       await user.save();
     }
