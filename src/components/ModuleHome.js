@@ -28,11 +28,19 @@ function ModuleHome({
   const problemsProgress = ((localSolvedProblems + skippedProblems) / totalProblems) * 100;
 
   const handleSolveProblem = () => {
+    // Retrieve the userId from sessionStorage (or other session management method)
+    const userId = sessionStorage.getItem('userId'); // Assuming userId is stored in sessionStorage
+  
+    if (!userId) {
+      console.error('User ID not found in session');
+      return;
+    }
+  
     axios
       .put(
-        `${backendUrl}/api/module/${moduleName}`,
+        `${backendUrl}/api/module/${moduleName}?userId=${userId}`,  // Pass userId as a query parameter
         {},
-        { withCredentials: true }
+        { withCredentials: true }  // Ensure cookies are sent with the request
       )
       .then((response) => {
         setLocalSolvedProblems(response.data.solvedProblems);

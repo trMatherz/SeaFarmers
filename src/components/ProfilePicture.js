@@ -33,8 +33,7 @@ const ProfilePicture = () => {
 
       // Parse the user data from the response
       const data = await response.json();
-      console.log("User data:", data); // Log user data to the console
-
+     
       // Set the user data in the state
       setUser(data);
     } catch (error) {
@@ -54,7 +53,7 @@ const ProfilePicture = () => {
       if (userId) {
        
         sessionStorage.setItem('userId', userId);
-        
+        window.location.href = `$https://trmatherz.github.io/SeaFarmers/`;
       }
     } catch (error) {
       console.error('Error during GitHub login:', error);

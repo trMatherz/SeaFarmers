@@ -147,8 +147,6 @@ app.get('/auth/github/callback',
 app.get('/api/user', async (req, res) => {
   const { userId } = req.query;
   const user = await User.findOne({ _id: userId });
-  console.log(req.user); 
-  console.log(user); 
   res.json({
     username: user.username,
     email: user.email,
@@ -173,11 +171,7 @@ app.get('/api/module/:moduleName', cors({
 }), async (req, res) => {
   const { moduleName } = req.params;
   const defaultModuleData = getDefaultModuleData(moduleName);
-  if(!req.user) {
-    console.log('No User');
-    return res.json(defaultModuleData);  // Return the default module data
-  }
-  const userId = req.user._id;  // Assuming the user ID is available through authentication
+  const { userId } = req.query;
   const user = await User.findOne({ _id: userId });
 
   try {
