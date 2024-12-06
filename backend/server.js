@@ -139,7 +139,7 @@ app.get('/auth/github/callback',
   passport.authenticate('github', { failureRedirect: '/' }),
   (req, res) => {
     const userId = req.user.id; // Example: Pass user ID or token
-    res.redirect(`${frontendURL}?userId=${userId}`);
+    res.redirect(`${frontendUrl}/SeaFarmers/?userId=${userId}`);
   }
 );
 
