@@ -43,6 +43,10 @@ const ProfilePicture = () => {
     try {
       // Call the backend API to initiate the GitHub OAuth flow
       window.location.href = `${backendUrl}/auth/github`;
+      const urlParams = new URLSearchParams(window.location.search);
+      const userId = urlParams.get('userId'); 
+      console.log('User authenticated:', userId);
+ 
 
     } catch (error) {
       console.error('Error during GitHub login:', error);
