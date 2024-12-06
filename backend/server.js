@@ -135,19 +135,11 @@ passport.deserializeUser(async (id, done) => {
 app.get('/auth/github', passport.authenticate('github'));
 
 // Route for GitHub OAuth callback
-app.get('/auth/github/callback',
-  (req, res, next) => {
-    console.log('Before Passport authenticate:', req.query);
-    next();
-  },
+app.get('/auth/github/callback', 
   passport.authenticate('github', { failureRedirect: '/' }),
   (req, res) => {
-    console.log('After Passport authenticate:', req.user);
-    if (!req.user) {
-      return res.status(401).send('Authentication failed');
-    }
-    const userId = req.user.id;
-    res.redirect(`${frontendUrl}?userId=${userId}`);
+    const userId = req.user.id; // Example: Pass user ID or token
+    res.redirect(`${frontendURL}?userId=${userId}`);
   }
 );
 
