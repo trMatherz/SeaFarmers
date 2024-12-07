@@ -179,13 +179,17 @@ app.get('/api/module/:moduleName', cors({
   const defaultModuleData = getDefaultModuleData(moduleName);
   const { userId } = req.query;
   const user = await User.findOne({ _id: userId });
-
   try {
+    if(!user) {
+      res.status(404).json({ message: 'User not found' });
+    }
+    if (!user.modules) {
+      return res.status(404).json({ message: 'Modules is null' });
+    }
     let userModuleData = user.modules.find(module => module.moduleName === moduleName);
     if (!userModuleData) {
       return res.status(404).json({ message: 'Module not found' });
     }
-    userModuleData.solvedProblems++; 
     await User.updateOne(
       { _id: userId, 'modules.moduleName': moduleName },  // Find user by ID and matching module name
       { 
