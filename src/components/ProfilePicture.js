@@ -47,9 +47,9 @@ const ProfilePicture = () => {
 
   const handleGitHubLogin = async () => {
     try {
-      // Call the backend API to initiate the GitHub OAuth flow
-      await axios.post(`${backendUrl}/auth/github`, {
-          withCredentials: true,  // Ensures cookies are sent with the request
+      
+      await axios.get(`${backendUrl}/auth/github`, {
+          withCredentials: true,  
       });
       const urlParams = new URLSearchParams(window.location.search);
       const userId = urlParams.get('userId'); 
