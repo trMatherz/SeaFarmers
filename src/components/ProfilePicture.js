@@ -8,8 +8,8 @@ const ProfilePicture = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Fetch the user data when the component mounts
     fetchUserData();
+    handleRedirect(); 
   }, []);
 
   const fetchUserData = async () => {
@@ -46,20 +46,15 @@ const ProfilePicture = () => {
   };
 
   const handleGitHubLogin = async () => {
-    try {
-      
-      await axios.get(`${backendUrl}/auth/github`, {
-          withCredentials: true,  
-      });
-      const urlParams = new URLSearchParams(window.location.search);
-      const userId = urlParams.get('userId'); 
-      if (userId) {
-       
-        sessionStorage.setItem('userId', userId);
-        window.location.href = `https://trmatherz.github.io/SeaFarmers/`;
-      }
-    } catch (error) {
-      console.error('Error during GitHub login:', error);
+      window.location.href = `${backendUrl}/auth/github`;
+  };
+
+  function handleRedirect() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const userId = urlParams.get('userId'); 
+    if (userId) {
+      sessionStorage.setItem('userId', userId);
+      window.location.href = `https://trmatherz.github.io/SeaFarmers/`;
     }
   };
 
