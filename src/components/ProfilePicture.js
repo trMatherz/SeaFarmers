@@ -49,9 +49,7 @@ const ProfilePicture = () => {
       // Call the backend API to initiate the GitHub OAuth flow
       fetch(`${backendUrl}/auth/github`, {
         method: 'GET', // or POST depending on your backend implementation
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        credentials: 'include',
       })
       const urlParams = new URLSearchParams(window.location.search);
       const userId = urlParams.get('userId'); 
