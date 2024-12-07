@@ -16,16 +16,21 @@ const TopicProgress = ({ moduleName, topicId }) => {
         async function fetchModuleData() {
             setLoading(true);
             try {
-                const response = await axios.get(`${backendUrl}/api/module/${moduleName}`, {
-                    withCredentials: true,
-                });
-                setModuleData(response.data); // Set module data
+              const userId = sessionStorage.getItem('userId');
+      
+              if (!userId) {
+                throw new Error('User ID not found in session storage');
+              }
+              const response = await axios.get(`${backendUrl}/api/module/${moduleName}?userId=${userId}`, {
+                withCredentials: true,
+              });
+              setModuleData(response.data);
             } catch (error) {
-                setError(error.response ? error.response.data : error.message);
+              setError(error.response ? error.response.data : error.message);
             } finally {
-                setLoading(false);
+              setLoading(false);
             }
-        }
+          }
 
         if (moduleName) {
             fetchModuleData();
@@ -52,8 +57,13 @@ const TopicProgress = ({ moduleName, topicId }) => {
         }));
 
         try {
+            const userId = sessionStorage.getItem('userId');
+
+            if (!userId) {
+              throw new Error('User ID not found in session storage');
+            }
             // Send state change to the backend
-            await axios.post(`${backendUrl}/api/topic/updateState`, {
+            await axios.post(`${backendUrl}/api/topic/updateState?userId=${userId}`, {
                 moduleName: moduleName,
                 topicId: topicId,
                 newState: newState,

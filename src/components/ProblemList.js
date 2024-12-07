@@ -16,7 +16,12 @@ const ProblemList = ({ moduleName, topicId }) => {
     async function fetchModuleData() {
       setLoading(true);
       try {
-        const response = await axios.get(`${backendUrl}/api/module/${moduleName}`, {
+        const userId = sessionStorage.getItem('userId');
+
+        if (!userId) {
+          throw new Error('User ID not found in session storage');
+        }
+        const response = await axios.get(`${backendUrl}/api/module/${moduleName}?userId=${userId}`, {
           withCredentials: true,
         });
         setModuleData(response.data);
@@ -61,7 +66,12 @@ const ProblemList = ({ moduleName, topicId }) => {
   const updateProblemState = async (problem, newState) => {
     const problemId = problem.problemId; 
     try {
-      const response = await axios.post(`${backendUrl}/api/problem/updateState`, {
+      const userId = sessionStorage.getItem('userId');
+
+      if (!userId) {
+        throw new Error('User ID not found in session storage');
+      }
+      const response = await axios.post(`${backendUrl}/api/problem/updateState?userId=${userId}`, {
         moduleName,
         topicId,
         problemId,

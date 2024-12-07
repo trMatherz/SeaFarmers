@@ -153,6 +153,7 @@ app.get('/auth/github/callback',
 app.get('/api/user', async (req, res) => {
   const { userId } = req.query;
   const user = await User.findOne({ _id: userId });
+  if(!user) throw new Error(`User with ID ${userId} not found.`);
   res.json({
     username: user.username,
     email: user.email,
@@ -170,42 +171,6 @@ const getDefaultModuleData = (moduleName) => {
     throw new Error(`Could not load default module data for ${moduleName}`);
   }
 };
-
-// app.get('/api/module/:moduleName', cors({
-//   origin: 'https://trmatherz.github.io',
-//   credentials: true,
-// }), async (req, res) => {
-//   const { moduleName } = req.params;
-//   const defaultModuleData = getDefaultModuleData(moduleName);
-//   const { userId } = req.query;
-//   const user = await User.findOne({ _id: userId });
-//   try {
-//     if(!user) {
-//       res.status(404).json({ message: 'User not found' });
-//     }
-//     if (!user.modules) {
-//       return res.status(404).json({ message: 'Modules is null' });
-//     }
-//     let userModuleData = user.modules.find(module => module.moduleName === moduleName);
-//     if (!userModuleData) {
-//       return res.status(404).json({ message: 'Module not found' });
-//     }
-//     await User.updateOne(
-//       { _id: userId, 'modules.moduleName': moduleName },  // Find user by ID and matching module name
-//       { 
-//         $set: { 'modules.$': userModuleData }  // Set the module data to the new data for the matched module
-//       }
-//     );
-//     await user.save();
-//     const updatedData = updateData(defaultModuleData, userModuleData); 
-//     res.json(updatedData);
-
-//   } catch (error) {
-//     console.error('Error updating module:', error);
-//     res.status(500).json({ message: 'Internal server error' });
-//   }
-// });
-
 
 const checkModuleUpdate = async (userId, moduleName) => {
   try {
@@ -422,10 +387,9 @@ app.get('/api/module/:moduleName', async (req, res) => {
 app.post('/api/problem/updateState', async (req, res) => {
   const { moduleName, topicId, problemId, newState } = req.body;
  
-  if(!req.user) return; 
-  
-  const userId = req.user._id;  // Assuming the user ID is available through authentication
+  const { userId } = req.query;
   const user = await User.findOne({ _id: userId });
+  if(!user) throw new Error(`User with ID ${userId} not found.`);
   if (!user) throw new Error(`User with ID ${userId} not found.`);
   
   try {
@@ -470,11 +434,9 @@ app.post('/api/problem/updateState', async (req, res) => {
 app.post('/api/topic/updateState', async (req, res) => {
   const { moduleName, topicId, newState } = req.body;
   
-  if (!req.user) return res.status(401).json({ error: 'User not authenticated' });
-
-  const userId = req.user._id;  // Assuming the user ID is available through authentication
+  const { userId } = req.query;
   const user = await User.findOne({ _id: userId });
-  if (!user) return res.status(404).json({ error: `User with ID ${userId} not found.` });
+  if(!user) throw new Error(`User with ID ${userId} not found.`);
   try {
     // Find the module by moduleName
     const module = user.modules.find((mod) => mod.moduleName === moduleName);

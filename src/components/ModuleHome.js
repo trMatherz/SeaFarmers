@@ -20,35 +20,11 @@ function ModuleHome({
   totalProblems,
   genericTopics = [],
   topics = [],
-  onIncrementSolved
 }) {
-  const [localSolvedProblems, setLocalSolvedProblems] = useState(solvedProblems);
+ 
 
   const topicsProgress = ((solvedTopics + skippedTopics) / totalTopics) * 100;
-  const problemsProgress = ((localSolvedProblems + skippedProblems) / totalProblems) * 100;
-
-  const handleSolveProblem = () => {
-    // Retrieve the userId from sessionStorage (or other session management method)
-    const userId = sessionStorage.getItem('userId'); // Assuming userId is stored in sessionStorage
-  
-    if (!userId) {
-      console.error('User ID not found in session');
-      return;
-    }
-  
-    axios
-      .put(
-        `${backendUrl}/api/module/${moduleName}?userId=${userId}`,  // Pass userId as a query parameter
-        {},
-        { withCredentials: true }  // Ensure cookies are sent with the request
-      )
-      .then((response) => {
-        setLocalSolvedProblems(response.data.solvedProblems);
-      })
-      .catch((error) => {
-        console.error('Error updating solved problems:', error);
-      });
-  };
+  const problemsProgress = ((solvedProblems + skippedProblems) / totalProblems) * 100;
 
   return (
     <Layout>
@@ -72,7 +48,7 @@ function ModuleHome({
                 ></div>
                 <div
                   className={`${styles.progressFill} ${styles.solved}`}
-                  style={{ width: `${(localSolvedProblems / totalProblems) * 100}%` }}
+                  style={{ width: `${(solvedProblems / totalProblems) * 100}%` }}
                 ></div>
               </div>
               <div className={styles.progressNumbers}>
@@ -85,7 +61,7 @@ function ModuleHome({
                   <div className={styles.label}>Skipped</div>
                 </span>
                 <span>
-                  <div className={styles.number}>{localSolvedProblems}</div>
+                  <div className={styles.number}>{solvedProblems}</div>
                   <div className={styles.label}>Solved</div>
                 </span>
               </div>
@@ -125,9 +101,6 @@ function ModuleHome({
           </div>
         </div>
 
-        <div>
-          <button onClick={handleSolveProblem}>Solve a Problem</button>
-        </div>
 
         <h3>Topics in This Module:</h3>
         <div className={styles.genericTopicsContainer}>

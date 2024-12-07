@@ -13,16 +13,21 @@ function Sidebar({ moduleName }) {
   // Fetch module data when component mounts or when moduleName changes
   useEffect(() => {
     async function fetchModuleData() {
-      setLoading(true); // Start loading
+      setLoading(true);
       try {
-        const response = await axios.get(`${backendUrl}/api/module/${moduleName}`, {
-          withCredentials: true, // Ensure session cookies are included
+        const userId = sessionStorage.getItem('userId');
+
+        if (!userId) {
+          throw new Error('User ID not found in session storage');
+        }
+        const response = await axios.get(`${backendUrl}/api/module/${moduleName}?userId=${userId}`, {
+          withCredentials: true,
         });
-        setModuleData(response.data); // Set module data
-        setLoading(false); // Stop loading
+        setModuleData(response.data);
       } catch (error) {
         setError(error.response ? error.response.data : error.message);
-        setLoading(false); // Stop loading
+      } finally {
+        setLoading(false);
       }
     }
 
