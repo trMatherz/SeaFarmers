@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 const config = require('../../docusaurus.config.js');  // Adjust the path if necessary
 const backendUrl = config.customFields.backendUrl; // Access customFields for backendUrl
 
@@ -47,10 +48,9 @@ const ProfilePicture = () => {
   const handleGitHubLogin = async () => {
     try {
       // Call the backend API to initiate the GitHub OAuth flow
-      fetch(`${backendUrl}/auth/github`, {
-        method: 'GET', // or POST depending on your backend implementation
-        credentials: 'include',
-      })
+      await axios.post(`${backendUrl}/auth/github`, {
+          withCredentials: true,  // Ensures cookies are sent with the request
+      });
       const urlParams = new URLSearchParams(window.location.search);
       const userId = urlParams.get('userId'); 
       if (userId) {
