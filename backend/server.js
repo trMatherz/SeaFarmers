@@ -171,40 +171,40 @@ const getDefaultModuleData = (moduleName) => {
   }
 };
 
-app.get('/api/module/:moduleName', cors({
-  origin: 'https://trmatherz.github.io',
-  credentials: true,
-}), async (req, res) => {
-  const { moduleName } = req.params;
-  const defaultModuleData = getDefaultModuleData(moduleName);
-  const { userId } = req.query;
-  const user = await User.findOne({ _id: userId });
-  try {
-    if(!user) {
-      res.status(404).json({ message: 'User not found' });
-    }
-    if (!user.modules) {
-      return res.status(404).json({ message: 'Modules is null' });
-    }
-    let userModuleData = user.modules.find(module => module.moduleName === moduleName);
-    if (!userModuleData) {
-      return res.status(404).json({ message: 'Module not found' });
-    }
-    await User.updateOne(
-      { _id: userId, 'modules.moduleName': moduleName },  // Find user by ID and matching module name
-      { 
-        $set: { 'modules.$': userModuleData }  // Set the module data to the new data for the matched module
-      }
-    );
-    await user.save();
-    const updatedData = updateData(defaultModuleData, userModuleData); 
-    res.json(updatedData);
+// app.get('/api/module/:moduleName', cors({
+//   origin: 'https://trmatherz.github.io',
+//   credentials: true,
+// }), async (req, res) => {
+//   const { moduleName } = req.params;
+//   const defaultModuleData = getDefaultModuleData(moduleName);
+//   const { userId } = req.query;
+//   const user = await User.findOne({ _id: userId });
+//   try {
+//     if(!user) {
+//       res.status(404).json({ message: 'User not found' });
+//     }
+//     if (!user.modules) {
+//       return res.status(404).json({ message: 'Modules is null' });
+//     }
+//     let userModuleData = user.modules.find(module => module.moduleName === moduleName);
+//     if (!userModuleData) {
+//       return res.status(404).json({ message: 'Module not found' });
+//     }
+//     await User.updateOne(
+//       { _id: userId, 'modules.moduleName': moduleName },  // Find user by ID and matching module name
+//       { 
+//         $set: { 'modules.$': userModuleData }  // Set the module data to the new data for the matched module
+//       }
+//     );
+//     await user.save();
+//     const updatedData = updateData(defaultModuleData, userModuleData); 
+//     res.json(updatedData);
 
-  } catch (error) {
-    console.error('Error updating module:', error);
-    res.status(500).json({ message: 'Internal server error' });
-  }
-});
+//   } catch (error) {
+//     console.error('Error updating module:', error);
+//     res.status(500).json({ message: 'Internal server error' });
+//   }
+// });
 
 
 const checkModuleUpdate = async (userId, moduleName) => {
@@ -402,8 +402,9 @@ function updateData(defaultData, userModuleData) {
 app.get('/api/module/:moduleName', async (req, res) => {
   const { moduleName } = req.params;
   const defaultModuleData = getDefaultModuleData(moduleName);
-  if(!req.user) return res.json(defaultModuleData);  // Return the default module data
-  const userId = req.user._id;  // Assuming the user ID is available through authentication
+  const { userId } = req.query;
+  if(!userId) return res.json(defaultModuleData);  // Return the default module data
+  
   checkModuleUpdate(userId, moduleName); 
   try {
     const user = await User.findOne({ _id: userId });
