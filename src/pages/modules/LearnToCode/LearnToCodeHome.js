@@ -14,7 +14,12 @@ const LearnToCode = () => {
   const fetchModuleData = async (moduleName) => {
     setLoading(true); // Start loading
     try {
-      const response = await axios.get(`${backendUrl}/api/module/${moduleName}`, {
+      const userId = sessionStorage.getItem('userId');
+
+      if (!userId) {
+        throw new Error('User ID not found in session storage');
+      }
+      const response = await axios.get(`${backendUrl}/api/module/${moduleName}?userId=${userId}`, {
         withCredentials: true, // Ensure session cookies are included
         credentials: 'include',
       });
