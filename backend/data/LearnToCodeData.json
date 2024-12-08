@@ -12,10 +12,10 @@
   "totalProblems": 5,
   "genericTopics" : [
     {
-      "genericTopicId": "topic1",
-      "genericTopicName": "name1",
+      "genericTopicId": "Pre-Code",
+      "genericTopicName": "Before You Code",
       "topics" : [
-        "variables"
+        "TimeComplexity"
       ]
     },
     {
@@ -28,8 +28,8 @@
   ],
   "topics": [
     {
-      "topicId": "variables",
-      "topicName": "Understanding Variables",
+      "topicId": "TimeComplexity",
+      "topicName": "Time Complexity",
       "description": "Learn about variables and their importance in programming.",
       "solvedProblems": 0,
       "skippedProblems": 0,
