@@ -111,51 +111,56 @@ const SampleProblem = ({ moduleName, topicId, location }) => {
         <table className={styles.problemTable}>
           <tbody>
             {topicData.problems
-                .find((problem) => problem.location === location) && (
+                .find((problem) => problem.location === location) ? (
+                // Only render the row if a matching problem is found
                 <tr key={problem.uniqueId || index}>
-                    <td className={styles.statusCell}>
+                <td className={styles.statusCell}>
                     <span
-                        className={`${styles.stateCircle} ${styles[`state${problem.state}`]}`}
-                        onClick={(event) => toggleDropdown(index, event)} // Pass the click event
-                    >
-                    </span>
+                    className={`${styles.stateCircle} ${styles[`state${problem.state}`]}`}
+                    onClick={(event) => toggleDropdown(index, event)} // Pass the click event
+                    ></span>
                     {dropdownOpen === index && ( // Conditionally render dropdown
-                        <div
+                    <div
                         className={styles.dropdownMenu}
                         style={{
-                            position: 'absolute',
-                            top: `${dropdownPosition.top}px`,
-                            left: `${dropdownPosition.left}px`,
+                        position: 'absolute',
+                        top: `${dropdownPosition.top}px`,
+                        left: `${dropdownPosition.left}px`,
                         }}
-                        >
-                        <ul>
-                            <li onClick={() => updateProblemState(problem, 2)}>Solved</li>
-                            <li onClick={() => updateProblemState(problem, 1)}>Skipped</li>
-                            <li onClick={() => updateProblemState(problem, 0)}>Unseen</li>
-                        </ul>
-                        </div>
-                    )}
-                    </td>
-                    <td className={styles.sourceCell}>{problem.source}</td>
-                    <td className={styles.starredCell}>{problem.star ? '⭐' : ''}</td>
-                    <td className={styles.problemCell}>
-                    <a
-                        href={problem.link}  // Use problem.link instead of problem.url
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={styles.problemLink}
                     >
-                        {problem.name}
+                        <ul>
+                        <li onClick={() => updateProblemState(problem, 2)}>Solved</li>
+                        <li onClick={() => updateProblemState(problem, 1)}>Skipped</li>
+                        <li onClick={() => updateProblemState(problem, 0)}>Unseen</li>
+                        </ul>
+                    </div>
+                    )}
+                </td>
+                <td className={styles.sourceCell}>{problem.source}</td>
+                <td className={styles.starredCell}>{problem.star ? '⭐' : ''}</td>
+                <td className={styles.problemCell}>
+                    <a
+                    href={problem.link}  // Use problem.link instead of problem.url
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.problemLink}
+                    >
+                    {problem.name}
                     </a>
-                    </td>
-                    <td className={styles.difficultyCell}>{problem.difficulty}</td>
-                    <td className={styles.tagsCell}>
+                </td>
+                <td className={styles.difficultyCell}>{problem.difficulty}</td>
+                <td className={styles.tagsCell}>
                     {problem.tags && Array.isArray(problem.tags)
-                        ? problem.tags.join(', ')
-                        : 'No tags'}
-                    </td>
+                    ? problem.tags.join(', ')
+                    : 'No tags'}
+                </td>
                 </tr>
-                )}
+            ) : (
+                // You can optionally render a message if no matching problem is found
+                <tr>
+                <td colSpan="6">No problems found for this location.</td>
+                </tr>
+            )}
             </tbody>
 
         </table>
