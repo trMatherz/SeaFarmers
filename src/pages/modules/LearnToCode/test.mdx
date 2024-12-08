@@ -1,7 +1,8 @@
 import React from 'react';
-import ProblemList from '../../../components/ProblemList';  // Default import
-import TopicProgress from '../../../components/TopicProgress';  // Default import
-import Sidebar from '../../../components/Sidebar';  // Default import
+import ProblemList from '../../../components/ProblemList';  
+import SampleProblem from '../../../components/SampleProblem';  
+import TopicProgress from '../../../components/TopicProgress';  
+import Sidebar from '../../../components/Sidebar';  
 import problems from './test.problems.json';
 import SignInButton from '@site/src/components/SignInButton';
 
@@ -17,9 +18,11 @@ Click below to sign in with GitHub:
 
 <SignInButton />
 
+<ResourceList moduleName={moduleName} topicId={topicId}/>
+
 # Example Problem List
 
-<ProblemList moduleName={moduleName} topicId={topicId} location="sample1"/>
+<SampleProblem moduleName={moduleName} topicId={topicId} location="sample1"/>
 
 <ProblemList moduleName={moduleName} topicId={topicId} location="problemlist"/>
 

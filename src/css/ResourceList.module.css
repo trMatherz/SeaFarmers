@@ -1,0 +1,107 @@
+/* ResourceList.module.css */
+
+/* General Table Styling */
+.resourceTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    font-family: 'Arial', sans-serif;
+    text-align: left;
+    background-color: #f9f9f9;
+  }
+  
+  .resourceTable thead tr {
+    background-color: #4CAF50; /* Green header */
+    color: white;
+  }
+  
+  .resourceTable th,
+  .resourceTable td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+  }
+  
+  .resourceTable th {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  
+  .resourceTable tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .resourceTable tbody tr:hover {
+    background-color: #f1f7ff; /* Light blue on hover */
+  }
+  
+  /* Columns */
+  .nameColumn {
+    width: 25%;
+  }
+  
+  .sourceColumn {
+    width: 20%;
+  }
+  
+  .starredColumn {
+    width: 10%;
+    text-align: center;
+  }
+  
+  .descriptionColumn {
+    width: 45%;
+  }
+  
+  /* Link Styling */
+  .resourceLink {
+    text-decoration: none;
+    color: #007BFF;
+    font-weight: bold;
+  }
+  
+  .resourceLink:hover {
+    text-decoration: underline;
+    color: #0056b3; /* Darker blue */
+  }
+  
+  /* Star Cell */
+  .starredCell {
+    font-size: 18px;
+    text-align: center;
+  }
+  
+  /* Responsive Table */
+  @media (max-width: 768px) {
+    .resourceTable thead {
+      display: none;
+    }
+  
+    .resourceTable,
+    .resourceTable tbody,
+    .resourceTable tr,
+    .resourceTable td {
+      display: block;
+      width: 100%;
+    }
+  
+    .resourceTable tr {
+      margin-bottom: 15px;
+    }
+  
+    .resourceTable td {
+      text-align: right;
+      padding-left: 50%;
+      position: relative;
+    }
+  
+    .resourceTable td::before {
+      content: attr(data-label);
+      position: absolute;
+      left: 10px;
+      width: calc(50% - 10px);
+      text-align: left;
+      font-weight: bold;
+    }
+  }
+  

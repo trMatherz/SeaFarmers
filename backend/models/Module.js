@@ -11,6 +11,13 @@ const ProblemSchema = new mongoose.Schema({
   tags: [String] // The source of the problem (e.g., platform name), default set to empty string
 });
 
+const ResourceSchema = new mongoose.Schema({
+  name: { type: String, required: true }, 
+  source: { type: String, required: true, default: "" }, 
+  star: { type: Boolean, required: true, default: false },
+  description: { type: String, required: true, default: "" }, 
+});
+
 const TopicSchema = new mongoose.Schema({
   topicId: { type: String, required: true },
   topicName: { type: String, required: true },
@@ -18,7 +25,8 @@ const TopicSchema = new mongoose.Schema({
   skippedProblems: { type: Number, default: 0 }, // Default set to 0
   unseenProblems: { type: Number, default: 0 }, // Default set to 0
   state: { type: Number, required: true, default: 0 }, 
-  problems: [ProblemSchema]  // Array of problems associated with the topic
+  problems: [ProblemSchema],
+  resources: [ResourceSchema]
 });
 
 const GeneralTopicSchema = new mongoose.Schema({
