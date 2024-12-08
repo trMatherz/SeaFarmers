@@ -152,6 +152,7 @@ app.get('/auth/github/callback',
 // API to fetch user details
 app.get('/api/user', async (req, res) => {
   const { userId } = req.query;
+  if(userId == "guest") throw new Error(`Guest`);
   const user = await User.findOne({ _id: userId });
   if(!user) throw new Error(`User with ID ${userId} not found.`);
   res.json({
@@ -368,6 +369,7 @@ app.get('/api/module/:moduleName', async (req, res) => {
   const { moduleName } = req.params;
   const defaultModuleData = getDefaultModuleData(moduleName);
   const { userId } = req.query;
+  if(userId == "guest") return res.json(defaultModuleData);  // Return the default module data
   if(!userId) return res.json(defaultModuleData);  // Return the default module data
   
   checkModuleUpdate(userId, moduleName); 
@@ -388,6 +390,7 @@ app.post('/api/problem/updateState', async (req, res) => {
   const { moduleName, topicId, problemId, newState } = req.body;
  
   const { userId } = req.query;
+  if(userId == "guest") throw new Error(`Guest`);
   const user = await User.findOne({ _id: userId });
   if(!user) throw new Error(`User with ID ${userId} not found.`);
   if (!user) throw new Error(`User with ID ${userId} not found.`);
@@ -433,8 +436,8 @@ app.post('/api/problem/updateState', async (req, res) => {
 
 app.post('/api/topic/updateState', async (req, res) => {
   const { moduleName, topicId, newState } = req.body;
-  
   const { userId } = req.query;
+  if(userId == "guest") throw new Error(`Guest`);
   const user = await User.findOne({ _id: userId });
   if(!user) throw new Error(`User with ID ${userId} not found.`);
   try {
