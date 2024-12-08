@@ -45,7 +45,8 @@
           "source": "PlatformX",
           "difficulty": 1,
           "star": 1,
-          "tags": ["one", "two"]
+          "tags": ["one", "two"],
+          "link": "https://cses.fi/problemset/"
         },
         {
           "problemId": "var2",
@@ -55,7 +56,8 @@
           "source": "PlatformXXXXX",
           "difficulty": 4,
           "star": 0,
-          "tags": ["onsssse", "two"]
+          "tags": ["onsssse", "two"],
+          "link": "https://cses.fi/problemset/"
         },
         {
           "problemId": "var3",
@@ -65,7 +67,8 @@
           "source": "PlatsadkjasdjkdsajdkaskdsjkajkkdjasdsadX",
           "difficulty": 10,
           "star": 1,
-          "tags": ["onssssddde", "tdddddwo", "osdoasdoasdsad"]
+          "tags": ["onssssddde", "tdddddwo", "osdoasdoasdsad"],
+          "link": "https://cses.fi/problemset/"
         }
         
       ], 
@@ -74,13 +77,15 @@
           "name": "BAS",
           "source": "LOLOOSS",
           "star": 1,
-          "description": "SaioSIHIJSOIJAILSJIJSIASHSASIAISISI  ASIS ASA IS ASIISA SAOIS"
+          "description": "SaioSIHIJSOIJAILSJIJSIASHSASIAISISI  ASIS ASA IS ASIISA SAOIS",
+          "link": "https://cses.fi/problemset/"
         },
         {
           "name": "BAS11",
           "source": "LOLOOsssssSS",
           "star": 0,
-          "description": "SaioSIHIJSOIJAILSJSISI  ASIS ASA IS ASIISA SAOIS"
+          "description": "SaioSIHIJSOIJAILSJSISI  ASIS ASA IS ASIISA SAOIS",
+          "link": "https://cses.fi/problemset/"
         }
       ]
     },
@@ -102,7 +107,8 @@
           "source": "PlatformY",
           "difficulty": 1,
           "star": 1,
-          "tags": ["one", "two"]
+          "tags": ["one", "two"],
+          "link": "https://cses.fi/problemset/"
         },
         {
           "problemId": "cond2",
@@ -112,7 +118,8 @@
           "source": "PlatformY",
           "difficulty": 2,
           "star": 1,
-          "tags": ["one", "two"]
+          "tags": ["one", "two"],
+          "link": "https://cses.fi/problemset/"
         }
       ]
     }

@@ -150,15 +150,15 @@ const ProblemList = ({ moduleName, topicId, location }) => {
                 <td className={styles.sourceCell}>{problem.source}</td>
                 <td className={styles.starredCell}>{problem.star ? '⭐' : ''}</td>
                 <td className={styles.problemCell}>
-                  <a
-                    href={problem.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.problemLink}
-                  >
-                    {problem.name}
-                  </a>
-                </td>
+                <a
+                  href={problem.link}  // Use problem.link instead of problem.url
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.problemLink}
+                >
+                  {problem.name}
+                </a>
+              </td>
                 <td className={styles.difficultyCell}>{problem.difficulty}</td>
                 <td className={styles.tagsCell}>
                   {problem.tags && Array.isArray(problem.tags)

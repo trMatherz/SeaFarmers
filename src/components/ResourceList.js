@@ -71,7 +71,7 @@ const ResourceList = ({ moduleName, topicId }) => {
                 <tr key={resource.uniqueId || index}>
                   <td className={styles.nameCell}>
                     <a
-                      href={resource.url}
+                      href={resource.link}
                       target="_blank"
                       rel="noopener noreferrer"
                       className={styles.resourceLink}

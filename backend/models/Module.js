@@ -8,7 +8,8 @@ const ProblemSchema = new mongoose.Schema({
   source: { type: String, required: true, default: "" }, // The source of the problem (e.g., platform name), default set to empty string
   star: { type: Boolean, required: true, default: false }, // The source of the problem (e.g., platform name), default set to empty string
   difficulty: { type: Number, required: true, default: 0 }, // Difficulty level (e.g., 1 to 5), default set to 0
-  tags: [String] // The source of the problem (e.g., platform name), default set to empty string
+  tags: [String], // The source of the problem (e.g., platform name), default set to empty string
+  link:  { type: String, required: true, default: "" }, 
 });
 
 const ResourceSchema = new mongoose.Schema({
@@ -16,6 +17,7 @@ const ResourceSchema = new mongoose.Schema({
   source: { type: String, required: true, default: "" }, 
   star: { type: Boolean, required: true, default: false },
   description: { type: String, required: true, default: "" }, 
+  link:  { type: String, required: true, default: "" }, 
 });
 
 const TopicSchema = new mongoose.Schema({

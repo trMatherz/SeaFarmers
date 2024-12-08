@@ -110,18 +110,17 @@ const SampleProblem = ({ moduleName, topicId, location }) => {
         {topicData && topicData.problems && (
             topicData.problems
             .find((problem) => problem.location === location) && (
-                <div className={styles.problemDetails}>
+                <div className={styles.problemDetails} style={{ display: 'flex', flexWrap: 'nowrap' }}>
                 {(() => {
                     const problem = topicData.problems.find((p) => p.location === location);
                     return (
                     <>
-                        <div className={styles.statusCell}>
+                        <div className={styles.statusCell} style={{ display: 'inline-block', marginRight: '10px' }}>
                         <span
                             className={`${styles.stateCircle} ${styles[`state${problem.state}`]}`}
                             onClick={(event) => toggleDropdown(problem.uniqueId, event)} // Pass the click event
-                        >
-                        </span>
-                        {dropdownOpen === problem.uniqueId && ( // Conditionally render dropdown
+                        ></span>
+                        {dropdownOpen === problem.uniqueId && (
                             <div
                             className={styles.dropdownMenu}
                             style={{
@@ -138,14 +137,16 @@ const SampleProblem = ({ moduleName, topicId, location }) => {
                             </div>
                         )}
                         </div>
-                        <div className={styles.sourceCell}><strong>Source:</strong> {problem.source}</div>
-                        <div className={styles.starredCell}>
+                        <div className={styles.sourceCell} style={{ display: 'inline-block', marginRight: '10px' }}>
+                        <strong>Source:</strong> {problem.source}
+                        </div>
+                        <div className={styles.starredCell} style={{ display: 'inline-block', marginRight: '10px' }}>
                         <strong>Starred:</strong> {problem.star ? '⭐' : 'No'}
                         </div>
-                        <div className={styles.problemCell}>
+                        <div className={styles.problemCell} style={{ display: 'inline-block', marginRight: '10px' }}>
                         <strong>Problem:</strong>
                         <a
-                            href={problem.url}
+                            href={problem.link}
                             target="_blank"
                             rel="noopener noreferrer"
                             className={styles.problemLink}
@@ -153,10 +154,10 @@ const SampleProblem = ({ moduleName, topicId, location }) => {
                             {problem.name}
                         </a>
                         </div>
-                        <div className={styles.difficultyCell}>
+                        <div className={styles.difficultyCell} style={{ display: 'inline-block', marginRight: '10px' }}>
                         <strong>Difficulty:</strong> {problem.difficulty}
                         </div>
-                        <div className={styles.tagsCell}>
+                        <div className={styles.tagsCell} style={{ display: 'inline-block' }}>
                         <strong>Tags:</strong> {problem.tags && Array.isArray(problem.tags)
                             ? problem.tags.join(', ')
                             : 'No tags'}
@@ -168,6 +169,7 @@ const SampleProblem = ({ moduleName, topicId, location }) => {
             )
         )}
         </div>
+
   );
 };
 
