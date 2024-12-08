@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const ProblemSchema = new mongoose.Schema({
   problemId: { type: String, required: true, unique: true }, // Unique ID for the problem
-  problemName: { type: String, required: true, unique: true }, // Unique ID for the problem
+  location: { type: String, required: true, unique: true }, 
   name: { type: String, required: true }, // Name of the problem
   state: { type: Number, required: true, default: 0 }, // Problem state (unseen, solved, or skipped), default set to 0
   source: { type: String, required: true, default: "" }, // The source of the problem (e.g., platform name), default set to empty string

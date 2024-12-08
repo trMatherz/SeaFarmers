@@ -40,6 +40,7 @@
         {
           "problemId": "var1",
           "name": "Declare a variable",
+          "location": "sample1",
           "state": 0,
           "source": "PlatformX",
           "difficulty": 1,
@@ -49,6 +50,7 @@
         {
           "problemId": "var2",
           "name": "Declare a variable pt2",
+          "location": "problemlist",
           "state": 0,
           "source": "PlatformXXXXX",
           "difficulty": 4,
@@ -58,6 +60,7 @@
         {
           "problemId": "var3",
           "name": "Declare a variable pt2skldaslkakdkakds",
+          "location": "problemlist",
           "state": 0,
           "source": "PlatsadkjasdjkdsajdkaskdsjkajkkdjasdsadX",
           "difficulty": 10,
@@ -80,6 +83,7 @@
         {
           "problemId": "cond1",
           "name": "Simple if-else statement",
+          "location": "problemlist",
           "state": 0,
           "source": "PlatformY",
           "difficulty": 1,
@@ -89,6 +93,7 @@
         {
           "problemId": "cond2",
           "name": "Nested if-else statement",
+          "location": "problemlist",
           "state": 0,
           "source": "PlatformY",
           "difficulty": 2,

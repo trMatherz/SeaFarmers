@@ -4,7 +4,7 @@ import styles from '../css/ProblemList.module.css'; // Import the CSS module
 const config = require('../../docusaurus.config.js');  // Adjust the path if necessary
 const backendUrl = config.customFields.backendUrl; // Access customFields for backendUrl
 
-const ProblemList = ({ moduleName, topicId }) => {
+const ProblemList = ({ moduleName, topicId, location }) => {
   const [moduleData, setModuleData] = useState(null);
   const [topicData, setTopicData] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -120,7 +120,9 @@ const ProblemList = ({ moduleName, topicId }) => {
             </tr>
           </thead>
           <tbody>
-            {topicData.problems.map((problem, index) => (
+          {topicData.problems
+            .filter((problem) => problem.location === location)
+            .map((problem, index) => (
               <tr key={problem.uniqueId || index}>
                 <td className={styles.statusCell}>
                   <span
