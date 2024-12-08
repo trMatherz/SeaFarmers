@@ -14,7 +14,7 @@ const LearnToCode = () => {
   const fetchModuleData = async (moduleName) => {
     setLoading(true); // Start loading
     try {
-      const userId = sessionStorage.getItem('userId');
+      const userId = sessionStorage.getItem('userId') || "guest";
 
       if (!userId) {
         throw new Error('User ID not found in session storage');

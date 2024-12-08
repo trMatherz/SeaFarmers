@@ -120,53 +120,54 @@ const ProblemList = ({ moduleName, topicId, location }) => {
             </tr>
           </thead>
           <tbody>
-          {topicData.problems
-            .filter((problem) => problem.location === location)
-            .map((problem, index) => (
-              <tr key={problem.uniqueId || index}>
-                <td className={styles.statusCell}>
-                  <span
-                    className={`${styles.stateCircle} ${styles[`state${problem.state}`]}`}
-                    onClick={(event) => toggleDropdown(index, event)} // Pass the click event
-                  >
-                  </span>
-                  {dropdownOpen === index && ( // Conditionally render dropdown
-                    <div
-                      className={styles.dropdownMenu}
-                      style={{
-                        position: 'absolute',
-                        top: `${dropdownPosition.top}px`,
-                        left: `${dropdownPosition.left}px`,
-                      }}
-                    >
-                      <ul>
-                          <li onClick={() => updateProblemState(problem, 2)}>Solved</li>
-                          <li onClick={() => updateProblemState(problem, 1)}>Skipped</li>
-                          <li onClick={() => updateProblemState(problem, 0)}>Unseen</li>
-                      </ul>
-                    </div>
-                  )}
-                </td>
-                <td className={styles.sourceCell}>{problem.source}</td>
-                <td className={styles.starredCell}>{problem.star ? '⭐' : ''}</td>
-                <td className={styles.problemCell}>
-                <a
-                  href={problem.link}  // Use problem.link instead of problem.url
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles.problemLink}
-                >
-                  {problem.name}
-                </a>
-              </td>
-                <td className={styles.difficultyCell}>{problem.difficulty}</td>
-                <td className={styles.tagsCell}>
-                  {problem.tags && Array.isArray(problem.tags)
-                    ? problem.tags.join(', ')
-                    : 'No tags'}
-                </td>
-              </tr>
-            ))}
+            {topicData.problems && Array.isArray(topicData.problems) && topicData.problems
+              .filter((problem) => problem.location === location)  // Filter by location
+              .map((problem, index) => (
+                problem ? (  // Check if problem is defined
+                  <tr key={problem.uniqueId || index}>
+                    <td className={styles.statusCell}>
+                      <span
+                        className={`${styles.stateCircle} ${styles[`state${problem.state}`]}`}
+                        onClick={(event) => toggleDropdown(index, event)} // Pass the click event
+                      ></span>
+                      {dropdownOpen === index && ( // Conditionally render dropdown
+                        <div
+                          className={styles.dropdownMenu}
+                          style={{
+                            position: 'absolute',
+                            top: `${dropdownPosition.top}px`,
+                            left: `${dropdownPosition.left}px`,
+                          }}
+                        >
+                          <ul>
+                            <li onClick={() => updateProblemState(problem, 2)}>Solved</li>
+                            <li onClick={() => updateProblemState(problem, 1)}>Skipped</li>
+                            <li onClick={() => updateProblemState(problem, 0)}>Unseen</li>
+                          </ul>
+                        </div>
+                      )}
+                    </td>
+                    <td className={styles.sourceCell}>{problem.source}</td>
+                    <td className={styles.starredCell}>{problem.star ? '⭐' : ''}</td>
+                    <td className={styles.problemCell}>
+                      <a
+                        href={problem.link}  // Use problem.link instead of problem.url
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.problemLink}
+                      >
+                        {problem.name}
+                      </a>
+                    </td>
+                    <td className={styles.difficultyCell}>{problem.difficulty}</td>
+                    <td className={styles.tagsCell}>
+                      {problem.tags && Array.isArray(problem.tags)
+                        ? problem.tags.join(', ')
+                        : 'No tags'}
+                    </td>
+                  </tr>
+                ) : null  // If problem is not defined, render nothing
+              ))}
           </tbody>
         </table>
       )}
