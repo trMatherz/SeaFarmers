@@ -1,107 +1,117 @@
-.problemDetails {
-  display: flex;
-  flex-wrap: wrap; /* Allow items to wrap if needed */
-  gap: 1rem;
-  border: 1px solid #ccc;
-  padding: 1rem;
-  border-radius: 8px;
-  background-color: #f9f9f9;
-  max-width: 600px;
-  margin: 0 auto;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.statusCell {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+/* Set the table to have a fixed layout, so column widths are respected */
+.problemTable {
   width: 100%;
-  max-width: 120px; /* Optional: Adjusts width of the status section */
+  table-layout: fixed;
+  margin: 0 auto;
+  border-collapse: collapse;
 }
 
+/* Column widths for each column */
+.statusColumn,
+.statusCell {
+  width: 120px;
+}
+
+.sourceColumn,
+.sourceCell {
+  width: 220px;
+}
+
+.starredColumn,
+.starredCell {
+  width: 100px;
+}
+
+.problemColumn,
+.problemCell {
+  width: 250px;
+}
+
+.difficultyColumn,
+.difficultyCell {
+  width: 180px;
+}
+
+.tagsColumn,
+.tagsCell {
+  width: 250px;
+}
+
+/* Table cell padding and no border */
+th,
+td {
+  padding: 10px;
+  border: 0 !important; /* Ensure no borders are applied to any cell */
+}
+
+/* Alternating row colors in the table body */
+tbody tr:nth-child(even) {
+  background-color: #0000ff; /* Blue for even rows */
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #ff0000; /* Red for odd rows */
+}
+
+/* State Circle Styles */
 .stateCircle {
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
   display: inline-block;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-}
-
-.stateCircle:hover {
-  transform: scale(1.2);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: grey; /* Default */
 }
 
 .state0 {
-  background-color: #d3d3d3; /* Unseen */
+  background-color: grey;
 }
 
 .state1 {
-  background-color: #ffa500; /* Skipped */
+  background-color: blue;
 }
 
 .state2 {
-  background-color: #32cd32; /* Solved */
+  background-color: green;
+}
+
+/* Hyperlink Styles */
+.problemLink {
+  text-decoration: none;
+  color: #0073e6;
+  font-weight: bold;
+}
+
+/* Starred Problems */
+.starredCell {
+  font-size: 20px;
+}
+
+/* Apply pink background to the header row cells */
+thead th {
+  background-color: pink;
+  color: white;
+  padding: 10px;
 }
 
 .dropdownMenu {
   background-color: white;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  padding: 0.5rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  z-index: 100;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
 }
 
 .dropdownMenu ul {
-  list-style: none;
-  padding: 0;
+  list-style-type: none;
   margin: 0;
+  padding: 0;
 }
 
 .dropdownMenu ul li {
-  padding: 0.5rem 1rem;
+  padding: 4px 8px;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  color: black; 
 }
 
 .dropdownMenu ul li:hover {
-  background-color: #f0f0f0;
+  background-color: #009900;
 }
 
-.sourceCell,
-.starredCell,
-.problemCell,
-.difficultyCell,
-.tagsCell {
-  font-size: 1rem;
-  color: #333;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.problemCell a {
-  color: #007bff;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.problemCell a:hover {
-  text-decoration: underline;
-}
-
-.starredCell {
-  font-size: 1.2rem;
-}
-
-.tagsCell {
-  font-style: italic;
-  color: #666;
-}
-
-.problemDetails strong {
-  color: #555;
-  margin-right: 0.5rem;
-}

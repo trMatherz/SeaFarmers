@@ -107,70 +107,61 @@ const SampleProblem = ({ moduleName, topicId, location }) => {
 
   return (
     <div>
-        {topicData && topicData.problems && (
-            topicData.problems
-            .find((problem) => problem.location === location) && (
-                <div className={styles.problemDetails} style={{ display: 'flex', flexWrap: 'nowrap' }}>
-                {(() => {
-                    const problem = topicData.problems.find((p) => p.location === location);
-                    return (
-                    <>
-                        <div className={styles.statusCell} style={{ display: 'inline-block', marginRight: '10px' }}>
-                        <span
-                            className={`${styles.stateCircle} ${styles[`state${problem.state}`]}`}
-                            onClick={(event) => toggleDropdown(problem.uniqueId, event)} // Pass the click event
-                        ></span>
-                        {dropdownOpen === problem.uniqueId && (
-                            <div
-                            className={styles.dropdownMenu}
-                            style={{
-                                position: 'absolute',
-                                top: `${dropdownPosition.top}px`,
-                                left: `${dropdownPosition.left}px`,
-                            }}
-                            >
-                            <ul>
-                                <li onClick={() => updateProblemState(problem, 2)}>Solved</li>
-                                <li onClick={() => updateProblemState(problem, 1)}>Skipped</li>
-                                <li onClick={() => updateProblemState(problem, 0)}>Unseen</li>
-                            </ul>
-                            </div>
-                        )}
-                        </div>
-                        <div className={styles.sourceCell} style={{ display: 'inline-block', marginRight: '10px' }}>
-                        <strong>Source:</strong> {problem.source}
-                        </div>
-                        <div className={styles.starredCell} style={{ display: 'inline-block', marginRight: '10px' }}>
-                        <strong>Starred:</strong> {problem.star ? '⭐' : 'No'}
-                        </div>
-                        <div className={styles.problemCell} style={{ display: 'inline-block', marginRight: '10px' }}>
-                        <strong>Problem:</strong>
-                        <a
-                            href={problem.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className={styles.problemLink}
+      {topicData && topicData.problems && (
+        <table className={styles.problemTable}>
+          <tbody>
+            {topicData.problems
+                .find((problem) => problem.location === location) && (
+                <tr key={problem.uniqueId || index}>
+                    <td className={styles.statusCell}>
+                    <span
+                        className={`${styles.stateCircle} ${styles[`state${problem.state}`]}`}
+                        onClick={(event) => toggleDropdown(index, event)} // Pass the click event
+                    >
+                    </span>
+                    {dropdownOpen === index && ( // Conditionally render dropdown
+                        <div
+                        className={styles.dropdownMenu}
+                        style={{
+                            position: 'absolute',
+                            top: `${dropdownPosition.top}px`,
+                            left: `${dropdownPosition.left}px`,
+                        }}
                         >
-                            {problem.name}
-                        </a>
+                        <ul>
+                            <li onClick={() => updateProblemState(problem, 2)}>Solved</li>
+                            <li onClick={() => updateProblemState(problem, 1)}>Skipped</li>
+                            <li onClick={() => updateProblemState(problem, 0)}>Unseen</li>
+                        </ul>
                         </div>
-                        <div className={styles.difficultyCell} style={{ display: 'inline-block', marginRight: '10px' }}>
-                        <strong>Difficulty:</strong> {problem.difficulty}
-                        </div>
-                        <div className={styles.tagsCell} style={{ display: 'inline-block' }}>
-                        <strong>Tags:</strong> {problem.tags && Array.isArray(problem.tags)
-                            ? problem.tags.join(', ')
-                            : 'No tags'}
-                        </div>
-                    </>
-                    );
-                })()}
-                </div>
-            )
-        )}
-        </div>
+                    )}
+                    </td>
+                    <td className={styles.sourceCell}>{problem.source}</td>
+                    <td className={styles.starredCell}>{problem.star ? '⭐' : ''}</td>
+                    <td className={styles.problemCell}>
+                    <a
+                        href={problem.link}  // Use problem.link instead of problem.url
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.problemLink}
+                    >
+                        {problem.name}
+                    </a>
+                    </td>
+                    <td className={styles.difficultyCell}>{problem.difficulty}</td>
+                    <td className={styles.tagsCell}>
+                    {problem.tags && Array.isArray(problem.tags)
+                        ? problem.tags.join(', ')
+                        : 'No tags'}
+                    </td>
+                </tr>
+                )}
+            </tbody>
 
+        </table>
+      )}
+    </div>
   );
 };
 
-export default SampleProblem; 
+export default SampleProblem;
