@@ -152,7 +152,7 @@ app.get('/auth/github/callback',
 // API to fetch user details
 app.get('/api/user', async (req, res) => {
   const { userId } = req.query;
-  if(userId == "guest") res.status(400).json({ message: "Guest users cannot proceed with this request." });
+  if(userId == "guest") return res.status(400).json({ message: "Guest users cannot proceed with this request." });
   const user = await User.findOne({ _id: userId });
   if(!user) throw new Error(`User with ID ${userId} not found.`);
   res.json({
@@ -390,7 +390,7 @@ app.post('/api/problem/updateState', async (req, res) => {
   const { moduleName, topicId, problemId, newState } = req.body;
  
   const { userId } = req.query;
-  if(userId == "guest") res.status(400).json({ message: "Guest users cannot proceed with this request." });
+  if(userId == "guest") return res.status(400).json({ message: "Guest users cannot proceed with this request." });
   const user = await User.findOne({ _id: userId });
   if(!user) throw new Error(`User with ID ${userId} not found.`);
   if (!user) throw new Error(`User with ID ${userId} not found.`);
@@ -437,7 +437,7 @@ app.post('/api/problem/updateState', async (req, res) => {
 app.post('/api/topic/updateState', async (req, res) => {
   const { moduleName, topicId, newState } = req.body;
   const { userId } = req.query;
-  if(userId == "guest") res.status(400).json({ message: "Guest users cannot proceed with this request." });
+  if(userId == "guest") return res.status(400).json({ message: "Guest users cannot proceed with this request." });
   const user = await User.findOne({ _id: userId });
   if(!user) throw new Error(`User with ID ${userId} not found.`);
   try {
