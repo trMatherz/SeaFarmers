@@ -16,7 +16,7 @@ const ProblemList = ({ moduleName, topicId, location }) => {
     async function fetchModuleData() {
       setLoading(true);
       try {
-        const userId = sessionStorage.getItem('userId');
+        const userId = sessionStorage.getItem('userId') || "guest";
 
         if (!userId) {
           throw new Error('User ID not found in session storage');
@@ -66,7 +66,7 @@ const ProblemList = ({ moduleName, topicId, location }) => {
   const updateProblemState = async (problem, newState) => {
     const problemId = problem.problemId; 
     try {
-      const userId = sessionStorage.getItem('userId');
+      const userId = sessionStorage.getItem('userId') || "guest";
 
       if (!userId) {
         throw new Error('User ID not found in session storage');

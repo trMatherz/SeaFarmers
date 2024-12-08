@@ -14,7 +14,7 @@ const ResourceList = ({ moduleName, topicId }) => {
     async function fetchModuleData() {
       setLoading(true);
       try {
-        const userId = sessionStorage.getItem('userId');
+        const userId = sessionStorage.getItem('userId') || "guest";
 
         if (!userId) {
           throw new Error('User ID not found in session storage');
