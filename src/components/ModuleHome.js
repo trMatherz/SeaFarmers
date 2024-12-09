@@ -117,8 +117,7 @@ function ModuleHome({
                     (matchingTopic, subIndex) =>
                       matchingTopic && (
                         <li key={subIndex}>
-                          <a href={`/SeaFarmers/modules/${moduleName}/${matchingTopic.topicId}`} 
-                            target="_blank" rel="noopener noreferrer">
+                          <a href={`/SeaFarmers/modules/${moduleName}/${matchingTopic.topicId}`}>
                             {matchingTopic.topicName}
                           </a>
                         </li>

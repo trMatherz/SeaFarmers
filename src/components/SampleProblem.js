@@ -49,43 +49,35 @@ const SampleProblem = ({ moduleName, topicId, location }) => {
 
   const toggleDropdown = (index, event) => {
     if (dropdownOpen === index) {
-      // Close dropdown if it's already open
       setDropdownOpen(null);
       setDropdownPosition({});
     } else {
-      // Calculate position and open dropdown
       const rect = event.target.getBoundingClientRect();
       setDropdownPosition({
-        top: rect.bottom + window.scrollY, // Position just below the circle
-        left: rect.left + window.scrollX, // Align with the circle
+        top: rect.bottom + window.scrollY,
+        left: rect.left + window.scrollX,
       });
       setDropdownOpen(index);
     }
   };
 
   const updateProblemState = async (problem, newState) => {
-    const problemId = problem.problemId; 
+    const problemId = problem.problemId;
     try {
       const userId = sessionStorage.getItem('userId') || "guest";
 
       if (!userId) {
         throw new Error('User ID not found in session storage');
       }
-      const response = await axios.post(`${backendUrl}/api/problem/updateState?userId=${userId}`, {
-        moduleName,
-        topicId,
-        problemId,
-        newState,
-      }, {
-        withCredentials: true,  // Ensures cookies are sent with the request
-      });
+      await axios.post(
+        `${backendUrl}/api/problem/updateState?userId=${userId}`,
+        { moduleName, topicId, problemId, newState },
+        { withCredentials: true }
+      );
       setTopicData((prevTopicData) => {
-        // Find the problem in the topicData.problems array and update its state
         const updatedProblems = prevTopicData.problems.map((p) =>
           p.problemId === problemId ? { ...p, state: newState } : p
         );
-  
-        // Return the updated topicData with the modified problems array
         return { ...prevTopicData, problems: updatedProblems };
       });
       setDropdownOpen(null);
@@ -94,8 +86,9 @@ const SampleProblem = ({ moduleName, topicId, location }) => {
     }
   };
 
-  
-  
+  const toggleHelpDropdown = (index) => {
+    setDropdownOpen(dropdownOpen === index ? null : index);
+  };
 
   if (loading) {
     return <p>Loading data...</p>;
@@ -168,13 +161,32 @@ const SampleProblem = ({ moduleName, topicId, location }) => {
                     </td>
                     <td className={styles.helpCell}>
                       {problem.helps && problem.helps.length > 0 ? (
-                        <select className={styles.helpDropdown}>
-                          {problem.helps.map((help, helpIndex) => (
-                            <option key={helpIndex} value={help.link}>
-                              {help.name}
-                            </option>
-                          ))}
-                        </select>
+                        <div className={styles.dropdownContainer}>
+                          <button
+                            className={styles.helpButton}
+                            onClick={() => toggleHelpDropdown(index)}
+                          >
+                            Show Helps
+                          </button>
+                          {dropdownOpen === index && (
+                            <div className={styles.helpDropdownMenu}>
+                              <ul>
+                                {problem.helps.map((help, helpIndex) => (
+                                  <li key={helpIndex}>
+                                    <a
+                                      href={help.link}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      className={styles.helpLink}
+                                    >
+                                      {help.name}
+                                    </a>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          )}
+                        </div>
                       ) : (
                         'No help available'
                       )}
@@ -191,7 +203,6 @@ const SampleProblem = ({ moduleName, topicId, location }) => {
       ) : (
         <p>No problems data available.</p>
       )}
-
     </div>
   );
 };
