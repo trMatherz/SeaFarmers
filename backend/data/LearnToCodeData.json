@@ -46,7 +46,17 @@
           "difficulty": 1,
           "star": 1,
           "tags": ["one", "two"],
-          "link": "https://cses.fi/problemset/"
+          "link": "https://cses.fi/problemset/",
+          "helps": [
+            {
+              "name": "My soution",
+              "link": "https://cses.fi/problemset/"
+            },
+            {
+              "name": "Official Solution",
+              "link": "https://cses.fi/problemset/9090"
+            }
+          ]
         },
         {
           "problemId": "var2",

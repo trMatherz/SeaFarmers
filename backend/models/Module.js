@@ -1,5 +1,10 @@
 const mongoose = require('mongoose');
 
+const HelpSchema = new mongoose.Schema({
+  name: { type: String, required: true }, 
+  link:  { type: String, required: true, default: "" }, 
+});
+
 const ProblemSchema = new mongoose.Schema({
   problemId: { type: String, required: true, unique: true }, // Unique ID for the problem
   location: { type: String, required: true, unique: true }, 
@@ -10,6 +15,7 @@ const ProblemSchema = new mongoose.Schema({
   difficulty: { type: Number, required: true, default: 0 }, // Difficulty level (e.g., 1 to 5), default set to 0
   tags: [String], // The source of the problem (e.g., platform name), default set to empty string
   link:  { type: String, required: true, default: "" }, 
+  helps: [HelpSchema],
 });
 
 const ResourceSchema = new mongoose.Schema({

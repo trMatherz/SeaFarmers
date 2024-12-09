@@ -1,12 +1,13 @@
-/* Set the table to have a fixed layout, so column widths are respected */
+/* Table Layout */
 .problemTable {
   width: 100%;
   table-layout: fixed;
   margin: 0 auto;
   border-collapse: collapse;
+  border: 1px solid #ccc; /* Light border around the table for better visibility */
 }
 
-/* Column widths for each column */
+/* Column Widths */
 .statusColumn,
 .statusCell {
   width: 120px;
@@ -37,20 +38,26 @@
   width: 250px;
 }
 
-/* Table cell padding and no border */
-th,
-td {
-  padding: 10px;
-  border: 0 !important; /* Ensure no borders are applied to any cell */
+.helpColumn,
+.helpCell {
+  width: 180px;
 }
 
-/* Alternating row colors in the table body */
+/* Cell Padding and Borders */
+th,
+td {
+  padding: 12px;
+  border: 1px solid #ccc; /* Subtle borders between cells */
+  text-align: center; /* Center-align content */
+}
+
+/* Alternating Row Colors */
 tbody tr:nth-child(even) {
-  background-color: #0000ff; /* Blue for even rows */
+  background-color: #f0f8ff; /* Light blue for even rows */
 }
 
 tbody tr:nth-child(odd) {
-  background-color: #ff0000; /* Red for odd rows */
+  background-color: #ffe4e1; /* Light red for odd rows */
 }
 
 /* State Circle Styles */
@@ -59,7 +66,7 @@ tbody tr:nth-child(odd) {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background-color: grey; /* Default */
+  border: 2px solid #fff; /* White border for contrast */
 }
 
 .state0 {
@@ -81,22 +88,33 @@ tbody tr:nth-child(odd) {
   font-weight: bold;
 }
 
+.problemLink:hover {
+  text-decoration: underline;
+  color: #005bb5; /* Darker blue on hover */
+}
+
 /* Starred Problems */
 .starredCell {
   font-size: 20px;
+  color: gold; /* Gold color for starred problems */
 }
 
-/* Apply pink background to the header row cells */
+/* Header Row Styles */
 thead th {
-  background-color: pink;
+  background-color: #ff69b4; /* Bright pink for headers */
   color: white;
-  padding: 10px;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 12px;
 }
 
+/* Dropdown Menu Styles */
 .dropdownMenu {
   background-color: white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
   z-index: 1000;
+  position: absolute;
 }
 
 .dropdownMenu ul {
@@ -106,12 +124,30 @@ thead th {
 }
 
 .dropdownMenu ul li {
-  padding: 4px 8px;
+  padding: 8px 12px;
   cursor: pointer;
-  color: black; 
+  color: black;
+  font-size: 14px;
 }
 
 .dropdownMenu ul li:hover {
-  background-color: #009900;
+  background-color: #32cd32; /* Lime green for hover effect */
+  color: white;
 }
 
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .problemTable {
+    font-size: 14px; /* Adjust font size for smaller screens */
+  }
+
+  th,
+  td {
+    padding: 8px;
+  }
+
+  .stateCircle {
+    width: 15px;
+    height: 15px;
+  }
+}

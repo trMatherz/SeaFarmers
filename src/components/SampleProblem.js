@@ -66,7 +66,7 @@ const SampleProblem = ({ moduleName, topicId, location }) => {
   const updateProblemState = async (problem, newState) => {
     const problemId = problem.problemId; 
     try {
-        const userId = sessionStorage.getItem('userId') || "guest";
+      const userId = sessionStorage.getItem('userId') || "guest";
 
       if (!userId) {
         throw new Error('User ID not found in session storage');
@@ -107,64 +107,91 @@ const SampleProblem = ({ moduleName, topicId, location }) => {
 
   return (
     <div>
-      {topicData && topicData.problems && (
+      {topicData?.problems?.length > 0 ? (
         <table className={styles.problemTable}>
+          <thead>
+            <tr>
+              <th>Status</th>
+              <th>Source</th>
+              <th>Starred</th>
+              <th>Problem</th>
+              <th>Difficulty</th>
+              <th>Tags</th>
+              <th>Help</th>
+            </tr>
+          </thead>
           <tbody>
-            {topicData.problems
-                .find((problem) => problem.location === location) ? (
-                // Only render the row if a matching problem is found
-                <tr key={problem.uniqueId || index}>
-                <td className={styles.statusCell}>
-                    <span
-                    className={`${styles.stateCircle} ${styles[`state${problem.state}`]}`}
-                    onClick={(event) => toggleDropdown(index, event)} // Pass the click event
-                    ></span>
-                    {dropdownOpen === index && ( // Conditionally render dropdown
-                    <div
-                        className={styles.dropdownMenu}
-                        style={{
-                        position: 'absolute',
-                        top: `${dropdownPosition.top}px`,
-                        left: `${dropdownPosition.left}px`,
-                        }}
-                    >
-                        <ul>
-                        <li onClick={() => updateProblemState(problem, 2)}>Solved</li>
-                        <li onClick={() => updateProblemState(problem, 1)}>Skipped</li>
-                        <li onClick={() => updateProblemState(problem, 0)}>Unseen</li>
-                        </ul>
-                    </div>
-                    )}
-                </td>
-                <td className={styles.sourceCell}>{problem.source}</td>
-                <td className={styles.starredCell}>{problem.star ? '⭐' : ''}</td>
-                <td className={styles.problemCell}>
-                    <a
-                    href={problem.link}  // Use problem.link instead of problem.url
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.problemLink}
-                    >
-                    {problem.name}
-                    </a>
-                </td>
-                <td className={styles.difficultyCell}>{problem.difficulty}</td>
-                <td className={styles.tagsCell}>
-                    {problem.tags && Array.isArray(problem.tags)
-                    ? problem.tags.join(', ')
-                    : 'No tags'}
-                </td>
-                </tr>
+            {topicData.problems.some((problem) => problem.location === location) ? (
+              topicData.problems
+                .filter((problem) => problem.location === location)
+                .map((problem, index) => (
+                  <tr key={problem.uniqueId || index}>
+                    <td className={styles.statusCell}>
+                      <span
+                        className={`${styles.stateCircle} ${styles[`state${problem.state}`]}`}
+                        onClick={(event) => toggleDropdown(index, event)}
+                      ></span>
+                      {dropdownOpen === index && (
+                        <div
+                          className={styles.dropdownMenu}
+                          style={{
+                            position: 'absolute',
+                            top: `${dropdownPosition.top}px`,
+                            left: `${dropdownPosition.left}px`,
+                          }}
+                        >
+                          <ul>
+                            <li onClick={() => updateProblemState(problem, 2)}>Solved</li>
+                            <li onClick={() => updateProblemState(problem, 1)}>Skipped</li>
+                            <li onClick={() => updateProblemState(problem, 0)}>Unseen</li>
+                          </ul>
+                        </div>
+                      )}
+                    </td>
+                    <td className={styles.sourceCell}>{problem.source}</td>
+                    <td className={styles.starredCell}>{problem.star ? '⭐' : ''}</td>
+                    <td className={styles.problemCell}>
+                      <a
+                        href={problem.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.problemLink}
+                      >
+                        {problem.name}
+                      </a>
+                    </td>
+                    <td className={styles.difficultyCell}>{problem.difficulty || 'Unknown'}</td>
+                    <td className={styles.tagsCell}>
+                      {problem.tags && Array.isArray(problem.tags)
+                        ? problem.tags.join(', ')
+                        : 'No tags'}
+                    </td>
+                    <td className={styles.helpCell}>
+                      {problem.helps && problem.helps.length > 0 ? (
+                        <select className={styles.helpDropdown}>
+                          {problem.helps.map((help, helpIndex) => (
+                            <option key={helpIndex} value={help.link}>
+                              {help.name}
+                            </option>
+                          ))}
+                        </select>
+                      ) : (
+                        'No help available'
+                      )}
+                    </td>
+                  </tr>
+                ))
             ) : (
-                // You can optionally render a message if no matching problem is found
-                <tr>
-                <td colSpan="6">No problems found for this location.</td>
-                </tr>
+              <tr>
+                <td colSpan="7">No problems found for this location.</td>
+              </tr>
             )}
-            </tbody>
-
+          </tbody>
         </table>
+      ) : (
+        <p>No problems data available.</p>
       )}
+
     </div>
   );
 };
