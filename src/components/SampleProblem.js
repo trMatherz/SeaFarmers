@@ -9,8 +9,10 @@ const SampleProblem = ({ moduleName, topicId, location }) => {
   const [topicData, setTopicData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [dropdownOpen, setDropdownOpen] = useState(null); // Track which dropdown is open
-  const [dropdownPosition, setDropdownPosition] = useState({}); // Store dropdown position dynamically
+  const [dropdownOpen, setDropdownOpen] = useState(null); 
+  const [dropdownPosition, setDropdownPosition] = useState({}); 
+  const [helpDropdownOpen, setHelpDropdownOpen] = useState(null); 
+  const [helpDropdownPosition, setHelpDropdownPosition] = useState({}); 
 
   useEffect(() => {
     async function fetchModuleData() {
@@ -61,6 +63,21 @@ const SampleProblem = ({ moduleName, topicId, location }) => {
     }
   };
 
+  const toggleHelpDropdown = (index, event) => {
+    if (helpDropdownOpen === index) {
+      setHelpDropdownOpen(null);
+      setHelpDropdownPosition({});
+    } else {
+      const rect = event.target.getBoundingClientRect();
+      setHelpDropdownPosition({
+        top: rect.bottom + window.scrollY,
+        left: rect.left + window.scrollX,
+      });
+      setHelpDropdownOpen(index);
+    }
+  };
+  
+
   const updateProblemState = async (problem, newState) => {
     const problemId = problem.problemId;
     try {
@@ -84,10 +101,6 @@ const SampleProblem = ({ moduleName, topicId, location }) => {
     } catch (error) {
       console.error('Error updating problem state:', error);
     }
-  };
-
-  const toggleHelpDropdown = (index) => {
-    setDropdownOpen(dropdownOpen === index ? null : index);
   };
 
   if (loading) {
@@ -160,37 +173,40 @@ const SampleProblem = ({ moduleName, topicId, location }) => {
                         : 'No tags'}
                     </td>
                     <td className={styles.helpCell}>
-                      {problem.helps && problem.helps.length > 0 ? (
-                        <div className={styles.dropdownContainer}>
-                          <button
-                            className={styles.helpButton}
-                            onClick={() => toggleHelpDropdown(index)}
-                          >
-                            Show Helps
-                          </button>
-                          {dropdownOpen === index && (
-                            <div className={styles.helpDropdownMenu}>
-                              <ul>
-                                {problem.helps.map((help, helpIndex) => (
-                                  <li key={helpIndex}>
-                                    <a
-                                      href={help.link}
-                                      target="_blank"
-                                      rel="noopener noreferrer"
-                                      className={styles.helpLink}
-                                    >
-                                      {help.name}
-                                    </a>
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
-                          )}
+                      <span
+                        className={styles.helpButton}
+                        onClick={(event) => toggleHelpDropdown(index, event)}
+                      >
+                        Show Helps
+                      </span>
+                      {helpDropdownOpen === index && (
+                        <div
+                          className={styles.helpDropdownMenu}
+                          style={{
+                            position: 'absolute',
+                            top: `${helpDropdownPosition.top}px`,
+                            left: `${helpDropdownPosition.left}px`,
+                          }}
+                        >
+                          <ul>
+                            {problem.helps.map((help, helpIndex) => (
+                              <li key={helpIndex}>
+                                <a
+                                  href={help.link}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className={styles.helpLink}
+                                >
+                                  {help.name}
+                                </a>
+                              </li>
+                            ))}
+                          </ul>
                         </div>
-                      ) : (
-                        'No help available'
                       )}
                     </td>
+
+
                   </tr>
                 ))
             ) : (
