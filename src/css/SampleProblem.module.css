@@ -10,37 +10,37 @@
 /* Column Widths */
 .statusColumn,
 .statusCell {
-  width: 150px;
+  width: 200px;
 }
 
 .sourceColumn,
 .sourceCell {
-  width: 220px;
+  width: 300px;
 }
 
 .starredColumn,
 .starredCell {
-  width: 100px;
+  width: 24px00px;
 }
 
 .problemColumn,
 .problemCell {
-  width: 250px;
+  width: 300px;
 }
 
 .difficultyColumn,
 .difficultyCell {
-  width: 180px;
+  width: 200px;
 }
 
 .tagsColumn,
 .tagsCell {
-  width: 250px;
+  width: 300px;
 }
 
 .helpColumn,
 .helpCell {
-  width: 180px;
+  width: 300px;
 }
 
 /* Cell Padding and Borders */

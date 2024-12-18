@@ -76,16 +76,78 @@
     margin-top: 5px;
   }
   
-  .genericTopicsContainer ul li {
-    color: #ffffff;
-  }
   
-  .genericTopicsContainer ul li a {
-    color: #ffffff;
-    text-decoration: none;
+  /* Flex container for topics */
+.topicsContainer {
+  display: flex;
+  flex-direction: column; /* Arrange rows vertically */
+  gap: 20px; /* Add spacing between rows */
+}
+
+/* Row for each generic and specific topic pair */
+.topicRow {
+  display: flex;
+  justify-content: center; /* Center the split */
+  align-items: center; /* Align content vertically */
+  gap: 40px; /* Add spacing between the two sections */
+  position: relative; /* For adding the middle line */
+}
+
+/* Left column for generic topics */
+.genericTopic {
+  flex: 1; /* Allow this section to take up equal space */
+  text-align: right; /* Align text to the right */
+}
+
+/* Right column for specific topics */
+.specificTopicsContainer {
+  flex: 1; /* Allow specific topics to take up equal space */
+  text-align: left; /* Align text to the left */
+}
+
+.specificTopicsContainer ul {
+  list-style-type: none; /* Remove bullets */
+  padding-left: 0;
+}
+
+.specificTopicsContainer ul li {
+  margin-bottom: 10px; /* Add spacing between list items */
+}
+
+.genericTopic h3,
+.specificTopicsContainer ul li a {
+  color: #ffffff; /* Use consistent color for headings and links */
+}
+
+.specificTopicsContainer ul li a {
+  text-decoration: none;
+}
+
+.specificTopicsContainer ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Middle line styling */
+.topicRow::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  background-color: #ffffff; /* Line color */
+  transform: translateX(-50%);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .topicRow {
+    flex-direction: column; /* Stack columns vertically on smaller screens */
+    gap: 10px;
   }
-  
-  .genericTopicsContainer ul li a:hover {
-    text-decoration: underline;
+
+  .topicRow::before {
+    display: none; /* Remove the middle line on smaller screens */
   }
-  
+}
+

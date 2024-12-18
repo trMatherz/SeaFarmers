@@ -40,11 +40,11 @@ function ModuleHome({
               <div className={styles.progressBar}>
                 <div
                   className={`${styles.progressFill} ${styles.unseen}`}
-                  style={{ width: `${(unseenProblems / totalProblems) * 100}%` }}
+                  style={{ width: `${100}%` }}
                 ></div>
                 <div
                   className={`${styles.progressFill} ${styles.skipped}`}
-                  style={{ width: `${(skippedProblems / totalProblems) * 100}%` }}
+                  style={{ width: `${((skippedProblems + solvedProblems) / totalProblems) * 100}%` }}
                 ></div>
                 <div
                   className={`${styles.progressFill} ${styles.solved}`}
@@ -72,11 +72,11 @@ function ModuleHome({
               <div className={styles.progressBar}>
                 <div
                   className={`${styles.progressFill} ${styles.unseen}`}
-                  style={{ width: `${(unseenTopics / totalTopics) * 100}%` }}
+                  style={{ width: `${100}%` }}
                 ></div>
                 <div
                   className={`${styles.progressFill} ${styles.skipped}`}
-                  style={{ width: `${(skippedTopics / totalTopics) * 100}%` }}
+                  style={{ width: `${((skippedTopics + solvedTopics) / totalTopics) * 100}%` }}
                 ></div>
                 <div
                   className={`${styles.progressFill} ${styles.solved}`}
@@ -102,32 +102,41 @@ function ModuleHome({
         </div>
 
 
+        
         <h3>Topics in This Module:</h3>
-        <div className={styles.genericTopicsContainer}>
-          {genericTopics.map((genericTopic, index) => {
-            const matchingTopics = genericTopic.topics.map((topicId) =>
-              topics.find((topic) => topic.topicId === topicId)
-            );
+          <div className={styles.topicsContainer}>
+            {genericTopics.map((genericTopic, index) => {
+              const matchingTopics = genericTopic.topics.map((topicId) =>
+                topics.find((topic) => topic.topicId === topicId)
+              );
 
-            return (
-              <div key={index} className={styles.genericTopic}>
-                <h3>{genericTopic.genericTopicName}</h3>
-                <ul>
-                  {matchingTopics.map(
-                    (matchingTopic, subIndex) =>
-                      matchingTopic && (
-                        <li key={subIndex}>
-                          <a href={`/SeaFarmers/modules/${moduleName}/${matchingTopic.topicId}`}>
-                            {matchingTopic.topicName}
-                          </a>
-                        </li>
-                      )
-                  )}
-                </ul>
-              </div>
-            );
-          })}
-        </div>
+              return (
+                <div key={index} className={styles.topicRow}>
+                  {/* Generic Topic on the Left */}
+                  <div className={styles.genericTopic}>
+                    <h3>{genericTopic.genericTopicName}</h3>
+                  </div>
+
+                  {/* Specific Topics on the Right */}
+                  <div className={styles.specificTopicsContainer}>
+                    <ul>
+                      {matchingTopics.map(
+                        (specificTopic, subIndex) =>
+                          specificTopic && (
+                            <li key={subIndex}>
+                              <a href={`/SeaFarmers/modules/${moduleName}/${specificTopic.topicId}`}>
+                                {specificTopic.topicName}
+                              </a>
+                            </li>
+                          )
+                      )}
+                    </ul>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
       </div>
     </Layout>
   );

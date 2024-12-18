@@ -15,13 +15,7 @@
       "genericTopicId": "Pre-Code",
       "genericTopicName": "Before You Code",
       "topics" : [
-        "TimeComplexity"
-      ]
-    },
-    {
-      "genericTopicId": "topic2",
-      "genericTopicName": "name2",
-      "topics" : [
+        "TimeComplexity",
         "conditionals"
       ]
     }
