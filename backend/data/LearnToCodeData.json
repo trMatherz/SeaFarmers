@@ -70,6 +70,9 @@
           "star": 0,
           "tags": ["onsssse", "two"],
           "link": "https://cses.fi/problemset/"
+         
+          
+          
         },
         {
           "problemId": "var3",
@@ -80,7 +83,17 @@
           "difficulty": 10,
           "star": 1,
           "tags": ["onssssddde", "tdddddwo", "osdoasdoasdsad"],
-          "link": "https://cses.fi/problemset/"
+          "link": "https://cses.fi/problemset/",
+          "helps": [
+            {
+              "name": "My soution",
+              "link": "https://cses.fi/problemset/"
+            },
+            {
+              "name": "Official Solution",
+              "link": "https://cses.fi/problemset/9090"
+            }
+          ]
         }
         
       ], 

@@ -52,6 +52,11 @@
   .descriptionColumn {
     width: 45%;
   }
+
+    .helpColumn,
+  .helpCell {
+    width: 300px;
+  }
   
   /* Link Styling */
   .resourceLink {

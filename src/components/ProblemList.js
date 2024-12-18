@@ -9,8 +9,11 @@ const ProblemList = ({ moduleName, topicId, location }) => {
   const [topicData, setTopicData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [dropdownOpen, setDropdownOpen] = useState(null); // Track which dropdown is open
-  const [dropdownPosition, setDropdownPosition] = useState({}); // Store dropdown position dynamically
+  const [dropdownOpen, setDropdownOpen] = useState(null); 
+  const [dropdownPosition, setDropdownPosition] = useState({});
+  const [helpDropdownOpen, setHelpDropdownOpen] = useState(null); 
+  const [helpDropdownPosition, setHelpDropdownPosition] = useState({}); 
+
 
   useEffect(() => {
     async function fetchModuleData() {
@@ -60,6 +63,20 @@ const ProblemList = ({ moduleName, topicId, location }) => {
         left: rect.left + window.scrollX, // Align with the circle
       });
       setDropdownOpen(index);
+    }
+  };
+
+  const toggleHelpDropdown = (index, event) => {
+    if (helpDropdownOpen === index) {
+      setHelpDropdownOpen(null);
+      setHelpDropdownPosition({});
+    } else {
+      const rect = event.target.getBoundingClientRect();
+      setHelpDropdownPosition({
+        top: rect.bottom + window.scrollY,
+        left: rect.left + window.scrollX,
+      });
+      setHelpDropdownOpen(index);
     }
   };
 
@@ -117,6 +134,7 @@ const ProblemList = ({ moduleName, topicId, location }) => {
               <th className={styles.problemColumn}>Problem</th>
               <th className={styles.difficultyColumn}>Difficulty</th>
               <th className={styles.tagsColumn}>Tags</th>
+              <th className={styles.helpColumn}>Help</th>
             </tr>
           </thead>
           <tbody>
@@ -165,8 +183,45 @@ const ProblemList = ({ moduleName, topicId, location }) => {
                         ? problem.tags.join(', ')
                         : 'No tags'}
                     </td>
+                    <td className={styles.helpCell}>
+                      <span
+                        className={styles.helpButton}
+                        onClick={(event) => toggleHelpDropdown(index, event)}
+                      >
+                        Show Helps
+                      </span>
+                      {helpDropdownOpen === index && (
+                        <div
+                          className={styles.helpDropdownMenu}
+                          style={{
+                            position: 'absolute',
+                            top: `${helpDropdownPosition.top}px`,
+                            left: `${helpDropdownPosition.left}px`,
+                          }}
+                        >
+                          <ul>
+                            {problem.helps && problem.helps.length > 0 ? (
+                              problem.helps.map((help, helpIndex) => (
+                                <li key={helpIndex}>
+                                  <a
+                                    href={help.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className={styles.helpLink}
+                                  >
+                                    {help.name}
+                                  </a>
+                                </li>
+                              ))
+                            ) : (
+                              <li>No helps</li>
+                            )}
+                          </ul>
+                        </div>
+                      )}
+                    </td>
                   </tr>
-                ) : null  // If problem is not defined, render nothing
+                ) : null  
               ))}
           </tbody>
         </table>

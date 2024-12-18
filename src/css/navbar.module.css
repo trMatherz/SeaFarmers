@@ -16,7 +16,8 @@
 .customNavbarItems {
   flex: 1; /* Allows flexible space allocation */
   display: flex;
-  justify-content: flex-start; /* Centers the dropdown */
+  justify-content: flex-start;  
+  padding-left: 20px;
   gap: 20px;
 }
 

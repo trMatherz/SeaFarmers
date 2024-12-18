@@ -117,13 +117,13 @@ const SampleProblem = ({ moduleName, topicId, location }) => {
         <table className={styles.problemTable}>
           <thead>
             <tr>
-              <th>Status</th>
-              <th>Source</th>
-              <th>Starred</th>
-              <th>Problem</th>
-              <th>Difficulty</th>
-              <th>Tags</th>
-              <th>Help</th>
+              <th className={styles.statusColumn}>Status</th>
+              <th className={styles.sourceColumn}>Source</th>
+              <th className={styles.starredColumn}>Starred</th>
+              <th className={styles.problemColumn}>Problem</th>
+              <th className={styles.difficultyColumn}>Difficulty</th>
+              <th className={styles.tagsColumn}>Tags</th>
+              <th className={styles.helpColumn}>Help</th>
             </tr>
           </thead>
           <tbody>
@@ -189,18 +189,22 @@ const SampleProblem = ({ moduleName, topicId, location }) => {
                           }}
                         >
                           <ul>
-                            {problem.helps.map((help, helpIndex) => (
-                              <li key={helpIndex}>
-                                <a
-                                  href={help.link}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  className={styles.helpLink}
-                                >
-                                  {help.name}
-                                </a>
-                              </li>
-                            ))}
+                            {problem.helps && problem.helps.length > 0 ? (
+                              problem.helps.map((help, helpIndex) => (
+                                <li key={helpIndex}>
+                                  <a
+                                    href={help.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className={styles.helpLink}
+                                  >
+                                    {help.name}
+                                  </a>
+                                </li>
+                              ))
+                            ) : (
+                              <li>No helps</li>
+                            )}
                           </ul>
                         </div>
                       )}

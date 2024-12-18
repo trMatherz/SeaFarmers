@@ -37,6 +37,11 @@
   width: 250px;
 }
 
+.helpColumn,
+.helpCell {
+  width: 300px;
+}
+
 /* Table cell padding and no border */
 th,
 td {
