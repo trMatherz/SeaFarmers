@@ -73,7 +73,7 @@ function Sidebar({ moduleName }) {
                   (matchingTopic, subIndex) =>
                     matchingTopic && (
                       <li key={subIndex}>
-                         <a href={`/SeaFarmers/modules/${moduleName}/${matchingTopic.topicId}`}>
+                         <a href={`/SeaFarmers/modules/${moduleName}/${matchingTopic.topicId}/`}>
                               {matchingTopic.topicName}
                             </a>
                       </li>
