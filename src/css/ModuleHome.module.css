@@ -151,3 +151,14 @@
   }
 }
 
+.state0 {
+  background-color: grey;  /* Unseen */
+}
+
+.state1 {
+  background-color: blue;  /* Skipped */
+}
+
+.state2 {
+  background-color: green; /* Solved */
+}

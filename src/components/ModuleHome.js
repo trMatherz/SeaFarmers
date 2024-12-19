@@ -36,7 +36,7 @@ function ModuleHome({
 
           <div className={styles.progressCardsContainer}>
             <div className={styles.progressCard}>
-              <h3>Progress on Problems</h3>
+              <h3>Problems</h3>
               <div className={styles.progressBar}>
                 <div
                   className={`${styles.progressFill} ${styles.unseen}`}
@@ -68,7 +68,7 @@ function ModuleHome({
             </div>
 
             <div className={styles.progressCard}>
-              <h3>Progress on Topics</h3>
+              <h3>Topics</h3>
               <div className={styles.progressBar}>
                 <div
                   className={`${styles.progressFill} ${styles.unseen}`}
@@ -103,7 +103,7 @@ function ModuleHome({
 
 
         
-        <h3>Topics in This Module:</h3>
+       
           <div className={styles.topicsContainer}>
             {genericTopics.map((genericTopic, index) => {
               const matchingTopics = genericTopic.topics.map((topicId) =>
@@ -123,11 +123,11 @@ function ModuleHome({
                       {matchingTopics.map(
                         (specificTopic, subIndex) =>
                           specificTopic && (
-                            <li key={subIndex}>
+                            <li key={subIndex} className={`state${specificTopic.state}`}>
                               <a href={`/SeaFarmers/modules/${moduleName}/${specificTopic.topicId}`}>
                                 {specificTopic.topicName}
                               </a>
-                            </li>
+                          </li>
                           )
                       )}
                     </ul>

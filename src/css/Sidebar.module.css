@@ -1,7 +1,21 @@
-/* Sidebar container */
+/* Specific styling for matchingTopic list items */
+ul li.matchingTopic {
+  background-color: lightgrey; /* Light grey background */
+  color: black; /* Black text for better readability */
+  padding: 10px 0;
+  font-size: 1em;
+  border-radius: 4px; /* Optional: slightly rounded corners */
+}
+
+/* Hover effect for matchingTopic list items */
+ul li.matchingTopic:hover {
+  background-color: rgba(211, 211, 211, 0.8); /* Slightly darker grey on hover */
+  cursor: pointer;
+}
+
 /* Sidebar container */
 .sidebarContainer {
-  width: 250px; /* Adjust width based on your needs */
+  width: 300px; 
   padding: 20px;
   background-color: #003366; /* Dark blue background */
   position: fixed; /* Fixed positioning on the left of the screen */
@@ -20,7 +34,6 @@
   margin-bottom: 20px;
   background-color: #003366; /* Dark blue background */
 }
-
 
 /* Dropdown container (optional, adjust if needed) */
 .dropdown {
@@ -49,7 +62,7 @@ ul li {
   color: white; /* White text for topics */
 }
 
-/* Hover effect on list items */
+/* Hover effect on general list items */
 ul li:hover {
   background-color: rgba(255, 255, 255, 0.1); /* Light hover effect */
   cursor: pointer;
@@ -65,5 +78,5 @@ p {
   color: #ffffff; /* White text in dropdown */
   font-size: 1.1em;
   font-weight: 600;
-  margin-left: 20px; /* Adjust positioning */
+  margin-left: 50px; /* Adjust positioning */
 }

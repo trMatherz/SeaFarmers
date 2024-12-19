@@ -1,8 +1,8 @@
 /* Table Layout */
 .problemTable {
-  width: 100%;
   table-layout: fixed;
-  margin: 0 auto;
+  width: 110%; 
+  margin-left: 100px; 
   border-collapse: collapse;
   border: 1px solid #ccc; /* Light border around the table for better visibility */
 }
@@ -10,7 +10,7 @@
 /* Column Widths */
 .statusColumn,
 .statusCell {
-  width: 400px;
+  width: 600px; 
 }
 
 .sourceColumn,
@@ -20,12 +20,12 @@
 
 .starredColumn,
 .starredCell {
-  width: 24px00px;
+  width: 2400px;
 }
 
 .problemColumn,
 .problemCell {
-  width: 300px;
+  width: 3000px;
 }
 
 .difficultyColumn,
@@ -135,19 +135,4 @@ thead th {
   color: white;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  .problemTable {
-    font-size: 14px; /* Adjust font size for smaller screens */
-  }
 
-  th,
-  td {
-    padding: 8px;
-  }
-
-  .stateCircle {
-    width: 15px;
-    height: 15px;
-  }
-}

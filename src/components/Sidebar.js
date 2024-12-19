@@ -72,11 +72,12 @@ function Sidebar({ moduleName }) {
                 {matchingTopics.map(
                   (matchingTopic, subIndex) =>
                     matchingTopic && (
-                      <li key={subIndex}>
-                         <a href={`/SeaFarmers/modules/${moduleName}/${matchingTopic.topicId}/`}>
-                              {matchingTopic.topicName}
-                            </a>
+                      <li key={subIndex} className="matchingTopic">
+                        <a href={`/SeaFarmers/modules/${moduleName}/${matchingTopic.topicId}/`}>
+                          {matchingTopic.topicName}
+                        </a>
                       </li>
+
                     )
                 )}
               </ul>

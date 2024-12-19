@@ -96,6 +96,9 @@ const TopicProgress = ({ moduleName, topicId }) => {
 
     return (
         <div className={styles.topicProgress}>
+            <div className="label">
+                Topic Progress: 
+            </div>
             <div
                 className={`${styles.stateCircle} ${styles[`state${topicData?.state ?? 0}`]}`}
                 onClick={toggleDropdown} // Toggle dropdown when the circle is clicked
@@ -103,12 +106,18 @@ const TopicProgress = ({ moduleName, topicId }) => {
             
             {/* Dropdown to change state */}
             {dropdownVisible && (
-                <div className={styles.dropdown}>
-                    <div onClick={() => handleStateChange(0)} className={styles.dropdownItem}>Unseen</div>
-                    <div onClick={() => handleStateChange(1)} className={styles.dropdownItem}>Skipped</div>
-                    <div onClick={() => handleStateChange(2)} className={styles.dropdownItem}>Solved</div>
+                <div className="dropdown">
+                    <div onClick={() => handleStateChange(0)} className="dropdownItem">
+                    Unseen
+                    </div>
+                    <div onClick={() => handleStateChange(1)} className="dropdownItem">
+                    Skipped
+                    </div>
+                    <div onClick={() => handleStateChange(2)} className="dropdownItem">
+                    Solved
+                    </div>
                 </div>
-            )}
+                )}
         </div>
     );
 };

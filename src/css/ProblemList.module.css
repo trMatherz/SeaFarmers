@@ -1,8 +1,8 @@
 /* Set the table to have a fixed layout, so column widths are respected */
 .problemTable {
-  width: 100%;
   table-layout: fixed;
-  margin: 0 auto;
+  width: 110%;
+  margin-left: 100px; 
   border-collapse: collapse;
 }
 
