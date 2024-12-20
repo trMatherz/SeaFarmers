@@ -1,13 +1,13 @@
 /* Table Layout */
 .problemTable {
-  table-layout: fixed;
-  width: 110%; 
+  width: auto;
+  table-layout: auto;
   margin-left: 100px; 
   border-collapse: collapse;
   border: 1px solid #ccc; /* Light border around the table for better visibility */
 }
 
-/* Column Widths */
+
 .statusColumn,
 .statusCell {
   width: 600px; 

@@ -152,13 +152,13 @@
 }
 
 .state0 {
-  background-color: grey;  /* Unseen */
+  background-color: grey;  
 }
 
 .state1 {
-  background-color: blue;  /* Skipped */
+  background-color: blue; 
 }
 
 .state2 {
-  background-color: green; /* Solved */
+  background-color: green;
 }

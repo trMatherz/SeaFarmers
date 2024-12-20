@@ -96,7 +96,7 @@ const TopicProgress = ({ moduleName, topicId }) => {
 
     return (
         <div className={styles.topicProgress}>
-            <div className="label">
+            <div className={styles.label}>
                 Topic Progress: 
             </div>
             <div
