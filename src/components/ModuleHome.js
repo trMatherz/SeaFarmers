@@ -127,7 +127,7 @@ function ModuleHome({
                               <a href={`/SeaFarmers/modules/${moduleName}/${specificTopic.topicId}`}>
                                 {specificTopic.topicName}
                               </a>
-                          </li>
+                            </li>
                           )
                       )}
                     </ul>

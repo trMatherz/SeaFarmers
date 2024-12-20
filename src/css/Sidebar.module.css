@@ -1,15 +1,12 @@
-/* Specific styling for matchingTopic list items */
-ul li.matchingTopic {
-  background-color: lightgrey; /* Light grey background */
-  color: rgba(240, 240, 240, 1);
-  padding: 10px 0;
-  font-size: 1em;
-  border-radius: 4px; /* Optional: slightly rounded corners */
+
+.matchingTopic a {
+  color: grey; 
+  text-decoration: none; 
+  transition: color 0.3s ease; 
 }
 
-ul li.matchingTopic:hover {
-  background-color: rgba(220, 220, 220, 0.8); 
-  cursor: pointer;
+.matchingTopic a:hover {
+  color: white; 
 }
 
 /* Sidebar container */
@@ -61,11 +58,7 @@ ul li {
   color: white; /* White text for topics */
 }
 
-/* Hover effect on general list items */
-ul li:hover {
-  background-color: rgba(255, 255, 255, 0.1); /* Light hover effect */
-  cursor: pointer;
-}
+
 
 /* Loading/Error message styling */
 p {

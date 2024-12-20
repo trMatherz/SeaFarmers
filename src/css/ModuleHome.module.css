@@ -123,9 +123,6 @@
   text-decoration: none;
 }
 
-.specificTopicsContainer ul li a:hover {
-  text-decoration: underline;
-}
 
 /* Middle line styling */
 .topicRow::before {
@@ -151,14 +148,14 @@
   }
 }
 
-.state0 {
-  background-color: grey;  
+.state0 a {
+  color: grey;
 }
 
-.state1 {
-  background-color: blue; 
+.state1 a {
+  color: blue;
 }
 
-.state2 {
-  background-color: green;
+.state2 a {
+  color: green;
 }

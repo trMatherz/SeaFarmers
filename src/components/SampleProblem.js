@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import styles from '../css/SampleProblem.module.css'; // Import the CSS module
-const config = require('../../docusaurus.config.js');  // Adjust the path if necessary
-const backendUrl = config.customFields.backendUrl; // Access customFields for backendUrl
+import styles from '../css/SampleProblem.module.css'; 
+const config = require('../../docusaurus.config.js'); 
+const backendUrl = config.customFields.backendUrl; 
 
 const SampleProblem = ({ moduleName, topicId, location }) => {
   const [moduleData, setModuleData] = useState(null);

@@ -1,45 +1,66 @@
-/* Set the table to have a fixed layout, so column widths are respected */
+
 .problemTable {
   table-layout: fixed;
-  width: 110%;
+  width: 900px;
   margin-left: 100px; 
   border-collapse: collapse;
 }
 
-/* Column widths for each column */
+
 .statusColumn,
 .statusCell {
-  width: 120px;
+  width: 50px; 
+  text-align: left; 
+  white-space: normal; 
+  word-wrap: break-word; 
 }
 
 .sourceColumn,
 .sourceCell {
-  width: 220px;
+  width: 100px;
+  text-align: left; 
+  white-space: normal; 
+  word-wrap: break-word; 
 }
 
 .starredColumn,
 .starredCell {
-  width: 100px;
+  width: 50px;
+  text-align: left; 
+  white-space: normal; 
+  word-wrap: break-word; 
 }
 
 .problemColumn,
 .problemCell {
-  width: 250px;
+  width: 350px;
+  text-align: left; 
+  white-space: normal; 
+  word-wrap: break-word; 
 }
 
 .difficultyColumn,
 .difficultyCell {
-  width: 180px;
+  width: 50px;
+  text-align: left; 
+  white-space: normal; 
+  word-wrap: break-word; 
 }
 
 .tagsColumn,
 .tagsCell {
   width: 250px;
+  text-align: left; 
+  white-space: normal; 
+  word-wrap: break-word; 
 }
 
 .helpColumn,
 .helpCell {
-  width: 300px;
+  width: 50px;
+  text-align: left; 
+  white-space: normal; 
+  word-wrap: break-word; 
 }
 
 /* Table cell padding and no border */
@@ -114,9 +135,5 @@ thead th {
   padding: 4px 8px;
   cursor: pointer;
   color: black; 
-}
-
-.dropdownMenu ul li:hover {
-  background-color: #009900;
 }
 

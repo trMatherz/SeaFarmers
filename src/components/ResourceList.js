@@ -59,16 +59,18 @@ const ResourceList = ({ moduleName, topicId }) => {
         <table className={styles.resourceTable}>
           <thead>
             <tr>
-              <th className={styles.nameColumn}>Name</th>
-              <th className={styles.sourceColumn}>Source</th>
-              <th className={styles.starredColumn}>Starred</th>
-              <th className={styles.descriptionColumn}>Description</th>
+              <th className={styles.sourceColumn}>Resources</th>
+              <th className={styles.starredColumn}></th>
+              <th className={styles.nameColumn}></th>
+              <th className={styles.descriptionColumn}></th>
             </tr>
           </thead>
           <tbody>
             {topicData.resources 
                 .map((resource, index) => (
                 <tr key={resource.uniqueId || index}>
+                  <td className={styles.sourceCell}>{resource.source}</td>
+                  <td className={styles.starredCell}>{resource.star ? '⭐' : ''}</td>
                   <td className={styles.nameCell}>
                     <a
                       href={resource.link}
@@ -79,8 +81,6 @@ const ResourceList = ({ moduleName, topicId }) => {
                       {resource.name}
                     </a>
                   </td>
-                  <td className={styles.sourceCell}>{resource.source}</td>
-                  <td className={styles.starredCell}>{resource.star ? '⭐' : ''}</td>
                   <td className={styles.descriptionCell}>{resource.description}</td>
                 </tr>
               ))}

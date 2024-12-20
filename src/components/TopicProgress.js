@@ -101,7 +101,7 @@ const TopicProgress = ({ moduleName, topicId }) => {
             </div>
             <div
                 className={`${styles.stateCircle} ${styles[`state${topicData?.state ?? 0}`]}`}
-                onClick={toggleDropdown} // Toggle dropdown when the circle is clicked
+                onClick={toggleDropdown} 
             />
             
             {/* Dropdown to change state */}

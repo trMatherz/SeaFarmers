@@ -1,48 +1,65 @@
-/* Table Layout */
+
 .problemTable {
-  width: auto;
-  table-layout: auto;
+  width: 900px;
+  table-layout: fixed;
   margin-left: 100px; 
   border-collapse: collapse;
-  border: 1px solid #ccc; /* Light border around the table for better visibility */
 }
-
-
 .statusColumn,
 .statusCell {
-  width: 600px; 
+  width: 50px;
+  text-align: left; 
+  white-space: normal; 
+  word-wrap: break-word; 
 }
 
 .sourceColumn,
 .sourceCell {
-  width: 300px;
+  width: 100px;
+  text-align: left; 
+  white-space: normal; 
+  word-wrap: break-word;
 }
 
 .starredColumn,
 .starredCell {
-  width: 2400px;
+  width: 50px;
+  text-align: left; 
+  white-space: normal;
+  word-wrap: break-word;
 }
 
 .problemColumn,
 .problemCell {
-  width: 3000px;
+  width: 350px;
+  text-align: left; 
+  white-space: normal; 
+  word-wrap: break-word;
 }
 
 .difficultyColumn,
 .difficultyCell {
-  width: 200px;
+  width: 50px;
+  text-align: left;
+  white-space: normal;
+  word-wrap: break-word;
 }
 
 .tagsColumn,
 .tagsCell {
-  width: 300px;
+  width: 250px;
+  text-align: left; 
+  white-space: normal;
+  word-wrap: break-word;
 }
 
 .helpColumn,
 .helpCell {
-  width: 300px;
+  width: 50px;
+  text-align: left; 
+  white-space: normal;
+  word-wrap: break-word;
 }
-
 /* Cell Padding and Borders */
 th,
 td {
