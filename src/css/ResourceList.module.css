@@ -34,21 +34,24 @@
   }
   
   /* Columns */
-  .nameColumn {
+  .nameColumn,
+  .nameCell {
     width: 200px;
     text-align: left; 
     white-space: normal; 
     word-wrap: break-word; 
   }
   
-  .sourceColumn {
+  .sourceColumn,
+  .sourceCell {
     width: 100px;
     text-align: left; 
     white-space: normal; 
     word-wrap: break-word; 
   }
   
-  .starredColumn {
+  .starredColumn,
+  .starredCell {
     width: 50px;
     text-align: center;
     text-align: left; 
@@ -56,7 +59,8 @@
     word-wrap: break-word; 
   }
   
-  .descriptionColumn {
+  .descriptionColumn,
+.descriptionCell {
     width: 500px;
     text-align: left; 
     white-space: normal; 
