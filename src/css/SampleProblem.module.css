@@ -5,12 +5,20 @@
   margin-left: 100px; 
   border-collapse: collapse;
 }
+
+th,
+td {
+  height: 40px; 
+  line-height: 40px; 
+  padding: 0; 
+}
+
 .statusColumn,
 .statusCell {
   width: 50px;
-  text-align: left; 
-  white-space: normal; 
-  word-wrap: break-word; 
+  display: flex;
+  justify-content: center; /
+  align-items: center;
 }
 
 .sourceColumn,
@@ -23,15 +31,12 @@
 
 .starredColumn,
 .starredCell {
-  width: 50px;
-  text-align: left; 
-  white-space: normal;
-  word-wrap: break-word;
+  width: 10px;
 }
 
 .problemColumn,
 .problemCell {
-  width: 350px;
+  width: 375px;
   text-align: left; 
   white-space: normal; 
   word-wrap: break-word;
@@ -39,15 +44,12 @@
 
 .difficultyColumn,
 .difficultyCell {
-  width: 50px;
-  text-align: left;
-  white-space: normal;
-  word-wrap: break-word;
+  width: 40px;
 }
 
 .tagsColumn,
 .tagsCell {
-  width: 250px;
+  width: 275px;
   text-align: left; 
   white-space: normal;
   word-wrap: break-word;
@@ -60,7 +62,7 @@
   white-space: normal;
   word-wrap: break-word;
 }
-/* Cell Padding and Borders */
+
 th,
 td {
   padding: 12px;
@@ -68,22 +70,21 @@ td {
   text-align: center; /* Center-align content */
 }
 
-/* Alternating Row Colors */
+
 tbody tr:nth-child(even) {
-  background-color: #f0f8ff; /* Light blue for even rows */
+  background-color: #f0f8ff; 
 }
 
 tbody tr:nth-child(odd) {
-  background-color: #ffe4e1; /* Light red for odd rows */
+  background-color: #ffe4e1; 
 }
 
 /* State Circle Styles */
 .stateCircle {
   display: inline-block;
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
-  border: 2px solid #fff; /* White border for contrast */
 }
 
 .state0 {
@@ -110,10 +111,9 @@ tbody tr:nth-child(odd) {
   color: #005bb5; /* Darker blue on hover */
 }
 
-/* Starred Problems */
 .starredCell {
   font-size: 20px;
-  color: gold; /* Gold color for starred problems */
+  color: gold;
 }
 
 /* Header Row Styles */
@@ -125,7 +125,7 @@ thead th {
   padding: 12px;
 }
 
-/* Dropdown Menu Styles */
+
 .dropdownMenu {
   background-color: white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -148,7 +148,7 @@ thead th {
 }
 
 .dropdownMenu ul li:hover {
-  background-color: #32cd32; /* Lime green for hover effect */
+  background-color: #32cd32; 
   color: white;
 }
 

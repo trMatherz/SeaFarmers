@@ -104,7 +104,7 @@ const TopicProgress = ({ moduleName, topicId }) => {
                 onClick={toggleDropdown} 
             />
             
-            {/* Dropdown to change state */}
+          
             {dropdownVisible && (
                 <div className="dropdown">
                     <div onClick={() => handleStateChange(0)} className="dropdownItem">

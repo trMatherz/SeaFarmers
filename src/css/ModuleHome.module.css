@@ -106,7 +106,7 @@
 }
 
 .specificTopicsContainer ul {
-  list-style-type: none; /* Remove bullets */
+  list-style-type: none; 
   padding-left: 0;
 }
 
@@ -114,9 +114,8 @@
   margin-bottom: 10px; /* Add spacing between list items */
 }
 
-.genericTopic h3,
-.specificTopicsContainer ul li a {
-  color: #ffffff; /* Use consistent color for headings and links */
+.genericTopic h3 {
+  color: #ffffff; 
 }
 
 .specificTopicsContainer ul li a {

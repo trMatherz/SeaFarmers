@@ -119,11 +119,11 @@ const SampleProblem = ({ moduleName, topicId, location }) => {
             <tr>
               <th className={styles.statusColumn}>Status</th>
               <th className={styles.sourceColumn}>Source</th>
-              <th className={styles.starredColumn}>Starred</th>
+              <th className={styles.starredColumn}></th>
               <th className={styles.problemColumn}>Problem</th>
-              <th className={styles.difficultyColumn}>Difficulty</th>
+              <th className={styles.difficultyColumn}>Dif</th>
               <th className={styles.tagsColumn}>Tags</th>
-              <th className={styles.helpColumn}>Help</th>
+              <th className={styles.helpColumn}></th>
             </tr>
           </thead>
           <tbody>
@@ -177,11 +177,11 @@ const SampleProblem = ({ moduleName, topicId, location }) => {
                         className={styles.helpButton}
                         onClick={(event) => toggleHelpDropdown(index, event)}
                       >
-                        Show Helps
+                        Help
                       </span>
                       {helpDropdownOpen === index && (
                         <div
-                          className={styles.helpDropdownMenu}
+                          className={styles.dropdownMenu}
                           style={{
                             position: 'absolute',
                             top: `${helpDropdownPosition.top}px`,
@@ -203,7 +203,7 @@ const SampleProblem = ({ moduleName, topicId, location }) => {
                                 </li>
                               ))
                             ) : (
-                              <li>No helps</li>
+                              <li>No Help</li>
                             )}
                           </ul>
                         </div>

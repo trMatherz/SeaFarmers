@@ -1,4 +1,4 @@
-/* TopicProgress.module.css */
+
 
 .topicProgress {
     display: flex;
@@ -8,6 +8,8 @@
   }
 .label {
   color: white; 
+  font-weight: bold;
+  font-size: 20px;
 }
   
   .stateCircle {

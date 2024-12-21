@@ -32,6 +32,8 @@
   border-radius: 5px;
   overflow: hidden;
   margin-top: 10px;
+  font-weight: normal;
+  font-size: 14px;
 }
 
 .dropdownContent a {
