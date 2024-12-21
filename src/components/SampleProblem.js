@@ -1,18 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
-import styles from '../css/SampleProblem.module.css'; 
-const config = require('../../docusaurus.config.js'); 
-const backendUrl = config.customFields.backendUrl; 
+import styles from '../css/SampleProblem.module.css';
+const config = require('../../docusaurus.config.js');
+const backendUrl = config.customFields.backendUrl;
 
 const SampleProblem = ({ moduleName, topicId, location }) => {
   const [moduleData, setModuleData] = useState(null);
   const [topicData, setTopicData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [dropdownOpen, setDropdownOpen] = useState(null); 
-  const [dropdownPosition, setDropdownPosition] = useState({}); 
-  const [helpDropdownOpen, setHelpDropdownOpen] = useState(null); 
-  const [helpDropdownPosition, setHelpDropdownPosition] = useState({}); 
+  const [dropdownOpen, setDropdownOpen] = useState(null);
+  const [dropdownPosition, setDropdownPosition] = useState({});
+  const [helpDropdownOpen, setHelpDropdownOpen] = useState(null);
+  const [helpDropdownPosition, setHelpDropdownPosition] = useState({});
+  
+  const dropdownRef = useRef(null); // Ref for the dropdown
+  const helpDropdownRef = useRef(null); // Ref for the help dropdown
 
   useEffect(() => {
     async function fetchModuleData() {
@@ -49,6 +52,30 @@ const SampleProblem = ({ moduleName, topicId, location }) => {
     }
   }, [moduleData, topicId]);
 
+  
+  useEffect(() => {
+    const handleOutsideClick = (event) => {
+     
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setDropdownOpen(null); 
+      }
+  
+     
+      if (helpDropdownRef.current && !helpDropdownRef.current.contains(event.target)) {
+        setHelpDropdownOpen(null);
+      }
+    };
+  
+   
+    document.addEventListener('mousedown', handleOutsideClick);
+  
+  
+    return () => {
+      document.removeEventListener('mousedown', handleOutsideClick);
+    };
+  }, []);
+
+
   const toggleDropdown = (index, event) => {
     if (dropdownOpen === index) {
       setDropdownOpen(null);
@@ -76,7 +103,6 @@ const SampleProblem = ({ moduleName, topicId, location }) => {
       setHelpDropdownOpen(index);
     }
   };
-  
 
   const updateProblemState = async (problem, newState) => {
     const problemId = problem.problemId;
@@ -127,97 +153,91 @@ const SampleProblem = ({ moduleName, topicId, location }) => {
             </tr>
           </thead>
           <tbody>
-            {topicData.problems.some((problem) => problem.location === location) ? (
-              topicData.problems
-                .filter((problem) => problem.location === location)
-                .map((problem, index) => (
-                  <tr key={problem.uniqueId || index}>
-                    <td className={styles.statusCell}>
-                      <span
-                        className={`${styles.stateCircle} ${styles[`state${problem.state}`]}`}
-                        onClick={(event) => toggleDropdown(index, event)}
-                      ></span>
-                      {dropdownOpen === index && (
-                        <div
-                          className={styles.dropdownMenu}
-                          style={{
-                            position: 'absolute',
-                            top: `${dropdownPosition.top}px`,
-                            left: `${dropdownPosition.left}px`,
-                          }}
-                        >
-                          <ul>
-                            <li onClick={() => updateProblemState(problem, 2)}>Solved</li>
-                            <li onClick={() => updateProblemState(problem, 1)}>Skipped</li>
-                            <li onClick={() => updateProblemState(problem, 0)}>Unseen</li>
-                          </ul>
-                        </div>
-                      )}
-                    </td>
-                    <td className={styles.sourceCell}>{problem.source}</td>
-                    <td className={styles.starredCell}>{problem.star ? '⭐' : ''}</td>
-                    <td className={styles.problemCell}>
-                      <a
-                        href={problem.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={styles.problemLink}
+            {topicData.problems
+              .filter((problem) => problem.location === location)
+              .map((problem, index) => (
+                <tr key={problem.uniqueId || index}>
+                  <td className={styles.statusCell}>
+                    <span
+                      className={`${styles.stateCircle} ${styles[`state${problem.state}`]}`}
+                      onClick={(event) => toggleDropdown(index, event)}
+                    >a</span>
+                    {dropdownOpen === index && (
+                      <div
+                        className={styles.dropdownMenu}
+                        ref={dropdownRef}
+                        style={{
+                          position: 'absolute',
+                          top: `${dropdownPosition.top}px`,
+                          left: `${dropdownPosition.left}px`,
+                        }}
                       >
-                        {problem.name}
-                      </a>
-                    </td>
-                    <td className={styles.difficultyCell}>{problem.difficulty || 'Unknown'}</td>
-                    <td className={styles.tagsCell}>
-                      {problem.tags && Array.isArray(problem.tags)
-                        ? problem.tags.join(', ')
-                        : 'No tags'}
-                    </td>
-                    <td className={styles.helpCell}>
-                      <span
-                        className={styles.helpButton}
-                        onClick={(event) => toggleHelpDropdown(index, event)}
+                        <ul>
+                          <li onClick={() => updateProblemState(problem, 2)}>Solved</li>
+                          <li onClick={() => updateProblemState(problem, 1)}>Skipped</li>
+                          <li onClick={() => updateProblemState(problem, 0)}>Unseen</li>
+                        </ul>
+                      </div>
+                    )}
+                  </td>
+                  <td className={styles.sourceCell}>{problem.source}</td>
+                  <td className={styles.starredCell}>{problem.star ? '⭐' : ''}</td>
+                  <td className={styles.problemCell}>
+                    <a
+                      href={problem.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.problemLink}
+                    >
+                      {problem.name}
+                    </a>
+                  </td>
+                  <td className={styles.difficultyCell}>{problem.difficulty || 'Unknown'}</td>
+                  <td className={styles.tagsCell}>
+                    {problem.tags && Array.isArray(problem.tags)
+                      ? problem.tags.join(', ')
+                      : 'No tags'}
+                  </td>
+                  <td className={styles.helpCell}>
+                    <span
+                      className={styles.helpButton}
+                      onClick={(event) => toggleHelpDropdown(index, event)}
+                    >
+                      Help
+                    </span>
+                    {helpDropdownOpen === index && (
+                      <div
+                        className={styles.dropdownMenu}
+                        ref={helpDropdownRef}
+                        style={{
+                          position: 'absolute',
+                          top: `${helpDropdownPosition.top}px`,
+                          left: `${helpDropdownPosition.left}px`,
+                        }}
                       >
-                        Help
-                      </span>
-                      {helpDropdownOpen === index && (
-                        <div
-                          className={styles.dropdownMenu}
-                          style={{
-                            position: 'absolute',
-                            top: `${helpDropdownPosition.top}px`,
-                            left: `${helpDropdownPosition.left}px`,
-                          }}
-                        >
-                          <ul>
-                            {problem.helps && problem.helps.length > 0 ? (
-                              problem.helps.map((help, helpIndex) => (
-                                <li key={helpIndex}>
-                                  <a
-                                    href={help.link}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className={styles.helpLink}
-                                  >
-                                    {help.name}
-                                  </a>
-                                </li>
-                              ))
-                            ) : (
-                              <li>No Help</li>
-                            )}
-                          </ul>
-                        </div>
-                      )}
-                    </td>
-
-
-                  </tr>
-                ))
-            ) : (
-              <tr>
-                <td colSpan="7">No problems found for this location.</td>
-              </tr>
-            )}
+                        <ul>
+                          {problem.helps && problem.helps.length > 0 ? (
+                            problem.helps.map((help, helpIndex) => (
+                              <li key={helpIndex}>
+                                <a
+                                  href={help.link}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className={styles.helpLink}
+                                >
+                                  {help.name}
+                                </a>
+                              </li>
+                            ))
+                          ) : (
+                            <li>No Help</li>
+                          )}
+                        </ul>
+                      </div>
+                    )}
+                  </td>
+                </tr>
+              ))}
           </tbody>
         </table>
       ) : (

@@ -51,32 +51,29 @@
   margin-top: 10px; /* Space between button and dropdown */
 }
 
-/* Individual dropdown items */
-.dropdownItem {
-  padding: 12px 16px; /* Adjust padding for spacing */
-  text-decoration: none; /* Removes underline */
-  color: black; /* Black text */
-  cursor: pointer; /* Pointer cursor for interactivity */
-  background-color: transparent; /* Transparent background by default */
+
+.dropdownMenu {
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  z-index: 1000;
+  position: absolute;
 }
 
-/* Hover effect for dropdown items */
-.dropdownItem:hover {
-  background-color: #f1f1f1; /* Light grey background on hover */
+.dropdownMenu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
-/* Dropdown trigger button */
-.dropdownButton {
-  background-color: #0078d4; /* Blue background for button */
-  color: white; /* White text */
-  padding: 10px 20px; /* Spacing inside the button */
-  font-size: 16px; /* Font size */
-  border: none; /* Removes default border */
-  cursor: pointer; /* Pointer cursor for button */
-  border-radius: 5px; /* Rounded corners for button */
+.dropdownMenu ul li {
+  padding: 8px 12px;
+  cursor: pointer;
+  color: black;
+  font-size: 14px;
 }
 
-/* Hover effect for the button */
-.dropdownButton:hover {
-  background-color: #005bb5; /* Darker blue on hover */
+.dropdownMenu ul li:hover {
+  background-color: #32cd32; 
+  color: white;
 }

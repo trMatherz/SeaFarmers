@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
 import styles from '../css/TopicProgress.module.css'; // Import the CSS module
 const config = require('../../docusaurus.config.js');  // Adjust the path if necessary
@@ -10,6 +10,8 @@ const TopicProgress = ({ moduleName, topicId }) => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [dropdownVisible, setDropdownVisible] = useState(false); // Track dropdown visibility
+    const [dropdownPosition, setDropdownPosition] = useState({}); // Track dropdown position
+    const dropdownRef = useRef(null); // Reference for dropdown menu
 
     // Fetch module data
     useEffect(() => {
@@ -83,7 +85,32 @@ const TopicProgress = ({ moduleName, topicId }) => {
         }
     };
 
-    const toggleDropdown = () => setDropdownVisible(!dropdownVisible);
+    const toggleDropdown = (event) => {
+        // Calculate the position and toggle dropdown
+        const rect = event.target.getBoundingClientRect();
+        setDropdownPosition({
+            top: rect.bottom + window.scrollY,
+            left: rect.left + window.scrollX,
+        });
+        setDropdownVisible(!dropdownVisible);
+    };
+
+    // Close the dropdown when clicking outside
+    useEffect(() => {
+        const handleOutsideClick = (event) => {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+                setDropdownVisible(false); // Close the dropdown if the click is outside
+            }
+        };
+
+        // Attach event listener
+        document.addEventListener('mousedown', handleOutsideClick);
+
+        // Cleanup the event listener when component unmounts
+        return () => {
+            document.removeEventListener('mousedown', handleOutsideClick);
+        };
+    }, []);
 
     // Loading and error handling
     if (loading) {
@@ -104,20 +131,27 @@ const TopicProgress = ({ moduleName, topicId }) => {
                 onClick={toggleDropdown} 
             />
             
-          
             {dropdownVisible && (
-                <div className="dropdown">
+                <div
+                    className={styles.dropdownMenu}
+                    ref={dropdownRef} // Attach ref here
+                    style={{
+                    position: 'absolute',
+                    top: `${dropdownPosition.top}px`,
+                    left: `${dropdownPosition.left}px`,
+                    }}
+                >
                     <div onClick={() => handleStateChange(0)} className="dropdownItem">
-                    Unseen
+                        Unseen
                     </div>
                     <div onClick={() => handleStateChange(1)} className="dropdownItem">
-                    Skipped
+                        Skipped
                     </div>
                     <div onClick={() => handleStateChange(2)} className="dropdownItem">
-                    Solved
+                        Solved
                     </div>
                 </div>
-                )}
+            )}
         </div>
     );
 };

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import styles from '../css/ProblemList.module.css'; // Import the CSS module
 const config = require('../../docusaurus.config.js');  // Adjust the path if necessary
@@ -14,6 +14,9 @@ const ProblemList = ({ moduleName, topicId, location }) => {
   const [helpDropdownOpen, setHelpDropdownOpen] = useState(null); 
   const [helpDropdownPosition, setHelpDropdownPosition] = useState({}); 
 
+  // Refs to track the dropdowns
+  const dropdownRef = useRef(null);
+  const helpDropdownRef = useRef(null);
 
   useEffect(() => {
     async function fetchModuleData() {
@@ -111,8 +114,28 @@ const ProblemList = ({ moduleName, topicId, location }) => {
     }
   };
 
+  useEffect(() => {
+    const handleOutsideClick = (event) => {
+     
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setDropdownOpen(null); 
+      }
+  
+     
+      if (helpDropdownRef.current && !helpDropdownRef.current.contains(event.target)) {
+        setHelpDropdownOpen(null);
+      }
+    };
+  
+   
+    document.addEventListener('mousedown', handleOutsideClick);
   
   
+    return () => {
+      document.removeEventListener('mousedown', handleOutsideClick);
+    };
+  }, []);
+
 
   if (loading) {
     return <p>Loading data...</p>;
@@ -150,6 +173,7 @@ const ProblemList = ({ moduleName, topicId, location }) => {
                       ></span>
                       {dropdownOpen === index && ( // Conditionally render dropdown
                         <div
+                          ref={dropdownRef} // Attach ref for outside click detection
                           className={styles.dropdownMenu}
                           style={{
                             position: 'absolute',
@@ -192,6 +216,7 @@ const ProblemList = ({ moduleName, topicId, location }) => {
                       </span>
                       {helpDropdownOpen === index && (
                         <div
+                          ref={helpDropdownRef} // Attach ref for outside click detection
                           className={styles.dropdownMenu}
                           style={{
                             position: 'absolute',
