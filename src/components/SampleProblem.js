@@ -13,6 +13,7 @@ const SampleProblem = ({ moduleName, topicId, location }) => {
   const [dropdownPosition, setDropdownPosition] = useState({});
   const [helpDropdownOpen, setHelpDropdownOpen] = useState(null);
   const [helpDropdownPosition, setHelpDropdownPosition] = useState({});
+  const [tagsVisible, setTagsVisible] = useState(false);
   
   const dropdownRef = useRef(null); // Ref for the dropdown
   const helpDropdownRef = useRef(null); // Ref for the help dropdown
@@ -143,12 +144,19 @@ const SampleProblem = ({ moduleName, topicId, location }) => {
         <table className={styles.problemTable}>
           <thead>
             <tr>
-              <th className={styles.statusColumn}>Status</th>
+              <th className={styles.statusColumn}></th>
               <th className={styles.sourceColumn}>Source</th>
               <th className={styles.starredColumn}></th>
               <th className={styles.problemColumn}>Problem</th>
               <th className={styles.difficultyColumn}>Dif</th>
-              <th className={styles.tagsColumn}>Tags</th>
+              <th className={styles.tagsColumn}>
+                <button 
+                  onClick={() => setTagsVisible((prev) => !prev)} 
+                  className={styles.toggleTagsButton}
+                >
+                  {tagsVisible ? 'Hide Tags' : 'Show Tags'}
+                </button>
+              </th>
               <th className={styles.helpColumn}></th>
             </tr>
           </thead>
@@ -161,7 +169,7 @@ const SampleProblem = ({ moduleName, topicId, location }) => {
                     <span
                       className={`${styles.stateCircle} ${styles[`state${problem.state}`]}`}
                       onClick={(event) => toggleDropdown(index, event)}
-                    >a</span>
+                    ></span>
                     {dropdownOpen === index && (
                       <div
                         className={styles.dropdownMenu}
@@ -194,9 +202,9 @@ const SampleProblem = ({ moduleName, topicId, location }) => {
                   </td>
                   <td className={styles.difficultyCell}>{problem.difficulty || 'Unknown'}</td>
                   <td className={styles.tagsCell}>
-                    {problem.tags && Array.isArray(problem.tags)
+                    {tagsVisible && problem.tags && Array.isArray(problem.tags)
                       ? problem.tags.join(', ')
-                      : 'No tags'}
+                      : ''}
                   </td>
                   <td className={styles.helpCell}>
                     <span

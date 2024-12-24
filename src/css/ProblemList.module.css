@@ -1,21 +1,25 @@
 .problemTable {
   table-layout: fixed;
   width: 900px;
-  margin-left: 100px;
+  margin-left: 125px;
   border-collapse: collapse;
+  border-spacing: 0;
 }
 
-th,
+tr, th,
 td {
-  height: 40px;
-  line-height: 40px;
-  padding: 0;
+  height: 40px; 
+  line-height: 40px; 
+  padding: 5; 
+  border: none !important;
 }
 
 .statusColumn,
 .statusCell {
   width: 50px;
-  
+  text-align: center;
+  overflow: hidden; 
+  text-overflow: ellipsis;
 }
 
 .sourceColumn,
@@ -24,11 +28,15 @@ td {
   text-align: left;
   white-space: normal;
   word-wrap: break-word;
+  overflow: hidden; /* Prevents overflow */
+  text-overflow: ellipsis;
 }
 
 .starredColumn,
 .starredCell {
   width: 10px;
+  overflow: hidden; /* Prevents overflow */
+  text-overflow: ellipsis;
   
 }
 
@@ -38,19 +46,27 @@ td {
   text-align: left;
   white-space: normal;
   word-wrap: break-word;
+  overflow: hidden; /* Prevents overflow */
+  text-overflow: ellipsis;
 }
 
 .difficultyColumn,
 .difficultyCell {
   width: 40px;
+  overflow: hidden; /* Prevents overflow */
+  text-overflow: ellipsis;
 }
 
 .tagsColumn,
 .tagsCell {
   width: 275px;
-  text-align: left; 
+  text-align: left;
   white-space: normal;
   word-wrap: break-word;
+  word-break: break-word; 
+  overflow-wrap: break-word; 
+  overflow: hidden; /* Prevents overflow */
+  text-overflow: ellipsis;
 }
 
 .helpColumn,
@@ -59,30 +75,27 @@ td {
   text-align: left;
   white-space: normal;
   word-wrap: break-word;
+  overflow: hidden; /* Prevents overflow */
+  text-overflow: ellipsis;
 }
 
-/* Table cell padding and no border */
-th,
-td {
-  padding: 10px;
-  border: 0 !important; /* Ensure no borders are applied to any cell */
-}
 
-/* Alternating row colors in the table body */
 tbody tr:nth-child(even) {
-  background-color: #0000ff; /* Blue for even rows */
+  background-color: #0000ff;
 }
 
 tbody tr:nth-child(odd) {
-  background-color: #ff0000; /* Red for odd rows */
+  background-color: #ff0000; 
 }
 
-/* State Circle Styles */
 .stateCircle {
-  display: inline-block;
+  display: inline-flex;
+  justify-content: center; 
+  align-items: center;
   width: 30px;
   height: 30px;
   border-radius: 50%;
+  vertical-align: middle; 
 }
 
 .state0 {
@@ -97,14 +110,14 @@ tbody tr:nth-child(odd) {
   background-color: green;
 }
 
-/* Hyperlink Styles */
+
 .problemLink {
   text-decoration: none;
   color: #0073e6;
   font-weight: bold;
 }
 
-/* Starred Problems */
+
 .starredCell {
   font-size: 20px;
 }
@@ -113,7 +126,7 @@ tbody tr:nth-child(odd) {
 thead th {
   background-color: pink;
   color: white;
-  padding: 10px;
+  border: none;
 }
 
 .dropdownMenu {
@@ -140,4 +153,27 @@ thead th {
 .dropdownMenu ul li:hover {
   background-color: #32cd32; 
   color: white;
+}
+
+
+.toggleTagsButton {
+  background-color: #4b0082;
+  color: white;
+  border: none;
+  border-radius: 20px; 
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.toggleTagsButton:hover {
+  background-color: #551a8b; 
+  transform: scale(1.05); 
+}
+
+.toggleTagsButton:active {
+  background-color: #3a005f;
+  transform: scale(0.95); 
 }

@@ -112,12 +112,11 @@ function ModuleHome({
 
               return (
                 <div key={index} className={styles.topicRow}>
-                  {/* Generic Topic on the Left */}
+                  
                   <div className={styles.genericTopic}>
                     <h3>{genericTopic.genericTopicName}</h3>
                   </div>
 
-                  {/* Specific Topics on the Right */}
                   <div className={styles.specificTopicsContainer}>
                     <ul>
                       {matchingTopics.map(

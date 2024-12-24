@@ -13,6 +13,7 @@ const ProblemList = ({ moduleName, topicId, location }) => {
   const [dropdownPosition, setDropdownPosition] = useState({});
   const [helpDropdownOpen, setHelpDropdownOpen] = useState(null); 
   const [helpDropdownPosition, setHelpDropdownPosition] = useState({}); 
+  const [tagsVisible, setTagsVisible] = useState(false);
 
   // Refs to track the dropdowns
   const dropdownRef = useRef(null);
@@ -151,12 +152,19 @@ const ProblemList = ({ moduleName, topicId, location }) => {
         <table className={styles.problemTable}>
           <thead>
             <tr>
-              <th className={styles.statusColumn}>Status</th>
+              <th className={styles.statusColumn}></th>
               <th className={styles.sourceColumn}>Source</th>
               <th className={styles.starredColumn}></th>
               <th className={styles.problemColumn}>Problem</th>
               <th className={styles.difficultyColumn}>Dif</th>
-              <th className={styles.tagsColumn}>Tags</th>
+              <th className={styles.tagsColumn}>
+              <button 
+                onClick={() => setTagsVisible((prev) => !prev)} 
+                className={styles.toggleTagsButton}
+              >
+                {tagsVisible ? 'Hide Tags' : 'Show Tags'}
+              </button>
+              </th>
               <th className={styles.helpColumn}></th>
             </tr>
           </thead>
@@ -203,9 +211,9 @@ const ProblemList = ({ moduleName, topicId, location }) => {
                     </td>
                     <td className={styles.difficultyCell}>{problem.difficulty}</td>
                     <td className={styles.tagsCell}>
-                      {problem.tags && Array.isArray(problem.tags)
+                      {tagsVisible && problem.tags && Array.isArray(problem.tags)
                         ? problem.tags.join(', ')
-                        : 'No tags'}
+                        : ''}
                     </td>
                     <td className={styles.helpCell}>
                       <span

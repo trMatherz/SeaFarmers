@@ -1,56 +1,45 @@
-
-
 .topicProgress {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: 100px; 
-  }
+  justify-content: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-left: 175px; 
+  display: flex; 
+}
+
+.stateLabel.state-0 {
+  background-color: gray;
+}
+
+.stateLabel.state-1 {
+  background-color: blue;
+}
+
+.stateLabel.state-2 {
+  background-color: green;
+}
+
 .label {
-  color: white; 
+  color: white;
   font-weight: bold;
   font-size: 20px;
-}
-  
-  .stateCircle {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    transition: background-color 0.3s ease;
-  }
-  
-  .state0 {
-    background-color: grey;  /* Unseen */
-  }
-  
-  .state1 {
-    background-color: blue;  /* Skipped */
-  }
-  
-  .state2 {
-    background-color: green; /* Solved */
-  }
-  
-  /* Dropdown container */
-.dropdown {
-  position: relative; /* Ensures dropdown content is positioned relative to this container */
-  display: inline-block;
+  margin-right: 10px;
 }
 
-/* Dropdown items container */
-.dropdownContent {
-  display: flex;
-  flex-direction: column; /* Stacks items vertically */
-  position: absolute; /* Positions dropdown content absolutely within .dropdown */
-  background-color: white; /* White background for dropdown */
-  min-width: 160px; /* Adjust width if needed */
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-  z-index: 1; /* Ensures dropdown appears on top */
-  border-radius: 5px; /* Rounded corners */
-  overflow: hidden; /* Prevents items from overflowing */
-  margin-top: 10px; /* Space between button and dropdown */
+.stateLabel {
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  background-color: grey;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  width: 100px; 
+  text-align: center;
 }
 
+.stateLabel:hover {
+  background-color: #d3d3d3;
+}
 
 .dropdownMenu {
   background-color: white;
@@ -58,22 +47,17 @@
   border-radius: 4px;
   z-index: 1000;
   position: absolute;
+  display: block;
 }
 
-.dropdownMenu ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-.dropdownMenu ul li {
+.dropdownItem {
   padding: 8px 12px;
   cursor: pointer;
   color: black;
   font-size: 14px;
 }
 
-.dropdownMenu ul li:hover {
-  background-color: #32cd32; 
+.dropdownItem:hover {
+  background-color: #32cd32;
   color: white;
 }

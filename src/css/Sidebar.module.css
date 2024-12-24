@@ -1,26 +1,35 @@
 
-.matchingTopic a {
-  color: grey; 
-  text-decoration: none; 
-  transition: color 0.3s ease; 
+
+.state0 a {
+  color: grey;
 }
 
-.matchingTopic a:hover {
+.state1 a {
+  color: blue;
+}
+
+.state2 a {
+  color: green;
+}
+
+.state0, .state1, .state2 a:hover {
   color: white; 
 }
 
-/* Sidebar container */
+
+
+
 .sidebarContainer {
   width: 300px; 
   padding: 20px;
-  background-color: #003366; /* Dark blue background */
-  position: fixed; /* Fixed positioning on the left of the screen */
+  background-color: #003366; 
+  position: fixed; 
   top: 0;
   left: 0;
   bottom: 0;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Optional: shadow for sidebar */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); 
   display: flex;
-  flex-direction: column; /* Ensure content stacks vertically */
+  flex-direction: column;
 }
 
 /* Sidebar header */

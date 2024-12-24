@@ -6,6 +6,7 @@ const backendUrl = config.customFields.backendUrl; // Access customFields for ba
 const ProfilePicture = () => {
   const [user, setUser] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  
 
   useEffect(() => {
     fetchUserData();

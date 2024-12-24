@@ -6,11 +6,11 @@ const config = require('../../docusaurus.config.js');  // Adjust the path if nec
 const backendUrl = config.customFields.backendUrl; // Access customFields for backendUrl
 
 function Sidebar({ moduleName }) {
-  const [moduleData, setModuleData] = useState(null); // Holds the entire module data
-  const [loading, setLoading] = useState(false); // Loading state for API calls
-  const [error, setError] = useState(null); // Holds any error that occurs
+  const [moduleData, setModuleData] = useState(null); 
+  const [loading, setLoading] = useState(false); 
+  const [error, setError] = useState(null); 
 
-  // Fetch module data when component mounts or when moduleName changes
+ 
   useEffect(() => {
     async function fetchModuleData() {
       setLoading(true);
@@ -44,12 +44,11 @@ function Sidebar({ moduleName }) {
     return <p>Error: {error}</p>;
   }
 
-  // Ensure moduleData and topics exist before rendering
   const { genericTopics = [], topics = [] } = moduleData || {};
 
   return (
     <div className={styles.sidebarContainer}>
-      {/* Header with dropdown */}
+      
       <header className={styles.sidebarHeader}>
         <div className={styles.dropdown}>
           <Dropdown />
@@ -57,22 +56,23 @@ function Sidebar({ moduleName }) {
       </header>
       <div className="generic-topics-container">
         {genericTopics.map((genericTopic, index) => {
-          // Find all matching topics for the current generic topic
+         
           const matchingTopics = genericTopic.topics.map((topicId) =>
             topics.find((topic) => topic.topicId === topicId)
           );
 
           return (
             <div key={index} className="generic-topic">
-              {/* Output the genericTopicName */}
+             
               <h3>{genericTopic.genericTopicName}</h3>
 
-              {/* Output all matching topics */}
+             
               <ul>
                 {matchingTopics.map(
                   (matchingTopic, subIndex) =>
                     matchingTopic && (
-                      <li key={subIndex} className={styles.matchingTopic}>
+    
+                      <li key={subIndex} className={`${styles[`state${matchingTopic.state}`]}`}>
                         <a href={`/SeaFarmers/modules/${moduleName}/${matchingTopic.topicId}/`}>
                           {matchingTopic.topicName}
                         </a>

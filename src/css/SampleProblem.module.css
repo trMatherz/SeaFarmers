@@ -2,21 +2,25 @@
 .problemTable {
   width: 900px;
   table-layout: fixed;
-  margin-left: 100px; 
+  margin-left: 125px; 
   border-collapse: collapse;
+  border-spacing: 0;
 }
 
-th,
+tr, th,
 td {
   height: 40px; 
   line-height: 40px; 
-  padding: 0; 
+  padding: 5; 
+  border: none !important;
 }
 
 .statusColumn,
 .statusCell {
   width: 50px;
-  
+  text-align: center;
+  overflow: hidden; 
+  text-overflow: ellipsis;
 }
 
 .sourceColumn,
@@ -25,11 +29,15 @@ td {
   text-align: left; 
   white-space: normal; 
   word-wrap: break-word;
+  overflow: hidden; 
+  text-overflow: ellipsis;
 }
 
 .starredColumn,
 .starredCell {
   width: 10px;
+  overflow: hidden; 
+  text-overflow: ellipsis;
 }
 
 .problemColumn,
@@ -38,11 +46,15 @@ td {
   text-align: left; 
   white-space: normal; 
   word-wrap: break-word;
+  overflow: hidden; 
+  text-overflow: ellipsis;
 }
 
 .difficultyColumn,
 .difficultyCell {
   width: 40px;
+  overflow: hidden; 
+  text-overflow: ellipsis;
 }
 
 .tagsColumn,
@@ -51,6 +63,8 @@ td {
   text-align: left; 
   white-space: normal;
   word-wrap: break-word;
+  overflow: hidden; 
+  text-overflow: ellipsis;
 }
 
 .helpColumn,
@@ -59,13 +73,8 @@ td {
   text-align: left; 
   white-space: normal;
   word-wrap: break-word;
-}
-
-th,
-td {
-  padding: 12px;
-  border: 1px solid #ccc; /* Subtle borders between cells */
-  text-align: center; /* Center-align content */
+  overflow: hidden; 
+  text-overflow: ellipsis;
 }
 
 
@@ -77,12 +86,14 @@ tbody tr:nth-child(odd) {
   background-color: #ffe4e1; 
 }
 
-/* State Circle Styles */
 .stateCircle {
-  display: inline-block;
+  display: inline-flex;
+  justify-content: center; 
+  align-items: center;
   width: 30px;
   height: 30px;
   border-radius: 50%;
+  vertical-align: middle; 
 }
 
 .state0 {
@@ -114,13 +125,12 @@ tbody tr:nth-child(odd) {
   color: gold;
 }
 
-/* Header Row Styles */
+
 thead th {
-  background-color: #ff69b4; /* Bright pink for headers */
+  background-color: #ff69b4; 
   color: white;
-  text-transform: uppercase;
   font-weight: bold;
-  padding: 12px;
+  border: none;
 }
 
 
@@ -151,3 +161,24 @@ thead th {
 }
 
 
+.toggleTagsButton {
+  background-color: #4b0082;
+  color: white;
+  border: none;
+  border-radius: 20px; 
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.toggleTagsButton:hover {
+  background-color: #551a8b; 
+  transform: scale(1.05); 
+}
+
+.toggleTagsButton:active {
+  background-color: #3a005f;
+  transform: scale(0.95); 
+}

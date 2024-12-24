@@ -2,19 +2,20 @@
 .resourceTable {
     border-collapse: collapse;
     width: 900px; 
-    margin-left: 100px; 
+    margin-left: 125px; 
     font-size: 16px;
-    font-family: 'Arial', sans-serif;
     text-align: left;
     background-color: #f9f9f9;
+    border-spacing: 0;
   }
 
-  th,
-td {
-  height: 40px; 
-  line-height: 40px; 
-  padding: 0; 
-}
+  tr, th,
+  td {
+    height: 40px; 
+    line-height: 40px; 
+    padding: 5; 
+    border: none !important;
+  }
   
   .resourceTable thead tr {
     background-color: #4CAF50;
@@ -23,7 +24,6 @@ td {
 
   
   .resourceTable th {
-    text-transform: uppercase;
     letter-spacing: 0.1em;
   }
   
