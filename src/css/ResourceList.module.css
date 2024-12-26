@@ -13,8 +13,11 @@
   td {
     height: 40px; 
     line-height: 40px; 
-    padding: 5; 
     border: none !important;
+    padding-top: 5px; 
+    padding-bottom: 5px; 
+    padding-left: 0; 
+    padding-right: 0; 
   }
   
   .resourceTable thead tr {
@@ -27,8 +30,12 @@
     letter-spacing: 0.1em;
   }
   
-  .resourceTable tbody tr:nth-child(even) {
-    background-color: #f2f2f2;
+  tbody tr:nth-child(even) {
+    background-color: #ffc0cb; 
+  }
+  
+  tbody tr:nth-child(odd) {
+    background-color: #ffb6c1; 
   }
   
 

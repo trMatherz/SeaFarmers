@@ -22,7 +22,7 @@
 .sidebarContainer {
   width: 300px; 
   padding: 20px;
-  background-color: #003366; 
+  background-color: #1c1e30;
   position: fixed; 
   top: 0;
   left: 0;
@@ -32,20 +32,20 @@
   flex-direction: column;
 }
 
-/* Sidebar header */
+
 .sidebarHeader {
   display: flex;
-  justify-content: flex-start; /* Align items to the left */
+  justify-content: flex-start; 
   margin-bottom: 20px;
-  background-color: #003366; /* Dark blue background */
+  background-color: #1c1e30;
 }
 
-/* Dropdown container (optional, adjust if needed) */
+
 .dropdown {
   margin-left: 10px; /* Adjust positioning */
 }
 
-/* Title for topics */
+
 h3 {
   color: white; /* White text for the topic title */
   margin-top: 0;
@@ -53,7 +53,7 @@ h3 {
   font-weight: bold;
 }
 
-/* Topic list */
+
 ul {
   list-style: none;
   padding: 0;
@@ -69,12 +69,10 @@ ul li {
 
 
 
-/* Loading/Error message styling */
 p {
-  color: white; /* Ensure any text (loading or error) is white */
+  color: white; 
 }
 
-/* Styling for the dropdown component (if needed) */
 .dropdown {
   color: #ffffff; /* White text in dropdown */
   font-size: 1.1em;

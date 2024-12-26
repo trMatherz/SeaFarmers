@@ -8,7 +8,7 @@
 }
 
 .dropdownButton {
-  background-color: #0078d4; /* Adjust for your theme */
+  background-color: #0045a4; /* Adjust for your theme */
   color: white;
   padding: 10px 20px;
   font-size: 16px;
@@ -18,7 +18,7 @@
 }
 
 .dropdownButton:hover {
-  background-color: #005bb5; /* Darker shade for hover effect */
+  background-color: #003499; 
 }
 
 .dropdownContent {

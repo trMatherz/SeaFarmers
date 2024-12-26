@@ -201,7 +201,7 @@ const ProblemList = ({ moduleName, topicId, location }) => {
                     <td className={styles.starredCell}>{problem.star ? '⭐' : ''}</td>
                     <td className={styles.problemCell}>
                       <a
-                        href={problem.link}  // Use problem.link instead of problem.url
+                        href={problem.link}  
                         target="_blank"
                         rel="noopener noreferrer"
                         className={styles.problemLink}
@@ -224,7 +224,7 @@ const ProblemList = ({ moduleName, topicId, location }) => {
                       </span>
                       {helpDropdownOpen === index && (
                         <div
-                          ref={helpDropdownRef} // Attach ref for outside click detection
+                          ref={helpDropdownRef} 
                           className={styles.dropdownMenu}
                           style={{
                             position: 'absolute',

@@ -28,8 +28,9 @@
   display: none !important;
 }
 
-/* Dark mode background */
+
 body {
-  background-color: #000040; /* Set dark mode background */
+  background-color: #000040; 
 }
+
 

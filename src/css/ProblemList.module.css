@@ -10,8 +10,11 @@ tr, th,
 td {
   height: 40px; 
   line-height: 40px; 
-  padding: 5; 
   border: none !important;
+  padding-top: 5px; 
+  padding-bottom: 5px; 
+  padding-left: 0; 
+  padding-right: 0; 
 }
 
 .statusColumn,
@@ -52,20 +55,20 @@ td {
 
 .difficultyColumn,
 .difficultyCell {
-  width: 40px;
+  width: 50px;
   overflow: hidden; /* Prevents overflow */
   text-overflow: ellipsis;
 }
 
 .tagsColumn,
 .tagsCell {
-  width: 275px;
+  width: 265px;
   text-align: left;
   white-space: normal;
   word-wrap: break-word;
   word-break: break-word; 
   overflow-wrap: break-word; 
-  overflow: hidden; /* Prevents overflow */
+  overflow: hidden; 
   text-overflow: ellipsis;
 }
 
@@ -75,17 +78,17 @@ td {
   text-align: left;
   white-space: normal;
   word-wrap: break-word;
-  overflow: hidden; /* Prevents overflow */
+  overflow: hidden; 
   text-overflow: ellipsis;
 }
 
 
 tbody tr:nth-child(even) {
-  background-color: #0000ff;
+  background-color: #ffc0cb; 
 }
 
 tbody tr:nth-child(odd) {
-  background-color: #ff0000; 
+  background-color: #ffb6c1; 
 }
 
 .stateCircle {
@@ -130,7 +133,7 @@ thead th {
 }
 
 .dropdownMenu {
-  background-color: white;
+  background-color: #ff4d4d; 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
   z-index: 1000;
@@ -151,7 +154,14 @@ thead th {
 }
 
 .dropdownMenu ul li:hover {
-  background-color: #32cd32; 
+  background-color: #ff6666; 
+  color: black;
+}
+
+.helpLink {
+  color: black;
+}
+.helpLink:hover {
   color: white;
 }
 
