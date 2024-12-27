@@ -4,9 +4,9 @@
     width: 100%;
   }
   
-  .moduleHeader [
+  .moduleHeader {
     transform: translateX(0);
-  ]
+  }
 
   
 
