@@ -42,12 +42,12 @@
 
 
 .dropdown {
-  margin-left: 10px; /* Adjust positioning */
+  margin-left: 10px; 
 }
 
 
 h3 {
-  color: white; /* White text for the topic title */
+  color: white; 
   margin-top: 0;
   font-size: 1.2em;
   font-weight: bold;
@@ -74,8 +74,8 @@ p {
 }
 
 .dropdown {
-  color: #ffffff; /* White text in dropdown */
+  color: #ffffff; 
   font-size: 1.1em;
   font-weight: 600;
-  margin-left: 50px; /* Adjust positioning */
+  margin-left: 50px; 
 }

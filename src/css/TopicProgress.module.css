@@ -42,7 +42,7 @@
 }
 
 .dropdownMenu {
-  background-color: white;
+  background-color: #ff4d4d; 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
   z-index: 1000;
@@ -58,6 +58,6 @@
 }
 
 .dropdownItem:hover {
-  background-color: #32cd32;
+  background-color: #ff6666;
   color: white;
 }

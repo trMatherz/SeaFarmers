@@ -1,3 +1,9 @@
 h1 {
     color: white;
+    transform: translateX(150px);
+}
+
+p {
+    color: white;
+    transform: translateX(150px);
 }

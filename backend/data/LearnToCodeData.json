@@ -15,6 +15,7 @@
       "genericTopicId": "Pre-Code",
       "genericTopicName": "Before You Code",
       "topics" : [
+        "ThisGuide",
         "TimeComplexity",
         "conditionals"
       ]
@@ -29,6 +30,16 @@
     }
   ],
   "topics": [
+    {
+      "topicId": "ThisGuide",
+      "topicName": "This Guide",
+      "description": "Learn about the long road ahead.",
+      "solvedProblems": 0,
+      "skippedProblems": 0,
+      "unseenProblems": 0,
+      "totalProblems": 0,
+      "state": 0
+    },
     {
       "topicId": "TimeComplexity",
       "topicName": "Time Complexity",
