@@ -4,6 +4,16 @@
     width: 100%;
   }
   
+  .moduleHeader [
+    transform: translateX(0);
+  ]
+
+  
+
+  .moduleDescription {
+    transform: translateX(0);
+  }
+  
   .informationBackground {
     background-color: #004080;
     border-radius: 10px;

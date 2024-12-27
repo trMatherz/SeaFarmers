@@ -31,8 +31,8 @@ function ModuleHome({
       <Navbar />
       <div className={styles.moduleHome}>
         <div className={styles.informationBackground}>
-          <h1>{moduleName}</h1>
-          <p>{description}</p>
+          <h1 className={styles.moduleHeader}>{moduleName}</h1>
+          <p className={styles.moduleDescription}>{description}</p>
 
           <div className={styles.progressCardsContainer}>
             <div className={styles.progressCard}>

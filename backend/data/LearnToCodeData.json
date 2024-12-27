@@ -2,13 +2,13 @@
   "moduleId": "module1",
   "moduleName": "LearnToCode",
   "description": "A beginner-friendly module to kickstart your coding journey.",
-  "unseenTopics": 4,
+  "unseenTopics": 5,
   "skippedTopics": 0,
   "solvedTopics": 0,
   "unseenProblems": 10,
   "skippedProblems": 0,
   "solvedProblems": 0,
-  "totalTopics": 4,
+  "totalTopics": 5,
   "totalProblems": 10,
   "genericTopics" : [
     {
