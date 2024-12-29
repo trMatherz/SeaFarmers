@@ -249,16 +249,16 @@ const checkModuleUpdate = async (userId, moduleName) => {
     userModuleData.unseenTopics = 0;
     userModuleData.skippedTopics = 0;
   
-    // Iterate over each topic in the userModuleData
+   
     userModuleData.topics.forEach((topic) => {
-      // Reset topic-level counts
+      
       topic.solvedProblems = 0;
       topic.unseenProblems = 0;
       topic.skippedProblems = 0;
   
-      // Iterate over each problem in the topic
+      
       topic.problems.forEach((problem) => {
-        // Update topic-level counts based on the problem state
+       
         if (problem.state == 2) {
           topic.solvedProblems++;
           userModuleData.solvedProblems++;
@@ -271,7 +271,7 @@ const checkModuleUpdate = async (userId, moduleName) => {
         }
       });
   
-      // Update module-level counts based on the topic state
+      
       if (topic.state == 2) {
         userModuleData.solvedTopics++;
       } else if (topic.state == 0) {

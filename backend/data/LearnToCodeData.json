@@ -38,7 +38,9 @@
       "skippedProblems": 0,
       "unseenProblems": 0,
       "totalProblems": 0,
-      "state": 0
+      "state": 0,
+      "problems": [],
+    "resources": []
     },
     {
       "topicId": "TimeComplexity",
