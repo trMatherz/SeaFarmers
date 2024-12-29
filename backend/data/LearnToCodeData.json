@@ -2,14 +2,14 @@
   "moduleId": "module1",
   "moduleName": "LearnToCode",
   "description": "A beginner-friendly module to kickstart your coding journey.",
-  "unseenTopics": 5,
+  "unseenTopics": 2,
   "skippedTopics": 0,
   "solvedTopics": 0,
-  "unseenProblems": 10,
+  "unseenProblems": 0,
   "skippedProblems": 0,
   "solvedProblems": 0,
-  "totalTopics": 5,
-  "totalProblems": 10,
+  "totalTopics": 2,
+  "totalProblems": 0,
   "genericTopics" : [
     {
       "genericTopicId": "Pre-Code",
@@ -51,219 +51,21 @@
       "unseenProblems": 3,
       "totalProblems": 3,
       "state": 0,
-      "problems": [
-        {
-          "problemId": "var1",
-          "name": "Declare a variable",
-          "location": "sample1",
-          "state": 0,
-          "source": "CSES",
-          "difficulty": 1000,
-          "star": 1,
-          "tags": ["one", "two"],
-          "link": "https://cses.fi/problemset/",
-          "helps": [
-            {
-              "name": "My soution",
-              "link": "https://cses.fi/problemset/"
-            },
-            {
-              "name": "Official Solution",
-              "link": "https://cses.fi/problemset/9090"
-            }
-          ]
-        },
-        {
-          "problemId": "var2",
-          "name": "Declare a variable pt2",
-          "location": "problemlist",
-          "state": 0,
-          "source": "USACO",
-          "difficulty": 1400,
-          "star": 0,
-          "tags": ["onsssse", "two"],
-          "link": "https://cses.fi/problemset/"
-         
-          
-          
-        },
-        {
-          "problemId": "var3",
-          "name": "Declare a variable pt2skldaslkakdkakds",
-          "location": "problemlist",
-          "state": 0,
-          "source": "CP-ALG",
-          "difficulty": 900,
-          "star": 1,
-          "tags": ["onssssddde", "tdddddwo", "osdoasdoasdsad"],
-          "link": "https://cses.fi/problemset/",
-          "helps": [
-            {
-              "name": "My soution",
-              "link": "https://cses.fi/problemset/"
-            },
-            {
-              "name": "Official Solution",
-              "link": "https://cses.fi/problemset/9090"
-            }
-          ]
-        }
-        
-      ], 
+      "problems": [],
       "resources": [
         {
-          "name": "BAS",
-          "source": "LOLOOSS",
+          "name": "Chapter 2: Time Complexity",
+          "source": "CPH",
           "star": 1,
-          "description": "SaioSIHIJSOIJAILSJIJSIASHSASIAISISI  ASIS ASA IS ASIISA SAOIS",
-          "link": "https://cses.fi/problemset/"
+          "description": "A more elaborate explanation with an example problem. A little complicated for newer-ones",
+          "link": "https://usaco.guide/CPH.pdf#page=27"
         },
         {
-          "name": "BAS11",
-          "source": "LOLOOsssssSS",
+          "name": "Big O in 5 minutes",
+          "source": "Youtube",
           "star": 0,
-          "description": "SaioSIHIJSOIJAILSJSISI  ASIS ASA IS ASIISA SAOIS",
-          "link": "https://cses.fi/problemset/"
-        }
-      ]
-    },
-    {
-      "topicId": "conditionals",
-      "topicName": "Mastering Conditionals",
-      "description": "Understand how to use if-else statements to make decisions in code.",
-      "solvedProblems": 0,
-      "skippedProblems": 0,
-      "unseenProblems": 2,
-      "totalProblems": 2,
-      "state": 0,
-      "problems": [
-        {
-          "problemId": "cond1",
-          "name": "Simple if-else statement",
-          "location": "problemlist",
-          "state": 0,
-          "source": "PlatformY",
-          "difficulty": 1,
-          "star": 1,
-          "tags": ["one", "two"],
-          "link": "https://cses.fi/problemset/"
-        },
-        {
-          "problemId": "cond2",
-          "name": "Nested if-else statement",
-          "location": "problemlist",
-          "state": 0,
-          "source": "PlatformY",
-          "difficulty": 2,
-          "star": 1,
-          "tags": ["one", "two"],
-          "link": "https://cses.fi/problemset/"
-        }
-      ]
-    },
-    {
-      "topicId": "Output",
-      "topicName": "Output",
-      "description": "Learn how to run your first program",
-      "solvedProblems": 0,
-      "skippedProblems": 0,
-      "unseenProblems": 3,
-      "totalProblems": 3,
-      "state": 0,
-      "problems": [
-        {
-          "problemId": "var1",
-          "name": "Declare a variable",
-          "location": "sample1",
-          "state": 0,
-          "source": "PlatformX",
-          "difficulty": 1,
-          "star": 1,
-          "tags": ["one", "two"],
-          "link": "https://cses.fi/problemset/",
-          "helps": [
-            {
-              "name": "My soution",
-              "link": "https://cses.fi/problemset/"
-            },
-            {
-              "name": "Official Solution",
-              "link": "https://cses.fi/problemset/9090"
-            }
-          ]
-        },
-        {
-          "problemId": "var2",
-          "name": "Declare a variable pt2",
-          "location": "problemlist",
-          "state": 0,
-          "source": "PlatformXXXXX",
-          "difficulty": 4,
-          "star": 0,
-          "tags": ["onsssse", "two"],
-          "link": "https://cses.fi/problemset/"
-        },
-        {
-          "problemId": "var3",
-          "name": "Declare a variable pt2skldaslkakdkakds",
-          "location": "problemlist",
-          "state": 0,
-          "source": "PlatsadkjasdjkdsajdkaskdsjkajkkdjasdsadX",
-          "difficulty": 10,
-          "star": 1,
-          "tags": ["onssssddde", "tdddddwo", "osdoasdoasdsad"],
-          "link": "https://cses.fi/problemset/"
-        }
-        
-      ], 
-      "resources": [
-        {
-          "name": "BAS",
-          "source": "LOLOOSS",
-          "star": 1,
-          "description": "SaioSIHIJSOIJAILSJIJSIASHSASIAISISI  ASIS ASA IS ASIISA SAOIS",
-          "link": "https://cses.fi/problemset/"
-        },
-        {
-          "name": "BAS11",
-          "source": "LOLOOsssssSS",
-          "star": 0,
-          "description": "SaioSIHIJSOIJAILSJSISI  ASIS ASA IS ASIISA SAOIS",
-          "link": "https://cses.fi/problemset/"
-        }
-      ]
-    },
-    {
-      "topicId": "Input",
-      "topicName": "Input",
-      "description": "Learn how to read in input.",
-      "solvedProblems": 0,
-      "skippedProblems": 0,
-      "unseenProblems": 2,
-      "totalProblems": 2,
-      "state": 0,
-      "problems": [
-        {
-          "problemId": "cond1",
-          "name": "Simple if-else statement",
-          "location": "problemlist",
-          "state": 0,
-          "source": "PlatformY",
-          "difficulty": 1,
-          "star": 1,
-          "tags": ["one", "two"],
-          "link": "https://cses.fi/problemset/"
-        },
-        {
-          "problemId": "cond2",
-          "name": "Nested if-else statement",
-          "location": "problemlist",
-          "state": 0,
-          "source": "PlatformY",
-          "difficulty": 2,
-          "star": 1,
-          "tags": ["one", "two"],
-          "link": "https://cses.fi/problemset/"
+          "description": "Video Format",
+          "link": "https://www.youtube.com/watch?v=__vX2sjlpXU&t=114s"
         }
       ]
     }
