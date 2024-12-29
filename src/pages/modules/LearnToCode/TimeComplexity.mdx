@@ -7,6 +7,8 @@ import TopicProgress from '../../../components/TopicProgress';
 import Sidebar from '../../../components/Sidebar';  
 import problems from './test.problems.json';
 import SignInButton from '@site/src/components/SignInButton';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
 import 'katex/dist/katex.min.css';
 
 
@@ -33,7 +35,7 @@ With good constant factors, this you are limited to around $5 * 10^8$ opperation
 
 The way we measure a code's time complexity is in Big O Notation. 
 
-`$\mathcal{O}(f(x))$` is how many opperations the worst-case-scenario of f(x) takes to complete. 
+`$\mathcal{O}(f(x))$` is how many opperations the worst-case-scenario of $f(x)$ takes to complete. 
 
 Here are some example time complexities: 
 
@@ -46,7 +48,7 @@ int b = 7;
 int c = a + b; 
 ```
 
-To keep it simple, we say that `$\mathcal{O}(C)$` = `$\mathcal{O}(1)$`
+To keep it simple, we say that `$\mathcal{O}(C)$` becomes `$\mathcal{O}(1)$`
 as the extact number will not often affect the run-time. 
 
 The code below runs in `$\mathcal{O}(n)$` since it does a constant number of opperations $n$ times: 
@@ -75,7 +77,7 @@ for (int i = 1; i <= n; i++) {
 
 Here is table to refernce if you are just starting out:
 
-| $n$                  | Possible complexities                                                  |
+| $n$                  | Complexities                                                  |
 | -------------------- | ----------------------------------------------------------------       |
 | $n \le 10$           | `$\mathcal{O}(n!)$`, `$\mathcal{O}(n^7)$`, `$\mathcal{O}(n^6)$`        |
 | $n \le 20$           | `$\mathcal{O}(2^n \cdot n)$`, `$\mathcal{O}(n^5)$`                     |

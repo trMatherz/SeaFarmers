@@ -57,4 +57,4 @@ const config = {
   },
 };
 
-module.exports = config; // Ensure this file is exporting properly
+module.exports = config; 

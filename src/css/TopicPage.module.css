@@ -7,3 +7,7 @@ p {
     color: white;
     transform: translateX(150px);
 }
+
+pre {
+    transform: translateX(150px);
+}
