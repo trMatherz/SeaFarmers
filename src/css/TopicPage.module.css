@@ -10,4 +10,9 @@ p {
 
 pre {
     transform: translateX(150px);
+    margin-left: 150px;
+}
+
+table {
+    transform: translateX(150px);
 }

@@ -5,8 +5,8 @@ const React = require('react');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
+  title: 'Sea Farmers',
+  tagline: 'Dinos are cool',
   favicon: 'img/favicon.ico',
   url: 'https://trmatherz.github.io',
   baseUrl: '/SeaFarmers/',
@@ -23,8 +23,11 @@ const config = {
       'classic',
       {
         docs: {
-          sidebarPath: './sidebars.js',
+          sidebarPath: require.resolve('./sidebars.js'),
           editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          path: './src/pages',
+          remarkPlugins: [require('remark-math')],
+          rehypePlugins: [require('rehype-katex')],
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -52,7 +55,7 @@ const config = {
     ],
   ],
   customFields: {
-    backendUrl: 'https://seafarmers.onrender.com', // Specify backend server URL here
+    backendUrl: 'https://seafarmers.onrender.com', 
    // backendUrl: 'http://localhost:3000',
   },
 };
