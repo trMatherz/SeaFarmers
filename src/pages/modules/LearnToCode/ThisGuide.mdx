@@ -1,0 +1,74 @@
+import React from 'react';
+import '../../../css/TopicPage.module.css';  
+import ProblemList from '../../../components/ProblemList';  
+import SampleProblem from '../../../components/SampleProblem';  
+import ResourceList from '../../../components/ResourceList';
+import TopicProgress from '../../../components/TopicProgress';  
+import Sidebar from '../../../components/Sidebar';  
+import problems from './test.problems.json';
+import SignInButton from '@site/src/components/SignInButton';
+
+
+export const moduleName = "LearnToCode"; 
+export const topicId = "ThisGuide";  
+
+
+<Sidebar moduleName={moduleName} /> 
+
+
+
+
+# This Guide 
+
+Prerequisites: Nothing
+
+Whether you are new to programming or someone who wants to push their abilties to the next level, 
+this guide will help you to realize your potential. While the emphasis in on competitive programming,
+the content taught here will enhance your problem-solving abilities, teach you how to break down abstract 
+concepts, and allow you to code naturally. 
+
+# Competitive Programming
+
+Competitive programming in a nut-shell is a competition you aim to solve a certain number of problems in a
+certain amount of time. The main catch is, that unlike almost everything else, the answers to these problems
+are not specific words or numbers, rather they are generic algorithms. If this is your first exposure, then this
+may sound overwhelming, but fret not: once you actually get into programming, this will be better understood.
+
+
+The ultimate reason for this guide is to help you dominate competitive programming problems. Competitions 
+are hosted locally, but the main target of this guide are the olympiads, specifcally for the U.S., this is
+USACO. You may learn more about these contests now, but I reccommend waiting since all of these problems will 
+seem quite scary and overwhelming if you do not know how to code. Additionally, worrying about potential 
+progression and the details of the contests is NOT more import than learning how to compete in them. You can
+NOT "fake it to you make it" in these contests. 
+
+# Lanuage
+
+If you are unware, there are many programming languages. This guide is made exclusively for C++. This is the 
+best lanuage for competitive programming, and it is better to learn than python since you must be more explicit
+with what you code, thereby understanding it better. 
+
+# Environment
+
+To code, you have to have certain software. I reccommend VSCODE which I will link below, but you may use whatever
+you prefer. 
+
+[Set Up](https://code.visualstudio.com/docs/setup/setup-overview)
+
+[C++](https://code.visualstudio.com/docs/languages/cpp)
+
+[Code Runner Extension](https://www.youtube.com/watch?v=QwqV0n7a2tc)
+
+# Last
+
+It is import to note that you do NOT have to be a genius to excel at programming. You don't have to have a
+strong math background. Don't get discouraged if you are confused at first as jumping from not understanding
+programming to solving problems on your own is a BIG leap. 
+
+Also, you are able to track your progress with problems and topics. If you are confused about a topic or problem, 
+you can always skip it and come back to it later. 
+
+
+
+
+<TopicProgress moduleName={moduleName} topicId={topicId} />
