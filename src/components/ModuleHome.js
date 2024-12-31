@@ -4,8 +4,7 @@ import axios from 'axios';
 import styles from '../css/ModuleHome.module.css'; // Import CSS module
 import Layout from '@theme/Layout';
 import Navbar from './Navbar';
-const config = require('../../docusaurus.config.js');  // Adjust the path if necessary
-const backendUrl = config.customFields.backendUrl; // Access customFields for backendUrl
+
 
 function ModuleHome({
   moduleName,

@@ -8,8 +8,8 @@ p {
     transform: translateX(150px);
 }
 
-pre {
-    margin-left: 200px;
+.codeBlockContent_biex {
+    margin-left: 150px;
 }
 
 table {

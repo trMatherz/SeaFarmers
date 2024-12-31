@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-const config = require('../../docusaurus.config.js');  // Adjust the path if necessary
-const backendUrl = config.customFields.backendUrl; // Access customFields for backendUrl
+
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+
 
 const ProfilePicture = () => {
+  const { siteConfig } = useDocusaurusContext();
+  const backendUrl = siteConfig.customFields.backendUrl; 
+
+
   const [user, setUser] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   

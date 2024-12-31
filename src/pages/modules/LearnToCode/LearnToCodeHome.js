@@ -2,13 +2,18 @@ import React, { useState, useEffect } from 'react';
 import ModuleHome from '../../../components/ModuleHome';
 import axios from 'axios';
 
-const config = require('../../../../docusaurus.config.js');  // Adjust the path if necessary
-const backendUrl = config.customFields.backendUrl; // Access customFields for backendUrl
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 const LearnToCode = () => {
+  const { siteConfig } = useDocusaurusContext();
+  const backendUrl = siteConfig.customFields.backendUrl; 
+
+
+
   const [error, setError] = useState(null);
   const [moduleData, setModuleData] = useState(null);
   const [loading, setLoading] = useState(true); // To track loading state
+  
 
   // Fetch module data based on moduleName
   const fetchModuleData = async (moduleName) => {

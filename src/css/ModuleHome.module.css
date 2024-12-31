@@ -58,15 +58,15 @@
   }
   
   .unseen {
-    background: linear-gradient(45deg, #f44336, #ff6666);
+    background: grey; 
   }
   
   .skipped {
-    background: linear-gradient(45deg, #ffeb3b, #ffee58);
+    background: blue; 
   }
   
   .solved {
-    background: linear-gradient(45deg, #4caf50, #81c784);
+    background: green; 
   }
   
   .progressNumbers {
@@ -148,12 +148,12 @@
 /* Responsive design */
 @media (max-width: 768px) {
   .topicRow {
-    flex-direction: column; /* Stack columns vertically on smaller screens */
+    flex-direction: column; 
     gap: 10px;
   }
 
   .topicRow::before {
-    display: none; /* Remove the middle line on smaller screens */
+    display: none;
   }
 }
 

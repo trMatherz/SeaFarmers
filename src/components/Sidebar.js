@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios'; // Ensure axios is installed
 import styles from '../css/Sidebar.module.css';
-import Dropdown from './Dropdown'; // Adjust path as needed
-const config = require('../../docusaurus.config.js');  // Adjust the path if necessary
-const backendUrl = config.customFields.backendUrl; // Access customFields for backendUrl
+import Dropdown from './Dropdown'; 
+
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+
 
 function Sidebar({ moduleName }) {
+  const { siteConfig } = useDocusaurusContext();
+  const backendUrl = siteConfig.customFields.backendUrl; 
+
+
   const [moduleData, setModuleData] = useState(null); 
   const [loading, setLoading] = useState(false); 
   const [error, setError] = useState(null); 

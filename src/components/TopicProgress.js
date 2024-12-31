@@ -1,10 +1,15 @@
 import React, { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
 import styles from '../css/TopicProgress.module.css'; 
-const config = require('../../docusaurus.config.js'); 
-const backendUrl = config.customFields.backendUrl; 
+
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+
 
 const TopicProgress = ({ moduleName, topicId }) => {
+  const { siteConfig } = useDocusaurusContext();
+  const backendUrl = siteConfig.customFields.backendUrl; 
+
+
   const [moduleData, setModuleData] = useState(null);
   const [topicData, setTopicData] = useState(null);
   const [loading, setLoading] = useState(true);

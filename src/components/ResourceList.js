@@ -1,10 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import styles from '../css/ResourceList.module.css'; // Import the CSS module
-const config = require('../../docusaurus.config.js'); // Adjust the path if necessary
-const backendUrl = config.customFields.backendUrl; // Access customFields for backendUrl
+import styles from '../css/ResourceList.module.css'; 
+
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+
 
 const ResourceList = ({ moduleName, topicId }) => {
+  const { siteConfig } = useDocusaurusContext();
+  const backendUrl = siteConfig.customFields.backendUrl; 
+
+
   const [moduleData, setModuleData] = useState(null);
   const [topicData, setTopicData] = useState(null);
   const [loading, setLoading] = useState(false);
