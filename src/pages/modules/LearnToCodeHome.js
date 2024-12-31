@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import ModuleHome from '../../../components/ModuleHome';
+import ModuleHome from '../../components/ModuleHome';
 import axios from 'axios';
 
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';

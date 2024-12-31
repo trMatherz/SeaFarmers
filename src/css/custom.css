@@ -31,6 +31,14 @@ body {
   background-color: #000040; 
 }
 
+.pagination-nav {
+  display: none;
+}
+
+.breadcrumbs {
+  display: none;
+}
+
 @import 'katex/dist/katex.min.css';
 
 

@@ -35,10 +35,10 @@ const Dropdown = () => {
         </button>
         {isOpen && (
           <div className={styles.dropdownContent}>
-            <Link to="/SeaFarmers/modules/LearnToCode/LearnToCodeHome/">
+            <Link to="/SeaFarmers/modules/LearnToCodeHome/">
               Learn To Code
             </Link>
-            <Link to="/SeaFarmers/modules/Novice/NoviceHome/">Novice</Link>
+            {/*<Link to="/SeaFarmers/modules/Novice/NoviceHome/">Novice</Link>*/}
           </div>
         )}
       </div>

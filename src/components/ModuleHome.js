@@ -122,7 +122,7 @@ function ModuleHome({
                         (specificTopic, subIndex) =>
                           specificTopic && (
                             <li key={subIndex} className={`${styles[`state${specificTopic.state}`]}`}>
-                              <a href={`/SeaFarmers/modules/${moduleName}/${specificTopic.topicId}`}>
+                              <a href={`/SeaFarmers/docs/modules/${moduleName}/${specificTopic.topicId}`}>
                                 {specificTopic.topicName}
                               </a>
                             </li>

@@ -1,0 +1,116 @@
+import React from 'react';
+import '../../../src/css/TopicPage.module.css';  
+import ProblemList from '../../../src/components/ProblemList';  
+import SampleProblem from '../../../src/components/SampleProblem';  
+import ResourceList from '../../../src/components/ResourceList';
+import TopicProgress from '../../../src/components/TopicProgress';  
+import Sidebar from '../../../src/components/Sidebar';  
+import SignInButton from '@site/src/components/SignInButton';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+import 'katex/dist/katex.min.css';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';
+
+
+export const moduleName = "LearnToCode"; 
+export const topicId = "TimeComplexity";  
+
+<Sidebar moduleName={moduleName} /> 
+
+# Time Complexity
+
+Prerequisites: Nothing
+
+Note: If you have never coded before, you may want to skip this until you have done a few simple problems.
+
+Here are some additional resources if you would like: 
+
+<ResourceList moduleName={moduleName} topicId={topicId}/>
+
+Time Complexity is all about determining the worst-case scenario for the time it takes for code to run. 
+This matters because probelms have a time limit for your code to run for each test-case which is usually a couple seconds.
+With good constant factors, this you are limited to around $5 * 10^8$ opperations for a problem. 
+
+# Big O Notation
+
+The way we measure a code's time complexity is in Big O Notation. 
+
+$\mathcal{O}(f(x))$ is how many opperations $f(x)$ takes to complete in the worst-case-scenario. 
+
+Here are some example time complexities: 
+
+
+The code below runs in $\mathcal{O}(1)$since it does a constant number of opperations:
+
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`int a = 5; 
+int b = 7; 
+int c = a + b; 
+`}
+  </SyntaxHighlighter>
+</div>
+
+
+To keep it simple, we say that $\mathcal{O}(C)$ becomes $\mathcal{O}(1)$
+as the extact number will not often affect the run-time. 
+
+The code below runs in $\mathcal{O}(n)$ since it does a constant number of opperations $n$ times: 
+
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`for (int i = 1; i <= n; i++) {
+    int a = 5; 
+    int b = 7; 
+    int c = a + b; 
+}
+`}
+  </SyntaxHighlighter>
+</div>
+
+
+Once again, we ignore $C$ so $\mathcal{O}(n)$ becomes $\mathcal{O}(n)$.
+
+If we add one more loop, it will run in $\mathcal{O}(n^2)$.
+
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`for (int i = 1; i <= n; i++) {
+    for(int j = 1; j <= n; j++) {
+        int a = 5; 
+        int b = 7; 
+        int c = a + b; 
+    }
+}
+`}
+  </SyntaxHighlighter>
+</div>
+
+
+Here is table to refernce if you are just starting out:
+
+| $n$                  | Complexities                                                        |
+| -------------------- | ----------------------------------------------------------------    |
+| $n \le 10$           | $\mathcal{O}(n!)$, $\mathcal{O}(n^7)$, $\mathcal{O}(n^6)$           |
+| $n \le 20$           | $\mathcal{O}(2^n \cdot n)$, $\mathcal{O}(n^5)$                      |
+| $n \le 100$          | $\mathcal{O}(n^4)$                                                  |
+| $n \le 500$          | $\mathcal{O}(n^3)$                                                  |
+| $n \le 8000$         | $\mathcal{O}(n^2)$                                                  |
+| $n \le 7 \cdot 10^4$ | $\mathcal{O}(n \sqrt n)$                                            |
+| $n \le 5 \cdot 10^5$ | $\mathcal{O}(n \log n)$                                             |
+| $n \le 5 \cdot 10^6$ | $\mathcal{O}(n)$                                                    |
+| $n \le 10^{18}$      | $\mathcal{O}(\log^2 n)$, $\mathcal{O}(\log n)$, $\mathcal{O}(1)$ | 
+
+Here are the most important cases for starting out: 
+
+If $n \le 500$,  $\mathcal{O}(n^3)$ works
+
+If $n \le 8000$,  $\mathcal{O}(n^2)$ works
+
+If $n \le 5 \cdot 10^6$,  $\mathcal{O}(n)$ works
+
+<TopicProgress moduleName={moduleName} topicId={topicId} />
+
+
+
