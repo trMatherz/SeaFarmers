@@ -1,0 +1,65 @@
+import React from 'react';
+import '../../../src/css/TopicPage.module.css';  
+import ProblemList from '../../../src/components/ProblemList';  
+import SampleProblem from '../../../src/components/SampleProblem';  
+import ResourceList from '../../../src/components/ResourceList';
+import TopicProgress from '../../../src/components/TopicProgress';  
+import Sidebar from '../../../src/components/Sidebar';  
+import SignInButton from '@site/src/components/SignInButton';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+import 'katex/dist/katex.min.css';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';
+
+
+export const moduleName = "LearnToCode"; 
+export const topicId = "Output";  
+
+<Sidebar moduleName={moduleName} /> 
+
+# Output
+
+Prerequisites: Nothing
+
+At its core, programs are designed to output something, given an input. For right now, let's keep it simple and 
+focus only on outputs. 
+
+This is your basic C++ file: 
+
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`#include <iostream>
+using namespace std;
+
+int main() {
+    cout << 5 << endl; 
+    cout << 2 + 3 << endl; 
+}
+`}
+  </SyntaxHighlighter>
+</div>
+
+When this code runs, it starts at the top of main() and goes line by line until it reaches the bottom. The "cout" 
+means output, the "\<\<" seperarates different outputs, and the "endl" makes the program output on the next line. 
+
+If you ran the code, you would get an output like this: 
+
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`5
+2
+`}
+  </SyntaxHighlighter>
+</div>
+
+Use this to solve this Focus Problem: 
+
+<SampleProblem  moduleName={moduleName} topicId={topicId} location={"sample1"} /> 
+
+
+
+<TopicProgress moduleName={moduleName} topicId={topicId} />
+
+
+

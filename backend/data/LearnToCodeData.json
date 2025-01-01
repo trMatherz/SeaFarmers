@@ -2,13 +2,13 @@
   "moduleId": "module1",
   "moduleName": "LearnToCode",
   "description": "A beginner-friendly module to kickstart your coding journey.",
-  "unseenTopics": 2,
+  "unseenTopics": 3,
   "skippedTopics": 0,
   "solvedTopics": 0,
   "unseenProblems": 0,
   "skippedProblems": 0,
   "solvedProblems": 0,
-  "totalTopics": 2,
+  "totalTopics": 3,
   "totalProblems": 0,
   "genericTopics" : [
     {
@@ -24,8 +24,8 @@
       "genericTopicId": "GettingStarted",
       "genericTopicName": "Getting Started",
       "topics" : [
-        "Output",
-        "Input"
+        "Output"
+        
       ]
     }
   ],
@@ -68,6 +68,35 @@
           "link": "https://www.youtube.com/watch?v=__vX2sjlpXU&t=114s"
         }
       ]
+    },
+    {
+      "topicId": "Output",
+      "topicName": "Output",
+      "description": "Run your first program.",
+      "solvedProblems": 0,
+      "skippedProblems": 0,
+      "unseenProblems": 1,
+      "totalProblems": 1,
+      "state": 0,
+      "problems": [
+        {
+          "problemId": "BabySteps",
+          "location": "sample1",
+          "name": "Baby Steps",
+          "state": 0,
+          "source": "Me",
+          "star": true,
+          "difficulty": 100,
+          "tags": "Output",
+          "link": "https://www.hackerrank.com/contests/wjd/challenges/baby-steps-a-new-beginning",
+          "helps": {
+            "name": "My Solution",
+            "location": "https://trmatherz.github.io/SeaFarmers/docs/solutions/BabySteps"
+          }
+        }
+      ],
+      "resources": []
+      
     }
   ]
 }
