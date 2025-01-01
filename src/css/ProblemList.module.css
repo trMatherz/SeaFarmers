@@ -6,6 +6,8 @@
   border-spacing: 0;
   transform: translateX(0);
   overflow: visible;
+  margin-top: 20px; 
+  margin-bottom: 20px; 
 }
 
 tr, th,
