@@ -87,12 +87,16 @@
           "source": "Me",
           "star": true,
           "difficulty": 100,
-          "tags": "Output",
+          "tags": [
+            "Output"
+          ],
           "link": "https://www.hackerrank.com/contests/wjd/challenges/baby-steps-a-new-beginning",
-          "helps": {
-            "name": "My Solution",
-            "location": "https://trmatherz.github.io/SeaFarmers/docs/solutions/BabySteps"
-          }
+          "helps": [
+            {
+              "name": "My Solution",
+              "location": "https://trmatherz.github.io/SeaFarmers/docs/solutions/BabySteps"
+            }
+          ]
         }
       ],
       "resources": []
