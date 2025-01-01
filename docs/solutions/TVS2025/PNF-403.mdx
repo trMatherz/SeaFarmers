@@ -1,0 +1,68 @@
+import React from 'react';
+import '../../../src/css/TopicPage.module.css';   
+import Sidebar from '../../../src/components/Sidebar';  
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+import 'katex/dist/katex.min.css';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';
+
+
+export const moduleName = "LearnToCode"; 
+
+<Sidebar moduleName={moduleName} /> 
+
+# Example 
+
+Prerequisites: Nothing
+
+# Breakdown
+
+This is a simulation problem, so all you have to do is translate the problem into code form. You can do this 
+with If Statements and variables or use a map to simplify. 
+
+# Implementation
+
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`#include <cmath>
+#include <cstdio>
+#include <vector>
+// #include <iostream> 
+#include <fstream>
+std::ifstream cin ("case8.txt");
+std::ofstream cout ("out8.txt");
+#include <algorithm>
+#include <map>
+using namespace std;
+
+
+int main() {
+    int n; 
+    cin >> n; 
+    map<char, long long> cur; 
+    for(int i = 0; i < n; i++) {
+        int k; 
+        cin >> k; 
+        for(int j = 0; j < k; j++) {
+            string w; long long x; char y; 
+            cin >> w >> x >> y; 
+            if(w == "Grow") cur[y] += x; 
+            else if(w == "Die") cur[y] -= x; 
+            else {
+                char z; 
+                cin >> z; 
+                cur[y] -= x; 
+                cur[z] += x; 
+            }
+        }
+        cout << cur['R'] << " " << 'R' << " ";
+        cout << cur['B'] << " " << 'B' << " ";
+        cout << cur['P'] << " " << 'P' << endl; 
+    }
+}
+`}
+  </SyntaxHighlighter>
+</div>
+
+

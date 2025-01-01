@@ -1,6 +1,6 @@
 import React from 'react';
-import '../../src/css/TopicPage.module.css';   
-import Sidebar from '../../src/components/Sidebar';  
+import '../../../src/css/TopicPage.module.css';   
+import Sidebar from '../../../src/components/Sidebar';   
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 import 'katex/dist/katex.min.css';
@@ -18,15 +18,25 @@ Prerequisites: Nothing
 
 # Breakdown
 
-Example breakdown
+Simply outut the sentence to solve the problem!
 
 # Implementation
 
 <div style={{ transform: 'translateX(150px)' }}>
   <SyntaxHighlighter language="cpp" style={okaidia}>
-{`int a = 5; 
-int b = 7; 
-int c = a + b; 
+{`#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+//These are comments 
+//They do not affect the code
+int main() {
+    cout << "What is up, Jerry?"; //Output the sentence
+    return 0;
+} 
 `}
   </SyntaxHighlighter>
 </div>
