@@ -7,7 +7,6 @@
   border-spacing: 0;
   transform: translateX(0);
   overflow: visible;
-  position: relative;
 }
 
 tr, th,
@@ -146,13 +145,13 @@ thead th {
   border-radius: 4px;
   z-index: 1000;
   position: absolute;
-  top: 100%;
 }
 
 .dropdownMenu ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
+  z-index: 1000;
 }
 
 .dropdownMenu ul li {
@@ -160,11 +159,13 @@ thead th {
   cursor: pointer;
   color: black;
   font-size: 14px;
+  z-index: 1000;
 }
 
 .dropdownMenu ul li:hover {
   background-color: #ff6666; 
   color: black;
+  z-index: 1000;
 }
 
 .helpLink {

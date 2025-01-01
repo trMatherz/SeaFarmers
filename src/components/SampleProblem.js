@@ -181,8 +181,6 @@ const SampleProblem = ({ moduleName, topicId, location }) => {
                         ref={dropdownRef}
                         style={{
                           position: 'absolute',
-                          top: `${dropdownPosition.top}px`,
-                          left: `${dropdownPosition.left}px`,
                         }}
                       >
                         <ul>
@@ -224,8 +222,6 @@ const SampleProblem = ({ moduleName, topicId, location }) => {
                         ref={helpDropdownRef}
                         style={{
                           position: 'absolute',
-                          top: `${helpDropdownPosition.top}px`,
-                          left: `${helpDropdownPosition.left}px`,
                         }}
                       >
                         <ul>

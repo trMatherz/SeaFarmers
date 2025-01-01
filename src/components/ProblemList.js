@@ -190,8 +190,7 @@ const ProblemList = ({ moduleName, topicId, location }) => {
                           className={styles.dropdownMenu}
                           style={{
                             position: 'absolute',
-                            top: `${dropdownPosition.top}px`,
-                            left: `${dropdownPosition.left}px`,
+                            
                           }}
                         >
                           <ul>
@@ -233,8 +232,7 @@ const ProblemList = ({ moduleName, topicId, location }) => {
                           className={styles.dropdownMenu}
                           style={{
                             position: 'absolute',
-                            top: `${helpDropdownPosition.top}px`,
-                            left: `${helpDropdownPosition.left}px`,
+                            
                           }}
                         >
                           <ul>
