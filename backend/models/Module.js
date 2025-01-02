@@ -29,6 +29,7 @@ const ResourceSchema = new mongoose.Schema({
 const TopicSchema = new mongoose.Schema({
   topicId: { type: String, required: true },
   topicName: { type: String, required: true },
+  description: { type: String, required: true, default: "" },
   solvedProblems: { type: Number, default: 0 }, // Default set to 0
   skippedProblems: { type: Number, default: 0 }, // Default set to 0
   unseenProblems: { type: Number, default: 0 }, // Default set to 0
