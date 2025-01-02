@@ -1,0 +1,95 @@
+import React from 'react';
+import '../../../src/css/TopicPage.module.css';  
+import ProblemList from '../../../src/components/ProblemList';  
+import SampleProblem from '../../../src/components/SampleProblem';  
+import ResourceList from '../../../src/components/ResourceList';
+import TopicProgress from '../../../src/components/TopicProgress';  
+import Sidebar from '../../../src/components/Sidebar';  
+import SignInButton from '@site/src/components/SignInButton';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+import 'katex/dist/katex.min.css';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';
+
+
+export const moduleName = "LearnToCode"; 
+export const topicId = "Output";  
+
+<Sidebar moduleName={moduleName} /> 
+
+# Input
+
+Prerequisites: Output
+
+Now that you can output things, its time to make your programs more dynamic! 
+
+# Standard I/O
+
+Most problems and vscode will use Standard I/O. It's very similar to output. 
+
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`#include <iostream> //Use this for Standard I/O
+using namespace std;
+
+int main() {
+    string a, b; 
+    cin >> a >> b;
+    cout << a << " : " << b; 
+}
+`}
+  </SyntaxHighlighter>
+</div>
+
+This code will take an input like this: 
+
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`Hello World
+`}
+  </SyntaxHighlighter>
+</div>
+
+And output this: 
+
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`Hello : World
+`}
+  </SyntaxHighlighter>
+</div>
+
+Don't worry about data types right now - that's next. Focus on how the "cin" operator will go to the next word and assign
+this value to the variable. You have to separate all variables with "\>\>". 
+
+File I/O 
+
+If you want to read from files for old USACO problems or for large inputs, you will have to slightly tweak the code. 
+
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`#include <fstream> //Use this for File I/O
+std::ifstream cin ("boarding.in"); //Change this
+std::ofstream cout ("boarding.out"); //Change this
+using namespace std;
+
+int main() {
+    string a, b; 
+    cin >> a >> b;
+    cout << a << " : " << b; 
+}
+`}
+  </SyntaxHighlighter>
+</div>
+
+Note: You will have to change the file names manually. 
+
+Use this to solve this Focus Problem: 
+
+<SampleProblem  moduleName={moduleName} topicId={topicId} location={"sample1"} /> 
+
+<TopicProgress moduleName={moduleName} topicId={topicId} />
+
+
+

@@ -2,30 +2,29 @@
   "moduleId": "module1",
   "moduleName": "LearnToCode",
   "description": "A beginner-friendly module to kickstart your coding journey.",
-  "unseenTopics": 3,
+  "unseenTopics": 4,
   "skippedTopics": 0,
   "solvedTopics": 0,
-  "unseenProblems": 0,
+  "unseenProblems": 2,
   "skippedProblems": 0,
-  "solvedProblems": 1,
-  "totalTopics": 3,
-  "totalProblems": 1,
+  "solvedProblems": 0,
+  "totalTopics": 4,
+  "totalProblems": 2,
   "genericTopics" : [
     {
       "genericTopicId": "Pre-Code",
       "genericTopicName": "Before You Code",
       "topics" : [
         "ThisGuide",
-        "TimeComplexity",
-        "conditionals"
+        "TimeComplexity"
       ]
     },
     {
       "genericTopicId": "GettingStarted",
       "genericTopicName": "Getting Started",
       "topics" : [
-        "Output"
-        
+        "Output",
+        "Input"
       ]
     }
   ],
@@ -95,6 +94,39 @@
             {
               "name": "Me",
               "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/LearnToCode/BabySteps"
+            }
+          ]
+        }
+      ],
+      "resources": []
+      
+    },
+    {
+      "topicId": "Input",
+      "topicName": "Input",
+      "description": "Make your programs dynamic!",
+      "solvedProblems": 0,
+      "skippedProblems": 0,
+      "unseenProblems": 1,
+      "totalProblems": 1,
+      "state": 0,
+      "problems": [
+        {
+          "problemId": "BabySteps",
+          "location": "sample1",
+          "name": "Mimicking Jerry",
+          "state": 0,
+          "source": "Me",
+          "star": true,
+          "difficulty": 200,
+          "tags": [
+            "Input"
+          ],
+          "link": "https://www.hackerrank.com/contests/wjd/challenges/mimicking-jerry",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/LearnToCode/MimickingJerry"
             }
           ]
         }

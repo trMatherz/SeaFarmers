@@ -12,13 +12,13 @@ export const moduleName = "LearnToCode";
 
 <Sidebar moduleName={moduleName} /> 
 
-# Baby Steps Solution
+# Mimicking Jerry Solution
 
-Prerequisites: Output
+Prerequisites: Input and Output
 
 # Breakdown
 
-Simply outut the sentence to solve the problem!
+There input is guranteed to be one word, so all we need is to read in a string varaible, then output it. 
 
 # Implementation
 
@@ -31,12 +31,13 @@ Simply outut the sentence to solve the problem!
 #include <algorithm>
 using namespace std;
 
-//These are comments 
-//They do not affect the code
+
 int main() {
-    cout << "What is up, Jerry?"; //Output the sentence
+    string a; //Declare the variable
+    cin >> a; //Read it in
+    cout << a; //Output the variable
     return 0;
-} 
+}
 `}
   </SyntaxHighlighter>
 </div>
