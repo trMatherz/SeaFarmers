@@ -1,0 +1,193 @@
+import React from 'react';
+import '../../../src/css/TopicPage.module.css';   
+import Sidebar from '../../../src/components/Sidebar';  
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+import 'katex/dist/katex.min.css';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';
+
+
+export const moduleName = "LearnToCode"; 
+
+<Sidebar moduleName={moduleName} /> 
+
+# The Mushroom Kingdom Solution
+
+Tags: Maps, Sorting
+
+# Subtask: With Randomness
+
+If you maintain a 2-D array of all patches, you can simulate walking in a random direction, but since 
+the kingdom is so big, we can't quite to that. Instead, we can use a map to hold all patches of interest 
+since most patches are not interesting.
+
+This has a upper-bound time of $\mathcal{O}(\log_2(N)*N*Q)$ but with randomness, it is much less. 
+
+
+# Simulation with Map
+
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`#include <cmath>
+#include <cstdio>
+#include <vector>
+// #include <iostream> 
+#include <fstream>
+std::ifstream cin ("case12.txt");
+std::ofstream cout ("out12.txt");
+#include <algorithm>
+#include <map>
+using namespace std;
+
+map<pair<long long, long long>, int> patches; 
+map<pair<long long, long long>, pair<long long, long long>> nex[4]; 
+vector<int> xc = {0, 1, 0, -1};
+vector<int> yc = {1, 0, -1, 0};
+pair<long long, long long> go(pair<long long, long long> pos, int dir, int dis) {
+    pair<long long, long long> cur = {pos.first + xc[dir] * dis, pos.second + yc[dir] * dis};
+    if(!patches.count(cur)) return cur; 
+    if(patches[cur] == 1) return pos; 
+    return go(pos, dir, dis + 1);
+}
+int main() {
+    pair<long long, long long> pos; 
+    int R, G, Q;
+    cin >> R >> G >> pos.first >> pos.second >> Q; 
+    for(int i = 0; i < R; i++) {
+        long long x, y; 
+        cin >> x >> y; 
+        patches[{x, y}] = 1; 
+    }
+    for(int i = 0; i < G; i++) {
+        long long x, y; 
+        cin >> x >> y; 
+        patches[{x, y}] = 2; 
+    }
+    for(int i = 0; i < Q; i++) {
+        string z; 
+        cin >> z; 
+        int dir = 0; 
+        if(z == "East") dir = 1; 
+        else if(z == "South") dir = 2; 
+        else if(z == "West") dir = 3;
+        pos = go(pos, dir, 1); 
+        cout << pos.first << " " << pos.second << endl;
+    }
+}
+`}
+  </SyntaxHighlighter>
+</div>
+
+# Full Breakdown
+
+Since these test cases are not random, the omplexity could be $\mathcal{O}(\log_2(N)*N*Q)$, infact it is. 
+So, we have to take a different approach. 
+
+If we pre-compute where a patches will take us, we only have to compute $N$ patches because most patches are 
+not special. Thus, if we sort based on all directions and "walk" from one end of slipery patches to the other, 
+we can store the results in a map. 
+
+You could also "memorize" whenever you first calculate a position, but this is simpler imo. 
+
+The complexity is $\mathcal{O}(\log_2(N)*(N+Q))$
+
+# Implementation 
+
+
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`#include <cmath>
+#include <cstdio>
+#include <vector>
+// #include <iostream> 
+#include <fstream>
+std::ifstream cin ("case12.txt");
+std::ofstream cout ("out12.txt");
+#include <algorithm>
+#include <map>
+using namespace std;
+
+map<pair<long long, long long>, int> patches; 
+map<pair<long long, long long>, pair<long long, long long>> nex[4]; 
+vector<int> xc = {0, 1, 0, -1};
+vector<int> yc = {1, 0, -1, 0};
+pair<long long, long long> go(pair<long long, long long> pos, int dir) {
+    return {pos.first + xc[dir], pos.second + yc[dir]}; 
+}
+int main() {
+    pair<long long, long long> pos; 
+    int R, G, Q;
+    cin >> R >> G >> pos.first >> pos.second >> Q; 
+    for(int i = 0; i < R; i++) {
+        long long x, y; 
+        cin >> x >> y; 
+        patches[{x, y}] = 1; 
+    }
+    vector<pair<long long, long long>> slip; 
+    for(int i = 0; i < G; i++) {
+        long long x, y; 
+        cin >> x >> y; 
+        slip.push_back({x, y}); 
+        patches[{x, y}] = 2; 
+    }
+    sort(slip.begin(), slip.end(), [](auto a, auto b){ 
+        if(a.first == b.first) return a.second < b.second; 
+        return a.first < b.first; 
+    });
+    for(int i = 0; i < slip.size(); i++) {
+        int r = i; 
+        while(r + 1 < slip.size() && slip[i].first == slip[r + 1].first 
+            && slip[r].second + 1 == slip[r + 1].second) r++; 
+        nex[0][slip[i]] = go(slip[r], 0); 
+        i = r; 
+    }
+    sort(slip.begin(), slip.end(), [](auto a, auto b){ 
+        if(a.first == b.first) return a.second > b.second; 
+        return a.first < b.first; 
+    });
+    for(int i = 0; i < slip.size(); i++) {
+        int r = i; 
+        while(r + 1 < slip.size() && slip[i].first == slip[r + 1].first 
+            && slip[r].second - 1 == slip[r + 1].second) r++; 
+        nex[2][slip[i]] = go(slip[r], 2); 
+        i = r; 
+    }
+    sort(slip.begin(), slip.end(), [](auto a, auto b){ 
+        if(a.second == b.second) return a.first < b.first; 
+        return a.second < b.second; 
+    });
+    for(int i = 0; i < slip.size(); i++) {
+        int r = i; 
+        while(r + 1 < slip.size() && slip[i].second == slip[r + 1].second 
+            && slip[r].first + 1 == slip[r + 1].first) r++; 
+        nex[1][slip[i]] = go(slip[r], 1); 
+        i = r; 
+    }
+    sort(slip.begin(), slip.end(), [](auto a, auto b){ 
+        if(a.second == b.second) return a.first > b.first; 
+        return a.second < b.second; 
+    });
+    for(int i = 0; i < slip.size(); i++) {
+        int r = i; 
+        while(r + 1 < slip.size() && slip[i].second == slip[r + 1].second 
+            && slip[r].first - 1 == slip[r + 1].first) r++; 
+        nex[3][slip[i]] = go(slip[r], 3); 
+        i = r; 
+    }
+    for(int i = 0; i < Q; i++) {
+        string z; 
+        cin >> z; 
+        int dir = 0; 
+        if(z == "East") dir = 1; 
+        else if(z == "South") dir = 2; 
+        else if(z == "West") dir = 3;
+        pair<long long, long long> cur = go(pos, dir); 
+        if(!nex[dir].count(cur) && patches[cur] != 1) pos = cur; 
+        else if(nex[dir].count(cur) && patches[nex[dir][cur]] != 1) pos = nex[dir][cur];
+        cout << pos.first << " " << pos.second << endl;
+    }
+}
+`}
+  </SyntaxHighlighter>
+</div>

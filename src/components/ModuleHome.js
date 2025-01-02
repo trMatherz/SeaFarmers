@@ -124,8 +124,11 @@ function ModuleHome({
                             <li key={subIndex} className={`${styles[`state${specificTopic.state}`]}`}>
                               <a href={`/SeaFarmers/docs/modules/${moduleName}/${specificTopic.topicId}`}>
                                 {specificTopic.topicName}
-                                {specificTopic.description}
                               </a>
+                              <span style={{ color: 'lightgray' }}>
+                                  {"  :  "} 
+                                  {specificTopic.description}
+                              </span>
                             </li>
                           )
                       )}

@@ -1,0 +1,121 @@
+import React from 'react';
+import '../../../src/css/TopicPage.module.css';   
+import Sidebar from '../../../src/components/Sidebar';  
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+import 'katex/dist/katex.min.css';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';
+
+
+export const moduleName = "LearnToCode"; 
+
+<Sidebar moduleName={moduleName} /> 
+
+# The Legend Of The Room Solution
+
+Tags: Complete Search
+
+# Breakdown
+
+This problem asks how count the number of ways something can be done: it is a complete search problem. This can be
+done naively with a boolean array and simulating the entire process with recursion. 
+
+This has a upper-bound time of $\mathcal{O}(A^n)$ with noticable constant time. 
+
+# Naive Implementation
+
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream> 
+#include <algorithm>
+#include <map>
+using namespace std;
+
+
+int w, l, n; 
+vector<pair<int, int>> a; 
+long long go(int x, vector<vector<bool>> y) {
+    if(x == n) return 1; 
+    long long ret = 0; 
+    for(int i = 0; i <= w - a[x].first; i++) {
+        for(int j = 0; j <= l - a[x].second; j++) {
+            vector<vector<bool>> ny = y; 
+            bool bad = false; 
+            for(int k = 0; k < a[x].first; k++) {
+                for(int p = 0; p < a[x].second; p++) {
+                    int xpos = i + k; 
+                    int ypos = j + p; 
+                    if(y[xpos][ypos]) bad = true; 
+                    ny[xpos][ypos] = true; 
+                }
+            }
+            if(!bad) ret += go(x + 1, ny); 
+        }
+    }
+    return ret; 
+}
+int main() {
+    cin >> w >> l >> n; 
+    a = vector<pair<int, int>>(n); 
+    for(auto &u : a) cin >> u.first >> u.second; 
+    cout << go(0, vector<vector<bool>>(w, vector<bool>(l, false))); 
+}
+`}
+  </SyntaxHighlighter>
+</div>
+
+# Optional Optimization 
+
+You make the array global and merely modify it OR 
+
+You can replace the boolean array with an integer since $A$ is small. This removes a lot of constant time. 
+
+# Implementation 
+
+
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream> 
+#include <algorithm>
+#include <map>
+using namespace std;
+
+
+int w, l, n; 
+vector<pair<int, int>> a; 
+long long go(int x, int y) {
+    if(x == n) return 1; 
+    long long ret = 0; 
+    for(int i = 0; i <= w - a[x].first; i++) {
+        for(int j = 0; j <= l - a[x].second; j++) {
+            int ny = y; 
+            bool bad = false; 
+            for(int k = 0; k < a[x].first; k++) {
+                for(int p = 0; p < a[x].second; p++) {
+                    int xpos = i + k; 
+                    int ypos = j + p; 
+                    if(y & (1 << (xpos * l + ypos))) bad = true; 
+                    ny += (1 << (xpos * l + ypos)); 
+                }
+            }
+            if(!bad) ret += go(x + 1, ny); 
+        }
+    }
+    return ret; 
+}
+int main() {
+    cin >> w >> l >> n; 
+    a = vector<pair<int, int>>(n); 
+    for(auto &u : a) cin >> u.first >> u.second; 
+    cout << go(0, 0); 
+}
+`}
+  </SyntaxHighlighter>
+</div>
