@@ -1,0 +1,80 @@
+import React from 'react';
+import '../../../src/css/TopicPage.module.css';   
+import Sidebar from '../../../src/components/Sidebar';  
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+import 'katex/dist/katex.min.css';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';
+
+
+export const moduleName = "LearnToCode"; 
+
+<Sidebar moduleName={moduleName} /> 
+
+# To Eat Or Not To Eat Solution
+
+Tags: Greedy, Simulation
+
+# Breakdown
+
+We maintain $bes[f]$ where $f$ is the set of colors, for each set of colors. 
+
+There are $3$ things that can happen: 
+
+$1$ We can eat the food
+
+$2$ We can go to dinner
+
+$3$ We can spit out any food
+
+This runs in $\mathcal{O}(n)$.  
+
+# Implementation
+
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`#include <cmath>
+#include <cstdio>
+#include <vector>
+// #include <iostream> 
+#include <fstream>
+std::ifstream cin ("case8.txt");
+std::ofstream cout ("out8.txt");
+#include <algorithm>
+#include <map>
+using namespace std;
+
+map<string, int> food = {{"Red", 0}, {"Blue", 1}, {"Yellow", 2}};
+long long const inf = (long long) 1e18 + 7; 
+int main() {
+    vector<long long> bes(8, -inf); 
+    bes[0] = 0; 
+    int n; 
+    cin >> n; 
+    for(int i = 0; i < n; i++) {
+        string f; 
+        cin >> f; 
+        if(food.count(f)) {
+            for(int j = 0; j < 8; j++) 
+                bes[j | (1 << food[f])] = max(bes[j | (1 << food[f])], bes[j]);
+        }
+        long long r, c; 
+        cin >> r >> c; 
+        int cur = 0; 
+        for(int i = 0; i < r; i++) {
+            string x; 
+            cin >> x; 
+            cur |= (1 << food[x]); 
+        }
+        bes[cur] += c; 
+        for(int j = 0; j < 8; j++) {
+            bes[j] = max(bes[j], bes[j | cur]); 
+        }
+    }
+    cout << bes[0]; 
+}
+`}
+  </SyntaxHighlighter>
+</div>
+

@@ -104,7 +104,7 @@
     {
       "topicId": "Input",
       "topicName": "Input",
-      "description": "Learn how to read in input.",
+      "description": "Learn how to read-in input.",
       "solvedProblems": 0,
       "skippedProblems": 0,
       "unseenProblems": 1,
@@ -132,7 +132,46 @@
         }
       ],
       "resources": []
-      
+    },
+    {
+      "topicId": "BasicDataTypes",
+      "topicName": "Basic Data Types",
+      "description": "Learn abotu data types and variables.",
+      "solvedProblems": 0,
+      "skippedProblems": 0,
+      "unseenProblems": 1,
+      "totalProblems": 1,
+      "state": 0,
+      "problems": [
+        {
+          "problemId": "WhatsMyAgeAgain",
+          "location": "sample1",
+          "name": "What's My Age Again?",
+          "state": 0,
+          "source": "Me",
+          "star": true,
+          "difficulty": 200,
+          "tags": [
+            "Integer"
+          ],
+          "link": "https://www.hackerrank.com/contests/wjd/challenges/whats-my-age-again-1",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/LearnToCode/WhatsMyAgeAgain"
+            }
+          ]
+        }
+      ],
+      "resources": [
+        {
+          "name": "CPH 1.3",
+          "source": "CPH",
+          "star": 0,
+          "description": "Integers specifically",
+          "link": "https://usaco.guide/CPH.pdf#page=16"
+        }
+      ]
     }
   ]
 }

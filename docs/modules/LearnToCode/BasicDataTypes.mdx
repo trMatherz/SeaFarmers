@@ -14,76 +14,53 @@ import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 
 export const moduleName = "LearnToCode"; 
-export const topicId = "Input";  
+export const topicId = "BasicDataTypes";  
 
 <Sidebar moduleName={moduleName} /> 
 
-# Input
+# Basic Data Types
 
-Prerequisites: Output
+Prerequisites: Nothing
 
-Now that you can output things, its time to make your programs more dynamic! 
+# Resources
 
-# Standard I/O
+<ResourceList moduleName={moduleName} topicId={topicId}/>
 
-Most problems and vscode will use Standard I/O. It's very similar to output. 
+So you just used a string but there are really $3$ import data types you should know for now: 
 
 <div style={{ transform: 'translateX(150px)' }}>
   <SyntaxHighlighter language="cpp" style={okaidia}>
-{`#include <iostream> //Use this for Standard I/O
-using namespace std;
-
-int main() {
-    string a, b; 
-    cin >> a >> b;
-    cout << a << " : " << b; 
-}
+{`string a; //words
+int b; //numbers less than a couple billion ($10^9$)
+long long c; //numners less than a couple quintillion ($10^18$)
 `}
   </SyntaxHighlighter>
 </div>
 
-This code will take an input like this: 
+Here is more syntax (or way that the code for certain logic) is written. 
 
 <div style={{ transform: 'translateX(150px)' }}>
   <SyntaxHighlighter language="cpp" style={okaidia}>
-{`Hello World
+{`int a = 0; cout << a << endl;
+    a = 3; cout << a << endl;
+    a = 4 + 7 - 2; cout << a << endl; //addition and subtraction
+    a = a + 1; cout << a << endl; //can use variables in equaitons
+    a = a * 3; cout << a << endl; //multiplication
+    a = 5 / 3; cout << a << endl; //division rounds down to nearest integer number
+    a = 5 % 3; cout << a << endl; //modular funciton that computes remainder; optional  
 `}
   </SyntaxHighlighter>
 </div>
 
-And output this: 
+Note: The code above would also work if a was a long long. 
 
 <div style={{ transform: 'translateX(150px)' }}>
   <SyntaxHighlighter language="cpp" style={okaidia}>
-{`Hello : World
+{`string a = "cat"; cout << a << endl; 
+a = "dog"; cout << a << endl; 
 `}
   </SyntaxHighlighter>
 </div>
-
-Don't worry about data types right now - that's next. Focus on how the "cin" operator will go to the next word and assign
-this value to the variable. You have to separate all variables with "\>\>". 
-
-# File I/O 
-
-If you want to read from files for old USACO problems or for large inputs, you will have to slightly tweak the code. 
-
-<div style={{ transform: 'translateX(150px)' }}>
-  <SyntaxHighlighter language="cpp" style={okaidia}>
-{`#include <fstream> //Use this for File I/O
-std::ifstream cin ("boarding.in"); //Change this
-std::ofstream cout ("boarding.out"); //Change this
-using namespace std;
-
-int main() {
-    string a, b; 
-    cin >> a >> b;
-    cout << a << " : " << b; 
-}
-`}
-  </SyntaxHighlighter>
-</div>
-
-Note: You will have to change the file names manually. 
 
 # Focus Problem
 

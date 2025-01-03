@@ -1,0 +1,146 @@
+import React from 'react';
+import '../../../src/css/TopicPage.module.css';   
+import Sidebar from '../../../src/components/Sidebar';  
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+import 'katex/dist/katex.min.css';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';
+
+
+export const moduleName = "LearnToCode"; 
+
+<Sidebar moduleName={moduleName} /> 
+
+# Now THATs A Suit Solution
+
+Tags: Bitwise DP 
+
+# Initial Thoughts
+
+For each query, we can try all the macthes.
+
+This runs in $\mathcal{O}(n*q*m)$.
+
+# Complete Search Implementation
+
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`#include <queue>
+#include <cmath>
+#include <cstdio>
+#include <vector>
+// #include <iostream> 
+#include <fstream>
+std::ifstream cin ("case3.txt");
+std::ofstream cout ("out4.txt");
+#include <algorithm>
+#include <map>
+using namespace std;
+
+
+
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    int n, m, p; 
+    cin >> n >> m >> p; 
+    vector<vector<int>> a(n, vector<int>(m)); 
+    for(auto &u : a) for(auto &l : u) cin >> l; 
+    int q; 
+    cin >> q; 
+    for(int i = 0; i < q; i++) {
+        int ans = 0; 
+        vector<int> x(m);
+        for(auto &u : x) cin >> u; 
+        for(int j = 0; j < n; j++) {
+            bool bad = false; 
+            for(int k = 0; k < m; k++) {
+                if(x[k] > a[j][k]) bad = true; 
+            }
+            if(!bad) ans++; 
+        }
+        cout << ans << endl;
+    }
+}
+`}
+  </SyntaxHighlighter>
+</div>
+
+# Breakdown 
+
+The problem is just asking for the sum of an adventure's subset of suits. For each possible set, 
+we could count the number of subsets but this is too slow. We must use SOS DP. 
+
+$dp[i][j]$ is the sum of the subsets of set $i$ where the first $j$ stats are less than 
+or equal to $i$'s first $j$ stats. 
+
+We can transitition to $dp[i][j + 1]$ with $dp[k][j]$, where the $k$th stat is less than or equal to the $i$th stat. 
+
+This runs in $\mathcal{O}((q+p^m)m)$.
+
+# Implementation
+
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`#include <queue>
+#include <cmath>
+#include <cstdio>
+#include <vector>
+// #include <iostream> 
+#include <fstream>
+std::ifstream cin ("case10.txt");
+std::ofstream cout ("out10.txt");
+#include <algorithm>
+#include <map>
+using namespace std;
+
+
+
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    int n, m, p; 
+    cin >> n >> m >> p; 
+    vector<int> pow = {1}; 
+    for(int i = 0; i < m; i++) pow.push_back(pow.back() * p); 
+    vector<vector<int>> v(pow[m], vector<int>(m, p - 1)); 
+    for(int i = 0; i < pow[m]; i++) {
+        int x = i; 
+        for(int j = m - 1; j >= 0; j--) {
+            while(x >= pow[j]) x -= pow[j], v[i][j]--; 
+        }
+    }
+    vector<vector<int>> dp(pow[m], vector<int>(m + 1, 0)); 
+    for(int i = 0; i < n; i++) {
+        int cur = 0;
+        for(int j = 0; j < m; j++) {
+            int x; 
+            cin >> x; 
+            cur += pow[j] * x; 
+        }
+        dp[cur][0]++; 
+    }
+    for(int i = pow[m] - 1; i >= 0; i--) { 
+        for(int j = 0; j < m; j++) {
+            for(int k = 0; k <= v[i][j]; k++) {
+                dp[i][j + 1] += dp[i + k * pow[j]][j]; 
+            }
+        }
+    }
+    int q; 
+    cin >> q; 
+    for(int i = 0; i < q; i++) {
+        int cur = 0;
+        for(int j = 0; j < m; j++) {
+            int x; 
+            cin >> x; 
+            cur += pow[j] * x; 
+        }
+        cout << dp[cur][m] << endl;
+    }
+}
+`}
+  </SyntaxHighlighter>
+</div>
+
