@@ -5,11 +5,11 @@
   "unseenTopics": 4,
   "skippedTopics": 0,
   "solvedTopics": 0,
-  "unseenProblems": 2,
+  "unseenProblems": 3,
   "skippedProblems": 0,
   "solvedProblems": 0,
-  "totalTopics": 4,
-  "totalProblems": 2,
+  "totalTopics": 5,
+  "totalProblems": 3,
   "genericTopics" : [
     {
       "genericTopicId": "Pre-Code",
@@ -24,7 +24,8 @@
       "genericTopicName": "Getting Started",
       "topics" : [
         "Output",
-        "Input"
+        "Input",
+        "BasicDataTypes"
       ]
     }
   ],
