@@ -1,0 +1,139 @@
+import React from 'react';
+import '../../../src/css/TopicPage.module.css';   
+import Sidebar from '../../../src/components/Sidebar';  
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+import 'katex/dist/katex.min.css';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';
+
+
+export const moduleName = "LearnToCode"; 
+
+<Sidebar moduleName={moduleName} /> 
+
+# Thomas J. Crook Solution
+
+Tags: MST, DSU
+
+# Subtask with $n \leq 10^2$
+
+We can simply build the MST using Prim's algorithm for each island. 
+
+This runs in $\mathcal{O}(n^2)$
+
+# Naive Implementation
+
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`#include <queue>
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream> 
+#include <algorithm>
+#include <map>
+using namespace std;
+
+int n, m; 
+string z; 
+vector<vector<pair<int, int>>> a; 
+long long get(int x) {
+    long long t = 0, ret = 0;
+    priority_queue<pair<long long, int>> q; 
+    q.push({0, x}); 
+    vector<bool> b(n, false); 
+    while(!q.empty()) {
+        auto u = q.top(); q.pop(); 
+        if(b[u.second]) continue; 
+        b[u.second] = true; 
+        t -= u.first; 
+        if(z[u.second] == '1') ret += t; 
+        for(auto &l : a[u.second]) q.push({-l.second, l.first}); 
+    }
+    return ret; 
+}
+int main() {
+    cin >> n >> m >> z; 
+    a = vector<vector<pair<int, int>>>(n); 
+    for(int i = 0; i < m; i++) {
+        int x, y, z; 
+        cin >> x >> y >> z; 
+        x--, y--; 
+        a[x].push_back({y, z});
+        a[y].push_back({x, z});
+    }
+    for(int i = 0; i < n; i++) cout << get(i) << endl;
+}
+`}
+  </SyntaxHighlighter>
+</div>
+
+# Full Solution 
+
+If we sort the edges by weight then after two islands visit each other and all edges of lower weight, 
+the islands behave the same from then on. Thus, we can merge them in a DSU where to get the answer for a 
+certain island, we go up the nodes. 
+
+
+This runs in $\mathcal{O}(\log_2(n)*n)$
+
+# Implementation
+
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`#include <queue>
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream> 
+#include <algorithm>
+#include <map>
+using namespace std;
+
+int cur; 
+struct stuff {
+    long long x, y, z; 
+};
+struct node {
+    long long val, t, ct; 
+    int p; 
+    node (int tct) : val(0), t(0), ct(tct), p(cur++) {}
+};
+vector<node> dsu; 
+node plop(node x, node y) {
+    x.val += y.val + y.ct * x.t; 
+    x.t += y.t; 
+    x.ct += y.ct; 
+    x.p = y.p; 
+    return x; 
+}
+node get(int x) {
+    return dsu[x].p == x ? dsu[x] : dsu[x] = plop(dsu[x], get(dsu[x].p));
+}
+void merge(int x, int y, int len) {
+    node vx = get(x), vy = get(y); 
+    if(vx.p == vy.p) return; 
+    dsu[vx.p].t += len, dsu[vy.p].t += len; 
+    dsu[vx.p] = plop(dsu[vx.p], vy); 
+    dsu[vy.p] = plop(dsu[vy.p], vx); 
+
+    dsu.push_back(node(0)); 
+    dsu[vx.p].p = dsu[vy.p].p = dsu.back().p; 
+}
+int main() {
+    int n, m; 
+    string z; 
+    cin >> n >> m >> z; 
+    for(int i = 0; i < n; i++) dsu.push_back(node(z[i] - '0')); 
+    vector<stuff> a(m); 
+    for(auto &u : a) cin >> u.x >> u.y >> u.z; 
+    for(auto &u : a) u.x--, u.y--; 
+    sort(a.begin(), a.end(), [](auto a, auto b){ return a.z < b.z; }); 
+    for(auto &u : a) merge(u.x, u.y, u.z); 
+    for(int i = 0; i < n; i++) cout << get(i).val << endl;
+}
+`}
+  </SyntaxHighlighter>
+</div>
+

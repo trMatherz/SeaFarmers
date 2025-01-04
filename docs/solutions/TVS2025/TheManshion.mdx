@@ -1,0 +1,232 @@
+import React from 'react';
+import '../../../src/css/TopicPage.module.css';   
+import Sidebar from '../../../src/components/Sidebar';  
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+import 'katex/dist/katex.min.css';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';
+
+
+export const moduleName = "LearnToCode"; 
+
+<Sidebar moduleName={moduleName} /> 
+
+# The Mansion Solution
+
+Tags: Greedy, Centroid Decompisition
+
+# Subtask with randomness
+
+If we arbitrarily root the tree, and try to cover the node with the greatest depth that isn't already covered, 
+it is always best for up to cover the node that is highest up in the tree that is also in range of that node. 
+It can be shown that this node will cover all nodes a node lower would cover and possible more. 
+
+We can naively simulate this in $\mathcal{O}(n^2)$, but in reality, this runs in $\mathcal{O}(C * R)$
+where $C$ is the answer. 
+
+# Naive Implementation
+
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <algorithm>
+#include <map>
+using namespace std;
+
+int n, k; 
+string z; 
+vector<vector<int>> a; 
+vector<int> d;
+vector<bool> b;  
+int comp(int x, int y) {
+    if(x == -1 || y == -1) return x != -1 ? x : y; 
+    if(d[x] < d[y]) return x; 
+    return y; 
+}
+void get_D(int x = 0, int y = -1) {
+    for(auto &u : a[x]) {
+        if(u == y) continue; 
+        d[u] = d[x] + 1; 
+        get_D(u, x); 
+    }
+}
+int find(int x, int y = -1, int dis = 0) {
+    if(dis > k) return -1; 
+    int ret = -1; 
+    if(z[x] == '0') ret = x; 
+    for(auto &u : a[x]) {
+        if(u == y) continue; 
+        ret = comp(ret, find(u, x, dis + 1)); 
+    }
+    return ret; 
+}
+void place(int x, int y = -1, int dis = 0) {
+    if(dis > k) return; 
+    b[x] = true; 
+    for(auto &u : a[x]) {
+        if(u == y) continue; 
+        place(u, x, dis + 1); 
+    }
+}
+
+
+int main() {
+    cin >> n >> k >> z; 
+    a = vector<vector<int>>(n); 
+    d = vector<int>(n, 0); 
+    b = vector<bool>(n, false); 
+    for(int i = 0; i < n - 1; i++) {
+        int x, y; 
+        cin >> x >> y;
+        x--, y--; 
+        a[x].push_back(y), a[y].push_back(x); 
+    }
+    get_D(); 
+    vector<int> o; 
+    for(int i = 0; i < n; i++) o.push_back(i); 
+    sort(o.begin(), o.end(), [](auto x, auto y){ return d[x] > d[y]; }); 
+    int an = 0;
+    for(auto &u : o) {
+        if(!b[u]) {
+            int bes = find(u); 
+            if(bes == -1) { cout << -1 << endl; return 0; }
+            an++; 
+            place(bes); 
+        }
+    }
+    cout << an << endl;
+}
+`}
+  </SyntaxHighlighter>
+</div>
+
+# Full Solution 
+
+We can use Centroid Decompisition to support the following: 
+
+$1$ Cover a node in $\mathcal{O}(\log_2(n)*n^2)$
+
+$2$ Find closest node in $\mathcal{O}(\log_2(n)*n)$
+
+$3$ Find best node to cover for each node in $\mathcal{O}(\log_2(n)*n)$
+
+This runs in $\mathcal{O}(\log_2(n)*n)$
+
+# Implementation
+
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream> 
+#include <algorithm>
+#include <map>
+using namespace std;
+
+int n, k, dep; 
+string z; 
+vector<vector<int>> a; 
+vector<int> d, sz, f, v, bes;
+vector<bool> seen; 
+vector<vector<pair<int, int>>> e; 
+int comp(int x, int y) {
+    if(x == -1 || y == -1) return x != -1 ? x : y; 
+    if(d[x] < d[y]) return x; 
+    return y; 
+}
+void get_D(int x = 0, int y = -1) {
+    for(auto &u : a[x]) {
+        if(u == y) continue; 
+        d[u] = d[x] + 1; 
+        get_D(u, x); 
+    }
+}
+int get_SZ(int x, int y = -1) {
+    sz[x] = 1; 
+    for(auto &u : a[x]) {
+        if(u == y || seen[u]) continue; 
+        sz[x] += get_SZ(u, x); 
+    }
+    return sz[x]; 
+}
+int get_C(int x, int tot, int y = -1) {
+    for(auto &u : a[x]) {
+        if(u == y || seen[u]) continue; 
+        if(sz[u] * 2 > tot) get_C(u, tot, x); 
+    }
+    return x; 
+}
+void get_BES(int c, int x, int y = -1, int dis = 0) {
+    if(z[x] == '0') bes[dis] = comp(bes[dis], x); 
+    dep = max(dep, dis); 
+    e[x].push_back({c, dis}); 
+    for(auto &u : a[x]) {
+        if(u == y || seen[u]) continue; 
+        get_BES(c, u, x, dis + 1); 
+    }
+}
+void get_F(int x, int y = -1, int dis = 0) {
+    if(k - dis < 0) return; 
+    f[x] = comp(f[x], bes[min(k - dis, dep)]); 
+    for(auto &u : a[x]) {
+        if(u == y || seen[u]) continue; 
+        get_F(u, x, dis + 1); 
+    }
+}
+void go(int x = 0, int y = -1) {
+    x = get_C(x, get_SZ(x)); 
+    dep = 0; 
+    get_BES(x, x); 
+    for(int i = 0; i < dep; i++) bes[i + 1] = comp(bes[i + 1], bes[i]); 
+    get_F(x); 
+    for(int i = 0; i <= dep; i++) bes[i] = -1; 
+    seen[x] = true; 
+    for(auto &u : a[x]) if(!seen[u]) go(u); 
+}
+int find(int x) {
+    int ret = k + 1; 
+    for(auto &u : e[x]) ret = min(ret, v[u.first] + u.second); 
+    return ret; 
+}
+void place(int x, int y = -1, int dis = 0) {
+    for(auto &u : e[x]) v[u.first] = min(v[u.first], u.second); 
+}
+int main() {
+    cin >> n >> k >> z; 
+    e = vector<vector<pair<int, int>>>(n); 
+    a = vector<vector<int>>(n); 
+    d = sz = vector<int>(n, 0); 
+    f = bes = vector<int>(n, -1); 
+    v = vector<int>(n, k + 1); 
+    seen = vector<bool>(n, false); 
+    for(int i = 0; i < n - 1; i++) {
+        int x, y; 
+        cin >> x >> y;
+        x--, y--; 
+        a[x].push_back(y), a[y].push_back(x); 
+    }
+    get_D(); 
+    go(); 
+    vector<int> o; 
+    for(int i = 0; i < n; i++) o.push_back(i); 
+    sort(o.begin(), o.end(), [](auto x, auto y){ return d[x] > d[y]; });
+    int an = 0;
+    for(auto &u : o) {
+        if(find(u) > k) {
+            if(f[u] == -1) { cout << -1 << endl; return 0; }
+            an++; 
+            place(f[u]); 
+        }
+    }
+    cout << an << endl;
+}
+
+
+`}
+  </SyntaxHighlighter>
+</div>
+
