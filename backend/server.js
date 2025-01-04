@@ -123,24 +123,23 @@ passport.use(new GitHubStrategy({
   }
 }));
 
-// Serialize and deserialize the user to store in the session
 passport.serializeUser((user, done) => {
-  done(null, user._id); // Storing the user's _id in the session
+  done(null, user._id); 
 });
 
 passport.deserializeUser(async (id, done) => {
   try {
-    const user = await User.findById(id);  // Retrieve user by _id
-    done(null, user);  // Populate req.user with the retrieved user object
+    const user = await User.findById(id);  
+    done(null, user);  
   } catch (err) {
-    done(err, null);  // Handle error if user not found
+    done(err, null); 
   }
 });
 
-// Route for GitHub OAuth authentication
+
 app.get('/auth/github', passport.authenticate('github'));
 
-// Route for GitHub OAuth callback
+
 app.get('/auth/github/callback', 
   passport.authenticate('github', { failureRedirect: '/' }),
   (req, res) => {
@@ -149,7 +148,7 @@ app.get('/auth/github/callback',
   }
 );
 
-// API to fetch user details
+
 app.get('/api/user', async (req, res) => {
   const { userId } = req.query;
   if(userId == "guest") return res.status(400).json({ message: "Guest users cannot proceed with this request." });

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const ProblemProgressSchema = new mongoose.Schema({
-  problemId: { type: String, required: true, unique: true }, // Unique ID for the problem
+  problemId: { type: String, required: true }, 
   state: { type: Number, required: true, default: 0 }, // Problem state (unseen, solved, or skipped)
 });
 
