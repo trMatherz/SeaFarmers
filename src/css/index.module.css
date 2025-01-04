@@ -17,7 +17,8 @@
   color: white;
   margin: 0;
   margin-top: -80px;
-  text-align: center; /* Center the text */
+  text-align: center; 
+  transform: translateX(0);
 }
 
 /* Subtitle */
