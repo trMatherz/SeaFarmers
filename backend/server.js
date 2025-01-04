@@ -107,6 +107,7 @@ passport.use(new GitHubStrategy({
   try {
     let user = await User.findOne({ githubId: profile.id });
     if (!user) {
+      console.log("Making New User"); 
       user = new User({
         githubId: profile.id,
         username: profile.username,
@@ -115,6 +116,7 @@ passport.use(new GitHubStrategy({
         modules: [],
       });
       await user.save();
+      console.log("Made a New User"); 
     }
     return done(null, user);
   } catch (err) {
