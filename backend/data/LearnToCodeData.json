@@ -230,25 +230,6 @@
           ]
         },
         {
-          "problemId": "CountingToys",
-          "location": "list",
-          "name": "Counting Toys",
-          "state": 0,
-          "source": "Me",
-          "star": true,
-          "difficulty": 400,
-          "tags": [
-            "Conditionals"
-          ],
-          "link": "https://www.hackerrank.com/contests/wjd/challenges/counting-toys-challenge-1",
-          "helps": [
-            {
-              "name": "Me",
-              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/LearnToCode/CountingToys"
-            }
-          ]
-        },
-        {
           "problemId": "FencePainting",
           "location": "list",
           "name": "Fence Painting",

@@ -7,6 +7,7 @@ import Navbar from './Navbar';
 
 
 function ModuleHome({
+  moduleId,
   moduleName,
   description,
   unseenTopics,
@@ -122,7 +123,7 @@ function ModuleHome({
                         (specificTopic, subIndex) =>
                           specificTopic && (
                             <li key={subIndex} className={`${styles[`state${specificTopic.state}`]}`}>
-                              <a href={`/SeaFarmers/docs/modules/${moduleName}/${specificTopic.topicId}`}>
+                              <a href={`/SeaFarmers/docs/modules/${moduleId}/${specificTopic.topicId}`}>
                                 {specificTopic.topicName}
                               </a>
                               <span style={{ color: 'lightgray' }}>

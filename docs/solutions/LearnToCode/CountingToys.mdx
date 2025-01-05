@@ -1,0 +1,50 @@
+import React from 'react';
+import '../../../src/css/TopicPage.module.css';   
+import Sidebar from '../../../src/components/Sidebar';   
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+import 'katex/dist/katex.min.css';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';
+
+
+export const moduleName = "LearnToCode"; 
+
+<Sidebar moduleName={moduleName} /> 
+
+# What's My Age Again? Solution
+
+Tags: Input and Output
+
+# Breakdown
+
+We are given an integer and must add five to it. 
+
+# Implementation
+
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    int n; //Decalre the variable
+    cin >> n; //Read it in
+    n = n + 5; //Increase the variable
+    cout << n; //Output the variable
+    /*
+        Alternative solution: 
+        int n; 
+        cin >> n; 
+        cout << n + 5; 
+    */
+    return 0;
+}
+`}
+  </SyntaxHighlighter>
+</div>

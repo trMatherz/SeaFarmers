@@ -78,7 +78,7 @@ function Sidebar({ moduleName }) {
                     matchingTopic && (
     
                       <li key={subIndex} className={`${styles[`state${matchingTopic.state}`]}`}>
-                        <a href={`/SeaFarmers/docs/modules/${moduleName}/${matchingTopic.topicId}/`}>
+                        <a href={`/SeaFarmers/docs/modules/${moduleData.moduleId}/${matchingTopic.topicId}/`}>
                           {matchingTopic.topicName}
                         </a>
                       </li>
