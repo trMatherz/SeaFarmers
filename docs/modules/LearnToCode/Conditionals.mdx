@@ -1,0 +1,38 @@
+import React from 'react';
+import '../../../src/css/TopicPage.module.css';  
+import ProblemList from '../../../src/components/ProblemList';  
+import SampleProblem from '../../../src/components/SampleProblem';  
+import ResourceList from '../../../src/components/ResourceList';
+import TopicProgress from '../../../src/components/TopicProgress';  
+import Sidebar from '../../../src/components/Sidebar';  
+import SignInButton from '@site/src/components/SignInButton';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+import 'katex/dist/katex.min.css';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';
+
+
+export const moduleName = "LearnToCode"; 
+export const topicId = "Conditionals";  
+
+<Sidebar moduleName={moduleName} /> 
+
+# Conditionals
+
+Prerequisites: Basic Data Types
+
+# Focus Problem
+
+<SampleProblem  moduleName={moduleName} topicId={topicId} location={"sample1"} /> 
+
+So what is a conditional? It is a fancy way of saying IF this, THEN this. 
+
+# Practice 
+
+<ProblemList  moduleName={moduleName} topicId={topicId} location={"list"} /> 
+
+<TopicProgress moduleName={moduleName} topicId={topicId} />
+
+
+

@@ -29,7 +29,7 @@ const Dropdown = () => {
 
   return (
     <div className={styles.navbarItems}>
-      <div className={styles.dropdown} ref={dropdownRef}> {/* Attach ref here */}
+      <div className={styles.dropdown} ref={dropdownRef}> 
         <button className={styles.dropdownButton} onClick={toggleDropdown}>
           Sections
         </button>

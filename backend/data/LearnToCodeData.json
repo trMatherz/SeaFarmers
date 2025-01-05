@@ -1,15 +1,15 @@
 {
-  "moduleId": "module1",
-  "moduleName": "LearnToCode",
+  "moduleId": "LearnToCode",
+  "moduleName": "Learn To Code",
   "description": "A beginner-friendly module to kickstart your coding journey.",
-  "unseenTopics": 4,
+  "unseenTopics": 6,
   "skippedTopics": 0,
   "solvedTopics": 0,
-  "unseenProblems": 3,
+  "unseenProblems": 6,
   "skippedProblems": 0,
   "solvedProblems": 0,
-  "totalTopics": 5,
-  "totalProblems": 3,
+  "totalTopics": 6,
+  "totalProblems": 6,
   "genericTopics" : [
     {
       "genericTopicId": "Pre-Code",
@@ -26,6 +26,13 @@
         "Output",
         "Input",
         "BasicDataTypes"
+      ]
+    }, 
+    {
+      "genericTopicId": "CoreConcepts",
+      "genericTopicName": "Core Concepts",
+      "topics" : [
+        "Conditionals"
       ]
     }
   ],
@@ -172,6 +179,100 @@
           "description": "Integers specifically",
           "link": "https://usaco.guide/CPH.pdf#page=16"
         }
+      ]
+    },
+    {
+      "topicId": "Conditionals",
+      "topicName": "Conditionals",
+      "description": "Apply basic logic to your programs.",
+      "solvedProblems": 0,
+      "skippedProblems": 0,
+      "unseenProblems": 3,
+      "totalProblems": 3,
+      "state": 0,
+      "problems": [
+        {
+          "problemId": "WhosOlder",
+          "location": "sample1",
+          "name": "Who's Older?",
+          "state": 0,
+          "source": "Me",
+          "star": true,
+          "difficulty": 300,
+          "tags": [
+            "Conditionals"
+          ],
+          "link": "https://www.hackerrank.com/contests/wjd/challenges/whats-bigger-if-statements",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/LearnToCode/WhosOlder"
+            }
+          ]
+        }, 
+        {
+          "problemId": "CountingToys",
+          "location": "list",
+          "name": "Counting Toys",
+          "state": 0,
+          "source": "Me",
+          "star": true,
+          "difficulty": 400,
+          "tags": [
+            "Conditionals"
+          ],
+          "link": "https://www.hackerrank.com/contests/wjd/challenges/counting-toys-challenge-1",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/LearnToCode/CountingToys"
+            }
+          ]
+        },
+        {
+          "problemId": "CountingToys",
+          "location": "list",
+          "name": "Counting Toys",
+          "state": 0,
+          "source": "Me",
+          "star": true,
+          "difficulty": 400,
+          "tags": [
+            "Conditionals"
+          ],
+          "link": "https://www.hackerrank.com/contests/wjd/challenges/counting-toys-challenge-1",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/LearnToCode/CountingToys"
+            }
+          ]
+        },
+        {
+          "problemId": "FencePainting",
+          "location": "list",
+          "name": "Fence Painting",
+          "state": 0,
+          "source": "USACO",
+          "star": true,
+          "difficulty": 500,
+          "tags": [
+            "Conditionals", "Loops"
+          ],
+          "link": "https://usaco.org/index.php?page=viewproblem2&cpid=567",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/LearnToCode/FencePainting"
+            },
+            {
+              "name": "Official",
+              "link": "https://usaco.org/current/data/sol_paint_bronze_dec15.html"
+            }
+          ]
+        }
+      ],
+      "resources": [
       ]
     }
   ]
