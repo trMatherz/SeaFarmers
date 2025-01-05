@@ -18,7 +18,12 @@ Tags: Input and Output
 
 # Breakdown
 
-We are given an integer and must add five to it. 
+We have to compare $3$ things. To stary organzied, $a, b, c$ will represent the names and $x, y, z$ will represent
+their respective quantities. 
+
+Note: It is guranteed that one of them is the biggest. 
+
+This runs in $\mathcal{O}(1)$
 
 # Implementation
 
@@ -33,16 +38,13 @@ using namespace std;
 
 
 int main() {
-    int n; //Decalre the variable
-    cin >> n; //Read it in
-    n = n + 5; //Increase the variable
-    cout << n; //Output the variable
-    /*
-        Alternative solution: 
-        int n; 
-        cin >> n; 
-        cout << n + 5; 
-    */
+    string a, b, c; int x, y, z;
+    cin >> a >> x >> b >> y >> c >> z; 
+    if(x > y && x > z) { //Check if x is the biggest
+        cout << a;
+    } else if(y > z) { //Check if y is the biggest
+        cout << b;
+    } else cout << c;  //Else c is the biggest
     return 0;
 }
 `}

@@ -146,7 +146,7 @@ const SampleProblem = ({ moduleName, topicId, location }) => {
   return (
     <div>
       {topicData?.problems?.length > 0 ? (
-        <table className={styles.problemTable}>
+        <table className={styles.sampleTable}>
           <thead>
             <tr>
               <th className={styles.statusColumn}></th>

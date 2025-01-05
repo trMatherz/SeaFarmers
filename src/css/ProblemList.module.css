@@ -8,6 +8,8 @@
   overflow: visible;
   margin-top: 20px; 
   margin-bottom: 20px; 
+  z-index: 900; 
+  position: relative; 
 }
 
 tr, th,
@@ -122,6 +124,11 @@ tbody tr:nth-child(odd) {
   text-decoration: none;
   color: #0073e6;
   font-weight: bold;
+}
+
+.problemLink:hover {
+  text-decoration: underline;
+  color: #005bb5; 
 }
 
 

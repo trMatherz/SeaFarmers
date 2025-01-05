@@ -18,7 +18,9 @@ Tags: Input and Output
 
 # Breakdown
 
-We are given an integer and must add five to it. 
+We are given two integers that we compare with If-Statements.
+
+This runs in $\mathcal{O}(1)$
 
 # Implementation
 
@@ -33,16 +35,15 @@ using namespace std;
 
 
 int main() {
-    int n; //Decalre the variable
-    cin >> n; //Read it in
-    n = n + 5; //Increase the variable
-    cout << n; //Output the variable
-    /*
-        Alternative solution: 
-        int n; 
-        cin >> n; 
-        cout << n + 5; 
-    */
+    int a, b; //Declare the variables
+    cin >> a >> b; //Read in the variables
+    if(a > b) { //Check if Mark is older
+        cout << "Mark";
+    } else if(a < b) { //Check if Jerry is older
+        cout << "Jerry"; 
+    } else { //If neither is older, they are the same age
+        cout << "You're the same age!";
+    }
     return 0;
 }
 `}

@@ -24,13 +24,77 @@ Prerequisites: Basic Data Types
 
 # Focus Problem
 
-<SampleProblem  moduleName={moduleName} topicId={topicId} location={"sample1"} /> 
-
 So what is a conditional? It is a fancy way of saying IF this, THEN this. 
 
-# Practice 
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`if(3 > 4) { //if this is true
+	b = b + 2; //then this happens
+} else if(b > 2) { //if this is true AND the previous if is not true
+	b = b - 2; //then this happens
+} else if(b == 2) { //use 2 equals signs to check if it is the same
+    b = 1; 
+} else { //if nothing above it is true
+    cout << b; //then this happens
+}
+`}
+  </SyntaxHighlighter>
+</div>
+
+
+Note: An 'if' statement can be stand alone, have a following 'else', and have any number of 
+'else if' statements in the middle if the 'if' statements are not connect by an else, 
+then they can BOTH happen
+
+# Possible Expressions
+
+These are the different things can you put in an If-Statement
+
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`a == b //returns true if a is equal to b
+a != b //returns true if a is equal to b
+a < b //returns true if a is less than b
+a > b //returns true if a is greater than b
+a <= b //returns true if a is less or equal to than b
+a >= b //returns true if a is greater than or equal to b 
+`}
+  </SyntaxHighlighter>
+</div>
+
+# Logical Operators
+
+These are a way of combing expressions
+
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`!(expression) //returns true if the expression is false and false otherwise
+(expression) || (expression) //returns true if EITHER expression is true
+(expression) && (expression) //returns true if BOTH expressions are true
+`}
+  </SyntaxHighlighter>
+</div>
+
+# Concrete Examples
+
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`if(5 > 4 || 3 > 4) //this equals (true || false) which is true
+if(5 > 4 && 3 > 4) //this equals (true && false) which is false
+if(5 > 4 && !(3 > 4)) //this equals (true && true) which is true
+`}
+  </SyntaxHighlighter>
+</div>
+
+# Focus Problem
+
+<SampleProblem  moduleName={moduleName} topicId={topicId} location={"sample1"} /> 
+
+# More Practice 
 
 <ProblemList  moduleName={moduleName} topicId={topicId} location={"list"} /> 
+
+Note: For Fence Painting, you will have to use File Input
 
 <TopicProgress moduleName={moduleName} topicId={topicId} />
 

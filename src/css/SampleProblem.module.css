@@ -1,5 +1,5 @@
 
-.problemTable {
+.sampleTable {
   width: 900px;
   table-layout: fixed;
   margin-left: 125px; 
@@ -9,6 +9,8 @@
   overflow: visible;
   margin-top: 20px; 
   margin-bottom: 20px; 
+  z-index: 1000; 
+  position: relative; 
 }
 
 tr, th,
