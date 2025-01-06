@@ -1,0 +1,52 @@
+import React from 'react';
+import '../../../src/css/TopicPage.module.css';   
+import Sidebar from '../../../src/components/Sidebar';   
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+import 'katex/dist/katex.min.css';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';
+
+
+export const moduleName = "LearnToCode"; 
+
+<Sidebar moduleName={moduleName} /> 
+
+# Weird Algorithm Solution
+
+Tags: Loops
+
+# Breakdown
+
+We simulate the process using a While Loop. 
+
+This runs in a time that is hard to determine is very quick. 
+
+# Implementation
+
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <fstream>
+std::ifstream cin ("paint.in");
+std::ofstream cout ("paint.out");
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    long long n; 
+    cin >> n; 
+    while(n != 1) {
+        cout << n << " "; 
+        if(n % 2 == 0) n /= 2; 
+        else n = 3 * n + 1; 
+    }
+    cout << 1; 
+}
+`}
+  </SyntaxHighlighter>
+</div>
+

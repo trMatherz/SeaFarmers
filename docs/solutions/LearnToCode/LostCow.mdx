@@ -1,0 +1,66 @@
+import React from 'react';
+import '../../../src/css/TopicPage.module.css';   
+import Sidebar from '../../../src/components/Sidebar';   
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+import 'katex/dist/katex.min.css';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';
+
+
+export const moduleName = "LearnToCode"; 
+
+<Sidebar moduleName={moduleName} /> 
+
+# The Lost Cow Solution
+
+Tags: Loops
+
+# Breakdown
+
+The answer to the problem in the distance between the starting and ending location plus the amount of times Bessie
+comes back to her inital point. 
+
+We can make an observation: if the ending point is to the right of the starting point, she will always have to move 
+right to get there. This means we can ignore her leftward movement. The same can be said fot the other case. For 
+simplicity, the code treats these cases distinctly. 
+
+This runs in $\mathcal{O}(n)$
+
+# Implementation
+
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <fstream>
+std::ifstream cin ("lostcow.in");
+std::ofstream cout ("lostcow.out");
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    int start, end; 
+    cin >> start >> end;
+    if(start <= end) { // Direction is always right
+        int t = 0; 
+        for(int dis = 1; start + dis < end; dis *= 4) { // Stops when she would reach the target
+            t += dis * 2; // Adds trip to the right and back
+            t += (dis * 2) * 2; // Adds trip to the left and back
+        }
+        cout << t + end - start; 
+    } else {
+        int t = 2; 
+        for(int dis = 2; start - dis > end; dis *= 4) {
+            t += dis * 2; 
+            t += (dis * 2) * 2; 
+        }
+        cout << t + start - end; 
+    }
+}
+`}
+  </SyntaxHighlighter>
+</div>
+

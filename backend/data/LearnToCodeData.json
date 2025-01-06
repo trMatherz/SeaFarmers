@@ -5,11 +5,11 @@
   "unseenTopics": 7,
   "skippedTopics": 0,
   "solvedTopics": 0,
-  "unseenProblems": 11,
+  "unseenProblems": 12,
   "skippedProblems": 0,
   "solvedProblems": 0,
   "totalTopics": 7,
-  "totalProblems": 11,
+  "totalProblems": 12,
   "genericTopics" : [
     {
       "genericTopicId": "Pre-Code",
@@ -263,8 +263,8 @@
       "description": "Unlock the power to iterate.",
       "solvedProblems": 0,
       "skippedProblems": 0,
-      "unseenProblems": 5,
-      "totalProblems": 5,
+      "unseenProblems": 6,
+      "totalProblems": 6,
       "state": 0,
       "problems": [
         {
@@ -321,6 +321,10 @@
             {
               "name": "Me",
               "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/LearnToCode/WeirdAlgorithm"
+            },
+            {
+              "name": "Geeks",
+              "link": "https://www.geeksforgeeks.org/weird-algorithm/"
             }
           ]
         },
@@ -340,6 +344,25 @@
             {
               "name": "Me",
               "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/LearnToCode/NewHeights"
+            }
+          ]
+        },
+        {
+          "problemId": "PizzaParty",
+          "location": "list",
+          "name": "The Pizza Party",
+          "state": 0,
+          "source": "ME",
+          "star": false,
+          "difficulty": 600,
+          "tags": [
+            "Loops"
+          ],
+          "link": "https://www.hackerrank.com/contests/wjd/challenges/pizza-party-5-2",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/LearnToCode/PizzaParty"
             }
           ]
         },
