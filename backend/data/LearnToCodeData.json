@@ -2,14 +2,14 @@
   "moduleId": "LearnToCode",
   "moduleName": "Learn To Code",
   "description": "A beginner-friendly module to kickstart your coding journey.",
-  "unseenTopics": 6,
+  "unseenTopics": 7,
   "skippedTopics": 0,
   "solvedTopics": 0,
-  "unseenProblems": 6,
+  "unseenProblems": 11,
   "skippedProblems": 0,
   "solvedProblems": 0,
-  "totalTopics": 6,
-  "totalProblems": 6,
+  "totalTopics": 7,
+  "totalProblems": 11,
   "genericTopics" : [
     {
       "genericTopicId": "Pre-Code",
@@ -249,6 +249,119 @@
             {
               "name": "Official",
               "link": "https://usaco.org/current/data/sol_paint_bronze_dec15.html"
+            }
+          ]
+        }
+      ],
+      "resources": [
+      ]
+    },
+    {
+      "topicId": "Iteration",
+      "topicName": "Iteration",
+      "description": "Unlock the power to iterate.",
+      "solvedProblems": 0,
+      "skippedProblems": 0,
+      "unseenProblems": 5,
+      "totalProblems": 5,
+      "state": 0,
+      "problems": [
+        {
+          "problemId": "CountDown",
+          "location": "sample1",
+          "name": "The Count Down",
+          "state": 0,
+          "source": "Me",
+          "star": true,
+          "difficulty": 400,
+          "tags": [
+            "Loops"
+          ],
+          "link": "https://www.hackerrank.com/contests/wjd/challenges/counting-down-while-loops",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/LearnToCode/CountDown"
+            }
+          ]
+        }, 
+        {
+          "problemId": "StackingPebbles",
+          "location": "sample2",
+          "name": "Stacking Pebbles",
+          "state": 0,
+          "source": "Me",
+          "star": true,
+          "difficulty": 400,
+          "tags": [
+            "Loops"
+          ],
+          "link": "https://www.hackerrank.com/contests/wjd/challenges/stacking-pebbles-input-part-ii",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/LearnToCode/StackingPebbles"
+            }
+          ]
+        },
+        {
+          "problemId": "WeirdAlgorithm",
+          "location": "list",
+          "name": "Weird Algorithm",
+          "state": 0,
+          "source": "CSES",
+          "star": false,
+          "difficulty": 400,
+          "tags": [
+            "Loops"
+          ],
+          "link": "https://cses.fi/problemset/task/1068",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/LearnToCode/WeirdAlgorithm"
+            }
+          ]
+        },
+        {
+          "problemId": "NewHeights",
+          "location": "list",
+          "name": "New Heights",
+          "state": 0,
+          "source": "ME",
+          "star": true,
+          "difficulty": 500,
+          "tags": [
+            "Loops"
+          ],
+          "link": "https://www.hackerrank.com/contests/wjd/challenges/new-heights-for-loops",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/LearnToCode/NewHeights"
+            }
+          ]
+        },
+        {
+          "problemId": "LostCow",
+          "location": "list",
+          "name": "The Lost Cow",
+          "state": 0,
+          "source": "USACO",
+          "star": true,
+          "difficulty": 700,
+          "tags": [
+            "Loops"
+          ],
+          "link": "https://usaco.org/index.php?page=viewproblem2&cpid=735",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/LearnToCode/LostCow"
+            },
+            {
+              "name": "Official",
+              "link": "https://usaco.org/current/data/sol_lostcow_bronze_open17.html"
             }
           ]
         }

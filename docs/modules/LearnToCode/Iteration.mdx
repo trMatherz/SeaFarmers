@@ -1,0 +1,123 @@
+import React from 'react';
+import '../../../src/css/TopicPage.module.css';  
+import ProblemList from '../../../src/components/ProblemList';  
+import SampleProblem from '../../../src/components/SampleProblem';  
+import ResourceList from '../../../src/components/ResourceList';
+import TopicProgress from '../../../src/components/TopicProgress';  
+import Sidebar from '../../../src/components/Sidebar';  
+import SignInButton from '@site/src/components/SignInButton';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+import 'katex/dist/katex.min.css';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';
+
+
+export const moduleName = "LearnToCode"; 
+export const topicId = "Iteration";  
+
+<Sidebar moduleName={moduleName} /> 
+
+# Iteration 
+
+Prerequisites: Conditionals
+
+# While Loops
+
+Iteration is a fancy way of saying repeated actions. In programming, this mainly involves doing something WHILE 
+something is true. The code in the {} runs will the expression is true. 
+
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`while(*expression*) {
+    a = a + 2; 
+    b = b + 3; 
+}
+`}
+  </SyntaxHighlighter>
+</div>
+
+Here's a comparison: 
+
+An If-Statement runs a code block ONCE, IF the expression is true. 
+
+A While loop runs a code block WHILE the expression is true. 
+
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`if(a < 2) { 
+    a = a + 2; 
+    b = b + 3; 
+}
+`}
+  </SyntaxHighlighter>
+</div>
+
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`while(a < 2) { 
+    a = a + 2; 
+    b = b + 3; 
+}
+`}
+  </SyntaxHighlighter>
+</div>
+
+# While Loop Focus Problem 
+
+<SampleProblem  moduleName={moduleName} topicId={topicId} location={"sample1"} /> 
+
+# For Loops 
+
+A For loop is just another kind of loop that does pretty much the same thing except they "streamline" the process. 
+
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`for(*variable* ; *expression* ; *runs between loops*) { 
+    a = a + 2; 
+    b = b + 3; 
+}
+`}
+  </SyntaxHighlighter>
+</div>
+
+The below code does the same thing. Most of the time, For Loops are more efficient, but you can use While Loops if
+you want. 
+
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`int sum = 0, a = 1; 
+while(a <= 5) {
+	sum += a; 
+    a = a + 1; 
+}
+cout << sum;
+`}
+  </SyntaxHighlighter>
+</div>
+
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`int sum = 0; 
+for(int a = 1; a <= 5; a = a + 1){
+	sum += a;
+}
+cout << sum; 
+`}
+  </SyntaxHighlighter>
+</div>
+
+# For Loop Focus Porblem 
+
+<SampleProblem  moduleName={moduleName} topicId={topicId} location={"sample2"} /> 
+
+Note: You can put loops inside other loops. This is called "nesting" loops. 
+
+# More Practice 
+
+<ProblemList  moduleName={moduleName} topicId={topicId} location={"list"} /> 
+
+<TopicProgress moduleName={moduleName} topicId={topicId} />
+
+
+
