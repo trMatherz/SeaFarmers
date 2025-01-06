@@ -32,7 +32,8 @@
       "genericTopicId": "CoreConcepts",
       "genericTopicName": "Core Concepts",
       "topics" : [
-        "Conditionals"
+        "Conditionals",
+        "Iteration"
       ]
     }
   ],
