@@ -330,7 +330,7 @@
           "name": "New Heights",
           "state": 0,
           "source": "ME",
-          "star": true,
+          "star": false,
           "difficulty": 500,
           "tags": [
             "Loops"
