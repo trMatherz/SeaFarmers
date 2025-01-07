@@ -2,14 +2,14 @@
   "moduleId": "LearnToCode",
   "moduleName": "Learn To Code",
   "description": "A beginner-friendly module to kickstart your coding journey.",
-  "unseenTopics": 7,
+  "unseenTopics": 8,
   "skippedTopics": 0,
   "solvedTopics": 0,
-  "unseenProblems": 12,
+  "unseenProblems": 16,
   "skippedProblems": 0,
   "solvedProblems": 0,
-  "totalTopics": 7,
-  "totalProblems": 12,
+  "totalTopics": 8,
+  "totalProblems": 16,
   "genericTopics" : [
     {
       "genericTopicId": "Pre-Code",
@@ -33,7 +33,8 @@
       "genericTopicName": "Core Concepts",
       "topics" : [
         "Conditionals",
-        "Iteration"
+        "Iteration",
+        "VectorsAndStrings"
       ]
     }
   ],
@@ -386,6 +387,100 @@
             {
               "name": "Official",
               "link": "https://usaco.org/current/data/sol_lostcow_bronze_open17.html"
+            }
+          ]
+        }
+      ],
+      "resources": [
+      ]
+    },
+    {
+      "topicId": "VectorsAndStrings",
+      "topicName": "Vectors and Strings",
+      "description": "A new world of fun.",
+      "solvedProblems": 0,
+      "skippedProblems": 0,
+      "unseenProblems": 4,
+      "totalProblems": 4,
+      "state": 0,
+      "problems": [
+        {
+          "problemId": "P1",
+          "location": "sample1",
+          "name": "The Count Down",
+          "state": 0,
+          "source": "Me",
+          "star": true,
+          "difficulty": 400,
+          "tags": [
+            "Loops"
+          ],
+          "link": "https://www.hackerrank.com/contests/wjd/challenges/counting-down-while-loops",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/LearnToCode/CountDown"
+            }
+          ]
+        }, 
+        {
+          "problemId": "P2",
+          "location": "list",
+          "name": "Stacking Pebbles",
+          "state": 0,
+          "source": "Me",
+          "star": true,
+          "difficulty": 400,
+          "tags": [
+            "Loops"
+          ],
+          "link": "https://www.hackerrank.com/contests/wjd/challenges/stacking-pebbles-input-part-ii",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/LearnToCode/StackingPebbles"
+            }
+          ]
+        },
+        {
+          "problemId": "P3",
+          "location": "list",
+          "name": "Weird Algorithm",
+          "state": 0,
+          "source": "CSES",
+          "star": false,
+          "difficulty": 400,
+          "tags": [
+            "Loops"
+          ],
+          "link": "https://cses.fi/problemset/task/1068",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/LearnToCode/WeirdAlgorithm"
+            },
+            {
+              "name": "Geeks",
+              "link": "https://www.geeksforgeeks.org/weird-algorithm/"
+            }
+          ]
+        },
+        {
+          "problemId": "P4",
+          "location": "list",
+          "name": "New Heights",
+          "state": 0,
+          "source": "ME",
+          "star": false,
+          "difficulty": 500,
+          "tags": [
+            "Loops"
+          ],
+          "link": "https://www.hackerrank.com/contests/wjd/challenges/new-heights-for-loops",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/LearnToCode/NewHeights"
             }
           ]
         }

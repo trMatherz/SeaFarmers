@@ -1,0 +1,135 @@
+import React from 'react';
+import '../../../src/css/TopicPage.module.css';  
+import ProblemList from '../../../src/components/ProblemList';  
+import SampleProblem from '../../../src/components/SampleProblem';  
+import ResourceList from '../../../src/components/ResourceList';
+import TopicProgress from '../../../src/components/TopicProgress';  
+import Sidebar from '../../../src/components/Sidebar';  
+import SignInButton from '@site/src/components/SignInButton';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+import 'katex/dist/katex.min.css';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';
+
+
+export const moduleName = "LearnToCode"; 
+export const topicId = "VectorsAndStrings";  
+
+<Sidebar moduleName={moduleName} /> 
+
+# Vectors
+
+Prerequisites: Iteration
+
+Note: Vectors are really the last major thing you have to know before the problems start to get harder. 
+There is a spike in difficulty starting with these problems, so don't get discouraged!
+
+# Strings
+
+There is actually more to strings then simply assigning them to variables. This is mainly important because it 
+is a little easier to understand conceptually than a vector at first. 
+
+So just how we know that words are made up of different characters, computes know that strings are made up of a char. 
+
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`char a = 'd'; 
+`}
+  </SyntaxHighlighter>
+</div>
+
+Note: They use a single quote instead of a double quote like a string. 
+
+So if we have a string and want to get the individual characters, we can do that! All we have to do is put the indice
+(or position) from the beginng in "[]". Accessing elements works in $\mathcal{O}(1)$. 
+
+Note: Indices are zero-index meaning that the first is $0$, second is $1$ and so on. 
+
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`string a = "cat"; 
+cout << a[0] << " " << a[1] << " " << a[2] << endl;
+`}
+  </SyntaxHighlighter>
+</div>
+
+# Vectors
+
+In the same way a string is a list of char, a vector is list except it can be a vist of anything including: 
+strings, ints, long longs, and even other vectors. 
+
+The syntax is a little differnt since you have to specify the type of vector, but the indices work the same. 
+ 
+To decare a vector, use "{}" to surround the list and commas to separate the list. 
+Accessing elements works in $\mathcal{O}(1)$. 
+
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`vector<int> a = {1, 2, 3, 4}; 
+cout << a[0] << " " << a[1] << " " << a[2] << " " << a[3] << endl;
+`}
+  </SyntaxHighlighter>
+</div>
+
+Alternatively, you can do this: 
+
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`vector<int> a(4, 3); // (number of elements, value)
+vector<int> b = {3, 3, 3, 3}; 
+`}
+  </SyntaxHighlighter>
+</div>
+
+Vectors also have one more crucial ability. Their size is dynamic! This means you can add elements to the back 
+of the vector in $\mathcal{O}(1)$
+
+To get the size of a vector (or string) you can do this: 
+
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`vector<int> a(4, 3);
+cout << a.size() << endl; // size is 4 and a = {3, 3, 3, 3}; 
+a.pop_back(); 
+cout << a.size() << endl; // size is 3 and a = {3, 3, 3}; 
+a.push_back(4); 
+cout << a.size() << endl; // size is 4 and a = {3, 3, 3, 4}; 
+`}
+  </SyntaxHighlighter>
+</div>
+
+# Traversing an Array
+
+Here's where things get interesting! Instead of manually accessing indices, you can use loops. 
+
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`vector<string> a(10, "cat");
+for(int i = 0; i < a.size(); i++) {
+  cout << a[i] << " "; 
+}
+`}
+  </SyntaxHighlighter>
+</div>
+
+# Focus Problem
+
+<SampleProblem  moduleName={moduleName} topicId={topicId} location={"sample2"} /> 
+
+https://www.hackerrank.com/contests/under-the-sea/challenges/beyond-the-gates
+
+https://www.hackerrank.com/contests/under-the-sea/challenges/weighing-urchins
+
+https://cses.fi/problemset/task/1069
+
+https://usaco.org/index.php?page=viewproblem2&cpid=568
+
+# More Practice 
+
+<ProblemList  moduleName={moduleName} topicId={topicId} location={"list"} /> 
+
+<TopicProgress moduleName={moduleName} topicId={topicId} />
+
+
+
