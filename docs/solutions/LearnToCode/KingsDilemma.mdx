@@ -1,0 +1,72 @@
+import React from 'react';
+import '../../../src/css/TopicPage.module.css';   
+import Sidebar from '../../../src/components/Sidebar';   
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+import 'katex/dist/katex.min.css';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';
+
+
+export const moduleName = "LearnToCode"; 
+
+<Sidebar moduleName={moduleName} /> 
+
+# The King's Dilemma Solution
+
+Tags: Vectors, Stack
+
+# Breakdown
+
+Maintain a current list of all urchins. 
+
+Maintain $sum$ to check if it is possible to fufull the request. 
+
+If it is, remove all urchins until the sum of the removed urchins exceed the required amount. 
+
+This runs in $\mathcal{O}(n)$
+
+# Implementation
+
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    int n, q; cin >> n >> q;
+    long long sum = 0; 
+    vector<long long> pile(n); 
+    for(int i = 0; i < n; i++) {
+        cin >> pile[i]; 
+        sum += pile[i]; 
+    }
+    while(q--) {
+        long long a, w; cin >> a >> w; 
+        if(a == 1) {
+            pile.push_back(w);
+            sum += w; 
+        }
+        else {
+            if(sum < w) cout << "We don't have enough urchins!" << endl; 
+            else {
+                long long amount = 0; 
+                while(amount < w) { // it is guranteed that the pile will not be empty while this is true
+                    amount += pile.back(); // or pile[pile.size() - 1]; 
+                    sum -= pile.back(); 
+                    pile.pop_back(); 
+                }
+                cout << "Here's " << amount << " in urchins." << endl; 
+            }
+        }
+    }
+    return 0;
+}
+`}
+  </SyntaxHighlighter>
+</div>

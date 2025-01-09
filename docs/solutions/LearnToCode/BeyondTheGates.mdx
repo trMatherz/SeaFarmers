@@ -12,15 +12,17 @@ export const moduleName = "LearnToCode";
 
 <Sidebar moduleName={moduleName} /> 
 
-# Weird Algorithm Solution
+# Beyond The Gates Solution
 
-Tags: Loops
+Tags: Vectors
 
 # Breakdown
 
-We simulate the process using a While Loop. 
+Store the names in a vector. Read in all positions and output the name at that position. 
 
-This runs in a time that is hard to determine is very quick. 
+Remeber that vectors are zero-indexed!
+
+This runs in $\mathcal{O}(n)$
 
 # Implementation
 
@@ -29,37 +31,32 @@ This runs in a time that is hard to determine is very quick.
 {`#include <cmath>
 #include <cstdio>
 #include <vector>
-#include <iostream> 
+#include <iostream>
 #include <algorithm>
 using namespace std;
 
 
-
 int main() {
-    string z; 
-    cin >> z; 
-    int an = 0; 
-    for(int i = 0; i < z.size(); i++) {
-        int cur = 1; 
-        while(i + 1 < z.size() && z[i + 1] == z[i]) i++, cur++; 
-        an = max(an, cur); 
-    }
-    cout << an; 
-}
-
-
-
-int main() {
-    long long n; 
+    int n; 
     cin >> n; 
-    while(n != 1) {
-        cout << n << " "; 
-        if(n % 2 == 0) n /= 2; // If Even
-        else n = 3 * n + 1;  // If Odd
+    vector<string> names(n); 
+    for(int i = 0; i < n; i++) cin >> names[i]; 
+    /* 
+    OR 
+
+    vector<string> names; 
+    for(int i = 0; i < n; i++) {
+        string v; cin >> v; 
+        names.push_back(v); 
     }
-    cout << 1; 
+    */
+    for(int i = 0; i < n; i++) {
+        int x; 
+        cin >> x; 
+        cout << names[x - 1] << endl;
+    }
+    return 0;
 }
 `}
   </SyntaxHighlighter>
 </div>
-

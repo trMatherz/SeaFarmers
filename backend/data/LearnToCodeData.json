@@ -405,82 +405,88 @@
       "state": 0,
       "problems": [
         {
-          "problemId": "P1",
+          "problemId": "BeyondTheGates",
           "location": "sample1",
-          "name": "The Count Down",
+          "name": "Beyond The Gates",
           "state": 0,
           "source": "Me",
           "star": true,
-          "difficulty": 400,
+          "difficulty": 500,
           "tags": [
-            "Loops"
+            "Vectors"
           ],
-          "link": "https://www.hackerrank.com/contests/wjd/challenges/counting-down-while-loops",
+          "link": "https://www.hackerrank.com/contests/under-the-sea/challenges/beyond-the-gates",
           "helps": [
             {
               "name": "Me",
-              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/LearnToCode/CountDown"
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/LearnToCode/BeyondTheGates"
             }
           ]
         }, 
         {
-          "problemId": "P2",
+          "problemId": "Repetitions",
           "location": "list",
-          "name": "Stacking Pebbles",
-          "state": 0,
-          "source": "Me",
-          "star": true,
-          "difficulty": 400,
-          "tags": [
-            "Loops"
-          ],
-          "link": "https://www.hackerrank.com/contests/wjd/challenges/stacking-pebbles-input-part-ii",
-          "helps": [
-            {
-              "name": "Me",
-              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/LearnToCode/StackingPebbles"
-            }
-          ]
-        },
-        {
-          "problemId": "P3",
-          "location": "list",
-          "name": "Weird Algorithm",
+          "name": "Repetitions",
           "state": 0,
           "source": "CSES",
           "star": false,
-          "difficulty": 400,
+          "difficulty": 600,
           "tags": [
-            "Loops"
+            "Vectors", 
+            "Greedy"
           ],
-          "link": "https://cses.fi/problemset/task/1068",
+          "link": "https://cses.fi/problemset/task/1069",
           "helps": [
             {
               "name": "Me",
-              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/LearnToCode/WeirdAlgorithm"
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/LearnToCode/Repetitions"
             },
             {
               "name": "Geeks",
-              "link": "https://www.geeksforgeeks.org/weird-algorithm/"
+              "link": "https://www.geeksforgeeks.org/cses-solutions-repetitions/"
             }
           ]
         },
         {
-          "problemId": "P4",
+          "problemId": "SpeedingTicket",
           "location": "list",
-          "name": "New Heights",
+          "name": "Speeding Ticket",
           "state": 0,
-          "source": "ME",
+          "source": "USACO",
           "star": false,
-          "difficulty": 500,
+          "difficulty": 600,
           "tags": [
-            "Loops"
+            "Vectors"
           ],
-          "link": "https://www.hackerrank.com/contests/wjd/challenges/new-heights-for-loops",
+          "link": "https://usaco.org/index.php?page=viewproblem2&cpid=568",
           "helps": [
             {
               "name": "Me",
-              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/LearnToCode/NewHeights"
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/LearnToCode/SpeedingTicket"
+            },
+            {
+              "name": "Official",
+              "link": "https://usaco.org/current/data/sol_speeding_bronze_dec15.html"
+            }
+          ]
+        },
+        {
+          "problemId": "KingsDilemma",
+          "location": "list",
+          "name": "The King's Dilemma",
+          "state": 0,
+          "source": "Me",
+          "star": true,
+          "difficulty": 800,
+          "tags": [
+            "Vectors",
+            "Stack"
+          ],
+          "link": "https://www.hackerrank.com/contests/under-the-sea/challenges/the-kings-dilemma",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/LearnToCode/KingsDilemma"
             }
           ]
         }

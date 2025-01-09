@@ -12,15 +12,15 @@ export const moduleName = "LearnToCode";
 
 <Sidebar moduleName={moduleName} /> 
 
-# Weird Algorithm Solution
+# Speeding Ticket Solution
 
-Tags: Loops
+Tags: Vectors
 
 # Breakdown
 
-We simulate the process using a While Loop. 
+Let $L$ be the length of the road. We can check the Bessie's speed and the speed limit at each point. 
 
-This runs in a time that is hard to determine is very quick. 
+This runs in $\mathcal{O}(L)$
 
 # Implementation
 
@@ -29,37 +29,37 @@ This runs in a time that is hard to determine is very quick.
 {`#include <cmath>
 #include <cstdio>
 #include <vector>
-#include <iostream> 
+#include <fstream>
+std::ifstream cin ("speeding.in");
+std::ofstream cout ("speeding.out");
 #include <algorithm>
 using namespace std;
 
-
-
 int main() {
-    string z; 
-    cin >> z; 
+    vector<int> limit(101); // Road from 1 to 100
+    int n, m; 
+    cin >> n >> m; 
+    int pos = 1; 
+    for(int i = 0; i < n; i++) {
+        int x, y; 
+        cin >> x >> y; 
+        for(int j = 0; j < x; j++) {
+            limit[pos] = y; // Set limit at pos 
+            pos++; 
+        }
+    }
+    pos = 1; 
     int an = 0; 
-    for(int i = 0; i < z.size(); i++) {
-        int cur = 1; 
-        while(i + 1 < z.size() && z[i + 1] == z[i]) i++, cur++; 
-        an = max(an, cur); 
+    for(int i = 0; i < m; i++) {
+        int x, y; 
+        cin >> x >> y; 
+        for(int j = 0; j < x; j++) {
+            an = max(an, y - limit[pos]); // Check speed against limit
+            pos++; 
+        }
     }
     cout << an; 
-}
-
-
-
-int main() {
-    long long n; 
-    cin >> n; 
-    while(n != 1) {
-        cout << n << " "; 
-        if(n % 2 == 0) n /= 2; // If Even
-        else n = 3 * n + 1;  // If Odd
-    }
-    cout << 1; 
 }
 `}
   </SyntaxHighlighter>
 </div>
-
