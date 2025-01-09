@@ -2,14 +2,14 @@
   "moduleId": "LearnToCode",
   "moduleName": "Learn To Code",
   "description": "A beginner-friendly module to kickstart your coding journey.",
-  "unseenTopics": 8,
+  "unseenTopics": 9,
   "skippedTopics": 0,
   "solvedTopics": 0,
-  "unseenProblems": 16,
+  "unseenProblems": 19,
   "skippedProblems": 0,
   "solvedProblems": 0,
-  "totalTopics": 8,
-  "totalProblems": 16,
+  "totalTopics": 9,
+  "totalProblems": 19,
   "genericTopics" : [
     {
       "genericTopicId": "Pre-Code",
@@ -35,6 +35,12 @@
         "Conditionals",
         "Iteration",
         "VectorsAndStrings"
+      ]
+    }, {
+      "genericTopicId": "WrappingUp",
+      "genericTopicName": "Wrapping Up",
+      "topics" : [
+        "UsefulTricks"
       ]
     }
   ],
@@ -487,6 +493,83 @@
             {
               "name": "Me",
               "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/LearnToCode/KingsDilemma"
+            }
+          ]
+        }
+      ],
+      "resources": [
+      ]
+    },
+    {
+      "topicId": "UsefulTricks",
+      "topicName": "Useful Tricks (Optional)",
+      "description": "Some extra tricks that might make implementation easier.",
+      "solvedProblems": 0,
+      "skippedProblems": 0,
+      "unseenProblems": 3,
+      "totalProblems": 3,
+      "state": 0,
+      "problems": [
+        {
+          "problemId": "IncreasingArray",
+          "location": "sample1",
+          "name": "Increasing Array",
+          "state": 0,
+          "source": "CSES",
+          "star": true,
+          "difficulty": 500,
+          "tags": [
+            "Max"
+          ],
+          "link": "https://cses.fi/problemset/task/1094",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/LearnToCode/IncreasingArray"
+            },
+            {
+              "name": "Geeks",
+              "link": "https://www.geeksforgeeks.org/cses-solutions-increasing-array/"
+            }
+          ]
+        },
+        {
+          "problemId": "Maximum Distance",
+          "location": "sample2",
+          "name": "Speeding Ticket",
+          "state": 0,
+          "source": "Codeforces",
+          "star": false,
+          "difficulty": 600,
+          "tags": [
+            "Pairs",
+            "Complete Search"
+          ],
+          "link": "https://codeforces.com/gym/102951/problem/A",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/LearnToCode/MaximumDistance"
+            }
+          ]
+        },
+        {
+          "problemId": "CountingToysII",
+          "location": "list",
+          "name": "Counting Toys II",
+          "state": 0,
+          "source": "Me",
+          "star": true,
+          "difficulty": 500,
+          "tags": [
+            "Pairs",
+            "Max"
+          ],
+          "link": "https://www.hackerrank.com/contests/wjd/challenges/counting-toys-ii",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/LearnToCode/CountingToysII"
             }
           ]
         }
