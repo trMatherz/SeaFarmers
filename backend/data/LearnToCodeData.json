@@ -534,15 +534,16 @@
           ]
         },
         {
-          "problemId": "Maximum Distance",
+          "problemId": "MaximumDistance",
           "location": "sample2",
-          "name": "Speeding Ticket",
+          "name": "Maximum Distance",
           "state": 0,
           "source": "Codeforces",
-          "star": false,
+          "star": true,
           "difficulty": 600,
           "tags": [
             "Pairs",
+            "Max",
             "Complete Search"
           ],
           "link": "https://codeforces.com/gym/102951/problem/A",
@@ -560,7 +561,7 @@
           "state": 0,
           "source": "Me",
           "star": true,
-          "difficulty": 500,
+          "difficulty": 600,
           "tags": [
             "Pairs",
             "Max"

@@ -12,18 +12,15 @@ export const moduleName = "LearnToCode";
 
 <Sidebar moduleName={moduleName} /> 
 
-# Counting Toys Solution
+# Maximum Distance Solution
 
-Tags: Input and Output
+Tags: Pairs, Max
 
 # Breakdown
 
-We have to compare $3$ things. To stary organzied, $a, b, c$ will represent the names and $x, y, z$ will represent
-their respective quantities. 
+We check all possible pairs.
 
-Note: It is guranteed that one of them is the biggest. 
-
-This runs in $\mathcal{O}(1)$
+This runs in $\mathcal{O}(n^2)$
 
 # Implementation
 
@@ -32,20 +29,26 @@ This runs in $\mathcal{O}(1)$
 {`#include <cmath>
 #include <cstdio>
 #include <vector>
-#include <iostream>
+#include <iostream> 
 #include <algorithm>
 using namespace std;
 
 
+
 int main() {
-    string a, b, c; int x, y, z;
-    cin >> a >> x >> b >> y >> c >> z; 
-    if(x > y && x > z) { //Check if x is the biggest
-        cout << a;
-    } else if(y > z) { //Check if y is the biggest
-        cout << b;
-    } else cout << c;  //Else c is the biggest
-    return 0;
+    int n; 
+    cin >> n; 
+    vector<pair<long long, long long>> a(n); 
+    for(int i = 0; i < n; i++) cin >> a[i].first; 
+    for(int i = 0; i < n; i++) cin >> a[i].second; 
+    long long an = 0;
+    for(int i = 0; i < n; i++) {
+        for(int j = i + 1; j < n; j++) {
+            an = max(an, (a[i].first - a[j].first) * (a[i].first - a[j].first) +
+                (a[i].second - a[j].second) * (a[i].second - a[j].second)); 
+        }
+    }
+    cout << an; 
 }
 `}
   </SyntaxHighlighter>

@@ -1,0 +1,93 @@
+import React from 'react';
+import '../../../src/css/TopicPage.module.css';  
+import ProblemList from '../../../src/components/ProblemList';  
+import SampleProblem from '../../../src/components/SampleProblem';  
+import ResourceList from '../../../src/components/ResourceList';
+import TopicProgress from '../../../src/components/TopicProgress';  
+import Sidebar from '../../../src/components/Sidebar';  
+import SignInButton from '@site/src/components/SignInButton';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+import 'katex/dist/katex.min.css';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';
+
+
+export const moduleName = "LearnToCode"; 
+export const topicId = "UsefulTricks";  
+
+<Sidebar moduleName={moduleName} /> 
+
+# Useful Tricks
+
+There are two things covered here that aren't "required" but are certainly helpful. 
+
+# Max
+
+As you may have guessed, this funciton just returns the max of two different quantities. For strings, it goes letter by
+letter. 
+
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`int a = 2, b = 5; 
+b = max(a, b); // b still equals 5
+a = max(a, b); // a now equals 5
+`}
+  </SyntaxHighlighter>
+</div>
+
+# Max Focus Problem
+
+<SampleProblem  moduleName={moduleName} topicId={topicId} location={"sample1"} /> 
+
+# Pairs
+
+Pairs are good for grouping two differnt variables together. 
+
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`pair<data_type1, data_type2>
+`}
+  </SyntaxHighlighter>
+</div>
+
+You can use "first" and "second" to access and element of the pair or you can use "{}" to set a pair. 
+
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`pair<int, string> a;
+a = {3, "Pop"}; 
+cout << a.first << " " << a.second << endl; // 3 Pop
+a.first += 3; 
+a.second += "pers"; 
+`}
+  </SyntaxHighlighter>
+</div>
+
+You can even use a pair with the max function. It will compare the first element. If they are equal, it will compare the
+second element. 
+
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`pair<int, string> c = {9, "Cat"}, d = {200, "OP"};
+c = max(c, d); // c = {200, "OP"}; 
+c.s = "OQ"; // c = {200, "OQ"}; 
+d = max(c, d); // d = {200, "OQ"}; 
+`}
+  </SyntaxHighlighter>
+</div>
+
+# Pairs Focus Problem
+
+<SampleProblem  moduleName={moduleName} topicId={topicId} location={"sample2"} /> 
+
+# More Practice 
+
+Note: Try to use both pairs and max to solve this problem: 
+
+<ProblemList  moduleName={moduleName} topicId={topicId} location={"list"} /> 
+
+<TopicProgress moduleName={moduleName} topicId={topicId} />
+
+
+

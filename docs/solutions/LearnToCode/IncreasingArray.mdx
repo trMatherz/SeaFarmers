@@ -12,18 +12,18 @@ export const moduleName = "LearnToCode";
 
 <Sidebar moduleName={moduleName} /> 
 
-# Counting Toys Solution
+# Increasing Array Solution
 
-Tags: Input and Output
+Tags: Max
 
 # Breakdown
 
-We have to compare $3$ things. To stary organzied, $a, b, c$ will represent the names and $x, y, z$ will represent
-their respective quantities. 
+For each interger $i$ ($i > 0$), if the $a$<sub>$i - 1$</sub> $>$ $a$<sub>$i$</sub> then we increase the answer by 
+the difference. 
 
-Note: It is guranteed that one of them is the biggest. 
+Then, set $a$<sub>$i$</sub> = $max(a$<sub>$i - 1$</sub> $>$ $a$<sub>$i$</sub>$)$. 
 
-This runs in $\mathcal{O}(1)$
+This runs in $\mathcal{O}(n)$
 
 # Implementation
 
@@ -32,20 +32,22 @@ This runs in $\mathcal{O}(1)$
 {`#include <cmath>
 #include <cstdio>
 #include <vector>
-#include <iostream>
+#include <iostream> 
 #include <algorithm>
 using namespace std;
 
 
+
 int main() {
-    string a, b, c; int x, y, z;
-    cin >> a >> x >> b >> y >> c >> z; 
-    if(x > y && x > z) { //Check if x is the biggest
-        cout << a;
-    } else if(y > z) { //Check if y is the biggest
-        cout << b;
-    } else cout << c;  //Else c is the biggest
-    return 0;
+    long long an = 0; 
+    int n, prev;
+    cin >> n >> prev; 
+    for(int i = 1; i < n; i++) {
+        int x; cin >> x; 
+        an += max(prev - x, 0); 
+        prev = max(prev, x); 
+    }
+    cout << an; 
 }
 `}
   </SyntaxHighlighter>
