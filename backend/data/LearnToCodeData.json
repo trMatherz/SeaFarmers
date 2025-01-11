@@ -2,14 +2,14 @@
   "moduleId": "LearnToCode",
   "moduleName": "Learn To Code",
   "description": "A beginner-friendly module to kickstart your coding journey.",
-  "unseenTopics": 9,
+  "unseenTopics": 10,
   "skippedTopics": 0,
   "solvedTopics": 0,
-  "unseenProblems": 19,
+  "unseenProblems": 25,
   "skippedProblems": 0,
   "solvedProblems": 0,
-  "totalTopics": 9,
-  "totalProblems": 19,
+  "totalTopics": 10,
+  "totalProblems": 25,
   "genericTopics" : [
     {
       "genericTopicId": "Pre-Code",
@@ -40,7 +40,8 @@
       "genericTopicId": "WrappingUp",
       "genericTopicName": "Wrapping Up",
       "topics" : [
-        "UsefulTricks"
+        "UsefulTricks",
+        "Review"
       ]
     }
   ],
@@ -571,6 +572,158 @@
             {
               "name": "Me",
               "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/LearnToCode/CountingToysII"
+            }
+          ]
+        }
+      ],
+      "resources": [
+      ]
+    },
+    {
+      "topicId": "Review",
+      "topicName": "Review",
+      "description": "Time to see how far you've come.",
+      "solvedProblems": 0,
+      "skippedProblems": 0,
+      "unseenProblems": 6,
+      "totalProblems": 6,
+      "state": 0,
+      "problems": [
+        {
+          "problemId": "PromotionCounting",
+          "location": "list",
+          "name": "Promotion Counting",
+          "state": 0,
+          "source": "USACO",
+          "star": true,
+          "difficulty": 1,
+          "tags": [
+            "If-Statement"
+          ],
+          "link": "https://usaco.org/index.php?page=viewproblem2&cpid=591",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/LearnToCode/PromotionCounting"
+            },
+            {
+              "name": "Official",
+              "link": "https://usaco.org/current/data/sol_promote_bronze_jan16.html"
+            }
+          ]
+        },
+        {
+          "problemId": "MissingNumber",
+          "location": "list",
+          "name": "Missing Number",
+          "state": 0,
+          "source": "CSES",
+          "star": true,
+          "difficulty": 2,
+          "tags": [
+            "Vectors"
+          ],
+          "link": "https://cses.fi/problemset/task/1083",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/LearnToCode/MissingNumber"
+            },
+            {
+              "name": "Geeks",
+              "link": "https://www.geeksforgeeks.org/missing-number-cses/"
+            }
+          ]
+        },
+        {
+          "problemId": "Permutation",
+          "location": "list",
+          "name": "Permutation",
+          "state": 0,
+          "source": "CSES",
+          "star": true,
+          "difficulty": 3,
+          "tags": [
+            "Loops"
+          ],
+          "link": "https://cses.fi/problemset/task/1070",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/LearnToCode/Permutation"
+            },
+            {
+              "name": "Geeks",
+              "link": "https://www.geeksforgeeks.org/cses-solutions-permutations/"
+            }
+          ]
+        },
+        {
+          "problemId": "NumberSpiral",
+          "location": "list",
+          "name": "Number Spiral",
+          "state": 0,
+          "source": "CSES",
+          "star": true,
+          "difficulty": 4,
+          "tags": [
+            "If-Statement"
+          ],
+          "link": "https://cses.fi/problemset/task/1071",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/LearnToCode/NumberSpiral"
+            },
+            {
+              "name": "Geeks",
+              "link": "https://www.geeksforgeeks.org/cses-solutions-number-spiral/"
+            }
+          ]
+        },
+        {
+          "problemId": "WhyDidTheCowCrossTheRoad",
+          "location": "list",
+          "name": "Why Did The Cow Cross The Road",
+          "state": 0,
+          "source": "USACO",
+          "star": true,
+          "difficulty": 5,
+          "tags": [
+            "Vectors"
+          ],
+          "link": "https://usaco.org/index.php?page=viewproblem2&cpid=711",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/LearnToCode/WhyDidTheCowCrossTheRoad"
+            },
+            {
+              "name": "Official",
+              "link": "https://usaco.org/current/data/sol_crossroad_bronze_feb17.html"
+            }
+          ]
+        },
+        {
+          "problemId": "FieldReduction",
+          "location": "list",
+          "name": "Field Reduction",
+          "state": 0,
+          "source": "USACO",
+          "star": true,
+          "difficulty": 6,
+          "tags": [
+            "Max"
+          ],
+          "link": "https://usaco.org/index.php?page=viewproblem2&cpid=641",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/LearnToCode/FieldReduction"
+            },
+            {
+              "name": "Official",
+              "link": "https://usaco.org/current/data/sol_reduce_bronze_open16.html"
             }
           ]
         }
