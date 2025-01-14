@@ -165,12 +165,9 @@ app.get('/api/user', async (req, res) => {
 
 const getDefaultModuleData = (moduleName) => {
   try {
-    console.log(moduleName);
-    moduleName = moduleName.replace(/\s+/g, '');
-    console.log(moduleName); 
-    const filePath = path.join(__dirname, 'data', `${moduleName}Data.json`); // Dynamic file path
-    const jsonData = fs.readFileSync(filePath, 'utf-8'); // Synchronously read the JSON file
-    return JSON.parse(jsonData); // Parse and return the JSON data
+    const filePath = path.join(__dirname, 'data', `${moduleName}Data.json`); 
+    const jsonData = fs.readFileSync(filePath, 'utf-8'); 
+    return JSON.parse(jsonData); 
   } catch (error) {
     console.error(`Error reading default module data for ${moduleName}:`, error.message);
     throw new Error(`Could not load default module data for ${moduleName}`);
@@ -290,13 +287,13 @@ const checkModuleUpdate = async (userId, moduleName) => {
     if(!user.modules.find(module => module.moduleName === moduleName)) user.modules.push(userModuleData);  
     else {
       await User.updateOne(
-        { _id: userId, 'modules.moduleName': moduleName },  // Find user by ID and matching module name
+        { _id: userId, 'modules.moduleName': moduleName },  
         { 
-          $set: { 'modules.$': userModuleData }  // Set the module data to the new data for the matched module
+          $set: { 'modules.$': userModuleData }  
         }
       );
     }
-    // Save the updated user data
+    
     await user.save();
 
     return { success: true, message: 'Module data updated successfully.' };
@@ -309,6 +306,10 @@ const checkModuleUpdate = async (userId, moduleName) => {
 function updateData(defaultData, userModuleData) {
   const updatedData = { ...defaultData };
 
+  if(!updatedData) console.log(`Bad default`); 
+  else console.log(updatedData.solvedProblems); 
+  if(!userModuleData) console.log(`Bad User`); 
+  else console.log(userModuleData.solvedProblems); 
   
   updatedData.solvedProblems = userModuleData.solvedProblems;
   updatedData.skippedProblems = userModuleData.skippedProblems;
