@@ -187,10 +187,14 @@ const checkModuleUpdate = async (userId, moduleName) => {
     let userModuleData = user.modules.find(module => module.moduleName === moduleName);
     
     if (!userModuleData) {
-      // If the module doesn't exist in the user's data, create it
+      
       const newModule = {
-        moduleId: moduleData.moduleId, // Required module ID
-        moduleName: moduleData.moduleName, // Required module name
+        moduleId: moduleData.moduleId, 
+        moduleName: moduleData.moduleName, 
+        solvedProblems: 0,
+        solvedTopics: 0,
+        skippedProblems: 0,
+        skippedTopics: 0,
         unseenProblems: 0,
         unseenTopics: 0,
         topics: [] 
@@ -199,9 +203,9 @@ const checkModuleUpdate = async (userId, moduleName) => {
     }
    
     
-    // Ensure all topics and problems are updated
+    
     const updatedTopics = moduleData.topics.map((moduleTopic) => {
-      // Ensure userTopic.topics exists
+      
       let userTopic = userModuleData.topics.find((userTopic) => userTopic.topicId === moduleTopic.topicId);
 
       if (!userTopic) {
@@ -287,14 +291,18 @@ const checkModuleUpdate = async (userId, moduleName) => {
     if(!user.modules.find(module => module.moduleName === moduleName)) user.modules.push(userModuleData);  
     else {
       await User.updateOne(
-        { _id: userId, 'modules.moduleName': moduleName },  
+        { _id: userId, 'modules.moduleName': moduleName },  // Find user by ID and matching module name
         { 
-          $set: { 'modules.$': userModuleData }  
+          $set: { 'modules.$': userModuleData }  // Set the module data to the new data for the matched module
         }
       );
     }
     
     await user.save();
+
+    userModuleData = user.modules.find(module => module.moduleName === moduleName);
+    if(!userModuleData) console.log(`Mistake with creating the module`);
+
 
     return { success: true, message: 'Module data updated successfully.' };
   } catch (error) {
@@ -306,10 +314,6 @@ const checkModuleUpdate = async (userId, moduleName) => {
 function updateData(defaultData, userModuleData) {
   const updatedData = { ...defaultData };
 
-  if(!updatedData) console.log(`Bad default`); 
-  else console.log(updatedData.solvedProblems); 
-  if(!userModuleData) console.log(`Bad User`); 
-  else console.log(userModuleData.solvedProblems); 
   
   updatedData.solvedProblems = userModuleData.solvedProblems;
   updatedData.skippedProblems = userModuleData.skippedProblems;
