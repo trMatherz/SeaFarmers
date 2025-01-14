@@ -165,6 +165,9 @@ app.get('/api/user', async (req, res) => {
 
 const getDefaultModuleData = (moduleName) => {
   try {
+    console.log(moduleName);
+    moduleName = moduleName.replace(/\s+/g, '');
+    console.log(moduleName); 
     const filePath = path.join(__dirname, 'data', `${moduleName}Data.json`); // Dynamic file path
     const jsonData = fs.readFileSync(filePath, 'utf-8'); // Synchronously read the JSON file
     return JSON.parse(jsonData); // Parse and return the JSON data
@@ -193,7 +196,7 @@ const checkModuleUpdate = async (userId, moduleName) => {
         moduleName: moduleData.moduleName, // Required module name
         unseenProblems: 0,
         unseenTopics: 0,
-        topics: [] // Initialize topics as an empty array
+        topics: [] 
       };
       userModuleData = newModule;
     }
@@ -304,10 +307,9 @@ const checkModuleUpdate = async (userId, moduleName) => {
 };
 
 function updateData(defaultData, userModuleData) {
-  // Clone defaultData to avoid mutating the original object
   const updatedData = { ...defaultData };
 
-  // Update module-level properties
+  
   updatedData.solvedProblems = userModuleData.solvedProblems;
   updatedData.skippedProblems = userModuleData.skippedProblems;
   updatedData.unseenProblems = userModuleData.unseenProblems;
@@ -316,15 +318,13 @@ function updateData(defaultData, userModuleData) {
   updatedData.skippedTopics = userModuleData.skippedTopics;
   updatedData.unseenTopics = userModuleData.unseenTopics;
 
-  // Update topics
   const updatedTopics = defaultData.topics.map((moduleTopic) => {
-    // Find the corresponding topic in userModuleData
     const userTopic = userModuleData.topics.find(
       (userTopic) => userTopic.topicId === moduleTopic.topicId
     );
 
     if (userTopic) {
-      // Update topic-level properties
+     
       const updatedTopic = {
         ...moduleTopic,
         state: userTopic.state,
@@ -333,9 +333,9 @@ function updateData(defaultData, userModuleData) {
         unseenProblems: userTopic.unseenProblems,
       };
 
-      // Update problems within the topic
+      
       const updatedProblems = moduleTopic.problems.map((moduleProblem) => {
-        // Find the corresponding problem in userTopic
+       
         const userProblem = userTopic.problems.find(
           (userProblem) => userProblem.problemId === moduleProblem.problemId
         );
@@ -343,11 +343,11 @@ function updateData(defaultData, userModuleData) {
         if (userProblem) {
           return {
             ...moduleProblem,
-            state: userProblem.state, // Update problem state
+            state: userProblem.state, 
           };
         }
 
-        // Return the original problem if no user updates are found
+        
         return moduleProblem;
       });
 
@@ -370,8 +370,8 @@ app.get('/api/module/:moduleName', async (req, res) => {
   const { moduleName } = req.params;
   const defaultModuleData = getDefaultModuleData(moduleName);
   const { userId } = req.query;
-  if(userId == "guest") return res.json(defaultModuleData);  // Return the default module data
-  if(!userId) return res.json(defaultModuleData);  // Return the default module data
+  if(!userId) return res.json(defaultModuleData);  
+  if(userId == "guest") return res.json(defaultModuleData);  
   
   checkModuleUpdate(userId, moduleName); 
   try {
