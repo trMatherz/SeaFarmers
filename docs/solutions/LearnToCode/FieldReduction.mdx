@@ -36,25 +36,39 @@ This runs in $\mathcal{O}(n)$
 #include <cstdio>
 #include <vector>
 #include <fstream>
-std::ifstream cin ("crossroad.in");
-std::ofstream cout ("crossroad.out");
+std::ifstream cin ("reduce.in");
+std::ofstream cout ("reduce.out");
 #include <algorithm>
 using namespace std;
 
 
-
+const int N = 40'005; 
 int main() {
-    int n; cin >> n; 
-    int an = 0; 
-    vector<int> a(10, -1); 
-    for(int i = 0; i < n; i++) {
-        int x, y; 
-        cin >> x >> y; 
-        x--; 
-        if(a[x] != -1 && a[x] != y) an++; // check if on the other side
-        a[x] = y; 
+    int n; 
+    cin >> n; 
+    vector<pair<int, int>> a(n); 
+    for(int i = 0; i < n; i++) cin >> a[i].first >> a[i].second; 
+    int gx1 = N, gx2 = -N, gy1 = N, gy2 = -N; // fence for all cows
+    for(int j = 0; j < n; j++) {
+        gx1 = min(gx1, a[j].first); 
+        gx2 = max(gx2, a[j].first); 
+        gy1 = min(gy1, a[j].second); 
+        gy2 = max(gy2, a[j].second); 
     }
-    cout << an;
+    int an = (gx2 - gx1) * (gy2 - gy1); 
+    for(int i = 0; i < n; i++) {
+        int x1 = N, x2 = -N, y1 = N, y2 = -N; // fence without cow i IF cow is on the global fence
+        if(gx1 != a[i].first && gx2 != a[i].first && gy1 != a[i].second && gy2 != a[i].second) continue; 
+        for(int j = 0; j < n; j++) {
+            if(i == j) continue; 
+            x1 = min(x1, a[j].first); 
+            x2 = max(x2, a[j].first); 
+            y1 = min(y1, a[j].second); 
+            y2 = max(y2, a[j].second); 
+        }
+        an = min(an, (x2 - x1) * (y2 - y1));
+    }
+    cout << an; 
 }
 `}
   </SyntaxHighlighter>

@@ -613,9 +613,9 @@
           ]
         },
         {
-          "problemId": "Permutation",
+          "problemId": "Permutations",
           "location": "list",
-          "name": "Permutation",
+          "name": "Permutations",
           "state": 0,
           "source": "CSES",
           "star": false,
@@ -627,7 +627,7 @@
           "helps": [
             {
               "name": "Me",
-              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/LearnToCode/Permutation"
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/LearnToCode/Permutations"
             },
             {
               "name": "Geeks",
