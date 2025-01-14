@@ -288,18 +288,15 @@ const checkModuleUpdate = async (userId, moduleName) => {
     
 
    
-    if(!user.modules.find(module => module.moduleName === moduleName)) user.modules.push(userModuleData);  
-    else {
-      await User.updateOne(
-        { _id: userId, 'modules.moduleName': moduleName },  // Find user by ID and matching module name
-        { 
-          $set: { 'modules.$': userModuleData }  // Set the module data to the new data for the matched module
-        }
-      );
+    const existingModule = user.modules.find(module => module.moduleName === moduleName);
+    if (!existingModule) {
+      user.modules.push(userModuleData);
+    } else {
+      const index = user.modules.findIndex(module => module.moduleName === moduleName);
+      user.modules[index] = userModuleData;
     }
-    
     await user.save();
-
+    
     userModuleData = user.modules.find(module => module.moduleName === moduleName);
     if(!userModuleData) console.log(`Mistake with creating the module`);
 
