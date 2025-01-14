@@ -12,13 +12,15 @@ export const moduleName = "LearnToCode";
 
 <Sidebar moduleName={moduleName} /> 
 
-# The Pizza Party Solution
+# Permutations Solution
 
 Tags: Loops
 
 # Breakdown
 
-We can simulate this process using a For Loop. 
+First of all, the only time the answer is NO SOLUTION is when $ n == 2 $ or $ n == 3 $. 
+
+For any other $n$, you can create this sequence by outputting numbers $2$ apart starting at $2$ and then $1$. 
 
 This runs in $\mathcal{O}(n)$
 
@@ -34,21 +36,15 @@ This runs in $\mathcal{O}(n)$
 using namespace std;
 
 
+
 int main() {
     int n; cin >> n; 
-    for(int i = 0; i < n; i++) {
-        int s, f; cin >> s >> f; 
-        int num = s / f; 
-        int rem = s % f; 
-        cout << "All friends shall get " << num << " slice";
-        if (num != 1) cout << "s"; 
-        cout << " and Mark shall get " << rem / 2 << " slice";
-        if (rem / 2 != 1) cout << "s"; 
-        cout << " which leaves Jerry with " << (rem + 1) / 2 << " slice";
-        if ((rem + 1) / 2 != 1) cout << "s"; 
-        cout << "!\n"; 
+    if(2 <= n && n <= 3) {
+        cout << "NO SOLUTION"; 
+        return 0; 
     }
-    return 0;
+    for(int i = 2; i <= n; i += 2) cout << i << " "; 
+    for(int i = 1; i <= n; i += 2) cout << i << " "; 
 }
 `}
   </SyntaxHighlighter>

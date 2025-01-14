@@ -590,36 +590,13 @@
       "state": 0,
       "problems": [
         {
-          "problemId": "PromotionCounting",
-          "location": "list",
-          "name": "Promotion Counting",
-          "state": 0,
-          "source": "USACO",
-          "star": true,
-          "difficulty": 1,
-          "tags": [
-            "If-Statement"
-          ],
-          "link": "https://usaco.org/index.php?page=viewproblem2&cpid=591",
-          "helps": [
-            {
-              "name": "Me",
-              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/LearnToCode/PromotionCounting"
-            },
-            {
-              "name": "Official",
-              "link": "https://usaco.org/current/data/sol_promote_bronze_jan16.html"
-            }
-          ]
-        },
-        {
           "problemId": "MissingNumber",
           "location": "list",
           "name": "Missing Number",
           "state": 0,
           "source": "CSES",
-          "star": true,
-          "difficulty": 2,
+          "star": false,
+          "difficulty": 500,
           "tags": [
             "Vectors"
           ],
@@ -641,8 +618,8 @@
           "name": "Permutation",
           "state": 0,
           "source": "CSES",
-          "star": true,
-          "difficulty": 3,
+          "star": false,
+          "difficulty": 600,
           "tags": [
             "Loops"
           ],
@@ -659,36 +636,13 @@
           ]
         },
         {
-          "problemId": "NumberSpiral",
-          "location": "list",
-          "name": "Number Spiral",
-          "state": 0,
-          "source": "CSES",
-          "star": true,
-          "difficulty": 4,
-          "tags": [
-            "If-Statement"
-          ],
-          "link": "https://cses.fi/problemset/task/1071",
-          "helps": [
-            {
-              "name": "Me",
-              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/LearnToCode/NumberSpiral"
-            },
-            {
-              "name": "Geeks",
-              "link": "https://www.geeksforgeeks.org/cses-solutions-number-spiral/"
-            }
-          ]
-        },
-        {
           "problemId": "WhyDidTheCowCrossTheRoad",
           "location": "list",
           "name": "Why Did The Cow Cross The Road",
           "state": 0,
           "source": "USACO",
-          "star": true,
-          "difficulty": 5,
+          "star": false,
+          "difficulty": 600,
           "tags": [
             "Vectors"
           ],
@@ -705,13 +659,59 @@
           ]
         },
         {
+          "problemId": "PromotionCounting",
+          "location": "list",
+          "name": "Promotion Counting",
+          "state": 0,
+          "source": "USACO",
+          "star": true,
+          "difficulty": 800,
+          "tags": [
+            "If-Statement"
+          ],
+          "link": "https://usaco.org/index.php?page=viewproblem2&cpid=591",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/LearnToCode/PromotionCounting"
+            },
+            {
+              "name": "Official",
+              "link": "https://usaco.org/current/data/sol_promote_bronze_jan16.html"
+            }
+          ]
+        },
+        {
+          "problemId": "NumberSpiral",
+          "location": "list",
+          "name": "Number Spiral",
+          "state": 0,
+          "source": "CSES",
+          "star": false,
+          "difficulty": 900,
+          "tags": [
+            "If-Statement"
+          ],
+          "link": "https://cses.fi/problemset/task/1071",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/LearnToCode/NumberSpiral"
+            },
+            {
+              "name": "Geeks",
+              "link": "https://www.geeksforgeeks.org/cses-solutions-number-spiral/"
+            }
+          ]
+        },
+        {
           "problemId": "FieldReduction",
           "location": "list",
           "name": "Field Reduction",
           "state": 0,
           "source": "USACO",
           "star": true,
-          "difficulty": 6,
+          "difficulty": 1000,
           "tags": [
             "Max"
           ],

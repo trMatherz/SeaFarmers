@@ -12,13 +12,19 @@ export const moduleName = "LearnToCode";
 
 <Sidebar moduleName={moduleName} /> 
 
-# The Pizza Party Solution
+# Field Reduction Solution
 
-Tags: Loops
+Tags: Vectors
 
 # Breakdown
 
-We can simulate this process using a For Loop. 
+Any cow that does not have a max or min in either the x or y direction will not affect the bounding rectangle. 
+
+If we simulate this process where we calculate these $4$ "critical values", 
+it runs in $\mathcal{O}(n^2)$ which will fail one testcase. 
+
+A better solution would be to only recalculate the area IF the cow is on the global rectangle since removing a 
+cow in the middle has no effect anyway. 
 
 This runs in $\mathcal{O}(n)$
 
@@ -29,26 +35,26 @@ This runs in $\mathcal{O}(n)$
 {`#include <cmath>
 #include <cstdio>
 #include <vector>
-#include <iostream>
+#include <fstream>
+std::ifstream cin ("crossroad.in");
+std::ofstream cout ("crossroad.out");
 #include <algorithm>
 using namespace std;
 
 
+
 int main() {
     int n; cin >> n; 
+    int an = 0; 
+    vector<int> a(10, -1); 
     for(int i = 0; i < n; i++) {
-        int s, f; cin >> s >> f; 
-        int num = s / f; 
-        int rem = s % f; 
-        cout << "All friends shall get " << num << " slice";
-        if (num != 1) cout << "s"; 
-        cout << " and Mark shall get " << rem / 2 << " slice";
-        if (rem / 2 != 1) cout << "s"; 
-        cout << " which leaves Jerry with " << (rem + 1) / 2 << " slice";
-        if ((rem + 1) / 2 != 1) cout << "s"; 
-        cout << "!\n"; 
+        int x, y; 
+        cin >> x >> y; 
+        x--; 
+        if(a[x] != -1 && a[x] != y) an++; // check if on the other side
+        a[x] = y; 
     }
-    return 0;
+    cout << an;
 }
 `}
   </SyntaxHighlighter>

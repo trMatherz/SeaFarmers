@@ -12,13 +12,14 @@ export const moduleName = "LearnToCode";
 
 <Sidebar moduleName={moduleName} /> 
 
-# The Pizza Party Solution
+# Missing Number Solution
 
-Tags: Loops
+Tags: Vectors
 
 # Breakdown
 
-We can simulate this process using a For Loop. 
+Since all numbers are bounded by $1$ and $N$, we can count how many of them in an array. We print the number that 
+has a count of $0$.
 
 This runs in $\mathcal{O}(n)$
 
@@ -36,19 +37,12 @@ using namespace std;
 
 int main() {
     int n; cin >> n; 
+    vector<int> a(n, 0); 
     for(int i = 0; i < n; i++) {
-        int s, f; cin >> s >> f; 
-        int num = s / f; 
-        int rem = s % f; 
-        cout << "All friends shall get " << num << " slice";
-        if (num != 1) cout << "s"; 
-        cout << " and Mark shall get " << rem / 2 << " slice";
-        if (rem / 2 != 1) cout << "s"; 
-        cout << " which leaves Jerry with " << (rem + 1) / 2 << " slice";
-        if ((rem + 1) / 2 != 1) cout << "s"; 
-        cout << "!\n"; 
+        int x; cin >> x; x--; 
+        a[x]++; 
     }
-    return 0;
+    for(int i = 0; i < n; i++) if(a[i] == 0) cout << i + 1 << endl;
 }
 `}
   </SyntaxHighlighter>
