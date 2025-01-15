@@ -225,7 +225,7 @@
           "name": "Counting Toys",
           "state": 0,
           "source": "Me",
-          "star": true,
+          "star": false,
           "difficulty": 400,
           "tags": [
             "Conditionals"

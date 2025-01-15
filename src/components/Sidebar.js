@@ -6,7 +6,7 @@ import Dropdown from './Dropdown';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 
-function Sidebar({ moduleName }) {
+function Sidebar({ moduleId }) {
   const { siteConfig } = useDocusaurusContext();
   const backendUrl = siteConfig.customFields.backendUrl; 
 
@@ -25,7 +25,7 @@ function Sidebar({ moduleName }) {
         if (!userId) {
           throw new Error('User ID not found in session storage');
         }
-        const response = await axios.get(`${backendUrl}/api/module/${moduleName}?userId=${userId}`, {
+        const response = await axios.get(`${backendUrl}/api/module/${moduleId}?userId=${userId}`, {
           withCredentials: true,
         });
         setModuleData(response.data);
@@ -36,10 +36,10 @@ function Sidebar({ moduleName }) {
       }
     }
 
-    if (moduleName) {
+    if (moduleId) {
       fetchModuleData();
     }
-  }, [moduleName]); // Runs whenever moduleName changes
+  }, [moduleId]); // Runs whenever moduleId changes
 
   if (loading) {
     return <p>Loading module data...</p>;
