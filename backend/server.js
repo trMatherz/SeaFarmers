@@ -291,10 +291,15 @@ const checkModuleUpdate = async (userId, moduleName) => {
     const existingModule = user.modules.find(module => module.moduleName === moduleName);
     if (!existingModule) {
       user.modules.push(userModuleData);
+      console.log(`Added new module: ${userModuleData.moduleName}`);
     } else {
       const index = user.modules.findIndex(module => module.moduleName === moduleName);
       user.modules[index] = userModuleData;
     }
+
+    console.log("All modules:");
+    user.modules.forEach(module => console.log(module.moduleName || "Unnamed module"));
+
     await user.save();
     
     userModuleData = user.modules.find(module => module.moduleName === moduleName);
