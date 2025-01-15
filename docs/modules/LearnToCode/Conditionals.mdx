@@ -13,10 +13,10 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 
-export const moduleName = "LearnToCode"; 
+export const moduleId = "LearnToCode"; 
 export const topicId = "Conditionals";  
 
-<Sidebar moduleName={moduleName} /> 
+<Sidebar moduleId={moduleId} /> 
 
 # Conditionals
 
@@ -88,15 +88,15 @@ if(5 > 4 && !(3 > 4)) //this equals (true && true) which is true
 
 # Focus Problem
 
-<SampleProblem  moduleName={moduleName} topicId={topicId} location={"sample1"} /> 
+<SampleProblem  moduleId={moduleId} topicId={topicId} location={"sample1"} /> 
 
 # More Practice 
 
-<ProblemList  moduleName={moduleName} topicId={topicId} location={"list"} /> 
+<ProblemList  moduleId={moduleId} topicId={topicId} location={"list"} /> 
 
 Note: For Fence Painting, you will have to use File Input
 
-<TopicProgress moduleName={moduleName} topicId={topicId} />
+<TopicProgress moduleId={moduleId} topicId={topicId} />
 
 
 

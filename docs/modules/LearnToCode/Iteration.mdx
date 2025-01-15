@@ -13,10 +13,10 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 
-export const moduleName = "LearnToCode"; 
+export const moduleId = "LearnToCode"; 
 export const topicId = "Iteration";  
 
-<Sidebar moduleName={moduleName} /> 
+<Sidebar moduleId={moduleId} /> 
 
 # Iteration 
 
@@ -65,7 +65,7 @@ A While Loop runs a code block WHILE the expression is true.
 
 # While Loop Focus Problem 
 
-<SampleProblem  moduleName={moduleName} topicId={topicId} location={"sample1"} /> 
+<SampleProblem  moduleId={moduleId} topicId={topicId} location={"sample1"} /> 
 
 # For Loops 
 
@@ -109,15 +109,15 @@ cout << sum;
 
 # For Loop Focus Problem 
 
-<SampleProblem  moduleName={moduleName} topicId={topicId} location={"sample2"} /> 
+<SampleProblem  moduleId={moduleId} topicId={topicId} location={"sample2"} /> 
 
 Note: You can put loops inside other loops. This is called "nesting" loops. 
 
 # More Practice 
 
-<ProblemList  moduleName={moduleName} topicId={topicId} location={"list"} /> 
+<ProblemList  moduleId={moduleId} topicId={topicId} location={"list"} /> 
 
-<TopicProgress moduleName={moduleName} topicId={topicId} />
+<TopicProgress moduleId={moduleId} topicId={topicId} />
 
 
 

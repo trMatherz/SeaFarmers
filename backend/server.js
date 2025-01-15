@@ -163,28 +163,28 @@ app.get('/api/user', async (req, res) => {
   });
 });
 
-const getDefaultModuleData = (moduleName) => {
+const getDefaultModuleData = (moduleId) => {
   try {
-    const filePath = path.join(__dirname, 'data', `${moduleName}Data.json`); 
+    const filePath = path.join(__dirname, 'data', `${moduleId}Data.json`); 
     const jsonData = fs.readFileSync(filePath, 'utf-8'); 
     return JSON.parse(jsonData); 
   } catch (error) {
-    console.error(`Error reading default module data for ${moduleName}:`, error.message);
-    throw new Error(`Could not load default module data for ${moduleName}`);
+    console.error(`Error reading default module data for ${moduleId}:`, error.message);
+    throw new Error(`Could not load default module data for ${moduleId}`);
   }
 };
 
-const checkModuleUpdate = async (userId, moduleName) => {
+const checkModuleUpdate = async (userId, moduleId) => {
   try {
     // Fetch the module data from the database (this function needs to be defined)
-    const moduleData = getDefaultModuleData(moduleName);
+    const moduleData = getDefaultModuleData(moduleId);
     const user = await User.findOne({ _id: userId });
     
-    if (!moduleData) throw new Error(`Module with name ${moduleName} not found.`);
+    if (!moduleData) throw new Error(`Module with name ${moduleId} not found.`);
     if (!user) throw new Error(`User with ID ${userId} not found.`);
     
     // Find the user's existing module progress data
-    let userModuleData = user.modules.find(module => module.moduleName === moduleName);
+    let userModuleData = user.modules.find(module => module.moduleId === moduleId);
     
     if (!userModuleData) {
       
@@ -246,7 +246,6 @@ const checkModuleUpdate = async (userId, moduleName) => {
    
    
   
-    // Reset all problem and topic counts in the module
     userModuleData.solvedProblems = 0;
     userModuleData.unseenProblems = 0;
     userModuleData.skippedProblems = 0;
@@ -288,21 +287,21 @@ const checkModuleUpdate = async (userId, moduleName) => {
     
 
    
-    const existingModule = user.modules.find(module => module.moduleName === moduleName);
+    const existingModule = user.modules.find(module => module.moduleId === moduleId);
     if (!existingModule) {
       user.modules.push(userModuleData);
-      console.log(`Added new module: ${userModuleData.moduleName}`);
+      console.log(`Added new module: ${userModuleData.moduleId}`);
     } else {
-      const index = user.modules.findIndex(module => module.moduleName === moduleName);
+      const index = user.modules.findIndex(module => module.moduleId === moduleId);
       user.modules[index] = userModuleData;
     }
 
     console.log("All modules:");
-    user.modules.forEach(module => console.log(module.moduleName || "Unnamed module"));
+    user.modules.forEach(module => console.log(module.moduleId || "Unnamed module"));
 
-   // await user.save();
+    await user.save();
     
-    userModuleData = user.modules.find(module => module.moduleName === moduleName);
+    userModuleData = user.modules.find(module => module.moduleId === moduleId);
     if(!userModuleData) console.log(`Mistake with creating the module`);
 
 
@@ -373,18 +372,18 @@ function updateData(defaultData, userModuleData) {
 
 
 // Dynamic API to fetch module data by module name
-app.get('/api/module/:moduleName', async (req, res) => {
-  const { moduleName } = req.params;
-  const defaultModuleData = getDefaultModuleData(moduleName);
+app.get('/api/module/:moduleId', async (req, res) => {
+  const { moduleId } = req.params;
+  const defaultModuleData = getDefaultModuleData(moduleId);
   const { userId } = req.query;
   if(!userId) return res.json(defaultModuleData);  
   if(userId == "guest") return res.json(defaultModuleData);  
   
-  checkModuleUpdate(userId, moduleName); 
+  checkModuleUpdate(userId, moduleId); 
   try {
     const user = await User.findOne({ _id: userId });
     if (!user) throw new Error(`User with ID ${userId} not found.`);
-    let userModuleData = user.modules.find(module => module.moduleName === moduleName);
+    let userModuleData = user.modules.find(module => module.moduleId === moduleId);
     const updatedData = updateData(defaultModuleData, userModuleData); 
     res.json(updatedData);
 
@@ -395,7 +394,7 @@ app.get('/api/module/:moduleName', async (req, res) => {
 });
 
 app.post('/api/problem/updateState', async (req, res) => {
-  const { moduleName, topicId, problemId, newState } = req.body;
+  const { moduleId, topicId, problemId, newState } = req.body;
  
   const { userId } = req.query;
   if(userId == "guest") return res.status(400).json({ message: "Guest users cannot proceed with this request." });
@@ -405,7 +404,7 @@ app.post('/api/problem/updateState', async (req, res) => {
   
   try {
     // Find the module, topic, and problem
-    const module = user.modules.find((mod) => mod.moduleName === moduleName);
+    const module = user.modules.find((mod) => mod.moduleId === moduleId);
     if (!module) {
       return res.status(404).json({ error: 'Module not found' });
     }
@@ -443,25 +442,25 @@ app.post('/api/problem/updateState', async (req, res) => {
 });
 
 app.post('/api/topic/updateState', async (req, res) => {
-  const { moduleName, topicId, newState } = req.body;
+  const { moduleId, topicId, newState } = req.body;
   const { userId } = req.query;
   if(userId == "guest") return res.status(400).json({ message: "Guest users cannot proceed with this request." });
   const user = await User.findOne({ _id: userId });
   if(!user) throw new Error(`User with ID ${userId} not found.`);
   try {
-    // Find the module by moduleName
-    const module = user.modules.find((mod) => mod.moduleName === moduleName);
+    
+    const module = user.modules.find((mod) => mod.moduleId === moduleId);
     if (!module) {
       return res.status(404).json({ error: 'Module not found' });
     }
 
-    // Find the topic within the module by topicId
+    
     const topic = module.topics.find((t) => t.topicId === topicId);
     if (!topic) {
       return res.status(404).json({ error: 'Topic not found' });
     }
 
-    // Adjust counts based on the current state of the topic
+   
     if (topic.state === 0) {  // Previously 'unseen'
       module.unseenTopics--;
       topic.unseenProblems--;

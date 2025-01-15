@@ -15,8 +15,8 @@ const LearnToCode = () => {
   const [loading, setLoading] = useState(true); // To track loading state
   
 
-  // Fetch module data based on moduleName
-  const fetchModuleData = async (moduleName) => {
+
+  const fetchModuleData = async (moduleId) => {
     setLoading(true); // Start loading
     try {
       const userId = sessionStorage.getItem('userId') || "guest";
@@ -24,7 +24,7 @@ const LearnToCode = () => {
       if (!userId) {
         throw new Error('User ID not found in session storage');
       }
-      const response = await axios.get(`${backendUrl}/api/module/${moduleName}?userId=${userId}`, {
+      const response = await axios.get(`${backendUrl}/api/module/${moduleId}?userId=${userId}`, {
         withCredentials: true, // Ensure session cookies are included
         credentials: 'include',
       });
@@ -36,13 +36,12 @@ const LearnToCode = () => {
     }
   };
 
-  // Fetch module data after component mounts or when the user is authenticated
+  
   useEffect(() => {
-    // Fetch the module data only if the user is authenticated or the required conditions are met
-    fetchModuleData('LearnToCode'); // Fetch module data for a specific module name
-  }, []);  // Empty dependency array to run once when the component mounts
+    fetchModuleData('LearnToCode'); 
+  }, []);  
 
-  // Display loading or error state
+  
   if (loading) {
     return <p>Loading module data...</p>;
   }

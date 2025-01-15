@@ -13,10 +13,10 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 
-export const moduleName = "LearnToCode"; 
+export const moduleId = "LearnToCode"; 
 export const topicId = "Output";  
 
-<Sidebar moduleName={moduleName} /> 
+<Sidebar moduleId={moduleId} /> 
 
 # Output
 
@@ -55,9 +55,9 @@ If you ran the code, you would get an output like this:
 
 # Focus Problem
 
-<SampleProblem  moduleName={moduleName} topicId={topicId} location={"sample1"} /> 
+<SampleProblem  moduleId={moduleId} topicId={topicId} location={"sample1"} /> 
 
-<TopicProgress moduleName={moduleName} topicId={topicId} />
+<TopicProgress moduleId={moduleId} topicId={topicId} />
 
 
 

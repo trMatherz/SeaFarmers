@@ -13,10 +13,10 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 
-export const moduleName = "LearnToCode"; 
+export const moduleId = "LearnToCode"; 
 export const topicId = "UsefulTricks";  
 
-<Sidebar moduleName={moduleName} /> 
+<Sidebar moduleId={moduleId} /> 
 
 # Useful Tricks
 
@@ -48,7 +48,7 @@ b = min(a, b); // b now equals 2
 
 # Max Focus Problem
 
-<SampleProblem  moduleName={moduleName} topicId={topicId} location={"sample1"} /> 
+<SampleProblem  moduleId={moduleId} topicId={topicId} location={"sample1"} /> 
 
 # Pairs
 
@@ -89,15 +89,15 @@ d = max(c, d); // d = {200, "OQ"};
 
 # Pairs Focus Problem
 
-<SampleProblem  moduleName={moduleName} topicId={topicId} location={"sample2"} /> 
+<SampleProblem  moduleId={moduleId} topicId={topicId} location={"sample2"} /> 
 
 # More Practice 
 
 Note: Try to use both pairs and max to solve this problem: 
 
-<ProblemList  moduleName={moduleName} topicId={topicId} location={"list"} /> 
+<ProblemList  moduleId={moduleId} topicId={topicId} location={"list"} /> 
 
-<TopicProgress moduleName={moduleName} topicId={topicId} />
+<TopicProgress moduleId={moduleId} topicId={topicId} />
 
 
 

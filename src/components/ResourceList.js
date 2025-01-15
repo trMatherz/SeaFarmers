@@ -5,7 +5,7 @@ import styles from '../css/ResourceList.module.css';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 
-const ResourceList = ({ moduleName, topicId }) => {
+const ResourceList = ({ moduleId, topicId }) => {
   const { siteConfig } = useDocusaurusContext();
   const backendUrl = siteConfig.customFields.backendUrl; 
 
@@ -24,7 +24,7 @@ const ResourceList = ({ moduleName, topicId }) => {
         if (!userId) {
           throw new Error('User ID not found in session storage');
         }
-        const response = await axios.get(`${backendUrl}/api/module/${moduleName}?userId=${userId}`, {
+        const response = await axios.get(`${backendUrl}/api/module/${moduleId}?userId=${userId}`, {
           withCredentials: true,
         });
         setModuleData(response.data);
@@ -35,10 +35,10 @@ const ResourceList = ({ moduleName, topicId }) => {
       }
     }
 
-    if (moduleName) {
+    if (moduleId) {
       fetchModuleData();
     }
-  }, [moduleName]);
+  }, [moduleId]);
 
   useEffect(() => {
     if (!moduleData || !topicId) return;

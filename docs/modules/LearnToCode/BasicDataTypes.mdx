@@ -13,10 +13,10 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 
-export const moduleName = "LearnToCode"; 
+export const moduleId = "LearnToCode"; 
 export const topicId = "BasicDataTypes";  
 
-<Sidebar moduleName={moduleName} /> 
+<Sidebar moduleId={moduleId} /> 
 
 # Basic Data Types
 
@@ -24,7 +24,7 @@ Prerequisites: Nothing
 
 # Resources
 
-<ResourceList moduleName={moduleName} topicId={topicId}/>
+<ResourceList moduleId={moduleId} topicId={topicId}/>
 
 So you just used a string but there are really $3$ import data types you should know for now: 
 
@@ -64,9 +64,9 @@ a = "dog"; cout << a << endl;
 
 # Focus Problem
 
-<SampleProblem  moduleName={moduleName} topicId={topicId} location={"sample1"} /> 
+<SampleProblem  moduleId={moduleId} topicId={topicId} location={"sample1"} /> 
 
-<TopicProgress moduleName={moduleName} topicId={topicId} />
+<TopicProgress moduleId={moduleId} topicId={topicId} />
 
 
 

@@ -5,7 +5,7 @@ import styles from '../css/TopicProgress.module.css';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 
-const TopicProgress = ({ moduleName, topicId }) => {
+const TopicProgress = ({ moduleId, topicId }) => {
   const { siteConfig } = useDocusaurusContext();
   const backendUrl = siteConfig.customFields.backendUrl; 
 
@@ -28,7 +28,7 @@ const TopicProgress = ({ moduleName, topicId }) => {
           throw new Error('User ID not found in session storage');
         }
         const response = await axios.get(
-          `${backendUrl}/api/module/${moduleName}?userId=${userId}`,
+          `${backendUrl}/api/module/${moduleId}?userId=${userId}`,
           { withCredentials: true }
         );
         setModuleData(response.data);
@@ -39,10 +39,10 @@ const TopicProgress = ({ moduleName, topicId }) => {
       }
     }
 
-    if (moduleName) {
+    if (moduleId) {
       fetchModuleData();
     }
-  }, [moduleName]);
+  }, [moduleId]);
 
   useEffect(() => {
     if (!moduleData || !topicId) return;
@@ -70,7 +70,7 @@ const TopicProgress = ({ moduleName, topicId }) => {
       await axios.post(
         `${backendUrl}/api/topic/updateState?userId=${userId}`,
         {
-          moduleName: moduleName,
+          moduleId: moduleId,
           topicId: topicId,
           newState: newState,
         },

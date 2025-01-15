@@ -13,10 +13,10 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 
-export const moduleName = "LearnToCode"; 
+export const moduleId = "LearnToCode"; 
 export const topicId = "TimeComplexity";  
 
-<Sidebar moduleName={moduleName} /> 
+<Sidebar moduleId={moduleId} /> 
 
 # Time Complexity
 
@@ -26,7 +26,7 @@ Note: If you have never coded before, you may want to skip this until you have d
 
 # Resources
 
-<ResourceList moduleName={moduleName} topicId={topicId}/>
+<ResourceList moduleId={moduleId} topicId={topicId}/>
 
 Time Complexity is all about determining the worst-case scenario for the time it takes for code to run. 
 This matters because probelms have a time limit for your code to run for each test-case which is usually a couple seconds.
@@ -110,7 +110,7 @@ If $n \le 8000$,  $\mathcal{O}(n^2)$ works
 
 If $n \le 5 \cdot 10^6$,  $\mathcal{O}(n)$ works
 
-<TopicProgress moduleName={moduleName} topicId={topicId} />
+<TopicProgress moduleId={moduleId} topicId={topicId} />
 
 
 

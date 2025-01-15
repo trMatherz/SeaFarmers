@@ -5,7 +5,7 @@ import styles from '../css/SampleProblem.module.css';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 
-const SampleProblem = ({ moduleName, topicId, location }) => {
+const SampleProblem = ({ moduleId, topicId, location }) => {
   const { siteConfig } = useDocusaurusContext();
   const backendUrl = siteConfig.customFields.backendUrl; 
 
@@ -32,7 +32,7 @@ const SampleProblem = ({ moduleName, topicId, location }) => {
         if (!userId) {
           throw new Error('User ID not found in session storage');
         }
-        const response = await axios.get(`${backendUrl}/api/module/${moduleName}?userId=${userId}`, {
+        const response = await axios.get(`${backendUrl}/api/module/${moduleId}?userId=${userId}`, {
           withCredentials: true,
         });
         setModuleData(response.data);
@@ -43,10 +43,10 @@ const SampleProblem = ({ moduleName, topicId, location }) => {
       }
     }
 
-    if (moduleName) {
+    if (moduleId) {
       fetchModuleData();
     }
-  }, [moduleName]);
+  }, [moduleId]);
 
   useEffect(() => {
     if (!moduleData || !topicId) return;
@@ -120,7 +120,7 @@ const SampleProblem = ({ moduleName, topicId, location }) => {
       }
       await axios.post(
         `${backendUrl}/api/problem/updateState?userId=${userId}`,
-        { moduleName, topicId, problemId, newState },
+        { moduleId, topicId, problemId, newState },
         { withCredentials: true }
       );
       setTopicData((prevTopicData) => {
