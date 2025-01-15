@@ -300,7 +300,7 @@ const checkModuleUpdate = async (userId, moduleName) => {
     console.log("All modules:");
     user.modules.forEach(module => console.log(module.moduleName || "Unnamed module"));
 
-    await user.save();
+   // await user.save();
     
     userModuleData = user.modules.find(module => module.moduleName === moduleName);
     if(!userModuleData) console.log(`Mistake with creating the module`);
