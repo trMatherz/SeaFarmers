@@ -29,8 +29,93 @@
       "unseenProblems": 0,
       "totalProblems": 0,
       "state": 0,
-      "problems": [],
-    "resources": []
+      "problems": [
+        {
+          "problemId": "TwoKnights",
+          "location": "sample1",
+          "name": "Two Knights",
+          "state": 0,
+          "source": "CSES",
+          "star": true,
+          "difficulty": 700,
+          "tags": [
+            "Functions"
+          ],
+          "link": "https://cses.fi/problemset/task/1072",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/Novice/TwoKnights"
+            },
+            {
+              "name": "Geeks",
+              "link": "https://www.geeksforgeeks.org/cses-solutions-two-knights/"
+            }
+          ]
+        },
+        {
+          "problemId": "BlockGame",
+          "location": "list",
+          "name": "Block Game",
+          "state": 0,
+          "source": "USACO",
+          "star": true,
+          "difficulty": 800,
+          "tags": [
+            "Functions"
+          ],
+          "link": "https://usaco.org/index.php?page=viewproblem2&cpid=664",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/Novice/BlockGame"
+            },
+            {
+              "name": "Official",
+              "link": "https://usaco.org/current/data/sol_blocks_bronze_dec16.html"
+            }
+          ]
+        },
+        {
+          "problemId": "TeamTicTacToe",
+          "location": "list",
+          "name": "Team Tic Tac Toe",
+          "state": 0,
+          "source": "USACO",
+          "star": false,
+          "difficulty": 800,
+          "tags": [
+            "Functions"
+          ],
+          "link": "https://usaco.org/index.php?page=viewproblem2&cpid=831",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/Novice/TeamTicTacToe"
+            },
+            {
+              "name": "Official",
+              "link": "https://usaco.org/current/data/sol_tttt_bronze_open18.html"
+            }
+          ]
+        }
+      ],
+      "resources": [
+        {
+          "name": "C++ Functions",
+          "source": "Geeks",
+          "star": true,
+          "description": "Approached for a beginner.",
+          "link": "https://www.w3schools.com/cpp/cpp_functions.asp"
+        },
+        {
+          "name": "Functions in C++",
+          "source": "Geeks",
+          "star": false,
+          "description": "A slightly more advanced look.",
+          "link": "https://www.geeksforgeeks.org/functions-in-cpp/"
+        }
+      ]
     }
   ]
 }

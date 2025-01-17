@@ -30,32 +30,23 @@ Prerequisites: Learn To Code
 
 Now that you have some experience solving basic problems, you can learn how to implement more complex ideas. To do this, 
 we can take the tools you have used to solve "mini" problems in a problem. We can solve these, without 
-copy and pasting code by using of functions. Here is an example of a program using a basic function: 
+copy and pasting code by using functions. Here is an example of a program using a basic function: 
 
 
 <div style={{ transform: 'translateX(150px)' }}>
   <SyntaxHighlighter language="cpp" style={okaidia}>
-{`#include <cmath>
-#include <cstdio>
-#include <vector>
-#include <fstream>
-#include <fstream>
-#include <iostream> 
-#include <algorithm>
-using namespace std;
-
-int count = 0; 
+{`int count = 0; 
 void increaseCount() {
-  count++; 
+    count++; 
 }
 
 int main() {
-  cout << count << endl;
-  increaseCount(); 
-  cout << count << endl;
-  increaseCount(); 
-  increaseCount(); 
-  cout << count << endl;
+    cout << count << endl;
+    increaseCount(); 
+    cout << count << endl;
+    increaseCount(); 
+    increaseCount(); 
+    cout << count << endl;
 }
 `}
   </SyntaxHighlighter>
@@ -70,27 +61,18 @@ Take varibes $x, y, z$ and positions A, B, C:
 
 <div style={{ transform: 'translateX(150px)' }}>
   <SyntaxHighlighter language="cpp" style={okaidia}>
-{`#include <cmath>
-#include <cstdio>
-#include <vector>
-#include <fstream>
-#include <fstream>
-#include <iostream> 
-#include <algorithm>
-using namespace std;
-
-int x; 
+{`int x; 
 void increaseCount() {
-  // Position A
+    // Position A
 }
 
 int main() {
-  int y; 
-  // Position B
-  if(6 > 4) {
-    int z; 
-    // Position C
-  }
+    int y; 
+    // Position B
+    if(6 > 4) {
+        int z; 
+        // Position C
+    }
 }
 `}
   </SyntaxHighlighter>
@@ -115,17 +97,17 @@ using namespace std;
 
 
 bool checkX(int x) {
-  if(x > 5) return true; 
-  return false; 
+    if(x > 5) return true; 
+    return false; 
 }
 
 int main() {
-  int x = 5; 
-  int y = 6; 
-  if(checkX(x)) cout << "X is Good!" << endl;
-  else cout << "X is Bad!" << endl;
-  if(checkX(y)) cout << "Y is Good!" << endl;
-  else cout << "Y is Bad!" << endl;
+    int x = 5; 
+    int y = 6; 
+    if(checkX(x)) cout << "X is Good!" << endl;
+    else cout << "X is Bad!" << endl;
+    if(checkX(y)) cout << "Y is Good!" << endl;
+    else cout << "Y is Bad!" << endl;
 }
 `}
   </SyntaxHighlighter>
@@ -145,26 +127,16 @@ Last example:
 
 <div style={{ transform: 'translateX(150px)' }}>
   <SyntaxHighlighter language="cpp" style={okaidia}>
-{`#include <cmath>
-#include <cstdio>
-#include <vector>
-#include <fstream>
-#include <fstream>
-#include <iostream> 
-#include <algorithm>
-using namespace std;
-
-
-bool checkX(int x, string z) {
-  if(z == "CAT") return true; 
-  if(x > 5) return true; 
-  return false; 
+{`bool checkX(int x, string z) {
+    if(z == "CAT") return true; 
+    if(x > 5) return true; 
+    return false; 
 }
 
 int main() {
-  int x = 5; 
-  if(checkX(x, "CAT")) cout << "X is Good!" << endl;
-  else cout << "X is Bad!" << endl;
+    int x = 5; 
+    if(checkX(x, "CAT")) cout << "X is Good!" << endl;
+    else cout << "X is Bad!" << endl;
 }
 `}
   </SyntaxHighlighter>
