@@ -1,0 +1,194 @@
+import React from 'react';
+import '../../../src/css/TopicPage.module.css';  
+import ProblemList from '../../../src/components/ProblemList';  
+import SampleProblem from '../../../src/components/SampleProblem';  
+import ResourceList from '../../../src/components/ResourceList';
+import TopicProgress from '../../../src/components/TopicProgress';  
+import Sidebar from '../../../src/components/Sidebar';  
+import SignInButton from '@site/src/components/SignInButton';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+import 'katex/dist/katex.min.css';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';
+
+
+export const moduleId = "Novice"; 
+export const topicId = "Functions";  
+
+<Sidebar moduleId={moduleId} /> 
+
+# Functions
+
+Prerequisites: Learn To Code
+
+# Resources
+
+<ResourceList moduleId={moduleId} topicId={topicId}/>
+
+# An Introduction to Functions
+
+Now that you have some experience solving basic problems, you can learn how to implement more complex ideas. To do this, 
+we can take the tools you have used to solve "mini" problems in a problem. We can solve these, without 
+copy and pasting code by using of functions. Here is an example of a program using a basic function: 
+
+
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <fstream>
+#include <fstream>
+#include <iostream> 
+#include <algorithm>
+using namespace std;
+
+int count = 0; 
+void increaseCount() {
+  count++; 
+}
+
+int main() {
+  cout << count << endl;
+  increaseCount(); 
+  cout << count << endl;
+  increaseCount(); 
+  increaseCount(); 
+  cout << count << endl;
+}
+`}
+  </SyntaxHighlighter>
+</div>
+
+Observe how you can "call" a function - this makes the program stop where it is and run all of the code in the 
+function. 
+
+Not it is also import to explain a variable's "localness" 
+
+Take varibes $x, y, z$ and positions A, B, C: 
+
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <fstream>
+#include <fstream>
+#include <iostream> 
+#include <algorithm>
+using namespace std;
+
+int x; 
+void increaseCount() {
+  // Position A
+}
+
+int main() {
+  int y; 
+  // Position B
+  if(6 > 4) {
+    int z; 
+    // Position C
+  }
+}
+`}
+  </SyntaxHighlighter>
+</div>
+
+Try to see how $x$ can be used at A, B, and C; $y$ can be used at B and C; and $z$ can only be used at C. 
+
+# More Complex Functions
+
+But that's not all: Functions can both RECEIVE and RETURN input!
+
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <fstream>
+#include <fstream>
+#include <iostream> 
+#include <algorithm>
+using namespace std;
+
+
+bool checkX(int x) {
+  if(x > 5) return true; 
+  return false; 
+}
+
+int main() {
+  int x = 5; 
+  int y = 6; 
+  if(checkX(x)) cout << "X is Good!" << endl;
+  else cout << "X is Bad!" << endl;
+  if(checkX(y)) cout << "Y is Good!" << endl;
+  else cout << "Y is Bad!" << endl;
+}
+`}
+  </SyntaxHighlighter>
+</div>
+
+For example, if you want a function to determine if a number if greater than $5$, you can pass $x$ as a variable 
+into the function and receive a return value from the function. 
+
+The return value can be a data type: "int", "long long", "string", "bool" and goes BEFORE the function name. 
+
+Note: Use "void" if the funciton doesn't return anything. 
+
+The parameters of a function (the variables that you "pass to it"), are named IN ORDER inside the () after the 
+function name. You must give a function all of its parameters in order for it to work. 
+
+Last example: 
+
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <fstream>
+#include <fstream>
+#include <iostream> 
+#include <algorithm>
+using namespace std;
+
+
+bool checkX(int x, string z) {
+  if(z == "CAT") return true; 
+  if(x > 5) return true; 
+  return false; 
+}
+
+int main() {
+  int x = 5; 
+  if(checkX(x, "CAT")) cout << "X is Good!" << endl;
+  else cout << "X is Bad!" << endl;
+}
+`}
+  </SyntaxHighlighter>
+</div>
+
+Observe that the variables are passed into the function in the specified order. 
+
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`string a = "cat"; cout << a << endl; 
+a = "dog"; cout << a << endl; 
+`}
+  </SyntaxHighlighter>
+</div>
+
+# Focus Problem
+
+<SampleProblem  moduleId={moduleId} topicId={topicId} location={"sample1"} /> 
+
+# More Practice 
+
+<ProblemList  moduleId={moduleId} topicId={topicId} location={"list"} /> 
+
+<TopicProgress moduleId={moduleId} topicId={topicId} />
+
+
+

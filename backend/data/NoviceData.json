@@ -1,0 +1,36 @@
+{
+  "moduleId": "Novice",
+  "moduleName": "Novice",
+  "description": "Rudimentary data structures and algorithms.",
+  "unseenTopics": 1,
+  "skippedTopics": 0,
+  "solvedTopics": 0,
+  "unseenProblems": 0,
+  "skippedProblems": 0,
+  "solvedProblems": 0,
+  "totalTopics": 1,
+  "totalProblems": 0,
+  "genericTopics" : [
+    {
+      "genericTopicId": "CompleteSearch",
+      "genericTopicName": "Complete Search",
+      "topics" : [
+        "Functions"
+      ]
+    }
+  ],
+  "topics": [
+    {
+      "topicId": "Functions",
+      "topicName": "Functions",
+      "description": "An introduction to functions.",
+      "solvedProblems": 0,
+      "skippedProblems": 0,
+      "unseenProblems": 0,
+      "totalProblems": 0,
+      "state": 0,
+      "problems": [],
+    "resources": []
+    }
+  ]
+}

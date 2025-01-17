@@ -4,7 +4,7 @@ import axios from 'axios';
 
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
-const LearnToCode = () => {
+const Novice = () => {
   const { siteConfig } = useDocusaurusContext();
   const backendUrl = siteConfig.customFields.backendUrl; 
 
@@ -12,7 +12,7 @@ const LearnToCode = () => {
 
   const [error, setError] = useState(null);
   const [moduleData, setModuleData] = useState(null);
-  const [loading, setLoading] = useState(true); 
+  const [loading, setLoading] = useState(true);
   
 
 
@@ -25,11 +25,11 @@ const LearnToCode = () => {
         throw new Error('User ID not found in session storage');
       }
       const response = await axios.get(`${backendUrl}/api/module/${moduleId}?userId=${userId}`, {
-        withCredentials: true, 
+        withCredentials: true,
         credentials: 'include',
       });
       setModuleData(response.data);
-      setLoading(false); 
+      setLoading(false);
     } catch (error) {
       setError(error.response ? error.response.data : error.message);
       setLoading(false); 
@@ -38,7 +38,7 @@ const LearnToCode = () => {
 
   
   useEffect(() => {
-    fetchModuleData('LearnToCode'); 
+    fetchModuleData('Novice'); 
   }, []);  
 
   
@@ -60,4 +60,4 @@ const LearnToCode = () => {
   );
 };
 
-export default LearnToCode;
+export default Novice;

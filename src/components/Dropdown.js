@@ -38,7 +38,9 @@ const Dropdown = () => {
             <Link to="/SeaFarmers/modules/LearnToCodeHome/">
               Learn To Code
             </Link>
-            {/*<Link to="/SeaFarmers/modules/Novice/NoviceHome/">Novice</Link>*/}
+            <Link to="/SeaFarmers/modules/NoviceHome/">
+              Novice
+              </Link>
           </div>
         )}
       </div>
