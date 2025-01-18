@@ -5,15 +5,15 @@
   "unseenTopics": 1,
   "skippedTopics": 0,
   "solvedTopics": 0,
-  "unseenProblems": 0,
+  "unseenProblems": 3,
   "skippedProblems": 0,
   "solvedProblems": 0,
   "totalTopics": 1,
-  "totalProblems": 0,
+  "totalProblems": 3,
   "genericTopics" : [
     {
-      "genericTopicId": "CompleteSearch",
-      "genericTopicName": "Complete Search",
+      "genericTopicId": "OutsideOfMain",
+      "genericTopicName": "Outside Of Main",
       "topics" : [
         "Functions"
       ]
@@ -26,8 +26,8 @@
       "description": "An introduction to functions.",
       "solvedProblems": 0,
       "skippedProblems": 0,
-      "unseenProblems": 0,
-      "totalProblems": 0,
+      "unseenProblems": 3,
+      "totalProblems": 3,
       "state": 0,
       "problems": [
         {
@@ -37,7 +37,7 @@
           "state": 0,
           "source": "CSES",
           "star": true,
-          "difficulty": 700,
+          "difficulty": 1000,
           "tags": [
             "Functions"
           ],
@@ -60,7 +60,7 @@
           "state": 0,
           "source": "USACO",
           "star": true,
-          "difficulty": 800,
+          "difficulty": 900,
           "tags": [
             "Functions"
           ],
@@ -83,7 +83,7 @@
           "state": 0,
           "source": "USACO",
           "star": false,
-          "difficulty": 800,
+          "difficulty": 1100,
           "tags": [
             "Functions"
           ],
@@ -103,16 +103,16 @@
       "resources": [
         {
           "name": "C++ Functions",
-          "source": "Geeks",
+          "source": "W3",
           "star": true,
-          "description": "Approached for a beginner.",
+          "description": "Approached for a beginner",
           "link": "https://www.w3schools.com/cpp/cpp_functions.asp"
         },
         {
           "name": "Functions in C++",
           "source": "Geeks",
           "star": false,
-          "description": "A slightly more advanced look.",
+          "description": "A slightly more advanced look",
           "link": "https://www.geeksforgeeks.org/functions-in-cpp/"
         }
       ]
