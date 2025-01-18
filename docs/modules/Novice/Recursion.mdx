@@ -1,0 +1,79 @@
+import React from 'react';
+import '../../../src/css/TopicPage.module.css';  
+import ProblemList from '../../../src/components/ProblemList';  
+import SampleProblem from '../../../src/components/SampleProblem';  
+import ResourceList from '../../../src/components/ResourceList';
+import TopicProgress from '../../../src/components/TopicProgress';  
+import Sidebar from '../../../src/components/Sidebar';  
+import SignInButton from '@site/src/components/SignInButton';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+import 'katex/dist/katex.min.css';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';
+
+
+export const moduleId = "Novice"; 
+export const topicId = "Recursion";  
+
+<Sidebar moduleId={moduleId} /> 
+
+# Recursion
+
+Prerequisites: Functions
+
+# Resources
+
+<ResourceList moduleId={moduleId} topicId={topicId}/>
+
+Now, we can take these functions, which may seem elementary right now, and spice them up by having functions call 
+themselves. Look at the code below: 
+
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`int count = 0; 
+void increaseCount(int x) {
+    if(x <= 0) return; 
+    count++; 
+    increaseCount(x - 1); 
+}
+
+int main() {
+    cout << count << endl;
+    increaseCount(1); 
+    cout << count << endl;
+    increaseCount(3); 
+    cout << count << endl;
+}
+`}
+  </SyntaxHighlighter>
+</div>
+
+This code and increases the count variable by the initial $x$ value. Though this code may seem extreme to solve such a 
+simple problem, think about how the code runs.
+
+Inside the function, there is a base case: This is when $x \leq 0$. Since count doesn't need to be increased anymore, 
+the funciton returns and does nothing. 
+
+Else: The function increases count by $1$ and then calls increaseCount($x - 1$). 
+
+To really break it down, increaseCount($x$) has the same affect as increaseCount($1$), increaseCount($x - 1$). With 
+increaseCount($1$) only increasing count once. 
+
+# Initial Applications
+
+We will use recursion to implement solutions that try to completely search all of the possible bounds of a problem. 
+This is usually for finding the BEST combination or findind the NUMBER OF WAYS. 
+
+# Focus Problem
+
+<SampleProblem  moduleId={moduleId} topicId={topicId} location={"sample1"} /> 
+
+# More Practice 
+
+<ProblemList  moduleId={moduleId} topicId={topicId} location={"list"} /> 
+
+<TopicProgress moduleId={moduleId} topicId={topicId} />
+
+
+

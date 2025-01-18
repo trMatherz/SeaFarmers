@@ -12,10 +12,11 @@
   "totalProblems": 3,
   "genericTopics" : [
     {
-      "genericTopicId": "OutsideOfMain",
-      "genericTopicName": "Outside Of Main",
+      "genericTopicId": "OutsideOfTheMainFunction",
+      "genericTopicName": "Outside Of The Main Function",
       "topics" : [
-        "Functions"
+        "Functions", 
+        "Recursion"
       ]
     }
   ],
@@ -114,6 +115,126 @@
           "star": false,
           "description": "A slightly more advanced look",
           "link": "https://www.geeksforgeeks.org/functions-in-cpp/"
+        }
+      ]
+    },
+    {
+      "topicId": "Recursion",
+      "topicName": "Recursion",
+      "description": "A more advanced uses of functions.",
+      "solvedProblems": 0,
+      "skippedProblems": 0,
+      "unseenProblems": 3,
+      "totalProblems": 3,
+      "state": 0,
+      "problems": [
+        {
+          "problemId": "AppleDivision",
+          "location": "sample1",
+          "name": "Apple Division",
+          "state": 0,
+          "source": "CSES",
+          "star": true,
+          "difficulty": 1100,
+          "tags": [
+            "Recursion"
+          ],
+          "link": "https://cses.fi/problemset/task/1623",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/Novice/AppleDivision"
+            },
+            {
+              "name": "Geeks",
+              "link": "https://www.geeksforgeeks.org/cses-solutions-apple-division/"
+            }
+          ]
+        },
+        {
+          "problemId": "CreatingStrings",
+          "location": "list",
+          "name": "Creating Strings",
+          "state": 0,
+          "source": "CSES",
+          "star": true,
+          "difficulty": 1100,
+          "tags": [
+            "Recursion"
+          ],
+          "link": "https://cses.fi/problemset/task/1622",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/Novice/CreatingStrings"
+            },
+            {
+              "name": "Geeks",
+              "link": "https://www.geeksforgeeks.org/cses-solutions-creating-strings/"
+            }
+          ]
+        },
+        {
+          "problemId": "ChessboardAndQueens",
+          "location": "list",
+          "name": "Chessboard And Queens",
+          "state": 0,
+          "source": "CSES",
+          "star": false,
+          "difficulty": 1100,
+          "tags": [
+            "Recursion"
+          ],
+          "link": "https://cses.fi/problemset/task/1624",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/Novice/ChessboardAndQueens"
+            },
+            {
+              "name": "Geeks",
+              "link": "https://www.geeksforgeeks.org/cses-solutions-chessboard-and-queens/"
+            }
+          ]
+        },
+        {
+          "problemId": "AirCownditioningII",
+          "location": "list",
+          "name": "Air Cownditioning II",
+          "state": 0,
+          "source": "USACO",
+          "star": false,
+          "difficulty": 1200,
+          "tags": [
+            "Recursion"
+          ],
+          "link": "https://usaco.org/index.php?page=viewproblem2&cpid=1276",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/Novice/AirCownditioningII"
+            },
+            {
+              "name": "Official",
+              "link": "https://usaco.org/current/data/sol_prob2_bronze_jan23.html"
+            }
+          ]
+        }
+      ],
+      "resources": [
+        {
+          "name": "C++ Recursion",
+          "source": "Geeks",
+          "star": false,
+          "description": "Similar Example",
+          "link": "https://www.geeksforgeeks.org/cpp-recursion/"
+        },
+        {
+          "name": "Chapter 5: Complete Search",
+          "source": "CPH",
+          "star": true,
+          "description": "More advanced and a comparsion to bitwise",
+          "link": "https://usaco.guide/CPH.pdf#page=57"
         }
       ]
     }
