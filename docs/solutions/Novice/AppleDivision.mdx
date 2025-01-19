@@ -1,0 +1,51 @@
+import React from 'react';
+import '../../../src/css/TopicPage.module.css';   
+import Sidebar from '../../../src/components/Sidebar';   
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+import 'katex/dist/katex.min.css';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';
+
+
+export const moduleId = "Novice"; 
+
+<Sidebar moduleId={moduleId} /> 
+
+# Apple Division Solution
+
+Tags: Recursion
+
+# Breakdown
+
+We can use recursion completely search all possible manners of splitting the apples into two groups. Our base is care
+is when we have no more apples. Other than that, we maintain the current sum of the two piles. 
+
+This runs in $\mathcal{O}(2^n)$
+
+# Implementation
+
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int n;
+vector<long long> a; 
+long long go(int x, long long sum1, long long sum2) {
+    if(x == n) return abs(sum1 - sum2); 
+    return min(go(x + 1, sum1 + a[x], sum2), go(x + 1, sum1, sum2 + a[x])); 
+}
+int main() {      
+    cin >> n; 
+    a = vector<long long>(n); 
+    for(int i = 0; i < n; i++) cin >> a[i]; 
+    cout << go(0, 0, 0); 
+}
+`}
+  </SyntaxHighlighter>
+</div>

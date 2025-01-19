@@ -1,0 +1,69 @@
+import React from 'react';
+import '../../../src/css/TopicPage.module.css';   
+import Sidebar from '../../../src/components/Sidebar';   
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+import 'katex/dist/katex.min.css';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';
+
+
+export const moduleId = "Novice"; 
+
+<Sidebar moduleId={moduleId} /> 
+
+# Air Cownditioning II Solution
+
+Tags: Recursion
+
+# Breakdown
+
+We can search each possible configuration of stalls. This is most easily doen with a vector that keeps strack of how much 
+more cooling each stall needs. 
+
+This runs in $\mathcal{O}(2^M*M*S)$, where $S$ is the number of stalls
+
+# Implementation
+
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int an = 0; 
+int n, m; 
+vector<int> stall(100, 0); // how much each stall needs
+vector<vector<int>> air; // all M air conditioners
+void go(int x, int cost) {
+    if(x == m) {
+        bool bad = false; 
+        for(int i = 0; i < 100; i++) if(stall[i] > 0) bad = true; 
+        if(!bad) ans = min(ans, cost)
+        return; 
+    }
+    go(x + 1. cost, cool); // don't use it
+    for(int i = air[x][0] - 1; i < air[x][1]; i++) stall[i] -= air[x][2]; 
+    go(x + 1, cost + air[x][3], cool); // use it 
+    for(int i = air[x][0] - 1; i < air[x][1]; i++) stall[i] += air[x][2]; 
+}
+int main() {
+    cin >> n >> m; 
+    for(int i = 0; i < n; i++) { // zero-index
+        int l, r, x; cin >> l >> r >> x; 
+        for(int i = l - 1; i < r; i++) stall[i] += x; 
+    }
+    air = vector<vector<int>>(m, vector<int>(4));
+    for(int i = 0; i < m; i++) {
+        for(int j = 0; j < 4; j++) cin >> air[i][j]; 
+        an += a[i][3]; // assume you have to use all 
+    }
+    go(0, 0); 
+    cout << an; 
+}
+`}
+  </SyntaxHighlighter>
+</div>

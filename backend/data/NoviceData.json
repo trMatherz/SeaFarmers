@@ -2,14 +2,14 @@
   "moduleId": "Novice",
   "moduleName": "Novice",
   "description": "Rudimentary data structures and algorithms.",
-  "unseenTopics": 1,
+  "unseenTopics": 2,
   "skippedTopics": 0,
   "solvedTopics": 0,
-  "unseenProblems": 3,
+  "unseenProblems": 8,
   "skippedProblems": 0,
   "solvedProblems": 0,
-  "totalTopics": 1,
-  "totalProblems": 3,
+  "totalTopics": 2,
+  "totalProblems": 8,
   "genericTopics" : [
     {
       "genericTopicId": "OutsideOfTheMainFunction",
@@ -124,8 +124,8 @@
       "description": "A more advanced uses of functions.",
       "solvedProblems": 0,
       "skippedProblems": 0,
-      "unseenProblems": 3,
-      "totalProblems": 3,
+      "unseenProblems": 5,
+      "totalProblems": 5,
       "state": 0,
       "problems": [
         {
@@ -135,7 +135,7 @@
           "state": 0,
           "source": "CSES",
           "star": true,
-          "difficulty": 1100,
+          "difficulty": 1000,
           "tags": [
             "Recursion"
           ],
@@ -152,9 +152,9 @@
           ]
         },
         {
-          "problemId": "CreatingStrings",
+          "problemId": "TowerOfHanoi",
           "location": "list",
-          "name": "Creating Strings",
+          "name": "Tower Of Hanoi",
           "state": 0,
           "source": "CSES",
           "star": true,
@@ -166,11 +166,11 @@
           "helps": [
             {
               "name": "Me",
-              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/Novice/CreatingStrings"
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/Novice/TowerOfHanoi"
             },
             {
               "name": "Geeks",
-              "link": "https://www.geeksforgeeks.org/cses-solutions-creating-strings/"
+              "link": "https://www.geeksforgeeks.org/cses-solutions-apple-division/"
             }
           ]
         },

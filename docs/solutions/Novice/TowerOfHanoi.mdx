@@ -1,0 +1,52 @@
+import React from 'react';
+import '../../../src/css/TopicPage.module.css';   
+import Sidebar from '../../../src/components/Sidebar';   
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+import 'katex/dist/katex.min.css';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';
+
+
+export const moduleId = "Novice"; 
+
+<Sidebar moduleId={moduleId} /> 
+
+# Tower Of Hanoi Solution
+
+Tags: Recursion
+
+# Breakdown
+
+Say we need to move a stack of $3$ from position $1$ to position $3$, this can be done by moving the stack of $2$ from
+position $1$ to position $2$, then moving disk $3$ from position $1$ to position $3$, then moving the stack of $2$ from 
+position $2$ to position $3$. We can use recursion so simulate this. For the base case of $1$, we can just move the disk. 
+This also proves that the number of moves is $2^n - 1$. 
+
+This runs in $\mathcal{O}(2^n)$
+
+# Implementation
+
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+void go(int x, int start, int end, int other) {
+    if(x == 0) return; 
+    go(x - 1, start, other, end); 
+    cout << start << " " << end << endl;
+    go(x - 1, other, end, start); 
+}
+int main() {
+    int n; cin >> n; 
+    cout << (1 << n) - 1 << endl; 
+    go(n, 1, 3, 2); 
+}
+`}
+  </SyntaxHighlighter>
+</div>
