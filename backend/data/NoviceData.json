@@ -2,14 +2,14 @@
   "moduleId": "Novice",
   "moduleName": "Novice",
   "description": "Rudimentary data structures and algorithms.",
-  "unseenTopics": 2,
+  "unseenTopics": 3,
   "skippedTopics": 0,
   "solvedTopics": 0,
-  "unseenProblems": 8,
+  "unseenProblems": 12,
   "skippedProblems": 0,
   "solvedProblems": 0,
-  "totalTopics": 2,
-  "totalProblems": 8,
+  "totalTopics": 3,
+  "totalProblems": 12,
   "genericTopics" : [
     {
       "genericTopicId": "OutsideOfTheMainFunction",
@@ -17,6 +17,13 @@
       "topics" : [
         "Functions", 
         "Recursion"
+      ]
+    },
+    {
+      "genericTopicId": "Sorting",
+      "genericTopicName": "Sorting",
+      "topics" : [
+        "BasicSorting"
       ]
     }
   ],
@@ -235,6 +242,149 @@
           "star": true,
           "description": "More advanced and a comparsion to bitwise",
           "link": "https://usaco.guide/CPH.pdf#page=57"
+        }
+      ]
+    },
+    {
+      "topicId": "BasicSorting",
+      "topicName": "Basic Sorting",
+      "description": "An introduction to sorting.",
+      "solvedProblems": 0,
+      "skippedProblems": 0,
+      "unseenProblems": 5,
+      "totalProblems": 5,
+      "state": 0,
+      "problems": [
+        {
+          "problemId": "DistinctNumbers",
+          "location": "sample1",
+          "name": "Distinct Numbers",
+          "state": 0,
+          "source": "CSES",
+          "star": true,
+          "difficulty": 800,
+          "tags": [
+            "Sorting"
+          ],
+          "link": "https://cses.fi/problemset/task/1623",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/Novice/DistinctNumbers"
+            },
+            {
+              "name": "Geeks",
+              "link": "https://www.geeksforgeeks.org/cses-solutions-distinct-numbers/"
+            }
+          ]
+        },
+        {
+          "problemId": "WhyDidTheCowCrossTheRoadIII",
+          "location": "list",
+          "name": "Why Did The Cow Cross The Road III",
+          "state": 0,
+          "source": "USACO",
+          "star": false,
+          "difficulty": 900,
+          "tags": [
+            "Sorting"
+          ],
+          "link": "https://usaco.org/index.php?page=viewproblem2&cpid=713",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/Novice/WhyDidTheCowCrossTheRoadIII"
+            },
+            {
+              "name": "Official",
+              "link": "https://usaco.org/current/data/sol_cowqueue_bronze_feb17.html"
+            }
+          ]
+        },
+        {
+          "problemId": "MovieFestival",
+          "location": "list",
+          "name": "Movie Festival",
+          "state": 0,
+          "source": "CSES",
+          "star": true,
+          "difficulty": 1000,
+          "tags": [
+            "Sorting"
+          ],
+          "link": "https://cses.fi/problemset/task/1629",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/Novice/MovieFestival"
+            },
+            {
+              "name": "Official",
+              "link": "https://www.geeksforgeeks.org/cses-solutions-movie-festivals/"
+            }
+          ]
+        },
+        {
+          "problemId": "AngryCows",
+          "location": "list",
+          "name": "Angry Cows",
+          "state": 0,
+          "source": "USACO",
+          "star": true,
+          "difficulty": 1000,
+          "tags": [
+            "Sorting"
+          ],
+          "link": "https://usaco.org/index.php?page=viewproblem2&cpid=592",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/Novice/AngryCows"
+            },
+            {
+              "name": "Official",
+              "link": "https://usaco.org/current/data/sol_angry_bronze_jan16.html"
+            }
+          ]
+        },
+        {
+          "problemId": "Permutator",
+          "location": "list",
+          "name": "Permutator",
+          "state": 0,
+          "source": "CF",
+          "star": false,
+          "difficulty": 1100,
+          "tags": [
+            "Recursion"
+          ],
+          "link": "https://codeforces.com/gym/104520/problem/H",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/Novice/Permutator"
+            },
+            {
+              "name": "Official",
+              "link": "https://codeforces.com/blog/entry/119632"
+            }
+          ]
+        }
+      ],
+      "resources": [
+        {
+          "name": "Chapter 3: Sorting in C++",
+          "source": "CPH",
+          "star": true,
+          "description": "More Specific; stop before user structs",
+          "link": "https://usaco.guide/CPH.pdf#page=39"
+        },
+        {
+          "name": "Sort",
+          "source": "CPlusPlus",
+          "star": false,
+          "description": "Implementation Reference",
+          "link": "https://cplusplus.com/reference/algorithm/sort/"
         }
       ]
     }

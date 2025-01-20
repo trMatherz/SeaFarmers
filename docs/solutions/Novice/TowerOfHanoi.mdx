@@ -18,9 +18,15 @@ Tags: Recursion
 
 # Breakdown
 
-Say we need to move a stack of $3$ from position $1$ to position $3$, this can be done by moving the stack of $2$ from
-position $1$ to position $2$, then moving disk $3$ from position $1$ to position $3$, then moving the stack of $2$ from 
-position $2$ to position $3$. We can use recursion so simulate this. For the base case of $1$, we can just move the disk. 
+Say we need to move a stack of $3$ from position $1$ to position $3$, this can be done by: 
+
+First, moving the stack of $2$ from position $1$ to position $2$
+
+Second, moving disk $3$ from position $1$ to position $3$
+
+Third, moving the stack of $2$ from position $2$ to position $3$
+
+We can use recursion so simulate this. For the base case of $1$, we can just move the disk. 
 This also proves that the number of moves is $2^n - 1$. 
 
 This runs in $\mathcal{O}(2^n)$

@@ -1,0 +1,56 @@
+import React from 'react';
+import '../../../src/css/TopicPage.module.css';  
+import ProblemList from '../../../src/components/ProblemList';  
+import SampleProblem from '../../../src/components/SampleProblem';  
+import ResourceList from '../../../src/components/ResourceList';
+import TopicProgress from '../../../src/components/TopicProgress';  
+import Sidebar from '../../../src/components/Sidebar';  
+import SignInButton from '@site/src/components/SignInButton';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+import 'katex/dist/katex.min.css';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';
+
+
+export const moduleId = "Novice"; 
+export const topicId = "Functions";  
+
+<Sidebar moduleId={moduleId} /> 
+
+# Basic Sorting
+
+Prerequisites: Learn To Code
+
+# Resources
+
+<ResourceList moduleId={moduleId} topicId={topicId}/>
+
+# In Competetive Programming, you need not know, at least for now, how to actually implement a sorting function. You can 
+use built in systems to do this for you. 
+
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`vector<int> a = {3, 2, 1, 4}; 
+sort(a.begin(), a.end()); // a = {1, 2, 3, 4}
+`}
+  </SyntaxHighlighter>
+</div>
+
+The code above sorts the entire vector. The default for sorting is in non-decreasing order. This is useful to a lot of
+problems, so don't worry about using cutsom comparators. 
+
+Keep in mind, sorting a vector of size $n$ takes $\mathcal{O}(\log_2(n)*n)$
+
+# Focus Problem
+
+<SampleProblem  moduleId={moduleId} topicId={topicId} location={"sample1"} /> 
+
+# More Practice 
+
+<ProblemList  moduleId={moduleId} topicId={topicId} location={"list"} /> 
+
+<TopicProgress moduleId={moduleId} topicId={topicId} />
+
+
+
