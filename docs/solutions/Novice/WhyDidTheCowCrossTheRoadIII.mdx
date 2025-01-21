@@ -1,0 +1,51 @@
+import React from 'react';
+import '../../../src/css/TopicPage.module.css';   
+import Sidebar from '../../../src/components/Sidebar';   
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+import 'katex/dist/katex.min.css';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';
+
+
+export const moduleId = "Novice"; 
+
+<Sidebar moduleId={moduleId} /> 
+
+# Why Did The Cow Cross The Road III Solution
+
+Tags: Sorting
+
+# Breakdown
+
+It is always better to first do a cow if their arrival time is smaller than another cow's. Thus, we sort the cows and 
+then simulate the process. 
+
+This runs in $\mathcal{O}(\log_2(n)*n)$
+
+# Implementation
+
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <fstream>
+std::ifstream cin ("cowqueue.in");
+std::ofstream cout ("cowqueue.out");
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    int n; cin >> n; 
+    vector<pair<int, int>> a(n); 
+    for(int i = 0; i < n; i++) cin >> a[i].first >> a[i].second; 
+    sort(a.begin(), a.end()); // always better if it starts first
+    int t = 0; 
+    for(int i = 0; i < n; i++) t = max(t, a[i].first) + a[i].second; 
+    cout << t; 
+}
+`}
+  </SyntaxHighlighter>
+</div>

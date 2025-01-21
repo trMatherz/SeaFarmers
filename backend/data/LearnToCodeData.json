@@ -503,7 +503,7 @@
     },
     {
       "topicId": "UsefulTricks",
-      "topicName": "Useful Tricks (Optional)",
+      "topicName": "Useful Tricks",
       "description": "Some extra tricks that might make implementation easier.",
       "solvedProblems": 0,
       "skippedProblems": 0,

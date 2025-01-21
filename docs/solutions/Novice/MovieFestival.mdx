@@ -1,0 +1,53 @@
+import React from 'react';
+import '../../../src/css/TopicPage.module.css';   
+import Sidebar from '../../../src/components/Sidebar';   
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+import 'katex/dist/katex.min.css';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';
+
+
+export const moduleId = "Novice"; 
+
+<Sidebar moduleId={moduleId} /> 
+
+# Movie Festival Solution
+
+Tags: Sorting
+
+# Breakdown
+
+It is always better to go to a movie if it ends first since we will be able to go to the next movie sooner. Sort them by 
+ending time, then simulate. 
+
+This runs in $\mathcal{O}(\log_2(n)*n)$
+
+# Implementation
+
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    int n; cin >> n; 
+    vector<pair<int, int>> a(n); 
+    for(int i = 0; i < n; i++) cin >> a[i].second >> a[i].first; 
+    sort(a.begin(), a.end()); 
+    int an = 0, t = 0;  
+    for(int i = 0; i < n; i++) {
+        if(t <= a[i].second) {
+            t = a[i].first; 
+            an++; 
+        }
+    }
+    cout << an; 
+}
+`}
+  </SyntaxHighlighter>
+</div>

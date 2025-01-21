@@ -333,7 +333,8 @@
           "star": true,
           "difficulty": 1000,
           "tags": [
-            "Sorting"
+            "Sorting",
+            "Functions"
           ],
           "link": "https://usaco.org/index.php?page=viewproblem2&cpid=592",
           "helps": [
@@ -356,7 +357,7 @@
           "star": false,
           "difficulty": 1100,
           "tags": [
-            "Recursion"
+            "Sorting"
           ],
           "link": "https://codeforces.com/gym/104520/problem/H",
           "helps": [
