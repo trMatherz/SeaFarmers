@@ -308,7 +308,7 @@
           "state": 0,
           "source": "CSES",
           "star": true,
-          "difficulty": 1000,
+          "difficulty": 900,
           "tags": [
             "Sorting"
           ],
@@ -325,13 +325,36 @@
           ]
         },
         {
+          "problemId": "Permutator",
+          "location": "list",
+          "name": "Permutator",
+          "state": 0,
+          "source": "CF",
+          "star": false,
+          "difficulty": 1000,
+          "tags": [
+            "Sorting"
+          ],
+          "link": "https://codeforces.com/gym/104520/problem/H",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/Novice/Permutator"
+            },
+            {
+              "name": "Official",
+              "link": "https://codeforces.com/blog/entry/119632"
+            }
+          ]
+        },
+        {
           "problemId": "AngryCows",
           "location": "list",
           "name": "Angry Cows",
           "state": 0,
           "source": "USACO",
           "star": true,
-          "difficulty": 1000,
+          "difficulty": 1100,
           "tags": [
             "Sorting",
             "Functions"
@@ -345,29 +368,6 @@
             {
               "name": "Official",
               "link": "https://usaco.org/current/data/sol_angry_bronze_jan16.html"
-            }
-          ]
-        },
-        {
-          "problemId": "Permutator",
-          "location": "list",
-          "name": "Permutator",
-          "state": 0,
-          "source": "CF",
-          "star": false,
-          "difficulty": 1100,
-          "tags": [
-            "Sorting"
-          ],
-          "link": "https://codeforces.com/gym/104520/problem/H",
-          "helps": [
-            {
-              "name": "Me",
-              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/Novice/Permutator"
-            },
-            {
-              "name": "Official",
-              "link": "https://codeforces.com/blog/entry/119632"
             }
           ]
         }
