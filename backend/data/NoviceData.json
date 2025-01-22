@@ -2,14 +2,14 @@
   "moduleId": "Novice",
   "moduleName": "Novice",
   "description": "Rudimentary data structures and algorithms.",
-  "unseenTopics": 3,
+  "unseenTopics": 4,
   "skippedTopics": 0,
   "solvedTopics": 0,
-  "unseenProblems": 12,
+  "unseenProblems": 18,
   "skippedProblems": 0,
   "solvedProblems": 0,
-  "totalTopics": 3,
-  "totalProblems": 12,
+  "totalTopics": 4,
+  "totalProblems": 18,
   "genericTopics" : [
     {
       "genericTopicId": "OutsideOfTheMainFunction",
@@ -386,6 +386,168 @@
           "star": false,
           "description": "Implementation Reference",
           "link": "https://cplusplus.com/reference/algorithm/sort/"
+        }
+      ]
+    },
+    {
+      "topicId": "SetsAndMaps",
+      "topicName": "Sets And Maps",
+      "description": "Beyond the vector.",
+      "solvedProblems": 0,
+      "skippedProblems": 0,
+      "unseenProblems": 6,
+      "totalProblems": 6,
+      "state": 0,
+      "problems": [
+        {
+          "problemId": "AssociativeArray",
+          "location": "sample1",
+          "name": "Associative Array",
+          "state": 0,
+          "source": "Library",
+          "star": true,
+          "difficulty": 800,
+          "tags": [
+            "Maps"
+          ],
+          "link": "https://judge.yosupo.jp/problem/associative_array",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/Novice/AssociativeArray"
+            }
+          ]
+        },
+        {
+          "problemId": "CreatingStrings",
+          "location": "sample2",
+          "name": "Creating Strings",
+          "state": 0,
+          "source": "CSES",
+          "star": true,
+          "difficulty": 800,
+          "tags": [
+            "Sets"
+          ],
+          "link": "https://cses.fi/problemset/task/1622",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/CreatingStrings"
+            },
+            {
+              "name": "Geeks",
+              "link": "https://www.geeksforgeeks.org/cses-solutions-creating-strings/"
+            }
+          ]
+        },
+        {
+          "problemId": "WhereAmI",
+          "location": "list",
+          "name": "Where Am I?",
+          "state": 0,
+          "source": "USACO",
+          "star": true,
+          "difficulty": 900,
+          "tags": [
+            "Maps"
+          ],
+          "link": "https://usaco.org/index.php?page=viewproblem2&cpid=964",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/Novice/WhereAmI"
+            },
+            {
+              "name": "Official",
+              "link": "https://usaco.org/current/data/sol_whereami_bronze_dec19.html"
+            }
+          ]
+        },
+        {
+          "problemId": "Traffic Lights",
+          "location": "list",
+          "name": "TrafficLights",
+          "state": 0,
+          "source": "CSES",
+          "star": false,
+          "difficulty": 1000,
+          "tags": [
+            "Sets"
+          ],
+          "link": "https://cses.fi/problemset/result/9233953/",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/Novice/TrafficLights"
+            },
+            {
+              "name": "Geeks",
+              "link": "https://www.geeksforgeeks.org/cses-solutions-traffic-lights/"
+            }
+          ]
+        },
+        {
+          "problemId": "JuryMarks",
+          "location": "list",
+          "name": "Jury Markss",
+          "state": 0,
+          "source": "CF",
+          "star": true,
+          "difficulty": 1100,
+          "tags": [
+            "Sets"
+          ],
+          "link": "https://codeforces.com/contest/831/problem/C",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/Novice/JuryMarks"
+            },
+            {
+              "name": "Official",
+              "link": "https://codeforces.com/blog/entry/53302"
+            }
+          ]
+        },
+        {
+          "problemId": "SumOfTwoValues",
+          "location": "list",
+          "name": "Sum Of Two Values",
+          "state": 0,
+          "source": "CSES",
+          "star": true,
+          "difficulty": 1100,
+          "tags": [
+            "Maps"
+          ],
+          "link": "https://cses.fi/problemset/task/1640",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/Novice/SumOfTwoValues"
+            },
+            {
+              "name": "Geeks",
+              "link": "https://www.geeksforgeeks.org/cses-solutions-sum-of-two-values/"
+            }
+          ]
+        }
+      ],
+      "resources": [
+        {
+          "name": "Map",
+          "source": "CPlusPlus",
+          "star": false,
+          "description": "Maps",
+          "link": "https://cplusplus.com/reference/map/map/"
+        },
+        {
+          "name": "Set",
+          "source": "CPlusPlus",
+          "star": false,
+          "description": "Sets",
+          "link": "https://cplusplus.com/reference/set/set/"
         }
       ]
     }

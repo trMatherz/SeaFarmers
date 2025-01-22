@@ -1,0 +1,85 @@
+import React from 'react';
+import '../../../src/css/TopicPage.module.css';  
+import ProblemList from '../../../src/components/ProblemList';  
+import SampleProblem from '../../../src/components/SampleProblem';  
+import ResourceList from '../../../src/components/ResourceList';
+import TopicProgress from '../../../src/components/TopicProgress';  
+import Sidebar from '../../../src/components/Sidebar';  
+import SignInButton from '@site/src/components/SignInButton';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+import 'katex/dist/katex.min.css';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';
+
+
+export const moduleId = "Novice"; 
+export const topicId = "SetsAndMaps";  
+
+<Sidebar moduleId={moduleId} /> 
+
+# Sets And Maps
+
+Prerequisites: Sorting
+
+# Resources
+
+<ResourceList moduleId={moduleId} topicId={topicId}/>
+
+# Maps
+
+Maps are a lot like arrays, except that their indices are not $0-n$, then can be anything you want them to be! 
+
+A map takes a data type, like int or string for BOTH its keys and values. These can be different. This means that 
+you can get a value of a int from a string or a boolean from an int. 
+
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`map<int, int> a; 
+if(a.count(3)) cout << a[3] << endl;
+else cout << "NONE" << endl;
+a[3] = 90990; 
+if(a.count(3)) cout << a[3] << endl;
+else cout << "NONE" << endl;
+`}
+  </SyntaxHighlighter>
+</div>
+
+Note: By nature of the maps, accessing elements takes $\mathcal{O}(\log_2(n))$
+
+# Maps Focus Problem
+
+<SampleProblem  moduleId={moduleId} topicId={topicId} location={"sample1"} /> 
+
+# Sets 
+
+Sets don't have indices but they contain all elements in a sorted order. 
+
+You can insert and erase values in $\mathcal{O}(\log_2(n))$
+
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`set<int> a; 
+a.insert(2); 
+a.insert(3); 
+cout << a.size() << endl; // 2
+a.insert(2); 
+cout << a.size() << endl; // 2 since this does nothgin
+a.erase(2); 
+cout << a.size() << endl; // 1 
+`}
+  </SyntaxHighlighter>
+</div>
+
+# Sets Focus Problem
+
+<SampleProblem  moduleId={moduleId} topicId={topicId} location={"sample2"} /> 
+
+# More Practice 
+
+<ProblemList  moduleId={moduleId} topicId={topicId} location={"list"} /> 
+
+<TopicProgress moduleId={moduleId} topicId={topicId} />
+
+
+
