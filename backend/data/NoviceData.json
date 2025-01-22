@@ -23,7 +23,8 @@
       "genericTopicId": "Sorting",
       "genericTopicName": "Sorting",
       "topics" : [
-        "BasicSorting"
+        "BasicSorting",
+        "SetsAndMaos"
       ]
     }
   ],
