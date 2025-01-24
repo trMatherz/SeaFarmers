@@ -1,0 +1,62 @@
+import React from 'react';
+import '../../../src/css/TopicPage.module.css';   
+import Sidebar from '../../../src/components/Sidebar';   
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+import 'katex/dist/katex.min.css';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';
+
+
+export const moduleId = "Novice"; 
+
+<Sidebar moduleId={moduleId} /> 
+
+# Creating Strings Solution
+
+Tags: Sets, Recursion
+
+# Breakdown
+
+We can use recursion to generate all possible strings and store them in a set. They will already be sorted, so simply 
+iterate through the set. 
+
+This runs in $\mathcal{O}(n!)$
+
+# Implementation
+
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <set> 
+#include <map> 
+using namespace std;
+
+set<string> a; 
+map<char, int> v; 
+string z;
+void go(string cur) {
+    if(cur.size() == z.size()) { a.insert(cur); return; }
+    for(char c : z) {
+        if(v[c] > 0) {
+            v[c]--; 
+            string ncur = cur + c; 
+            go(ncur); 
+            v[c]++; 
+        }
+    }
+}
+int main() {
+    cin >> z; 
+    for(char c : z) v[c]++; 
+    go("");
+    cout << a.size() << endl;
+    for(string u : a) cout << u << endl;
+}
+`}
+  </SyntaxHighlighter>
+</div>

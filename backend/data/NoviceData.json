@@ -5,11 +5,11 @@
   "unseenTopics": 4,
   "skippedTopics": 0,
   "solvedTopics": 0,
-  "unseenProblems": 18,
+  "unseenProblems": 17,
   "skippedProblems": 0,
   "solvedProblems": 0,
   "totalTopics": 4,
-  "totalProblems": 18,
+  "totalProblems": 17,
   "genericTopics" : [
     {
       "genericTopicId": "OutsideOfTheMainFunction",
@@ -396,8 +396,8 @@
       "description": "Beyond the vector.",
       "solvedProblems": 0,
       "skippedProblems": 0,
-      "unseenProblems": 6,
-      "totalProblems": 6,
+      "unseenProblems": 5,
+      "totalProblems": 5,
       "state": 0,
       "problems": [
         {
@@ -426,9 +426,10 @@
           "state": 0,
           "source": "CSES",
           "star": true,
-          "difficulty": 800,
+          "difficulty": 1100,
           "tags": [
-            "Sets"
+            "Sets", 
+            "Recursion"
           ],
           "link": "https://cses.fi/problemset/task/1622",
           "helps": [
@@ -439,6 +440,29 @@
             {
               "name": "Geeks",
               "link": "https://www.geeksforgeeks.org/cses-solutions-creating-strings/"
+            }
+          ]
+        },
+        {
+          "problemId": "SumOfTwoValues",
+          "location": "list",
+          "name": "Sum Of Two Values",
+          "state": 0,
+          "source": "CSES",
+          "star": false,
+          "difficulty": 800,
+          "tags": [
+            "Maps"
+          ],
+          "link": "https://cses.fi/problemset/task/1640",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/Novice/SumOfTwoValues"
+            },
+            {
+              "name": "Geeks",
+              "link": "https://www.geeksforgeeks.org/cses-solutions-sum-of-two-values/"
             }
           ]
         },
@@ -466,35 +490,12 @@
           ]
         },
         {
-          "problemId": "Traffic Lights",
-          "location": "list",
-          "name": "TrafficLights",
-          "state": 0,
-          "source": "CSES",
-          "star": false,
-          "difficulty": 1000,
-          "tags": [
-            "Sets"
-          ],
-          "link": "https://cses.fi/problemset/result/9233953/",
-          "helps": [
-            {
-              "name": "Me",
-              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/Novice/TrafficLights"
-            },
-            {
-              "name": "Geeks",
-              "link": "https://www.geeksforgeeks.org/cses-solutions-traffic-lights/"
-            }
-          ]
-        },
-        {
           "problemId": "JuryMarks",
           "location": "list",
           "name": "Jury Markss",
           "state": 0,
           "source": "CF",
-          "star": true,
+          "star": false,
           "difficulty": 1100,
           "tags": [
             "Sets"
@@ -508,29 +509,6 @@
             {
               "name": "Official",
               "link": "https://codeforces.com/blog/entry/53302"
-            }
-          ]
-        },
-        {
-          "problemId": "SumOfTwoValues",
-          "location": "list",
-          "name": "Sum Of Two Values",
-          "state": 0,
-          "source": "CSES",
-          "star": true,
-          "difficulty": 1100,
-          "tags": [
-            "Maps"
-          ],
-          "link": "https://cses.fi/problemset/task/1640",
-          "helps": [
-            {
-              "name": "Me",
-              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/Novice/SumOfTwoValues"
-            },
-            {
-              "name": "Geeks",
-              "link": "https://www.geeksforgeeks.org/cses-solutions-sum-of-two-values/"
             }
           ]
         }

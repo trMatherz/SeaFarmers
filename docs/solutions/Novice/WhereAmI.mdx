@@ -1,0 +1,61 @@
+import React from 'react';
+import '../../../src/css/TopicPage.module.css';   
+import Sidebar from '../../../src/components/Sidebar';   
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+import 'katex/dist/katex.min.css';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';
+
+
+export const moduleId = "Novice"; 
+
+<Sidebar moduleId={moduleId} /> 
+
+# Where Am I? Solution
+
+Tags: Sets
+
+# Breakdown
+
+We can check each length and output the smallest one. To check, we use a set to count the number of distrinct substrings. 
+
+This runs in $\mathcal{O}(\log_2(n)*n^2)$
+
+# Implementation
+
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+vector<string> a(8); 
+int an = 0; 
+void go(int x, vector<pair<int, int>> used) {
+    if(x < 0) { an++; return; }
+    for(int y = 0; y <= 7; y++) {
+        if(a[x][y] == '*') continue; 
+        bool bad = false; 
+        for(int j = 0; j < used.size(); j++) {
+            if(used[j].second == y) bad = true; 
+            if(used[j].first - x == abs(used[j].second - y)) bad = true; 
+        }
+        if(!bad) {
+            used.push_back({x, y}); 
+            go(x - 1, used); 
+            used.pop_back(); 
+        }
+    }
+}
+int main() {
+    for(int i = 0; i < 8; i++) cin >> a[i]; 
+    go(7, {}); 
+    cout << an; 
+}
+`}
+  </SyntaxHighlighter>
+</div>

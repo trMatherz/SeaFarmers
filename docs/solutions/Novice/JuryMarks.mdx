@@ -1,0 +1,63 @@
+import React from 'react';
+import '../../../src/css/TopicPage.module.css';   
+import Sidebar from '../../../src/components/Sidebar';   
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+import 'katex/dist/katex.min.css';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';
+
+
+export const moduleId = "Novice"; 
+
+<Sidebar moduleId={moduleId} /> 
+
+# Jury Marks Solution
+
+Tags: Sets
+
+# Breakdown
+
+For each value $x$, we can check if it works in $\mathcal{O}(\log_2(n)*n)$
+
+There are only at most $n$ possible values of $x$ since $b$<sub>$0$</sub> must be in the sequence. 
+
+This runs in$\mathcal{O}(\log_2(n)*n^2)$
+
+# Implementation
+
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <set> 
+using namespace std;
+
+int n, m; 
+vector<int> a, b; 
+bool check(int x) {
+    int cur = x; 
+    set<int> poss; 
+    for(int i = 0; i < n; i++) cur += a[i], poss.insert(cur);
+    for(int j = 0; j < m; j++) if(!poss.count(b[j])) return false; 
+    return true;
+}
+int main() {
+    cin >> n >> m; 
+    a = vector<int>(n); b = vector<int>(m); 
+    for(auto &u : a) cin >> u; 
+    for(auto &u : b) cin >> u; 
+    int cur = b[0]; 
+    set<int> an; 
+    for(int i = 0; i < n; i++) {
+        cur -= a[i];
+        if(check(cur)) an.insert(cur); 
+    }
+    cout << an.size(); 
+}
+`}
+  </SyntaxHighlighter>
+</div>

@@ -47,13 +47,22 @@ else cout << "NONE" << endl;
 
 Note: By nature of the maps, accessing elements takes $\mathcal{O}(\log_2(n))$
 
+Note: You will have to use this
+
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`#include <map> 
+`}
+  </SyntaxHighlighter>
+</div>
+
 # Maps Focus Problem
 
 <SampleProblem  moduleId={moduleId} topicId={topicId} location={"sample1"} /> 
 
 # Sets 
 
-Sets don't have indices but they contain all elements in a sorted order. 
+Sets don't have indices but they contain all elements in sorted order. 
 
 You can insert and erase values in $\mathcal{O}(\log_2(n))$
 
@@ -67,6 +76,29 @@ a.insert(2);
 cout << a.size() << endl; // 2 since this does nothgin
 a.erase(2); 
 cout << a.size() << endl; // 1 
+`}
+  </SyntaxHighlighter>
+</div>
+
+In sets, and also vectors, you can iterate through the elements in order without using indices
+
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`set<int> a; 
+a.insert(2); 
+a.insert(3); 
+a.insert(2); 
+a.insert(1); 
+for(int u : a) cout << u << " "; // {1, 2, 3}
+`}
+  </SyntaxHighlighter>
+</div>
+
+Note: You will have to use this
+
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`#include <set> 
 `}
   </SyntaxHighlighter>
 </div>
