@@ -5,11 +5,11 @@
   "unseenTopics": 10,
   "skippedTopics": 0,
   "solvedTopics": 0,
-  "unseenProblems": 25,
+  "unseenProblems": 26,
   "skippedProblems": 0,
   "solvedProblems": 0,
   "totalTopics": 10,
-  "totalProblems": 25,
+  "totalProblems": 26,
   "genericTopics" : [
     {
       "genericTopicId": "Pre-Code",
@@ -585,8 +585,8 @@
       "description": "Time to see how far you've come.",
       "solvedProblems": 0,
       "skippedProblems": 0,
-      "unseenProblems": 6,
-      "totalProblems": 6,
+      "unseenProblems": 7,
+      "totalProblems": 7,
       "state": 0,
       "problems": [
         {
@@ -655,6 +655,25 @@
             {
               "name": "Official",
               "link": "https://usaco.org/current/data/sol_crossroad_bronze_feb17.html"
+            }
+          ]
+        },
+        {
+          "problemId": "WeighingUrchins",
+          "location": "list",
+          "name": "Weighing Urchins",
+          "state": 0,
+          "source": "ME",
+          "star": false,
+          "difficulty": 600,
+          "tags": [
+            "Vectors"
+          ],
+          "link": "https://usaco.org/index.php?page=viewproblem2&cpid=711",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/LearnToCode/WeighingUrchins"
             }
           ]
         },
