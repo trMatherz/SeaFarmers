@@ -5,11 +5,11 @@
   "unseenTopics": 4,
   "skippedTopics": 0,
   "solvedTopics": 0,
-  "unseenProblems": 17,
+  "unseenProblems": 18,
   "skippedProblems": 0,
   "solvedProblems": 0,
   "totalTopics": 4,
-  "totalProblems": 17,
+  "totalProblems": 18,
   "genericTopics" : [
     {
       "genericTopicId": "OutsideOfTheMainFunction",
@@ -407,7 +407,7 @@
           "state": 0,
           "source": "Library",
           "star": true,
-          "difficulty": 800,
+          "difficulty": 700,
           "tags": [
             "Maps"
           ],
@@ -420,26 +420,21 @@
           ]
         },
         {
-          "problemId": "CreatingStrings",
+          "problemId": "AnglerFish",
           "location": "sample2",
-          "name": "Creating Strings",
+          "name": "Angler Fish",
           "state": 0,
-          "source": "CSES",
+          "source": "ME",
           "star": true,
-          "difficulty": 1100,
+          "difficulty": 700,
           "tags": [
-            "Sets", 
-            "Recursion"
+            "Sets"
           ],
-          "link": "https://cses.fi/problemset/task/1622",
+          "link": "https://www.hackerrank.com/contests/under-the-sea/challenges/angler-fish/submissions/code/1387779846",
           "helps": [
             {
               "name": "Me",
-              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/Novice/CreatingStrings"
-            },
-            {
-              "name": "Geeks",
-              "link": "https://www.geeksforgeeks.org/cses-solutions-creating-strings/"
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/Novice/AnglerFish"
             }
           ]
         },
@@ -486,6 +481,30 @@
             {
               "name": "Official",
               "link": "https://usaco.org/current/data/sol_whereami_bronze_dec19.html"
+            }
+          ]
+        },
+        {
+          "problemId": "CreatingStrings",
+          "location": "list",
+          "name": "Creating Strings",
+          "state": 0,
+          "source": "CSES",
+          "star": true,
+          "difficulty": 900,
+          "tags": [
+            "Sets", 
+            "Recursion"
+          ],
+          "link": "https://cses.fi/problemset/task/1622",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/Novice/CreatingStrings"
+            },
+            {
+              "name": "Geeks",
+              "link": "https://www.geeksforgeeks.org/cses-solutions-creating-strings/"
             }
           ]
         },
