@@ -655,7 +655,7 @@
           "tags": [
             "2P"
           ],
-          "link": "https://cses.fi/problemset/task/1622",
+          "link": "https://usaco.org/index.php?page=viewproblem2&cpid=918",
           "helps": [
             {
               "name": "Me",
@@ -695,7 +695,7 @@
         {
           "name": "Chapter 8.1: Two Pointers",
           "source": "CSES",
-          "star": false,
+          "star": true,
           "description": "Another perspective",
           "link": "https://usaco.guide/CPH.pdf#page=87"
         },

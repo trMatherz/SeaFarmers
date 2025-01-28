@@ -1,0 +1,54 @@
+import React from 'react';
+import '../../../src/css/TopicPage.module.css';   
+import Sidebar from '../../../src/components/Sidebar';   
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+import 'katex/dist/katex.min.css';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';
+
+
+export const moduleId = "Novice"; 
+
+<Sidebar moduleId={moduleId} /> 
+
+# Subarray Sums I Solution
+
+Tags: 2P
+
+# Breakdown
+
+If $g(i)$ is the first value where the sum from elements $i$ to $g(i)$ is greater than $x$, than it can be seen that $g(i) 
+\leq g(j)$ for $i < j$. Thus, we can use two pointers.  
+
+This runs in $\mathcal{O}(n)$
+
+# Implementation
+
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    long long n, x; cin >> n >> x; 
+    vector<long long> a(n); 
+    for(int i = 0; i < n; i++) cin >> a[i]; 
+    long long an = 0, sum = 0, r = 0; 
+    for(int i = 0; i < n; i++) {
+        while(r < n && sum + a[r] <= x) {
+            sum += a[r];
+            r++;
+        }
+        if(sum == x) an++; 
+        sum -= a[i]; 
+    }
+    cout << an; 
+}
+`}
+  </SyntaxHighlighter>
+</div>
