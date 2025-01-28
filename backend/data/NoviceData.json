@@ -551,9 +551,9 @@
       ]
     },
     {
-      "topicId": "SetsAndMaps",
-      "topicName": "Sets And Maps",
-      "description": "Beyond the vector.",
+      "topicId": "TwoPointers",
+      "topicName": "Two Pointers",
+      "description": "A trick to searching.",
       "solvedProblems": 0,
       "skippedProblems": 0,
       "unseenProblems": 6,
