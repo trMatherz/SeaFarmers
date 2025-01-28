@@ -2,14 +2,14 @@
   "moduleId": "Novice",
   "moduleName": "Novice",
   "description": "Rudimentary data structures and algorithms.",
-  "unseenTopics": 4,
+  "unseenTopics": 5,
   "skippedTopics": 0,
   "solvedTopics": 0,
-  "unseenProblems": 18,
+  "unseenProblems": 24,
   "skippedProblems": 0,
   "solvedProblems": 0,
-  "totalTopics": 4,
-  "totalProblems": 18,
+  "totalTopics": 5,
+  "totalProblems": 24,
   "genericTopics" : [
     {
       "genericTopicId": "OutsideOfTheMainFunction",
@@ -24,7 +24,8 @@
       "genericTopicName": "Sorting",
       "topics" : [
         "BasicSorting",
-        "SetsAndMaps"
+        "SetsAndMaps",
+        "TwoPointers"
       ]
     }
   ],
@@ -396,8 +397,8 @@
       "description": "Beyond the vector.",
       "solvedProblems": 0,
       "skippedProblems": 0,
-      "unseenProblems": 5,
-      "totalProblems": 5,
+      "unseenProblems": 6,
+      "totalProblems": 6,
       "state": 0,
       "problems": [
         {
@@ -546,6 +547,164 @@
           "star": false,
           "description": "Sets",
           "link": "https://cplusplus.com/reference/set/set/"
+        }
+      ]
+    },
+    {
+      "topicId": "SetsAndMaps",
+      "topicName": "Sets And Maps",
+      "description": "Beyond the vector.",
+      "solvedProblems": 0,
+      "skippedProblems": 0,
+      "unseenProblems": 6,
+      "totalProblems": 6,
+      "state": 0,
+      "problems": [
+        {
+          "problemId": "SubarraySumsI",
+          "location": "sample1",
+          "name": "Subarray Sums I",
+          "state": 0,
+          "source": "CSES",
+          "star": true,
+          "difficulty": 800,
+          "tags": [
+            "2P"
+          ],
+          "link": "https://cses.fi/problemset/task/1660",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/Novice/SubarraySumsI"
+            }
+          ]
+        },
+        {
+          "problemId": "Books",
+          "location": "list",
+          "name": "Books",
+          "state": 0,
+          "source": "CF",
+          "star": false,
+          "difficulty": 700,
+          "tags": [
+            "2P"
+          ],
+          "link": "https://codeforces.com/contest/279/problem/B",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/Novice/Books"
+            },
+            {
+              "name": "Official",
+              "link": "https://codeforces.com/blog/entry/95148"
+            }
+          ]
+        },
+        {
+          "problemId": "SumOfThreeValues",
+          "location": "list",
+          "name": "Sum Of Three Values",
+          "state": 0,
+          "source": "CSES",
+          "star": true,
+          "difficulty": 900,
+          "tags": [
+            "2P"
+          ],
+          "link": "https://cses.fi/problemset/task/1641",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/Novice/SumOfThreeValues"
+            }
+          ]
+        },
+        {
+          "problemId": "DiamondCollector",
+          "location": "list",
+          "name": "Diamond Collector",
+          "state": 0,
+          "source": "USACO",
+          "star": true,
+          "difficulty": 900,
+          "tags": [
+            "2P"
+          ],
+          "link": "https://usaco.org/index.php?page=viewproblem2&cpid=643",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/Novice/DiamondCollector"
+            },
+            {
+              "name": "Official",
+              "link": "https://usaco.org/current/data/sol_diamond_silver_open16.html"
+            }
+          ]
+        },
+        {
+          "problemId": "SleepyCowHearding",
+          "location": "list",
+          "name": "Sleepy Cow Hearding",
+          "state": 0,
+          "source": "USACO",
+          "star": true,
+          "difficulty": 900,
+          "tags": [
+            "2P"
+          ],
+          "link": "https://cses.fi/problemset/task/1622",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/Novice/SleepyCowHearding"
+            },
+            {
+              "name": "Official",
+              "link": "https://usaco.org/current/data/sol_herding_silver_feb19.html"
+            }
+          ]
+        },
+        {
+          "problemId": "PairedUp",
+          "location": "list",
+          "name": "Paired Up",
+          "state": 0,
+          "source": "USACO",
+          "star": false,
+          "difficulty": 1100,
+          "tags": [
+            "Sets"
+          ],
+          "link": "https://usaco.org/index.php?page=viewproblem2&cpid=738",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/Novice/PairedUp"
+            },
+            {
+              "name": "Official",
+              "link": "https://usaco.org/current/data/sol_pairup_silver_open17.html"
+            }
+          ]
+        }
+      ],
+      "resources": [
+        {
+          "name": "Chapter 8.1: Two Pointers",
+          "source": "CSES",
+          "star": false,
+          "description": "Another perspective",
+          "link": "https://usaco.guide/CPH.pdf#page=87"
+        },
+        {
+          "name": "Two Pointers",
+          "source": "Geeks",
+          "star": false,
+          "description": "Has example code as well",
+          "link": "https://www.geeksforgeeks.org/two-pointers-technique/"
         }
       ]
     }

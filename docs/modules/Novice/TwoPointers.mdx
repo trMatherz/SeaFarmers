@@ -1,0 +1,49 @@
+import React from 'react';
+import '../../../src/css/TopicPage.module.css';  
+import ProblemList from '../../../src/components/ProblemList';  
+import SampleProblem from '../../../src/components/SampleProblem';  
+import ResourceList from '../../../src/components/ResourceList';
+import TopicProgress from '../../../src/components/TopicProgress';  
+import Sidebar from '../../../src/components/Sidebar';  
+import SignInButton from '@site/src/components/SignInButton';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+import 'katex/dist/katex.min.css';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';
+
+
+export const moduleId = "Novice"; 
+export const topicId = "TwoPointers";  
+
+<Sidebar moduleId={moduleId} /> 
+
+# Two Pointers
+
+Prerequisites: NA
+
+# Resources
+
+<ResourceList moduleId={moduleId} topicId={topicId}/>
+
+# Focus Problem
+
+<SampleProblem  moduleId={moduleId} topicId={topicId} location={"sample1"} /> 
+
+After looking at the probelem at hand, this concept will seem more concrete. Basicall, instead of doing a complete search
+by looping through every possibility, these problems use a simple fact: 
+
+If $f(i)$ is the function and the best indice of the function for $i$ is $g(i)$, meaning that $f(g(i))$ is greater than 
+all other values of $f(l)$, and we also know that $g(i)$ \leq g(j)$ for $i \leq j$, then we can simply start at $g(i)$ 
+when finding $g(j)$.  
+
+# More Practice 
+
+<ProblemList  moduleId={moduleId} topicId={topicId} location={"list"} /> 
+
+<TopicProgress moduleId={moduleId} topicId={topicId} />
+
+
+
+
+
