@@ -1,0 +1,56 @@
+import React from 'react';
+import '../../../src/css/TopicPage.module.css';   
+import Sidebar from '../../../src/components/Sidebar';   
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+import 'katex/dist/katex.min.css';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';
+
+
+export const moduleId = "Novice"; 
+
+<Sidebar moduleId={moduleId} /> 
+
+# Sum Of Three Values Solution
+
+Tags: 2P
+
+# Breakdown
+
+If we try to make a sum that involves $i$, then we can use two pointers for the other two values. $l < i$ and $r > i$. 
+
+This runs in $\mathcal{O}(n^2)$
+
+# Implementation
+
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    int n, k; cin >> n >> k; 
+    vector<pair<int, int>> a(n); 
+    for(int i = 0; i < n; i++) cin >> a[i].first; 
+    for(int i = 0; i < n; i++) a[i].second = i + 1; 
+    sort(a.begin(), a.end()); 
+    for(int i = 0; i < n; i++) {
+        int r = n - 1; 
+        for(int l = 0; l < i; l++) {
+            while(r > i && a[l].first + a[i].first + a[r].first > k) r--; 
+            if(r > i && a[l].first + a[i].first + a[r].first == k) {
+                cout << a[l].s << " " << a[i].second << " " << a[r].second; 
+                return 0; 
+            }
+        }
+    }
+    cout << "IMPOSSIBLE"; 
+}
+`}
+  </SyntaxHighlighter>
+</div>

@@ -1,0 +1,63 @@
+import React from 'react';
+import '../../../src/css/TopicPage.module.css';   
+import Sidebar from '../../../src/components/Sidebar';   
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+import 'katex/dist/katex.min.css';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';
+
+
+export const moduleId = "Novice"; 
+
+<Sidebar moduleId={moduleId} /> 
+
+# Diamond Collector Solution
+
+Tags: 2P
+
+# Breakdown
+
+The answer is the max of lef[i] + rig[i] where lef[i] represents the max amount of ways to collect with one group that
+includes at MOST dimaond i. rig[i] is similar. 
+
+We can use two pointers to calculate all these values. 
+
+This runs in $\mathcal{O}(n)$
+
+# Implementation
+
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <fstream>
+std::ifstream cin("diamond.in");
+std::ofstream cout("diamond.out");
+#include <algorithm>
+using namespace std;
+
+int main() {
+    int n, k; cin >> n >> k; 
+    int an = 0; 
+    vector<int> a(n); 
+    for(int i = 0; i < n; i++) cin >> a[i]; 
+    sort(a.begin(), a.end()); 
+    vector<int> lef(n, 1), rig(n, 1); 
+    int r = 0; 
+    for(int i = 0; i < n - 1; i++) {
+        while(r < n && a[i] - k > a[r]) r++; 
+        lef[i + 1] = lef[i] = max(i - r + 1, lef[i]); 
+    }
+    r = n - 1; 
+    for(int i = n - 1; i > 0; i--) {
+        while(r >= 0 && a[r] > a[i] + k) r--; 
+        rig[i - 1] = rig[i] = max(r - i + 1, rig[i]); 
+    }
+    for(int i = 0; i < n - 1; i++) emax(an, lef[i] + rig[i + 1]); 
+    cout << an; 
+}
+`}
+  </SyntaxHighlighter>
+</div>
