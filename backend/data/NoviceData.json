@@ -603,6 +603,29 @@
           ]
         },
         {
+          "problemId": "PairedUp",
+          "location": "list",
+          "name": "Paired Up",
+          "state": 0,
+          "source": "USACO",
+          "star": false,
+          "difficulty": 800,
+          "tags": [
+            "Sets"
+          ],
+          "link": "https://usaco.org/index.php?page=viewproblem2&cpid=738",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/Novice/PairedUp"
+            },
+            {
+              "name": "Official",
+              "link": "https://usaco.org/current/data/sol_pairup_silver_open17.html"
+            }
+          ]
+        },
+        {
           "problemId": "SumOfThreeValues",
           "location": "list",
           "name": "Sum Of Three Values",
@@ -627,7 +650,7 @@
           "name": "Diamond Collector",
           "state": 0,
           "source": "USACO",
-          "star": true,
+          "star": false,
           "difficulty": 900,
           "tags": [
             "2P"
@@ -645,13 +668,13 @@
           ]
         },
         {
-          "problemId": "SleepyCowHearding",
+          "problemId": "SleepyCowHerding",
           "location": "list",
-          "name": "Sleepy Cow Hearding",
+          "name": "Sleepy Cow Herding",
           "state": 0,
           "source": "USACO",
           "star": true,
-          "difficulty": 900,
+          "difficulty": 1000,
           "tags": [
             "2P"
           ],
@@ -659,34 +682,11 @@
           "helps": [
             {
               "name": "Me",
-              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/Novice/SleepyCowHearding"
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/Novice/SleepyCowHerding"
             },
             {
               "name": "Official",
               "link": "https://usaco.org/current/data/sol_herding_silver_feb19.html"
-            }
-          ]
-        },
-        {
-          "problemId": "PairedUp",
-          "location": "list",
-          "name": "Paired Up",
-          "state": 0,
-          "source": "USACO",
-          "star": false,
-          "difficulty": 1100,
-          "tags": [
-            "Sets"
-          ],
-          "link": "https://usaco.org/index.php?page=viewproblem2&cpid=738",
-          "helps": [
-            {
-              "name": "Me",
-              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/Novice/PairedUp"
-            },
-            {
-              "name": "Official",
-              "link": "https://usaco.org/current/data/sol_pairup_silver_open17.html"
             }
           ]
         }
