@@ -25,7 +25,8 @@
       "topics" : [
         "BasicSorting",
         "SetsAndMaps",
-        "TwoPointers"
+        "TwoPointers",
+        "BinarySearch"
       ]
     }
   ],
