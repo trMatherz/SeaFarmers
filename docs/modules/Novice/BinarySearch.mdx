@@ -1,0 +1,104 @@
+import React from 'react';
+import '../../../src/css/TopicPage.module.css';  
+import ProblemList from '../../../src/components/ProblemList';  
+import SampleProblem from '../../../src/components/SampleProblem';  
+import ResourceList from '../../../src/components/ResourceList';
+import TopicProgress from '../../../src/components/TopicProgress';  
+import Sidebar from '../../../src/components/Sidebar';  
+import SignInButton from '@site/src/components/SignInButton';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+import 'katex/dist/katex.min.css';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';
+
+
+export const moduleId = "Novice"; 
+export const topicId = "BinarySearch";  
+
+<Sidebar moduleId={moduleId} /> 
+
+# Binary Search
+
+Prerequisites: Nothing
+
+# Resources
+
+<ResourceList moduleId={moduleId} topicId={topicId}/>
+
+# Using Library Functions
+
+I think its best to see the goal of binary search before understanding general applications since there are so many. 
+So, consider the problem where we have a sorted array and are using a set. We can use the two following functions to 
+find either the first element that is strictly greater or greater than ot equal to a certain value. 
+
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`
+vector<int> a = {0, 1, 2, 5, 6}; 
+int pos = upper_bound(a.begin(), a.end(), 2); // pos = 3, since a[3] >= 3
+pos = upper_bound(a.begin(), a.end(), 2); // pos = 2, since a[2] >= 2
+`}
+  </SyntaxHighlighter>
+</div>
+
+Note that on a vector, it only works if the vector is in SORTED order. 
+
+These functions run in $\mathcal{O}(\log_2(n))$
+
+# Library Function Focus Problem
+
+<SampleProblem  moduleId={moduleId} topicId={topicId} location={"sample1"} /> 
+
+# General Applications
+
+Instead of being limited to certain problems, we can binary search on any monotonic function. A funtion is monotonic 
+if $f(x) <= $f(x + 1$)$ or $f(x) >= f(x + 1)$ for all values of $x$. 
+
+If we are to find the first value of $x$ where $f(x)$ is a certain value, we can take are current search-able area, 
+and then keep dividing it into two until we have one value. 
+
+This finds the first value with $f(x) <= v$ if $f(x)$ is decreasing: 
+
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`
+int l = 0, r = n - 1; 
+while(l < r) {
+    int m = (l + r) / 2; 
+    if(f(m) <= v) r = m; 
+    else l = m + 1; 
+}
+`}
+  </SyntaxHighlighter>
+</div>
+
+This finds the last value with $f(x) < v$ if $f(x)$ is increasing:
+
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`
+int l = 0, r = n - 1; 
+while(l < r) {
+    int m = (l + r + 1) / 2; // Add one if r = m - 1 
+    if(f(m) >= v) r = m - 1; 
+    else l = m ;
+}
+`}
+  </SyntaxHighlighter>
+</div>
+
+Binary Searching runs in $\mathcal{O}(\log_2(n)) * \mathcal{O}(f(x))$
+
+# General Applications Focus Problem 
+
+<SampleProblem  moduleId={moduleId} topicId={topicId} location={"sample2"} /> 
+
+# More Practice 
+
+<ProblemList  moduleId={moduleId} topicId={topicId} location={"list"} /> 
+
+<TopicProgress moduleId={moduleId} topicId={topicId} />
+
+
+

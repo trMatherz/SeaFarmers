@@ -2,14 +2,14 @@
   "moduleId": "Novice",
   "moduleName": "Novice",
   "description": "Rudimentary data structures and algorithms.",
-  "unseenTopics": 5,
+  "unseenTopics": 6,
   "skippedTopics": 0,
   "solvedTopics": 0,
-  "unseenProblems": 24,
+  "unseenProblems": 34,
   "skippedProblems": 0,
   "solvedProblems": 0,
-  "totalTopics": 5,
-  "totalProblems": 24,
+  "totalTopics": 6,
+  "totalProblems": 34,
   "genericTopics" : [
     {
       "genericTopicId": "OutsideOfTheMainFunction",
@@ -705,6 +705,264 @@
           "star": false,
           "description": "Has example code as well",
           "link": "https://www.geeksforgeeks.org/two-pointers-technique/"
+        }
+      ]
+    },
+    {
+      "topicId": "BinarySearch",
+      "topicName": "Binary Search",
+      "description": "The first Ah-Ha moment.",
+      "solvedProblems": 0,
+      "skippedProblems": 0,
+      "unseenProblems": 10,
+      "totalProblems": 10,
+      "state": 0,
+      "problems": [
+        {
+          "problemId": "CountingHaybales",
+          "location": "sample1",
+          "name": "Counting Haybales",
+          "state": 0,
+          "source": "USACO",
+          "star": true,
+          "difficulty": 800,
+          "tags": [
+            "Binary Search"
+          ],
+          "link": "https://usaco.org/index.php?page=viewproblem2&cpid=666",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/Novice/CountingHaybales"
+            },
+            {
+              "name": "Official",
+              "link": "https://usaco.org/current/data/sol_haybales_silver_dec16.html"
+            }
+          ]
+        },
+        {
+          "problemId": "FactoryMachines",
+          "location": "sample2",
+          "name": "Factory Machines",
+          "state": 0,
+          "source": "CSES",
+          "star": true,
+          "difficulty": 800,
+          "tags": [
+            "Binary Search"
+          ],
+          "link": "https://cses.fi/problemset/task/1620",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/Novice/FactoryMachines"
+            },
+            {
+              "name": "Geeks",
+              "link": "https://www.geeksforgeeks.org/cses-solutions-factory-machines/"
+            }
+          ]
+        },
+        {
+          "problemId": "Convention",
+          "location": "list",
+          "name": "Convention",
+          "state": 0,
+          "source": "USACO",
+          "star": false,
+          "difficulty": 800,
+          "tags": [
+            "Binary Search"
+          ],
+          "link": "https://usaco.org/index.php?page=viewproblem2&cpid=858",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/Novice/Convention"
+            },
+            {
+              "name": "Official",
+              "link": "https://usaco.org/current/data/sol_convention_silver_dec18.html"
+            }
+          ]
+        },
+        {
+          "problemId": "SocialDistancing",
+          "location": "list",
+          "name": "Social Distancing",
+          "state": 0,
+          "source": "USACO",
+          "star": false,
+          "difficulty": 800,
+          "tags": [
+            "Binary Search"
+          ],
+          "link": "https://usaco.org/index.php?page=viewproblem2&cpid=1038",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/Novice/SocialDistancing"
+            },
+            {
+              "name": "Official",
+              "link": "https://usaco.org/current/data/sol_socdist_silver_open20.html"
+            }
+          ]
+        },
+        {
+          "problemId": "AngryCows",
+          "location": "list",
+          "name": "Angry Cows",
+          "state": 0,
+          "source": "USACO",
+          "star": false,
+          "difficulty": 800,
+          "tags": [
+            "Binary Search"
+          ],
+          "link": "https://usaco.org/index.php?page=viewproblem2&cpid=597",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/Novice/AngryCows"
+            },
+            {
+              "name": "Official",
+              "link": "https://usaco.org/current/data/sol_angry_gold_jan16.html"
+            }
+          ]
+        },
+        {
+          "problemId": "LoanRepayment",
+          "location": "list",
+          "name": "Loan Repayment",
+          "state": 0,
+          "source": "USACO",
+          "star": false,
+          "difficulty": 800,
+          "tags": [
+            "Binary Search"
+          ],
+          "link": "https://usaco.org/index.php?page=viewproblem2&cpid=991",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/Novice/LoanRepayment"
+            },
+            {
+              "name": "Official",
+              "link": "https://usaco.org/current/data/sol_loan_silver_jan20.html"
+            }
+          ]
+        },
+        {
+          "problemId": "ArrayDivision",
+          "location": "list",
+          "name": "Array Division",
+          "state": 0,
+          "source": "CSES",
+          "star": false,
+          "difficulty": 800,
+          "tags": [
+            "Binary Search"
+          ],
+          "link": "https://cses.fi/problemset/task/1085",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/Novice/ArrayDivision"
+            },
+            {
+              "name": "Geeks",
+              "link": "https://www.geeksforgeeks.org/cses-solutions-array-division/"
+            }
+          ]
+        },
+        {
+          "problemId": "MeetingPlaceCantBeChanged",
+          "location": "list",
+          "name": "Meeting Place Cant Be Changed",
+          "state": 0,
+          "source": "CF",
+          "star": false,
+          "difficulty": 800,
+          "tags": [
+            "Binary Search"
+          ],
+          "link": "https://codeforces.com/contest/782/problem/B",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/Novice/MeetingPlaceCantBeChanged"
+            },
+            {
+              "name": "Official",
+              "link": "https://codeforces.com/blog/entry/50854"
+            }
+          ]
+        },
+        {
+          "problemId": "Handshake",
+          "location": "list",
+          "name": "Handshake",
+          "state": 0,
+          "source": "AC",
+          "star": false,
+          "difficulty": 800,
+          "tags": [
+            "Binary Search"
+          ],
+          "link": "https://atcoder.jp/contests/abc149/tasks/abc149_e",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/Novice/Handshake"
+            },
+            {
+              "name": "Official",
+              "link": "https://atcoder.jp/contests/abc149/editorial"
+            }
+          ]
+        },
+        {
+          "problemId": "LevelGeneration",
+          "location": "list",
+          "name": "Level Generation",
+          "state": 0,
+          "source": "CF",
+          "star": false,
+          "difficulty": 800,
+          "tags": [
+            "Binary Search"
+          ],
+          "link": "https://codeforces.com/problemset/problem/818/F",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/Novice/LevelGeneration"
+            },
+            {
+              "name": "Official",
+              "link": "https://codeforces.com/blog/entry/52991"
+            }
+          ]
+        }
+      ],
+      "resources": [
+        {
+          "name": "Chapter 3.3: Binary Search",
+          "source": "CSES",
+          "star": true,
+          "description": "Another perspective",
+          "link": "https://usaco.guide/CPH.pdf#page=41"
+        },
+        {
+          "name": "Two Pointers",
+          "source": "CPlusPlus",
+          "star": false,
+          "description": "Implementation Reference",
+          "link": "https://cplusplus.com/reference/algorithm/lower_bound/"
         }
       ]
     }
