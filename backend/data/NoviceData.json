@@ -5,11 +5,11 @@
   "unseenTopics": 6,
   "skippedTopics": 0,
   "solvedTopics": 0,
-  "unseenProblems": 34,
+  "unseenProblems": 32,
   "skippedProblems": 0,
   "solvedProblems": 0,
   "totalTopics": 6,
-  "totalProblems": 34,
+  "totalProblems": 32,
   "genericTopics" : [
     {
       "genericTopicId": "OutsideOfTheMainFunction",
@@ -715,8 +715,8 @@
       "description": "The first Ah-Ha moment.",
       "solvedProblems": 0,
       "skippedProblems": 0,
-      "unseenProblems": 10,
-      "totalProblems": 10,
+      "unseenProblems": 8,
+      "totalProblems": 8,
       "state": 0,
       "problems": [
         {
@@ -835,29 +835,6 @@
           ]
         },
         {
-          "problemId": "LoanRepayment",
-          "location": "list",
-          "name": "Loan Repayment",
-          "state": 0,
-          "source": "USACO",
-          "star": false,
-          "difficulty": 800,
-          "tags": [
-            "Binary Search"
-          ],
-          "link": "https://usaco.org/index.php?page=viewproblem2&cpid=991",
-          "helps": [
-            {
-              "name": "Me",
-              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/Novice/LoanRepayment"
-            },
-            {
-              "name": "Official",
-              "link": "https://usaco.org/current/data/sol_loan_silver_jan20.html"
-            }
-          ]
-        },
-        {
           "problemId": "ArrayDivision",
           "location": "list",
           "name": "Array Division",
@@ -923,29 +900,6 @@
             {
               "name": "Official",
               "link": "https://atcoder.jp/contests/abc149/editorial"
-            }
-          ]
-        },
-        {
-          "problemId": "LevelGeneration",
-          "location": "list",
-          "name": "Level Generation",
-          "state": 0,
-          "source": "CF",
-          "star": false,
-          "difficulty": 800,
-          "tags": [
-            "Binary Search"
-          ],
-          "link": "https://codeforces.com/problemset/problem/818/F",
-          "helps": [
-            {
-              "name": "Me",
-              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/Novice/LevelGeneration"
-            },
-            {
-              "name": "Official",
-              "link": "https://codeforces.com/blog/entry/52991"
             }
           ]
         }
