@@ -726,7 +726,7 @@
           "state": 0,
           "source": "USACO",
           "star": true,
-          "difficulty": 800,
+          "difficulty": 900,
           "tags": [
             "Binary Search"
           ],
@@ -749,7 +749,7 @@
           "state": 0,
           "source": "CSES",
           "star": true,
-          "difficulty": 800,
+          "difficulty": 1000,
           "tags": [
             "Binary Search"
           ],
@@ -766,13 +766,36 @@
           ]
         },
         {
+          "problemId": "ArrayDivision",
+          "location": "list",
+          "name": "Array Division",
+          "state": 0,
+          "source": "CSES",
+          "star": false,
+          "difficulty": 1000,
+          "tags": [
+            "Binary Search"
+          ],
+          "link": "https://cses.fi/problemset/task/1085",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/Novice/ArrayDivision"
+            },
+            {
+              "name": "Geeks",
+              "link": "https://www.geeksforgeeks.org/cses-solutions-array-division/"
+            }
+          ]
+        },
+        {
           "problemId": "Convention",
           "location": "list",
           "name": "Convention",
           "state": 0,
           "source": "USACO",
           "star": false,
-          "difficulty": 800,
+          "difficulty": 1000,
           "tags": [
             "Binary Search"
           ],
@@ -795,7 +818,7 @@
           "state": 0,
           "source": "USACO",
           "star": false,
-          "difficulty": 800,
+          "difficulty": 1000,
           "tags": [
             "Binary Search"
           ],
@@ -812,59 +835,13 @@
           ]
         },
         {
-          "problemId": "AngryCows",
-          "location": "list",
-          "name": "Angry Cows",
-          "state": 0,
-          "source": "USACO",
-          "star": false,
-          "difficulty": 800,
-          "tags": [
-            "Binary Search"
-          ],
-          "link": "https://usaco.org/index.php?page=viewproblem2&cpid=597",
-          "helps": [
-            {
-              "name": "Me",
-              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/Novice/AngryCows"
-            },
-            {
-              "name": "Official",
-              "link": "https://usaco.org/current/data/sol_angry_gold_jan16.html"
-            }
-          ]
-        },
-        {
-          "problemId": "ArrayDivision",
-          "location": "list",
-          "name": "Array Division",
-          "state": 0,
-          "source": "CSES",
-          "star": false,
-          "difficulty": 800,
-          "tags": [
-            "Binary Search"
-          ],
-          "link": "https://cses.fi/problemset/task/1085",
-          "helps": [
-            {
-              "name": "Me",
-              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/Novice/ArrayDivision"
-            },
-            {
-              "name": "Geeks",
-              "link": "https://www.geeksforgeeks.org/cses-solutions-array-division/"
-            }
-          ]
-        },
-        {
           "problemId": "MeetingPlaceCantBeChanged",
           "location": "list",
           "name": "Meeting Place Cant Be Changed",
           "state": 0,
           "source": "CF",
           "star": false,
-          "difficulty": 800,
+          "difficulty": 1100,
           "tags": [
             "Binary Search"
           ],
@@ -887,7 +864,7 @@
           "state": 0,
           "source": "AC",
           "star": false,
-          "difficulty": 800,
+          "difficulty": 1200,
           "tags": [
             "Binary Search"
           ],
@@ -900,6 +877,29 @@
             {
               "name": "Official",
               "link": "https://atcoder.jp/contests/abc149/editorial"
+            }
+          ]
+        },
+        {
+          "problemId": "AngryCows",
+          "location": "list",
+          "name": "Angry Cows",
+          "state": 0,
+          "source": "USACO",
+          "star": true,
+          "difficulty": 1500,
+          "tags": [
+            "Binary Search"
+          ],
+          "link": "https://usaco.org/index.php?page=viewproblem2&cpid=597",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/Novice/AngryCowsGold"
+            },
+            {
+              "name": "Official",
+              "link": "https://usaco.org/current/data/sol_angry_gold_jan16.html"
             }
           ]
         }

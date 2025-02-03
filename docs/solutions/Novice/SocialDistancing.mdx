@@ -1,0 +1,66 @@
+import React from 'react';
+import '../../../src/css/TopicPage.module.css';   
+import Sidebar from '../../../src/components/Sidebar';   
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+import 'katex/dist/katex.min.css';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';
+
+
+export const moduleId = "Novice"; 
+
+<Sidebar moduleId={moduleId} /> 
+
+# Social Distancing Solution
+
+Tags: Binary Search
+
+# Breakdown
+
+We can test a certain distance in $\mathcal{O}(n)$, and the function is monotonic. 
+
+This runs in $\mathcal{O}(\log_2(n)*n)$
+
+# Implementation
+
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <fstream> 
+std::ifstream cin("socdist.in");
+std::ofstream cout("socdist.out");
+#include <algorithm>
+using namespace std;
+
+int n, k; 
+vector<pair<long long, long long>> a; 
+bool check(long long x) {  
+    int ret = 0; 
+    long long last = -x; 
+    for(int i = 0; i < k; i++) {
+        while(last + x <= a[i].second) {
+            last = max(last + x, a[i].first);
+            if(++ret == n) return true; 
+        }
+    }
+    return false; 
+}
+int main() {
+    cin >> n >> k; 
+    long long l = 0, r = (long long) 1e18 + 7;
+    a = vector<pair<long long, long long>>(k); 
+    for(int i = 0; i < k; i++) cin >> a[i].first >> a[i].second;  
+    sort(a.begin(), a.end()); 
+    while(l < r) {
+        long long m = (l + r + 1) / 2; 
+        if(check(m)) l = m;
+        else r = m - 1; 
+    }
+    cout << l; 
+}
+`}
+  </SyntaxHighlighter>
+</div>

@@ -1,0 +1,95 @@
+import React from 'react';
+import '../../../src/css/TopicPage.module.css';   
+import Sidebar from '../../../src/components/Sidebar';   
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+import 'katex/dist/katex.min.css';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';
+
+
+export const moduleId = "Novice"; 
+
+<Sidebar moduleId={moduleId} /> 
+
+# Angry Cows Solution
+
+Tags: Binary Search
+
+# Breakdown
+
+We can test a certain distance in $\mathcal{O}(\log_2(n)*n)$, and the function is monotonic. 
+
+We can do this by binary searching on the left-most and right-most values separately. 
+
+This runs in $\mathcal{O}(\log_2(n)^2*n)$
+
+# Implementation
+
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <fstream> 
+std::ifstream cin("angry.in");
+std::ofstream cout("angry.out");
+#include <algorithm>
+using namespace std;
+
+int n; 
+vector<long long> a; 
+bool checkLef(int x, long long y) {
+    long long cur, last = x--; 
+    while(last != -1) {
+        y -= 2; 
+        cur = a[last] - y; 
+        last = -1; 
+        while(x >= 0 && a[x] >= cur) last = x--; 
+    }
+    return x == -1; 
+}
+int findLef(long long x) {
+    int l = 0, r = n - 1; 
+    while(l < r) {
+        int m = (l + r + 1) / 2; 
+        if(checkLef(m, x)) l = m; 
+        else r = m - 1; 
+    }
+    return l; 
+}
+bool checkRig(int x, long long y) {
+    long long cur, last = x++; 
+    while(last != -1) {
+        y -= 2; 
+        cur = a[last] + y; 
+        last = -1; 
+        while(x < n && a[x] <= cur) last = x++; 
+    }
+    return x == n; 
+}
+int findRig(long long x) {
+    int l = 0, r = n - 1; 
+    while(l < r) {
+        int m = (l + r) / 2; 
+        if(checkRig(m, x)) r = m; 
+        else l = m + 1; 
+    }
+    return l; 
+}
+int main() {
+    cin >> n; 
+    a = vector<long long>(n); 
+    for(int i = 0; i < n; i++) { cin >> a[i]; a[i] *= 2; }
+    sort(a.begin(), a.end()); 
+    long long l = 0, r = (long long) 1e12 + 7;
+    while(l < r) {
+        long long m = (l + r) / 2; 
+        if(a[findRig(m)] - a[findLef(m)] <= m * 2) r = m; 
+        else l = m + 1; 
+    }
+    cout << l / 2 << "." << (l % 2 == 0 ? 0 : 5); 
+}
+`}
+  </SyntaxHighlighter>
+</div>

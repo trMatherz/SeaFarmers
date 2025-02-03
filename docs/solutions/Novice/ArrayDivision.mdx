@@ -1,0 +1,62 @@
+import React from 'react';
+import '../../../src/css/TopicPage.module.css';   
+import Sidebar from '../../../src/components/Sidebar';   
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+import 'katex/dist/katex.min.css';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';
+
+
+export const moduleId = "Novice"; 
+
+<Sidebar moduleId={moduleId} /> 
+
+# Array Division Solution
+
+Tags: Binary Search
+
+# Breakdown
+
+We can test a certain sum in $\mathcal{O}(n)$, and the function is monotonic. 
+
+This runs in $\mathcal{O}(\log_2(n)*n)$
+
+# Implementation
+
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+long long n, k;
+vector<long long> a; 
+bool check(long long x) {
+    int ct = 0; 
+    long long cur = x; 
+    for(int i = 0; i < n; i++) {
+        if(cur + a[i] <= x) cur += a[i]; 
+        else if(ct < k && a[i] <= x) cur = a[i], ct++; 
+        else return false; 
+    }
+    return true;
+}
+int main() {
+    cin >> n >> k; 
+    a = vector<long long>(n); 
+    for(int i = 0; i < n; i++) cin >> a[i]; 
+    long long l = 0, r = (long long) 1e15; 
+    while(l < r) {
+        long long m = (l + r) / 2; 
+        if(check(m)) r = m; 
+        else l = m + 1; 
+    }
+    cout << l; 
+}
+`}
+  </SyntaxHighlighter>
+</div>
