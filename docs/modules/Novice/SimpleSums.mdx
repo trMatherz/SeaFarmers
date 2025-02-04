@@ -1,0 +1,71 @@
+import React from 'react';
+import '../../../src/css/TopicPage.module.css';  
+import ProblemList from '../../../src/components/ProblemList';  
+import SampleProblem from '../../../src/components/SampleProblem';  
+import ResourceList from '../../../src/components/ResourceList';
+import TopicProgress from '../../../src/components/TopicProgress';  
+import Sidebar from '../../../src/components/Sidebar';  
+import SignInButton from '@site/src/components/SignInButton';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+import 'katex/dist/katex.min.css';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';
+
+
+export const moduleId = "Novice"; 
+export const topicId = "SimpleSums";  
+
+<Sidebar moduleId={moduleId} /> 
+
+# Simple Sums
+
+Prerequisites: Learn To Code
+
+# Resources
+
+<ResourceList moduleId={moduleId} topicId={topicId}/>
+
+# An Introduction to Prefix Sums
+
+If you want to sum the elements of an array betwen $l$ and $r$, your first instinct is to do this: 
+
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`int sum = 0; 
+for(int i = l; i <= r; i++) sum += a[i]; 
+cout << sum; 
+`}
+  </SyntaxHighlighter>
+</div>
+
+This runs in$\mathcal{O}(n)$
+
+Instead, we can do pre-calculations for the sum of the first $i$ elemenets for each $i$. 
+
+Then, the sum is equal to $pre[r + 1]$ - $pre[l]$ (one-indexed). 
+
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`
+vector<int> pre(n + 1, 0); 
+for(int i = 0; i < n; i++) pre[i + 1] = pre[i] + a[i]; 
+cout << pre[r + 1] - pre[l]; 
+`}
+  </SyntaxHighlighter>
+</div>
+
+This runs in$\mathcal{O}(1)$
+
+# Focus Problem
+
+<SampleProblem  moduleId={moduleId} topicId={topicId} location={"sample1"} /> 
+
+# More Practice 
+
+<ProblemList  moduleId={moduleId} topicId={topicId} location={"list"} /> 
+
+<TopicProgress moduleId={moduleId} topicId={topicId} />
+
+
+

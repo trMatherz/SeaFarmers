@@ -28,6 +28,13 @@
         "TwoPointers",
         "BinarySearch"
       ]
+    },
+    {
+      "genericTopicId": "PerfixSums",
+      "genericTopicName": "Prefix Sums",
+      "topics" : [
+        "Simple Sums"
+      ]
     }
   ],
   "topics": [
@@ -918,6 +925,134 @@
           "star": false,
           "description": "Implementation Reference",
           "link": "https://cplusplus.com/reference/algorithm/lower_bound/"
+        }
+      ]
+    },
+    {
+      "topicId": "SimpleSums",
+      "topicName": "Simple Sums",
+      "description": "The first Ah-Ha moment.",
+      "solvedProblems": 0,
+      "skippedProblems": 0,
+      "unseenProblems": 5,
+      "totalProblems": 5,
+      "state": 0,
+      "problems": [
+        {
+          "problemId": "StaticRangeSum",
+          "location": "sample1",
+          "name": "Static Range Sum",
+          "state": 0,
+          "source": "YS",
+          "star": true,
+          "difficulty": 800,
+          "tags": [
+            "Prefix Sums"
+          ],
+          "link": "https://judge.yosupo.jp/problem/static_range_sum6",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/Novice/StaticRangeSum"
+            }
+          ]
+        },
+        {
+          "problemId": "SubsequencesSummingToSeven",
+          "location": "list",
+          "name": "Subsequences Summing to Sevens",
+          "state": 0,
+          "source": "USACO",
+          "star": true,
+          "difficulty": 800,
+          "tags": [
+            "Prefix Sums"
+          ],
+          "link": "https://usaco.org/index.php?page=viewproblem2&cpid=595",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/Novice/SubsequencesSummingToSeven"
+            },
+            {
+              "name": "Official",
+              "link": "https://usaco.org/current/data/sol_div7_silver_jan16.html"
+            }
+          ]
+        },
+        {
+          "problemId": "BreedCounting",
+          "location": "list",
+          "name": "Breed Counting",
+          "state": 0,
+          "source": "USACO",
+          "star": true,
+          "difficulty": 800,
+          "tags": [
+            "Prefix Sums"
+          ],
+          "link": "https://usaco.org/index.php?page=viewproblem2&cpid=572",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/Novice/BreedCounting"
+            },
+            {
+              "name": "Official",
+              "link": "https://usaco.org/current/data/sol_bcount_silver_dec15.html"
+            }
+          ]
+        },
+        {
+          "problemId": "HaybaleStacking",
+          "location": "list",
+          "name": "Haybale Stacking",
+          "state": 0,
+          "source": "SPOJ",
+          "star": true,
+          "difficulty": 800,
+          "tags": [
+            "Prefix Sums"
+          ],
+          "link": "https://www.spoj.com/problems/HAYBALE/",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/Novice/HaybaleStacking"
+            }
+          ]
+        },
+        {
+          "problemId": "RunningMiles",
+          "location": "list",
+          "name": "Running Miles",
+          "state": 0,
+          "source": "CF",
+          "star": true,
+          "difficulty": 800,
+          "tags": [
+            "Prefix Sums"
+          ],
+          "link": "https://codeforces.com/contest/1826/problem/D",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/Novice/RunningMiles"
+            },
+            {
+              "name": "Official",
+              "link": "https://codeforces.com/blog/entry/115892"
+            }
+          ]
+        }
+      ],
+      "resources": [
+        {
+          "name": "Chapter 9.1: Static Array Queries",
+          "source": "CSES",
+          "star": true,
+          "description": "Another perspective",
+          "link": "https://usaco.guide/CPH.pdf#page=94"
         }
       ]
     }
