@@ -2,14 +2,14 @@
   "moduleId": "Novice",
   "moduleName": "Novice",
   "description": "Rudimentary data structures and algorithms.",
-  "unseenTopics": 6,
+  "unseenTopics": 7,
   "skippedTopics": 0,
   "solvedTopics": 0,
-  "unseenProblems": 32,
+  "unseenProblems": 37,
   "skippedProblems": 0,
   "solvedProblems": 0,
-  "totalTopics": 6,
-  "totalProblems": 32,
+  "totalTopics": 7,
+  "totalProblems": 37,
   "genericTopics" : [
     {
       "genericTopicId": "OutsideOfTheMainFunction",
@@ -33,7 +33,7 @@
       "genericTopicId": "PerfixSums",
       "genericTopicName": "Prefix Sums",
       "topics" : [
-        "Simple Sums"
+        "SimpleSums"
       ]
     }
   ],
