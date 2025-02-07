@@ -1,0 +1,50 @@
+import React from 'react';
+import '../../../src/css/TopicPage.module.css';   
+import Sidebar from '../../../src/components/Sidebar';   
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+import 'katex/dist/katex.min.css';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';
+
+
+export const moduleId = "Novice"; 
+
+<Sidebar moduleId={moduleId} /> 
+
+# Static Range Sums Solution
+
+Tags: Prefix Sums
+
+# Breakdown
+
+Very basic prefix sums.
+
+This runs in $\mathcal{O}(n)$
+
+# Implementation
+
+<div style={{ transform: 'translateX(150px)' }}>
+  <SyntaxHighlighter language="cpp" style={okaidia}>
+{`#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream> 
+#include <algorithm>
+using namespace std;
+
+int main() {
+    int n, q; cin >> n >> q; 
+    vector<long long> a(n, 0); 
+    for(int i = 0; i < n; i++) cin >> a[i]; 
+    vector<long long> pre(n + 1, 0); 
+    for(int i = 0; i < n; i++) pre[i + 1] = pre[i] + a[i]; 
+    for(int i = 0; i < q; i++) {
+        int x, y; cin >> x >> y;
+        cout << pre[y] - pre[x] << endl;
+    }
+}
+`}
+  </SyntaxHighlighter>
+</div>
+

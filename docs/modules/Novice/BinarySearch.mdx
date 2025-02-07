@@ -77,8 +77,7 @@ This finds the last value with $f(x) < v$ if $f(x)$ is increasing:
 
 <div style={{ transform: 'translateX(150px)' }}>
   <SyntaxHighlighter language="cpp" style={okaidia}>
-{`
-int l = 0, r = n - 1; 
+{`int l = 0, r = n - 1; 
 while(l < r) {
     int m = (l + r + 1) / 2; // Add one if r = m - 1 
     if(f(m) >= v) r = m - 1; 

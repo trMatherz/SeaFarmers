@@ -949,34 +949,11 @@
           "tags": [
             "Prefix Sums"
           ],
-          "link": "https://judge.yosupo.jp/problem/static_range_sum6",
+          "link": "https://judge.yosupo.jp/problem/static_range_sum",
           "helps": [
             {
               "name": "Me",
               "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/Novice/StaticRangeSum"
-            }
-          ]
-        },
-        {
-          "problemId": "SubsequencesSummingToSeven",
-          "location": "list",
-          "name": "Subsequences Summing to Sevens",
-          "state": 0,
-          "source": "USACO",
-          "star": true,
-          "difficulty": 800,
-          "tags": [
-            "Prefix Sums"
-          ],
-          "link": "https://usaco.org/index.php?page=viewproblem2&cpid=595",
-          "helps": [
-            {
-              "name": "Me",
-              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/Novice/SubsequencesSummingToSeven"
-            },
-            {
-              "name": "Official",
-              "link": "https://usaco.org/current/data/sol_div7_silver_jan16.html"
             }
           ]
         },
@@ -986,7 +963,7 @@
           "name": "Breed Counting",
           "state": 0,
           "source": "USACO",
-          "star": true,
+          "star": false,
           "difficulty": 800,
           "tags": [
             "Prefix Sums"
@@ -1004,13 +981,36 @@
           ]
         },
         {
+          "problemId": "SubsequencesSummingToSeven",
+          "location": "list",
+          "name": "Subsequences Summing To Sevens",
+          "state": 0,
+          "source": "USACO",
+          "star": false,
+          "difficulty": 900,
+          "tags": [
+            "Prefix Sums"
+          ],
+          "link": "https://usaco.org/index.php?page=viewproblem2&cpid=595",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/Novice/SubsequencesSummingToSeven"
+            },
+            {
+              "name": "Official",
+              "link": "https://usaco.org/current/data/sol_div7_silver_jan16.html"
+            }
+          ]
+        },
+        {
           "problemId": "HaybaleStacking",
           "location": "list",
           "name": "Haybale Stacking",
           "state": 0,
           "source": "SPOJ",
           "star": true,
-          "difficulty": 800,
+          "difficulty": 1000,
           "tags": [
             "Prefix Sums"
           ],
@@ -1029,7 +1029,7 @@
           "state": 0,
           "source": "CF",
           "star": true,
-          "difficulty": 800,
+          "difficulty": 1100,
           "tags": [
             "Prefix Sums"
           ],
