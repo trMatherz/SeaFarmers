@@ -2,14 +2,14 @@
   "moduleId": "Novice",
   "moduleName": "Novice",
   "description": "Rudimentary data structures and algorithms.",
-  "unseenTopics": 7,
+  "unseenTopics": 8,
   "skippedTopics": 0,
   "solvedTopics": 0,
-  "unseenProblems": 37,
+  "unseenProblems": 41,
   "skippedProblems": 0,
   "solvedProblems": 0,
-  "totalTopics": 7,
-  "totalProblems": 37,
+  "totalTopics": 8,
+  "totalProblems": 41,
   "genericTopics" : [
     {
       "genericTopicId": "OutsideOfTheMainFunction",
@@ -33,7 +33,8 @@
       "genericTopicId": "PerfixSums",
       "genericTopicName": "Prefix Sums",
       "topics" : [
-        "SimpleSums"
+        "SimpleSums",
+        "TwoDimensional"
       ]
     }
   ],
@@ -931,7 +932,7 @@
     {
       "topicId": "SimpleSums",
       "topicName": "Simple Sums",
-      "description": "The first Ah-Ha moment.",
+      "description": "An introduction to Range Queries.",
       "solvedProblems": 0,
       "skippedProblems": 0,
       "unseenProblems": 5,
@@ -1054,6 +1055,112 @@
           "description": "Another perspective",
           "link": "https://usaco.guide/CPH.pdf#page=94"
         }
+      ]
+    },
+    {
+      "topicId": "TwoDimensional",
+      "topicName": "Two Dimensional",
+      "description": "How multiple dimenions affect Range Queries.",
+      "solvedProblems": 0,
+      "skippedProblems": 0,
+      "unseenProblems": 4,
+      "totalProblems": 4,
+      "state": 0,
+      "problems": [
+        {
+          "problemId": "ForestQueries",
+          "location": "sample1",
+          "name": "Forest Queries",
+          "state": 0,
+          "source": "CSES",
+          "star": true,
+          "difficulty": 800,
+          "tags": [
+            "Prefix Sums"
+          ],
+          "link": "https://cses.fi/problemset/task/1652",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/Novice/ForestQueries"
+            },
+            {
+              "name": "Geeks",
+              "link": "https://www.geeksforgeeks.org/cses-solutions-forest-queries/"
+            }
+          ]
+        },
+        {
+          "problemId": "TheLazyCow",
+          "location": "list",
+          "name": "The Lazy Cow",
+          "state": 0,
+          "source": "USACO",
+          "star": false,
+          "difficulty": 800,
+          "tags": [
+            "Prefix Sums"
+          ],
+          "link": "https://usaco.org/index.php?page=viewproblem2&cpid=416",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/Novice/TheLazyCow"
+            },
+            {
+              "name": "Official",
+              "link": "https://usaco.org/current/data/sol_lazy_silver.html"
+            }
+          ]
+        },
+        {
+          "problemId": "PaintingTheBarn",
+          "location": "list",
+          "name": "Painting The Barn",
+          "state": 0,
+          "source": "USACO",
+          "star": false,
+          "difficulty": 900,
+          "tags": [
+            "Prefix Sums"
+          ],
+          "link": "https://usaco.org/index.php?page=viewproblem2&cpid=919",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/Novice/PaintingTheBarns"
+            },
+            {
+              "name": "Official",
+              "link": "https://usaco.org/current/data/sol_paintbarn_silver_feb19.html"
+            }
+          ]
+        },
+        {
+          "problemId": "NusretGokce",
+          "location": "list",
+          "name": "Nusret Gokce",
+          "state": 0,
+          "source": "CF",
+          "star": true,
+          "difficulty": 1000,
+          "tags": [
+            "Prefix Sums"
+          ],
+          "link": "https://codeforces.com/gym/104114/problem/N",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/Novice/NursetGokce"
+            },
+            {
+              "name": "Official",
+              "link": "https://drive.google.com/file/d/1MS0R9gT6XGpM_R1DIslzvhQ-MCMR4tIV/view"
+            }
+          ]
+        }
+      ],
+      "resources": [
       ]
     }
   ]
