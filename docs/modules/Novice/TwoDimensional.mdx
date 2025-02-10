@@ -29,11 +29,11 @@ Prerequisites: Prefix Sums
 We want to use the idea of prefix sums to solve the followimg problem, but if we did a prefix sum array for each row, 
 it would take $\mathcal{O}(n)$ per query. 
 
-If instead, we did a two dimensional prefix sum, where cell ${i, j}$ contains the sum of the elements ${x, y}$
-where $x \leq i$ and $y \leq j$, we can answer the queries in $\mathcal{O}(1)$. 
+If instead, we did a two dimensional prefix sum, where cell $(i, j)$ contains the sum of the elements $(x, y)$
+where $x \leq i$ and $y \leq j$, we can answer the queries in $\mathcal(O)(1)$. 
 
-The code below finds the sum of elemenst bounded by the rectange with a lower left point ${2, 1}$ and an upper right
-point ${4, 3}$ (one-indexed)
+The code below finds the sum of elemenst bounded by the rectange with a lower left point $(2, 1)$ and an upper right
+point $(4, 3)$ (one-indexed)
 
 <div style={{ transform: 'translateX(150px)' }}>
   <SyntaxHighlighter language="cpp" style={okaidia}>
@@ -48,7 +48,7 @@ cout << pre[4][3] - pre[1][3] - pre[4][0] + pre[1][0];
   </SyntaxHighlighter>
 </div>
 
-Notice how we have to add back the overlap between the rectangles. 
+Note: We have to add back the overlap between the rectangles. 
 
 # More Practice 
 

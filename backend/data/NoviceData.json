@@ -5,11 +5,11 @@
   "unseenTopics": 8,
   "skippedTopics": 0,
   "solvedTopics": 0,
-  "unseenProblems": 41,
+  "unseenProblems": 40,
   "skippedProblems": 0,
   "solvedProblems": 0,
   "totalTopics": 8,
-  "totalProblems": 41,
+  "totalProblems": 40,
   "genericTopics" : [
     {
       "genericTopicId": "OutsideOfTheMainFunction",
@@ -1063,8 +1063,8 @@
       "description": "How multiple dimenions affect Range Queries.",
       "solvedProblems": 0,
       "skippedProblems": 0,
-      "unseenProblems": 4,
-      "totalProblems": 4,
+      "unseenProblems": 3,
+      "totalProblems": 3,
       "state": 0,
       "problems": [
         {
@@ -1133,29 +1133,6 @@
             {
               "name": "Official",
               "link": "https://usaco.org/current/data/sol_paintbarn_silver_feb19.html"
-            }
-          ]
-        },
-        {
-          "problemId": "NusretGokce",
-          "location": "list",
-          "name": "Nusret Gokce",
-          "state": 0,
-          "source": "CF",
-          "star": true,
-          "difficulty": 1000,
-          "tags": [
-            "Prefix Sums"
-          ],
-          "link": "https://codeforces.com/gym/104114/problem/N",
-          "helps": [
-            {
-              "name": "Me",
-              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/Novice/NursetGokce"
-            },
-            {
-              "name": "Official",
-              "link": "https://drive.google.com/file/d/1MS0R9gT6XGpM_R1DIslzvhQ-MCMR4tIV/view"
             }
           ]
         }

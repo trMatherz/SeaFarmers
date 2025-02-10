@@ -34,8 +34,7 @@ find either the first element that is strictly greater or greater than ot equal 
 
 <div style={{ transform: 'translateX(150px)' }}>
   <SyntaxHighlighter language="cpp" style={okaidia}>
-{`
-vector<int> a = {0, 1, 2, 5, 6}; 
+{`vector<int> a = {0, 1, 2, 5, 6}; 
 int pos = upper_bound(a.begin(), a.end(), 2); // pos = 3, since a[3] >= 3
 pos = upper_bound(a.begin(), a.end(), 2); // pos = 2, since a[2] >= 2
 `}
@@ -62,8 +61,7 @@ This finds the first value with $f(x) <= v$ if $f(x)$ is decreasing:
 
 <div style={{ transform: 'translateX(150px)' }}>
   <SyntaxHighlighter language="cpp" style={okaidia}>
-{`
-int l = 0, r = n - 1; 
+{`int l = 0, r = n - 1; 
 while(l < r) {
     int m = (l + r) / 2; 
     if(f(m) <= v) r = m; 
