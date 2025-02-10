@@ -1074,7 +1074,7 @@
           "state": 0,
           "source": "CSES",
           "star": true,
-          "difficulty": 800,
+          "difficulty": 1000,
           "tags": [
             "Prefix Sums"
           ],
@@ -1091,13 +1091,36 @@
           ]
         },
         {
+          "problemId": "PaintingTheBarn",
+          "location": "list",
+          "name": "Painting The Barn",
+          "state": 0,
+          "source": "USACO",
+          "star": false,
+          "difficulty": 1100,
+          "tags": [
+            "Prefix Sums"
+          ],
+          "link": "https://usaco.org/index.php?page=viewproblem2&cpid=919",
+          "helps": [
+            {
+              "name": "Me",
+              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/Novice/PaintingTheBarn"
+            },
+            {
+              "name": "Official",
+              "link": "https://usaco.org/current/data/sol_paintbarn_silver_feb19.html"
+            }
+          ]
+        },
+        {
           "problemId": "TheLazyCow",
           "location": "list",
           "name": "The Lazy Cow",
           "state": 0,
           "source": "USACO",
-          "star": false,
-          "difficulty": 800,
+          "star": true,
+          "difficulty": 1300,
           "tags": [
             "Prefix Sums"
           ],
@@ -1110,29 +1133,6 @@
             {
               "name": "Official",
               "link": "https://usaco.org/current/data/sol_lazy_silver.html"
-            }
-          ]
-        },
-        {
-          "problemId": "PaintingTheBarn",
-          "location": "list",
-          "name": "Painting The Barn",
-          "state": 0,
-          "source": "USACO",
-          "star": false,
-          "difficulty": 900,
-          "tags": [
-            "Prefix Sums"
-          ],
-          "link": "https://usaco.org/index.php?page=viewproblem2&cpid=919",
-          "helps": [
-            {
-              "name": "Me",
-              "link": "https://trmatherz.github.io/SeaFarmers/docs/solutions/Novice/PaintingTheBarns"
-            },
-            {
-              "name": "Official",
-              "link": "https://usaco.org/current/data/sol_paintbarn_silver_feb19.html"
             }
           ]
         }
