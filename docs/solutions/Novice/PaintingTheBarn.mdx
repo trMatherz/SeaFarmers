@@ -12,13 +12,13 @@ export const moduleId = "Novice";
 
 <Sidebar moduleId={moduleId} /> 
 
-# Forest Queries Solution
+# Painting The Barn Solution
 
 Tags: Prefix Sums
 
 # Breakdown
 
-Simple $2D-$Prefix Sums.
+Apply prefix sums, then complete search to find the amount with $k$. 
 
 This runs in $\mathcal{O}(n^2)$
 
@@ -29,25 +29,34 @@ This runs in $\mathcal{O}(n^2)$
 {`#include <cmath>
 #include <cstdio>
 #include <vector>
-#include <iostream> 
+#include<fstream> 
+std::ifstream cin ("paintbarn.in");
+std::ofstream cout ("paintbarn.out");
 #include <algorithm>
 using namespace std;
 
 int main () {
-    int n, q; cin >> n >> q; 
-    vector<string> a(n); 
-    for(int i = 0; i < n; i++) cin >> a[i]; 
-    vector<vector<int>> pre(n + 1, vector<int>(n + 1, 0)); 
+    int n, k; cin >> n >> k; 
+    vector<vector<int>> a(1001, vector<int>(1001, 0)); 
     for(int i = 0; i < n; i++) {
-        for(int j = 0; j < n; j++) {
-            pre[i + 1][j + 1] = pre[i + 1][j] + pre[i][j + 1] - pre[i][j] + (a[i][j] == '*'); 
+        int x1, y1, x2, y2; cin >> x1 >> y1 >> x2 >> y2; 
+        a[x1][y1]++, a[x2][y2]++; 
+        a[x1][y2]--, a[x2][y1]--; 
+    }
+    vector<vector<int>> pre(1002, vector<int>(1002, 0)); 
+    for(int i = 0; i < 1001; i++) {
+        for(int j = 0; j < 1001; j++) {
+            pre[i + 1][j + 1] = pre[i + 1][j] + pre[i][j + 1] - pre[i][j] + a[i][j]; 
         }
     }
-    for(int i = 0; i < q; i++) {
-        int x1, y1 ,x2, y2; cin >> x1 >> y1 >> x2 >> y2; 
-        cout << pre[x2][y2] - pre[x1 - 1][y2] - pre[x2][y1 - 1] + pre[x1 - 1][y1 - 1] << endl;
+    int an = 0; 
+    for(int i = 0; i < 1001; i++) {
+        for(int j = 0; j < 1001; j++) {
+            if(pre[i][j] == k) an++; 
+        }
     }
-}  
+    cout << an; 
+}    
 `}
   </SyntaxHighlighter>
 </div>

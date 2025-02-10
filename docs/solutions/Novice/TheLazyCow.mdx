@@ -12,13 +12,13 @@ export const moduleId = "Novice";
 
 <Sidebar moduleId={moduleId} /> 
 
-# Forest Queries Solution
+# The Lazy Cow Solution
 
 Tags: Prefix Sums
 
 # Breakdown
 
-Simple $2D-$Prefix Sums.
+You have to rotate the field by $45$ degrees. Then, do prefix sums. 
 
 This runs in $\mathcal{O}(n^2)$
 
@@ -29,25 +29,35 @@ This runs in $\mathcal{O}(n^2)$
 {`#include <cmath>
 #include <cstdio>
 #include <vector>
-#include <iostream> 
+#include<fstream> 
+std::ifstream cin ("lazy.in");
+std::ofstream cout ("lazy.out");
 #include <algorithm>
 using namespace std;
 
 int main () {
-    int n, q; cin >> n >> q; 
-    vector<string> a(n); 
-    for(int i = 0; i < n; i++) cin >> a[i]; 
-    vector<vector<int>> pre(n + 1, vector<int>(n + 1, 0)); 
+    int n, k; cin >> n >> k; 
+    vector<vector<int>> a(n * 2 - 1, vector<int>(n * 2 - 1, 0)); 
     for(int i = 0; i < n; i++) {
         for(int j = 0; j < n; j++) {
-            pre[i + 1][j + 1] = pre[i + 1][j] + pre[i][j + 1] - pre[i][j] + (a[i][j] == '*'); 
+            cin >> a[i + j][n - i + j - 1]; 
         }
     }
-    for(int i = 0; i < q; i++) {
-        int x1, y1 ,x2, y2; cin >> x1 >> y1 >> x2 >> y2; 
-        cout << pre[x2][y2] - pre[x1 - 1][y2] - pre[x2][y1 - 1] + pre[x1 - 1][y1 - 1] << endl;
+    vector<vector<int>> pre(n * 2, vector<int>(n * 2, 0)); 
+    for(int i = 0; i < n * 2 - 1; i++) {
+        for(int j = 0; j < n * 2 - 1; j++) {
+            pre[i + 1][j + 1] = pre[i + 1][j] + pre[i][j + 1] - pre[i][j] + a[i][j]; 
+        }
     }
-}  
+    int an = 0; 
+    for(int i = 0; i < n * 2; i++) {
+        for(int j = 0; j < n * 2; j++) {
+            int ni = max(0, i - 2 * k - 1), nj = max(0, j - 2 * k - 1); 
+            an = max(an, pre[i][j] - pre[ni][j] - pre[i][nj] + pre[ni][nj]); 
+        }
+    }
+    cout << an; 
+}   
 `}
   </SyntaxHighlighter>
 </div>
